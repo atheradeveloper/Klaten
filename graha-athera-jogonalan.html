@@ -26,16 +26,12 @@
  * ============================================================
  */
 
-/* --- 1. BASE & RESET STYLES --- 
-   (Reset browser, font standar, box-sizing) */
-*,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }
-::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }
-* ,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}
-:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:Plus Jakarta Sans,Inter,sans-serif;-webkit-tap-highlight-color:transparent}
-body{margin:0;line-height:inherit;scroll-behavior:smooth;--tw-bg-opacity:1;background-color:rgb(247 246 242/var(--tw-bg-opacity,1));color:rgb(30 45 36/var(--tw-text-opacity,1));-webkit-font-smoothing:antialiased}
-
-
-/* Layout Utama */
+:root { --brand-dark: #1e2d24; --brand-gold: #c5a880; --brand-gold-contrast: #5d4b1f; }
+    *,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb;margin:0;padding:0}
+    html{line-height:1.5;font-family:'Plus Jakarta Sans',sans-serif;scroll-behavior:smooth}
+    body{background-color:#f7f6f2;color:#1e2d24;-webkit-font-smoothing:antialiased}
+    
+    /* Layout Utama */
     .max-w-7xl{max-width:80rem}.mx-auto{margin-left:auto;margin-right:auto}.flex{display:flex}.grid{display:grid}
     .items-center{align-items:center}.justify-between{justify-content:space-between}.relative{position:relative}
     .sticky{position:sticky}.top-0{top:0}.z-30{z-index:30}.h-20{height:5rem}.w-full{width:100%}
@@ -44,12 +40,6 @@ body{margin:0;line-height:inherit;scroll-behavior:smooth;--tw-bg-opacity:1;backg
     /* Warna & Teks */
     .bg-brand-dark{background-color:var(--brand-dark)}.bg-brand-gold{background-color:var(--brand-gold)}
     .text-brand-gold-dark{color:var(--brand-gold-contrast) !important}.text-gray-safe{color:#4b5563 !important}
-    
-    /* FONT FACE (Taruh di sini agar browser langsung download font bersamaan dengan CSS) */
-    @font-face { font-family: 'Outfit'; font-style: normal; font-weight: 700; font-display: swap; src: url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2'); }
-    @font-face { font-family: 'Plus Jakarta Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yw.woff2) format('woff2'); }
-
-
     
 /* --- 2. LAYOUT & POSITIONING --- 
    (Flex, Grid, Absolute, Relative, Z-index) */
