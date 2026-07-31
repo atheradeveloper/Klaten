@@ -8,12 +8,7 @@
 
   <!-- 1. PRELOADS (Koneksi Tercepat) -->
 <!-- 1. Resource Hint: Preload agar browser mendownload lebih awal -->
-  <link rel="preload" href="css/tailwind.css" as="style">
-
-  <!-- 2. Non-Blocking Load: Teknik media="print" + onload swap -->
-  <!-- Browser menganggap file ini hanya untuk print (prioritas rendah), 
-       lalu JS merubahnya ke "all" setelah download selesai -->
-  <link rel="stylesheet" href="css/tailwind.css" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="css/tailwind.css">
   <link rel="preload" as="image" href="assets/graha-athera-jogonalan-tipe-30.webp" fetchpriority="high">
   <link rel="preload" href="data/proyek-data.json" as="fetch" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="assets/icon.png">
