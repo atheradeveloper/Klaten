@@ -13,8 +13,9 @@
   <link rel="preload" href="data/proyek-data.json" as="fetch" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="assets/icon.png">
 
-  <!-- 2. OPTIMIZED FONTS -->
-
+  <!-- 1. KONEKSI CEPAT (Solusi: no origins were preconnected) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- 3. INLINE CSS (Dibersihkan & Diperbaiki) -->
   <style>
@@ -337,6 +338,12 @@
     }
   }
   </script>
+
+
+    <script src="js/app.js" defer></script>
+  <script src="js/siteplan.js" defer></script>
+  <script src="js/kalkulator.js" defer></script>
+  
 </head>
 <body class="bg-brand-light text-brand-dark font-sans scroll-smooth">
 
