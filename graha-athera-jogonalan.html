@@ -24,30 +24,7 @@
   <!-- Hanya panggil satu kali dengan display=swap -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- 3. INLINE CSS (Menghilangkan Render-Blocking 100%) -->
-  <style>
-    :root { --brand-dark: #1e2d24; --brand-gold: #c5a880; --brand-light: #f7f6f2; }
-    *,::after,::before{box-sizing:border-box;border:0 solid #e5e7eb}
-    html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:'Plus Jakarta Sans',sans-serif;scroll-behavior:smooth}
-    body{margin:0;background-color:var(--brand-light);color:var(--brand-dark);-webkit-font-smoothing:antialiased}
-    
-    /* Utility Minimalist */
-    .max-w-7xl{max-width:80rem}.mx-auto{margin-left:auto;margin-right:auto}.flex{display:flex}.grid{display:grid}
-    .items-center{align-items:center}.justify-between{justify-content:space-between}.relative{position:relative}
-    .sticky{position:sticky}.top-0{top:0}.z-30{z-index:30}.w-full{width:100%}.h-full{height:100%}.h-20{height:5rem}
-    .hidden{display:none}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}
-    .bg-brand-dark{background-color:var(--brand-dark)}.bg-brand-gold{background-color:var(--brand-gold)}
-    .text-white{color:#fff}.text-brand-gold{color:var(--brand-gold)}.font-display{font-family:'Outfit',sans-serif}
-    .shadow-xl{box-shadow:0 20px 25px -5px rgba(0,0,0,.1)}.aspect-\[16\/10\]{aspect-ratio:16/10}.object-cover{object-fit:cover}
-
-    @media (min-width:768px){.md\:flex{display:flex}.md\:hidden{display:none}}
-    @media (min-width:1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}}
-
-    .kavling-path{transition:all .3s ease;cursor:pointer}.kavling-path:hover{filter:brightness(1.1);stroke-width:3}
-    @keyframes pulse-gold{0%,100%{transform:scale(1)}50%{transform:scale(1.05);opacity:.8}}
-    .pulse-gold{animation:pulse-gold 2s infinite ease-in-out}
-  </style>
-
+  
   <!-- OpenGraph -->
   <meta property="og:title" content="Graha Athera Jogonalan - Rumah Subsidi Premium">
   <meta property="og:description" content="Siteplan interaktif, kalkulator KPR, dan booking online.">
