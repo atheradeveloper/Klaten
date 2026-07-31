@@ -4,107 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Graha Athera Jogonalan | Rumah Subsidi Nyaman & Berkualitas</title>
-  <meta name="description" content="Miliki Rumah Subsidi Graha Athera Jogonalan tipe 30/60 mulai Rp 160 Jutaan. Angsuran flat ringan, legalitas aman terjamin ready. Cek ketersediaan kavling disini!">
+  <meta name="description" content="Miliki Rumah Subsidi Graha Athera Jogonalan tipe 30/60 mulai Rp 160 Jutaan. Angsuran flat ringan, legalitas aman terjamin ready.">
 
-  <!-- 1. PRELOADS (Koneksi Tercepat) -->
+  <!-- 1. NETWORK & PERFORMANCE OPTIMIZATION -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" href="assets/graha-athera-jogonalan-tipe-30.webp" fetchpriority="high">
   <link rel="preload" href="data/proyek-data.json" as="fetch" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="assets/icon.png">
 
-  <!-- 2. OPTIMIZED FONTS -->
+  <!-- 2. FONTS -->
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
-  <!-- 3. ALL INLINED CSS (Tailwind + Style.css) -->
+  <!-- 3. OPTIMIZED INLINE CSS (GABUNGAN SEMUA CSS) -->
   <style>
-    /* 
-     * ============================================================
-     * PROJECT   : Athera Properti Klaten (athro.biz.id)
-     * VERSION   : 3.4.19 (Tailwind Production Build)
-     * SECTIONS  : Base, Layout, Spacing, Typography, Colors, 
-     *             Components, Siteplan & Animations, Responsive.
-     * ============================================================
-     */
+    /* --- A. RESET & BASE (Mencegah Struktur Rusak) --- */
+    *,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb;margin:0;padding:0}
+    html{line-height:1.5;-webkit-text-size-adjust:100%;font-family:'Plus Jakarta Sans',sans-serif;scroll-behavior:smooth}
+    body{background-color:#f7f6f2;color:#1e2d24;-webkit-font-smoothing:antialiased}
+    img,svg{display:block;vertical-align:middle;max-width:100%;height:auto} /* FIX ICON RAKSASA */
+    button{cursor:pointer;background:none;font-family:inherit}
+    a{text-decoration:none;color:inherit}
 
-    /* --- 1. BASE & RESET STYLES (tailwind.css) --- */
-    *,:after,:before{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }
-    ::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }
-    * ,:after,:before{box-sizing:border-box;border:0 solid #e5e7eb}:after,:before{--tw-content:""}
-    :host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:Plus Jakarta Sans,Inter,sans-serif;-webkit-tap-highlight-color:transparent}
-    body{margin:0;line-height:inherit;scroll-behavior:smooth;--tw-bg-opacity:1;background-color:rgb(247 246 242/var(--tw-bg-opacity,1));color:rgb(30 45 36/var(--tw-text-opacity,1));-webkit-font-smoothing:antialiased}
-
-    /* --- 2. LAYOUT & POSITIONING --- */
-    .pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}
-    .inset-0{inset:0}.-inset-4{inset:-1rem}.z-0{z-index:0}.z-10{z-index:10}.z-30{z-index:30}.z-40{z-index:40}.z-50{z-index:50}
-    .flex{display:flex}.grid{display:grid}.hidden{display:none}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-between{justify-content:space-between}
-    .grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}.grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-
-    /* --- 3. SPACING & SIZING --- */
-    .mx-auto{margin-left:auto;margin-right:auto}.mb-4{margin-bottom:1rem}.mb-10{margin-bottom:2.5rem}.mb-16{margin-bottom:4rem}
-    .mt-2{margin-top:.5rem}.p-4{padding:1rem}.p-8{padding:2rem}.px-4{padding-left:1rem;padding-right:1rem}.py-12{padding-top:3rem;padding-bottom:3rem}
-    .w-full{width:100%}.h-full{height:100%}.h-20{height:5rem}.max-w-7xl{max-width:80rem}.aspect-\[4\/3\]{aspect-ratio:4/3}
-
-    /* --- 4. TYPOGRAPHY --- */
-    .font-display{font-family:Outfit,sans-serif}.font-sans{font-family:Plus Jakarta Sans,Inter,sans-serif}
-    .text-xs{font-size:.75rem}.text-sm{font-size:.875rem}.text-base{font-size:1rem}.text-xl{font-size:1.25rem}.text-3xl{font-size:1.875rem}.text-7xl{font-size:4.5rem}
-    .font-bold{font-weight:700}.font-light{font-weight:300}.font-semibold{font-weight:600}
-    .uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.tracking-widest{letter-spacing:.1em}
-
-    /* --- 5. COLORS & BACKGROUNDS --- */
-    .text-white{--tw-text-opacity:1;color:rgb(255 255 255/var(--tw-text-opacity,1))}
-    .text-brand-gold{--tw-text-opacity:1;color:rgb(197 168 128/var(--tw-text-opacity,1))}
-    .text-brand-dark{--tw-text-opacity:1;color:rgb(30 45 36/var(--tw-text-opacity,1))}
-    .bg-brand-dark{--tw-bg-opacity:1;background-color:rgb(30 45 36/var(--tw-bg-opacity,1))}
-    .bg-brand-gold{--tw-bg-opacity:1;background-color:rgb(197 168 128/var(--tw-bg-opacity,1))}
-    .bg-brand-light{--tw-bg-opacity:1;background-color:rgb(247 246 242/var(--tw-bg-opacity,1))}
-    .opacity-35{opacity:.35}.bg-gradient-to-t{background-image:linear-gradient(to top,var(--tw-gradient-stops))}
-
-    /* --- 6. UI COMPONENTS --- */
-    .rounded-full{border-radius:9999px}.rounded-2xl{border-radius:1rem}.border{border-width:1px}.border-white\/10{border-color:hsla(0,0%,100%,.1)}
-    .shadow-lg{--tw-shadow:0 10px 15px -3px rgba(0,0,0,.1)}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgba(0,0,0,.25)}
-    .transition-all{transition-property:all;transition-duration:.15s}.duration-300{transition-duration:.3s}.ease-in-out{transition-timing-function:cubic-bezier(.4,0,.2,1)}
-
-    /* --- 7. CUSTOM SITEPLAN & ANIMATIONS --- */
-    .text-glow{text-shadow:0 0 10px hsla(35,37%,64%,.3)}
-    .kavling-path{transition:all .3s cubic-bezier(.4,0,.2,1);cursor:pointer}
-    .kavling-path:hover{filter:brightness(1.15) saturate(1.1);stroke-width:2.5}
-    .kavling-available{fill:#34d399;stroke:#059669}.kavling-available:hover{fill:#10b981}.kavling-booked{fill:#fbbf24;stroke:#d97706}.kavling-booked:hover{fill:#f59e0b}.kavling-sold{fill:#f87171;stroke:#dc2626;cursor:not-allowed}
-
-    @keyframes custom-pulse {
-      0%,to{transform:scale(1);box-shadow:0 4px 6px -1px hsla(35,37%,64%,.4)}
-      50%{transform:scale(1.05);box-shadow:0 10px 15px -3px hsla(35,37%,64%,.6)}
-    }
-    .pulse-gold{animation:custom-pulse 2s ease-in-out infinite}
-
-    /* --- 8. RESPONSIVE MEDIA QUERIES --- */
-    @media (min-width:640px){ .sm\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))} .sm\:flex-row{flex-direction:row} }
-    @media (min-width:768px){ .md\:flex{display:flex}.md\:hidden{display:none} .md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))} .md\:py-32{padding-top:8rem;padding-bottom:8rem} }
-    @media (min-width:1024px){ .lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))} .lg\:px-8{padding-left:2rem;padding-right:2rem} }
-
-    /* --- 9. ADDITIONAL CUSTOM STYLES (style.css) --- */
-    .transition-all-custom {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    .map-container iframe {
-      filter: grayscale(10%) contrast(100%) invert(0%);
-    }
-
-    /* Custom Reset untuk kontras Aksesibilitas */
+    /* --- B. VARIABEL BRAND --- */
     :root {
-      --brand-gold-contrast: #5d4b1f;
+      --brand-dark: #1e2d24;
+      --brand-gold: #c5a880;
+      --brand-gold-contrast: #5d4b1f; /* Lolos Kontras Google */
+      --brand-light: #f7f6f2;
     }
-    .text-brand-gold-dark { color: var(--brand-gold-contrast) !important; }
-    .text-gray-safe { color: #4b5563 !important; }
+
+    /* --- C. CORE UTILITIES (Grid, Flex, Spacing) --- */
+    .max-w-7xl{max-width:80rem}.mx-auto{margin-left:auto;margin-right:auto}
+    .flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.block{display:block}
+    .items-center{align-items:center}.items-start{align-items:flex-start}.justify-center{justify-content:center}.justify-between{justify-content:space-between}
+    .flex-col{flex-direction:column}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.gap-12{gap:3rem}
+    .relative{position:relative}.absolute{position:absolute}.sticky{position:sticky}.top-0{top:0}.z-30{z-index:30}.z-50{z-index:50}
+    .w-full{width:100%}.h-full{height:100%}.h-20{height:5rem}.h-auto{height:auto}
+    .p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-12{padding-top:3rem;padding-bottom:3rem}
+    .mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mt-4{margin-top:1rem}
+
+    /* --- D. TYPOGRAPHY & COLORS --- */
+    .font-display{font-family:'Outfit',sans-serif}.font-bold{font-weight:700}.font-semibold{font-weight:600}
+    .text-xs{font-size:0.75rem}.text-sm{font-size:0.875rem}.text-base{font-size:1rem}.text-lg{font-size:1.125rem}.text-xl{font-size:1.25rem}.text-3xl{font-size:1.875rem}.text-4xl{font-size:2.25rem}
+    .uppercase{text-transform:uppercase}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.leading-relaxed{line-height:1.625}
+    .bg-brand-dark{background-color:var(--brand-dark)}.bg-brand-gold{background-color:var(--brand-gold)}.bg-emerald-100{background-color:#d1fae5}
+    .text-white{color:#fff}.text-emerald-800{color:#065f46}
+    .text-brand-gold-dark{color:var(--brand-gold-contrast) !important}
+    .text-gray-safe{color:#4b5563 !important} /* Gray 600 untuk Kontras */
+
+    /* --- E. COMPONENTS & ANIMATIONS --- */
+    .rounded-xl{border-radius:0.75rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}
+    .border{border-width:1px}.border-t{border-top-width:1px}.border-gray-100{border-color:#f3f4f6}.border-gray-200{border-color:#e5e7eb}
+    .shadow-md{box-shadow:0 4px 6px -1px rgba(0,0,0,0.1)}.shadow-xl{box-shadow:0 20px 25px -5px rgba(0,0,0,0.1)}
+    .aspect-\[16\/10\]{aspect-ratio:16/10}.object-cover{object-fit:cover}
+    .transition{transition:all 0.3s ease}
+
+    /* Mobile Menu Style */
+    #mobile-menu { width: 100%; position: absolute; left: 0; top: 80px; z-index: 100; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.3); }
+    #mobile-menu:not(.hidden) { animation: slideDown 0.3s ease-out forwards; }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Siteplan & Map */
+    .kavling-path{transition:all 0.3s ease;cursor:pointer}.kavling-path:hover{filter:brightness(1.1);stroke-width:3}
+    @keyframes pulse-gold{0%,100%{transform:scale(1)}50%{transform:scale(1.05);opacity:0.8}}
+    .pulse-gold{animation:pulse-gold 2s infinite ease-in-out}
+    #peta-placeholder{background:#e5e7eb;border:1px solid #d1d5db;height:300px}
+    
+    /* Custom Filter Peta (style.css) */
+    .map-container iframe { filter: grayscale(10%) contrast(100%) invert(0%); }
+
+    /* --- F. RESPONSIVE MEDIA QUERIES --- */
+    @media (min-width:768px){
+      .md\:flex{display:flex}.md\:hidden{display:none}
+      .md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.md\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    }
+    @media (min-width:1024px){
+      .lg\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+      .lg\:col-span-1{grid-column:span 1/span 1}.lg\:col-span-2{grid-column:span 2/span 2}
+    }
   </style>
 
-  <!-- OpenGraph Metadata -->
+  <!-- 4. SEO & OG METADATA -->
   <meta property="og:title" content="Graha Athera Jogonalan - Rumah Subsidi Premium">
-  <meta property="og:description" content="Siteplan interaktif real-time, kalkulator angsuran KPR, dan booking online langsung via WhatsApp.">
+  <meta property="og:description" content="Siteplan interaktif real-time, kalkulator angsuran KPR, dan booking via WhatsApp.">
   <meta property="og:image" content="https://athro.biz.id/assets/graha-athera-jogonalan-tipe-30.webp">
-  <meta property="og:type" content="website">
 
-  <!-- JSON-LD SEO Schema for Product -->
+  <!-- 5. SCHEMA MARKUP -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -123,7 +109,6 @@
   }
   </script>
 </head>
-
   
 <body class="bg-brand-light text-brand-dark font-sans scroll-smooth">
 
