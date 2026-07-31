@@ -338,13 +338,7 @@
   }
   </script>
 
-  <!-- 4. NON-BLOCKING SCRIPTS (Solusi untuk 1.059ms Delay) -->
-  <!-- Dengan 'defer', script tidak akan masuk ke Network Dependency Tree yang kritis -->
-  <script src="js/siteplan.js" defer></script>
-  <script src="js/kalkulator.js" defer></script>
-  <script src="js/app.js" defer></script>
 
-  
   <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
