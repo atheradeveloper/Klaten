@@ -34,6 +34,23 @@
 :host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:Plus Jakarta Sans,Inter,sans-serif;-webkit-tap-highlight-color:transparent}
 body{margin:0;line-height:inherit;scroll-behavior:smooth;--tw-bg-opacity:1;background-color:rgb(247 246 242/var(--tw-bg-opacity,1));color:rgb(30 45 36/var(--tw-text-opacity,1));-webkit-font-smoothing:antialiased}
 
+
+/* Layout Utama */
+    .max-w-7xl{max-width:80rem}.mx-auto{margin-left:auto;margin-right:auto}.flex{display:flex}.grid{display:grid}
+    .items-center{align-items:center}.justify-between{justify-content:space-between}.relative{position:relative}
+    .sticky{position:sticky}.top-0{top:0}.z-30{z-index:30}.h-20{height:5rem}.w-full{width:100%}
+    .hidden{display:none}.rounded-2xl{border-radius:1rem}.shadow-xl{box-shadow:0 20px 25px -5px rgba(0,0,0,.1)}
+    
+    /* Warna & Teks */
+    .bg-brand-dark{background-color:var(--brand-dark)}.bg-brand-gold{background-color:var(--brand-gold)}
+    .text-brand-gold-dark{color:var(--brand-gold-contrast) !important}.text-gray-safe{color:#4b5563 !important}
+    
+    /* FONT FACE (Taruh di sini agar browser langsung download font bersamaan dengan CSS) */
+    @font-face { font-family: 'Outfit'; font-style: normal; font-weight: 700; font-display: swap; src: url(https://fonts.gstatic.com/s/outfit/v15/QGYvz_MVcBeNP4NJtEtq.woff2) format('woff2'); }
+    @font-face { font-family: 'Plus Jakarta Sans'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/plusjakartasans/v12/LDIoaomQNQcsA88c7O9yZ4KMCoOg4Ko20yw.woff2) format('woff2'); }
+
+
+    
 /* --- 2. LAYOUT & POSITIONING --- 
    (Flex, Grid, Absolute, Relative, Z-index) */
 .pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}
