@@ -844,37 +844,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-<script>
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuIcon = document.getElementById('menu-icon');
 
-  // Ikon Hamburger (Garis 3)
-  const iconHamburger = "M4 6h16M4 12h16M4 18h16";
-  // Ikon Close (Silang)
-  const iconClose = "M6 18L18 6M6 6l12 12";
-
-  menuBtn.addEventListener('click', () => {
-    const isOpen = mobileMenu.classList.toggle('active');
-    menuBtn.classList.toggle('open');
-    
-    // Animasi Ikon
-    menuIcon.setAttribute('d', isOpen ? iconClose : iconHamburger);
-    
-    // Update ARIA untuk aksesibilitas
-    menuBtn.setAttribute('aria-expanded', isOpen);
-  });
-
-  // Otomatis tutup menu saat link diklik (Smooth Scroll)
-  document.querySelectorAll('#mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('active');
-      menuBtn.classList.remove('open');
-      menuIcon.setAttribute('d', iconHamburger);
-    });
-  });
-</script>
-
-  
+    <!-- Global scripts -->
+  <script src="js/app.js"></script>
 </body>
 </html>
