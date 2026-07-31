@@ -265,8 +265,18 @@
 
   <!-- SEO Schema -->
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/tailwind.css">
+<!-- 1. Resource Hint: Preload agar browser mendownload lebih awal -->
+  <link rel="preload" href="css/tailwind.css" as="style">
+
+  <!-- 2. Non-Blocking Load: Teknik media="print" + onload swap -->
+  <!-- Browser menganggap file ini hanya untuk print (prioritas rendah), 
+       lalu JS merubahnya ke "all" setelah download selesai -->
+  <link rel="stylesheet" href="css/tailwind.css" media="print" onload="this.media='all'">
+
+  <!-- 3. Fallback: Jika JavaScript dimatikan oleh user -->
+  <noscript>
+    <link rel="stylesheet" href="css/tailwind.css">
+  </noscript>
 
   <!-- JSON-LD SEO Schema for Product -->
 
