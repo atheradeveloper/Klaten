@@ -21,10 +21,10 @@
     
     /* Reset & Variabel Dasar */
     :root {
-      --brand-dark: #1e2d24;
-      --brand-gold: #c5a880;
+  --brand-dark: #1e2d24;
+  --brand-gold: #664D03;
   /* Tambahkan warna emas yang lebih gelap khusus untuk teks (Aksesibilitas) */
-  --brand-gold-dark: #8c734b; 
+  --brand-gold-dark: #664d03;  
   --brand-light: #f7f6f2;
     }
 
@@ -35,8 +35,8 @@
 
 
 /* Tambahkan utility class baru ini */
-.text-brand-gold-dark { color: var(--brand-gold-dark); }
-.text-gray-safe { color: #4b5563; } /* Pengganti gray-500 yang lebih gelap */
+.text-brand-gold-dark { color: var(--brand-gold-dark) !important; }
+.text-gray-safe { color: #4b5563 !important; } /* Gray 600 */
 .text-gray-strong { color: #374151; } /* Pengganti gray-600 */
 
     
@@ -487,7 +487,7 @@
             </g>
 
             <!-- Border & Compass decoration -->
-            <rect x="2" y="2" width="796" height="356" fill="none" stroke="#c5a880" stroke-width="1.5" rx="10" pointer-events="none" />
+            <rect x="2" y="2" width="796" height="356" fill="none" stroke="#664D03" stroke-width="1.5" rx="10" pointer-events="none" />
           </svg>
         </div>
       </div>
@@ -577,7 +577,7 @@
               
 <div class="flex justify-between pt-3 border-t border-gray-200 text-sm">
     <span class="font-bold text-brand-dark">Total Biaya Awal</span>
-    <span id="out-total-awal" class="font-bold text-brand-gold-dark">Rp 0</span>
+<span id="out-total-awal" class="font-bold text-brand-gold-dark text-lg">Rp 0</span>
 </div>
             </div>
           </div>
