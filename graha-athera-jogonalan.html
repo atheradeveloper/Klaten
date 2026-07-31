@@ -383,12 +383,11 @@
 
         <!-- Mobile Menu Hamburger -->
         <div class="md:hidden flex items-center">
-<button id="menu-btn" class=" text-white p-2" aria-label="Toggle Menu">
-  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <!-- TAMBAHKAN ID DISINI -->
-    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-  </svg>
-</button>
+          <button id="menu-btn" class="text-white hover:text-brand-gold-dark focus:outline-none" aria-label="Toggle Menu">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
       </div>
     </div>
@@ -825,7 +824,6 @@
   </a>
 
   <!-- Project Specific Logic & Calculations -->
-  <script src="js/kalkulator.js"></script>
   <script src="js/siteplan.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -972,6 +970,140 @@ function initDefaultWhatsAppWidget() {
 }
 </script>
 
+
+
+  <script>
+/**
+ * ATHERA PROPERTI - KPR CALCULATOR LOGIC
+ * Menggunakan rumus Annuity KPR Standard
+ */
+
+// 1. Fungsi Inti Perhitungan KPR
+function hitungKPR(hargaJual, uangMuka, bungaTahunan, tenorTahun) {
+    const plafonPinjaman = hargaJual - uangMuka;
+    if (plafonPinjaman <= 0) return { angsuran: 0, plafon: 0 };
+
+    const bungaBulanan = (bungaTahunan / 100) / 12;
+    const totalBulan = tenorTahun * 12;
+
+    let angsuranPerBulan = 0;
+    if (bungaBulanan === 0) {
+        angsuranPerBulan = plafonPinjaman / totalBulan;
+    } else {
+        angsuranPerBulan = (plafonPinjaman * bungaBulanan) / (1 - Math.pow(1 + bungaBulanan, -totalBulan));
+    }
+
+    return {
+        angsuran: Math.round(angsuranPerBulan),
+        plafon: plafonPinjaman
+    };
+}
+
+// 2. Perhitungan Biaya Legalitas (Pajak, Notaris, Bank)
+function hitungBiayaLegalitas(hargaJual, plafonPinjaman, isSubsidized = false) {
+    let bphtb = 0;
+    let ajbNotaris = 0;
+    let provisiBank = 0;
+    let adminBank = 1000000; // Estimasi biaya admin bank
+
+    if (isSubsidized) {
+        bphtb = 0; // Subsidi biasanya bebas BPHTB atau ditanggung pengembang
+        ajbNotaris = 2500000; // Paket standar subsidi
+        provisiBank = 0.005 * plafonPinjaman; 
+    } else {
+        const npoptkp = 60000000; // NPOPTKP standar Jawa Tengah
+        bphtb = Math.max(0, 0.05 * (hargaJual - npoptkp));
+        ajbNotaris = Math.round(0.01 * hargaJual);
+        provisiBank = Math.round(0.01 * plafonPinjaman);
+    }
+
+    return {
+        bphtb,
+        ajbNotaris,
+        provisiBank,
+        adminBank,
+        totalBiayaAwal: bphtb + ajbNotaris + provisiBank + adminBank
+    };
+}
+
+// 3. Fungsi Inisialisasi UI & Event Listeners
+function inisialisasiKalkulator(isSubsidized = false) {
+    const elements = {
+        inputHarga: document.getElementById('input-harga-kpr'),
+        inputDPPersen: document.getElementById('input-dp-persen'),
+        inputDPNominal: document.getElementById('input-dp-nominal'),
+        inputBunga: document.getElementById('input-bunga-kpr'),
+        inputTenor: document.getElementById('input-tenor-kpr'),
+        outPlafon: document.getElementById('out-plafon'),
+        outAngsuran: document.getElementById('out-angsuran'),
+        outBphtb: document.getElementById('out-bphtb'),
+        outAjb: document.getElementById('out-ajb'),
+        outProvisi: document.getElementById('out-provisi'),
+        outAdmin: document.getElementById('out-admin'),
+        outTotalBiayaAwal: document.getElementById('out-total-awal')
+    };
+
+    // Validasi keberadaan elemen agar tidak error
+    if (!elements.inputHarga) return;
+
+    const formatIDR = (num) => new Intl.NumberFormat('id-ID', { 
+        style: 'currency', 
+        currency: 'IDR', 
+        maximumFractionDigits: 0 
+    }).format(num);
+
+    function updateKalkulator() {
+        // Gunakan requestAnimationFrame untuk performa rendering yang mulus
+        window.requestAnimationFrame(() => {
+            const harga = parseFloat(elements.inputHarga.value) || 0;
+            const dpPersen = parseFloat(elements.inputDPPersen.value) || 0;
+            const bunga = parseFloat(elements.inputBunga.value) || 0;
+            const tenor = parseFloat(elements.inputTenor.value) || 0;
+
+            const dpNominal = Math.round(harga * (dpPersen / 100));
+            elements.inputDPNominal.value = dpNominal;
+
+            const kpr = hitungKPR(harga, dpNominal, bunga, tenor);
+            const legal = hitungBiayaLegalitas(harga, kpr.plafon, isSubsidized);
+
+            // Update Tampilan
+            elements.outPlafon.innerText = formatIDR(kpr.plafon);
+            elements.outAngsuran.innerText = formatIDR(kpr.angsuran);
+            elements.outBphtb.innerText = formatIDR(legal.bphtb);
+            elements.outAjb.innerText = formatIDR(legal.ajbNotaris);
+            elements.outProvisi.innerText = formatIDR(legal.provisiBank);
+            elements.outAdmin.innerText = formatIDR(legal.adminBank);
+            elements.outTotalBiayaAwal.innerText = formatIDR(legal.totalBiayaAwal);
+        });
+    }
+
+    // Event Listeners
+    ['input', 'change'].forEach(evt => {
+        [elements.inputHarga, elements.inputDPPersen, elements.inputBunga, elements.inputTenor].forEach(el => {
+            el.addEventListener(evt, updateKalkulator);
+        });
+    });
+
+    elements.inputDPNominal.addEventListener('input', () => {
+        const harga = parseFloat(elements.inputHarga.value) || 0;
+        const nominal = parseFloat(elements.inputDPNominal.value) || 0;
+        if (harga > 0) {
+            elements.inputDPPersen.value = ((nominal / harga) * 100).toFixed(1);
+        }
+        updateKalkulator();
+    });
+
+    // Jalankan sekali saat load
+    updateKalkulator();
+}
+</script>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Set parameter 'true' karena ini adalah produk SUBSIDI
+    inisialisasiKalkulator(true);
+  });
+</script>
   
 </body>
 </html>
