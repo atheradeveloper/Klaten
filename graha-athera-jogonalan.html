@@ -13,8 +13,7 @@
   <link rel="preload" href="data/proyek-data.json" as="fetch" crossorigin="anonymous">
   <link rel="icon" type="image/png" href="assets/icon.png">
 
-  <!-- 1. KONEKSI CEPAT (Solusi: no origins were preconnected) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- 1. KONEKSI KE SERVER FONT (Hanya gstatic yang utama) -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <!-- 3. INLINE CSS (Dibersihkan & Diperbaiki) -->
@@ -339,9 +338,13 @@
   }
   </script>
 
-
-    <script src="js/app.js" defer></script>
+  <!-- 4. NON-BLOCKING SCRIPTS (Solusi untuk 1.059ms Delay) -->
+  <!-- Dengan 'defer', script tidak akan masuk ke Network Dependency Tree yang kritis -->
+  <script src="js/siteplan.js" defer></script>
   <script src="js/kalkulator.js" defer></script>
+  <script src="js/app.js" defer></script>
+
+  
   <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
