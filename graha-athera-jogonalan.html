@@ -46,6 +46,27 @@
 }
 
 
+
+/* Efek Pulse yang Teroptimasi (Composited) */
+@keyframes custom-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+
+
     
 /* Tambahkan utility class baru ini */
 .text-brand-gold-dark { color: var(--brand-gold-dark) !important; }
@@ -247,10 +268,38 @@
     @media (min-width: 1024px) { .lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
     /* Custom Siteplan & Animations */
-    .kavling-path { transition: all 0.3s ease; cursor: pointer; }
-    .kavling-path:hover { filter: brightness(1.1); stroke-width: 3; }
+    .kavling-path {
+  transition: opacity 0.3s ease; /* Gunakan opacity sebagai ganti fill transisi jika memungkinkan */
+  cursor: pointer;
+  will-change: filter, opacity;
+}
+    .kavling-path:hover {
+  /* Alih-alih merubah warna fill, gunakan brightness filter (GPU Accelerated) */
+  filter: brightness(1.2);
+  opacity: 0.8;
+}
     @keyframes pulse-gold { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); opacity: 0.8; } }
-    .pulse-gold { animation: pulse-gold 2s infinite ease-in-out; }
+    .pulse-gold {
+  animation: custom-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  will-change: transform, opacity; /* Memberitahu GPU untuk bersiap */
+}
+
+
+/* Update global transition agar lebih efisien */
+.transition-all {
+  transition-property: transform, opacity !important; /* Batasi hanya pada properti composited */
+  transition-duration: 200ms;
+}
+
+/* Fix untuk tombol WhatsApp */
+#btn-cta-whatsapp, #floating-wa-widget {
+  will-change: transform;
+}
+
+#btn-cta-whatsapp:hover, #floating-wa-widget:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
     
     /* Map Container */
     #peta-placeholder { background: #e5e7eb; border: 1px solid #d1d5db; }
