@@ -231,43 +231,6 @@
     /* Map Container */
     #peta-placeholder { background: #e5e7eb; border: 1px solid #d1d5db; }
 
-
-    /* Animasi Slide Dropdown Mobile */
-#mobile-menu {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateY(-10px);
-}
-
-#mobile-menu.active {
-  max-height: 500px; /* Sesuaikan dengan tinggi konten menu */
-  opacity: 1;
-  transform: translateY(0);
-  margin-top: 10px;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-/* Animasi Ikon Hamburger ke X */
-#menu-btn svg {
-  transition: transform 0.3s ease-in-out;
-}
-
-#menu-btn.open svg {
-  transform: rotate(90deg);
-}
-
-/* Efek Hover pada Link Mobile */
-#mobile-menu a {
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-#mobile-menu a:active {
-  background-color: rgba(197, 168, 128, 0.1); /* Warna brand-gold transparan */
-  color: var(--brand-gold);
-}
     
   </style>
 
