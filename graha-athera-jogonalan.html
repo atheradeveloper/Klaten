@@ -340,15 +340,24 @@
 
       <!-- Map frame -->
       <div class="lg:col-span-2 rounded-xl overflow-hidden shadow-md border border-gray-200 h-[280px]">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.270732448332!2d110.5190491!3d-7.7053242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwNDInMTkuMiJTIDExMMKwMzEnMDguNiJF!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid" 
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          title="Peta Lokasi Graha Athera Jogonalan"
-        ></iframe>
+        <!-- 1. Placeholder untuk Peta (Tampilan Awal) -->
+<div id="peta-placeholder" style="width: 100%; height: 450px; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center; border-radius: 12px;">
+  <p style="font-family: sans-serif; color: #888;">Memuat Peta Lokasi...</p>
+</div>
+
+<!-- 2. Iframe Asli (Disembunyikan) -->
+<div id="peta-container" style="display: none; width: 100%; height: 450px; border-radius: 12px; overflow: hidden;">
+  <iframe 
+    id="peta-gmaps"
+    data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.270732448332!2d110.5190491!3d-7.7053242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwNDInMTkuMiJTIDExMMKwMzEnMDguNiJF!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid"
+    width="100%" 
+    height="100%" 
+    style="border:0;" 
+    allowfullscreen="" 
+    loading="lazy" 
+    title="Peta Lokasi Graha Athera Jogonalan"
+  ></iframe>
+</div>
       </div>
     </section>
 
@@ -512,5 +521,33 @@
         }
     });
   </script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const petaPlaceholder = document.getElementById('peta-placeholder');
+  const petaContainer = document.getElementById('peta-container');
+  const iframePeta = document.getElementById('peta-gmaps');
+
+  const observer = new IntersectionObserver((entries) => {
+    // Jika placeholder mulai terlihat di layar
+    if (entries[0].isIntersecting) {
+      // Ambil link peta dari data-src dan masukkan ke src
+      iframePeta.src = iframePeta.getAttribute('data-src');
+
+      // Tampilkan kontainer peta dan sembunyikan placeholder
+      petaPlaceholder.style.display = 'none';
+      petaContainer.style.display = 'block';
+      
+      // Hentikan pengamatan setelah peta dimuat
+      observer.unobserve(petaPlaceholder);
+    }
+  }, { rootMargin: '0px 0px 100px 0px' }); // Muat peta 100px sebelum sampai di layar
+
+  // Mulai amati placeholder
+  observer.observe(petaPlaceholder);
+});
+</script>
+  
 </body>
 </html>
