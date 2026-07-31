@@ -383,11 +383,12 @@
 
         <!-- Mobile Menu Hamburger -->
         <div class="md:hidden flex items-center">
-          <button id="menu-btn" class="text-white hover:text-brand-gold-dark focus:outline-none" aria-label="Toggle Menu">
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
+<button id="menu-btn" class="md:hidden text-white p-2">
+  <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <!-- TAMBAHKAN ID DISINI -->
+    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+</button>
         </div>
       </div>
     </div>
@@ -888,6 +889,89 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     <!-- Global scripts -->
-  <script src="js/app.js"></script>
+<script>
+/**
+ * PROJECT: Athera Properti Klaten
+ * GLOBAL APP LOGIC (Optimized)
+ */
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // --- 1. Navbar Scroll Effect (Optimized with Passive Listener) ---
+    const navbar = document.getElementById('main-navbar');
+    if (navbar) {
+        let isScrolled = false;
+        
+        window.addEventListener('scroll', () => {
+            // Hanya jalankan manipulasi DOM jika status scroll berubah (hemat CPU)
+            if (window.scrollY > 20 && !isScrolled) {
+                navbar.classList.add('shadow-md', 'bg-brand-dark/95', 'backdrop-blur-md');
+                navbar.classList.remove('md:bg-transparent');
+                isScrolled = true;
+            } else if (window.scrollY <= 20 && isScrolled) {
+                navbar.classList.remove('shadow-md', 'bg-brand-dark/95', 'backdrop-blur-md');
+                navbar.classList.add('md:bg-transparent');
+                isScrolled = false;
+            }
+        }, { passive: true });
+    }
+
+    // --- 2. Mobile Menu Toggle (With Icon Animation) ---
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon'); // Pastikan path SVG punya ID ini
+
+    // Definisi Path SVG (Hamburger & X)
+    const iconHamburger = "M4 6h16M4 12h16M4 18h16";
+    const iconClose = "M6 18L18 6M6 6l12 12";
+
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            
+            // Animasi Ikon & Aksesibilitas
+            if (!isHidden) {
+                mobileMenu.classList.add('flex');
+                if (menuIcon) menuIcon.setAttribute('d', iconClose);
+                menuBtn.setAttribute('aria-expanded', 'true');
+            } else {
+                mobileMenu.classList.remove('flex');
+                if (menuIcon) menuIcon.setAttribute('d', iconHamburger);
+                menuBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Close mobile menu saat mengklik link (untuk Smooth Scroll)
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+                if (menuIcon) menuIcon.setAttribute('d', iconHamburger);
+            });
+        });
+    }
+
+    // --- 3. WhatsApp Floating Widget Logic ---
+    initDefaultWhatsAppWidget();
+});
+
+/**
+ * Inisialisasi Link WhatsApp Default
+ */
+function initDefaultWhatsAppWidget() {
+    const nomorSales = "6285124665145"; // Nomor Athera Properti
+    const defaultText = "Halo Athera Properti, saya tertarik bertanya mengenai unit rumah di Graha Athera Jogonalan. Bisa dibantu informasinya?";
+    const defaultUrl = `https://api.whatsapp.com/send?phone=${nomorSales}&text=${encodeURIComponent(defaultText)}`;
+
+    const floatingWidget = document.getElementById('floating-wa-widget');
+    const btnCtaWa = document.getElementById('btn-cta-whatsapp');
+
+    // Set link jika elemen ada dan belum memiliki href
+    if (floatingWidget) floatingWidget.href = defaultUrl;
+    if (btnCtaWa) btnCtaWa.href = defaultUrl;
+}
+</script>
+
+  
 </body>
 </html>
