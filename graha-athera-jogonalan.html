@@ -72,6 +72,45 @@
     
     /* Map Container */
     #peta-placeholder { background: #e5e7eb; border: 1px solid #d1d5db; }
+
+
+    /* Animasi Slide Dropdown Mobile */
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(-10px);
+}
+
+#mobile-menu.active {
+  max-height: 500px; /* Sesuaikan dengan tinggi konten menu */
+  opacity: 1;
+  transform: translateY(0);
+  margin-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Animasi Ikon Hamburger ke X */
+#menu-btn svg {
+  transition: transform 0.3s ease-in-out;
+}
+
+#menu-btn.open svg {
+  transform: rotate(90deg);
+}
+
+/* Efek Hover pada Link Mobile */
+#mobile-menu a {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+#mobile-menu a:active {
+  background-color: rgba(197, 168, 128, 0.1); /* Warna brand-gold transparan */
+  color: var(--brand-gold);
+}
+    
   </style>
 
   <!-- OpenGraph Metadata -->
@@ -146,21 +185,25 @@
     </div>
 
 
-        <!-- Mobile Menu Button -->
-        <button id="menu-btn" class="md:hidden text-white p-2" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobile-menu">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
-        </button>
-      </div>
+       <!-- Mobile Menu Button -->
+<button id="menu-btn" class="md:hidden text-white p-2 focus:outline-none" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobile-menu">
+  <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <!-- Path ini akan berubah otomatis lewat JS -->
+    <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+</button>
 
-      <!-- Mobile Nav Dropdown -->
-      <nav id="mobile-menu" class="hidden md:hidden pb-4 flex flex-col space-y-1">
-        <a href="index.html" class="text-gray-300 hover:text-brand-gold transition text-sm py-2 px-2">Kembali ke Home</a>
-        <a href="#proyek-detail" class="text-gray-300 hover:text-brand-gold transition text-sm py-2 px-2">Info Proyek</a>
-        <a href="#siteplan-section" class="text-gray-300 hover:text-brand-gold transition text-sm py-2 px-2">Denah Siteplan</a>
-        <a href="#kpr-section" class="text-gray-300 hover:text-brand-gold transition text-sm py-2 px-2">Kalkulator KPR</a>
-        <a href="#location-section" class="text-gray-300 hover:text-brand-gold transition text-sm py-2 px-2">Lokasi</a>
-        <a href="index.html#contact" class="bg-brand-gold text-brand-dark px-5 py-2.5 rounded-full hover:bg-white transition font-semibold text-xs tracking-wider uppercase text-center mt-2">Hubungi Sales</a>
-      </nav>
+<!-- Mobile Nav Dropdown (Hapus class 'hidden') -->
+<nav id="mobile-menu" class="md:hidden flex flex-col space-y-1">
+  <a href="/" class="text-gray-300 hover:text-brand-gold py-3 px-4 text-sm font-medium border-b border-white/5">Kembali ke Home</a>
+  <a href="#proyek-detail" class="text-gray-300 hover:text-brand-gold py-3 px-4 text-sm font-medium border-b border-white/5">Info Proyek</a>
+  <a href="#siteplan-section" class="text-gray-300 hover:text-brand-gold py-3 px-4 text-sm font-medium border-b border-white/5">Denah Siteplan</a>
+  <a href="#kpr-section" class="text-gray-300 hover:text-brand-gold py-3 px-4 text-sm font-medium border-b border-white/5">Kalkulator KPR</a>
+  <a href="#location-section" class="text-gray-300 hover:text-brand-gold py-3 px-4 text-sm font-medium border-b border-white/5">Lokasi</a>
+  <div class="px-4 py-4">
+    <a href="/#contact" class="block bg-brand-gold text-brand-dark py-3 rounded-full hover:bg-white transition font-bold text-xs tracking-widest uppercase text-center shadow-lg">Hubungi Sales</a>
+  </div>
+</nav>
 
 
     
@@ -645,6 +688,38 @@ document.addEventListener("DOMContentLoaded", function() {
   observer.observe(petaPlaceholder);
 });
 </script>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+
+  // Ikon Hamburger (Garis 3)
+  const iconHamburger = "M4 6h16M4 12h16M4 18h16";
+  // Ikon Close (Silang)
+  const iconClose = "M6 18L18 6M6 6l12 12";
+
+  menuBtn.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('active');
+    menuBtn.classList.toggle('open');
+    
+    // Animasi Ikon
+    menuIcon.setAttribute('d', isOpen ? iconClose : iconHamburger);
+    
+    // Update ARIA untuk aksesibilitas
+    menuBtn.setAttribute('aria-expanded', isOpen);
+  });
+
+  // Otomatis tutup menu saat link diklik (Smooth Scroll)
+  document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      menuBtn.classList.remove('open');
+      menuIcon.setAttribute('d', iconHamburger);
+    });
+  });
+</script>
+
   
 </body>
 </html>
