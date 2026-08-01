@@ -50,16 +50,6 @@
 .text-gray-safe { color: #4b5563 !important; } /* Gray 600 */
 .text-gray-strong { color: #374151; } /* Pengganti gray-600 */
 
-
-  <!-- 1. Tambahkan Preconnect Kritis Ini -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- 2. Preload WebFont spesifik yang terdeteksi di report (woff2) jika menggunakan custom font -->
-  <link rel="preload" href="https://fonts.gstatic.com/s/inter/v15/...woff2" as="font" type="font/woff2" crossorigin>
-    
-  <!-- 3. Google Fonts dengan font-display: swap untuk mencegah FOUT layout shift -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
     
 /* Additional custom styles */
 /* Can be used for custom overrides if needed */
@@ -274,13 +264,8 @@
 
   <!-- SEO Schema -->
 
-  <!-- Preload file CSS agar diunduh secara parallel tanpa memblokir DOM/Render -->
-  <link rel="preload" href="/css/tailwind.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback jika Javascript browser dinonaktifkan -->
-  <noscript>
-    <link rel="stylesheet" href="/css/tailwind.css">
-  </noscript>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/tailwind.css">
 
   <!-- JSON-LD SEO Schema for Product -->
 
