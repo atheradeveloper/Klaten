@@ -1,15 +1,14 @@
-// Global app logic
+// Global app logic & Service Worker Registration
+
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Navbar Scroll Effect
+    // 1. Navbar Scroll Effect (Mencari ID 'main-navbar')
     const navbar = document.getElementById('main-navbar');
     if (navbar) {
         window.addEventListener('scroll', () => {
             if (window.scrollY > 20) {
                 navbar.classList.add('shadow-md', 'bg-brand-dark/95', 'backdrop-blur-md');
-                navbar.classList.remove('bg-transparent');
             } else {
                 navbar.classList.remove('shadow-md', 'bg-brand-dark/95', 'backdrop-blur-md');
-                navbar.classList.add('bg-transparent');
             }
         });
     }
@@ -20,11 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuBtn && mobileMenu) {
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-            // Toggle hamburger icon animation
-            const paths = menuBtn.querySelectorAll('path');
-            if (paths.length >= 2) {
-                // simple toggle of classes or icons can be done here
-            }
         });
     }
 
@@ -52,4 +46,18 @@ function initDefaultWhatsAppWidget() {
     if (floatingWidget && !floatingWidget.getAttribute('href')) {
         floatingWidget.href = defaultUrl;
     }
+}
+
+// 4. Service Worker Registration (PWA)
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        // Registrasi cache.js sebagai Service Worker pada cakupan root
+        navigator.serviceWorker.register('cache.js')
+            .then(reg => {
+                console.log('Service Worker berhasil didaftarkan dengan cakupan:', reg.scope);
+            })
+            .catch(err => {
+                console.error('Pendaftaran Service Worker gagal:', err);
+            });
+    });
 }
