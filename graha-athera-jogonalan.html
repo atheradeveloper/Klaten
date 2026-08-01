@@ -763,8 +763,9 @@
   </a>
 
   <!-- Project Specific Logic & Calculations -->
-  <script src="js/kalkulator.js"></script>
-  <script src="js/siteplan.js"></script>
+<!-- Tambahkan atribut defer agar JS dieksekusi secara non-blocking -->
+<script src="/js/kalkulator.js" defer></script>
+<script src="/js/siteplan.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
         // Initialize siteplan for 'subsidi-asri' with isSubsidized = true
