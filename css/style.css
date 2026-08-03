@@ -8,3 +8,6 @@
 .map-container iframe {
   filter: grayscale(10%) contrast(100%) invert(0%);
 }
+.testimonial-container { overflow: hidden; width: 100%; position: relative; }
+.testimonial-track { display: flex; transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
+.testimonial-item { min-width: 100%; padding: 2rem; text-align: center; }
