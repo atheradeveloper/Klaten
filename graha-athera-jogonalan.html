@@ -289,7 +289,7 @@
     </section>
 
     <!-- B. BAGIAN TENGAH: SITEPLAN SVG INTERAKTIF (Aksesibilitas Ditingkatkan) -->
-   <!-- Responsive SVG Container -->
+ <!-- Responsive SVG Container -->
 <div class="overflow-x-auto py-6 bg-brand-light/50 rounded-xl border border-gray-200 flex justify-center">
   <div class="min-w-[300px] w-full max-w-5xl px-4">
     <svg viewBox="50 635 760 470" class="w-full h-auto select-none" xmlns="http://www.w3.org/2000/svg">
@@ -322,21 +322,26 @@
           stroke-width: 1.5;
           stroke-dasharray: 6 4;
         }
+        .road-text {
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 11px;
+          font-weight: 800;
+          fill: #ffffff;
+          letter-spacing: 1.5px;
+        }
       </style>
 
       <!-- Outer Site Boundary (Garis Batas Lahan) -->
       <path d="M 520.16482,659.02655 75.641659,937.6653 167.89518,1087.7935 793.70079,698.08853 Z" class="site-border" pointer-events="none" />
 
-      <!-- JALAN UTAMA (Presisi CAD Asli) -->
+      <!-- JALAN UTAMA (Tanpa Garis Putus-Putus) -->
       <g id="jalan-utama">
         <path d="m 557.89184,729.18152 -441.44005,274.89588 20.26558,32.9791 441.63556,-275.01765 z" class="road-path" />
-        <!-- Garis Tengah Dashed Jalan Presisi Sumbu Sumbu -->
-        <line x1="568.02" y1="745.67" x2="126.58" y2="1020.57" stroke="#ffffff" stroke-width="1.8" stroke-dasharray="8, 6" pointer-events="none" />
-        <!-- Teks Jalan sejajar dengan SudutKemiringan Jalan (-31.9135 deg) -->
-        <text x="347.3" y="883.1" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="bold" fill="#ffffff" text-anchor="middle" transform="rotate(-31.9135 347.3 883.1)" letter-spacing="1.5">JALAN UTAMA PAVING ROW 6m</text>
+        <!-- Teks Jalan Center Presisi -->
+        <text x="347.3" y="883.1" class="road-text" text-anchor="middle" transform="rotate(-31.9135 347.3 883.1)">JALAN LEBAR 6,5M</text>
       </g>
 
-      <!-- TAMAN & FASUM (Presisi CAD Asli) -->
+      <!-- TAMAN & FASUM -->
       <g id="fasum-area">
         <!-- Fasum Atas Kanan -->
         <path d="m 793.70079,698.08853 -273.53597,-39.06198 -6.80974,4.26853 42.00928,67.46037 2.52748,-1.57393 20.46109,32.85733 31.47859,50.54972 z" class="fasum-path" />
@@ -348,179 +353,179 @@
         <path d="m 153.73523,1026.459 -17.01786,10.5975 31.17781,50.737 17.31864,-10.7848 z" class="fasum-path" />
       </g>
 
-      <!-- ROW KAVLING ATAS (Kav A1 - A14) -->
+      <!-- ROW KAVLING ATAS (Kav B14 - B1) -->
       <g id="kavling-row-atas">
-        <!-- Kav A1 -->
+        <!-- Kav B14 -->
         <g>
-          <path id="kav-A1" d="m 513.35508,663.29508 -27.75129,17.39523 41.95822,67.37837 27.80235,-17.31323 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A1, Luas Lahan 36/60 meter persegi" />
-          <text x="520.5" y="705.7" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A1</text>
-          <text x="520.5" y="717.7" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/60 m²</text>
-        </g>
-        <!-- Kav A2 -->
-        <g>
-          <path id="kav-A2" d="m 485.60379,680.69031 -30.27412,18.97661 41.9025,67.28891 30.32984,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A2, Luas Lahan 36/60 meter persegi" />
-          <text x="491.4" y="723.8" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A2</text>
-          <text x="491.4" y="735.8" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/60 m²</text>
-        </g>
-        <!-- Kav A3 -->
-        <g>
-          <path id="kav-A3" d="m 455.32967,699.66692 -30.27413,18.97662 41.8468,67.19945 30.32983,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A3, Luas Lahan 36/60 meter persegi" />
-          <text x="461.1" y="742.8" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A3</text>
-          <text x="461.1" y="754.8" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/60 m²</text>
-        </g>
-        <!-- Kav A4 -->
-        <g>
-          <path id="kav-A4" d="m 425.05554,718.64354 -30.27413,18.97661 41.79109,67.10999 30.32984,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A4, Luas Lahan 36/60 meter persegi" />
-          <text x="430.9" y="761.8" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A4</text>
-          <text x="430.9" y="773.8" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/60 m²</text>
-        </g>
-        <!-- Kav A5 -->
-        <g>
-          <path id="kav-A5" d="m 394.78141,737.62015 -30.27412,18.97662 41.73538,67.02053 30.32983,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A5, Luas Lahan 36/60 meter persegi" />
-          <text x="400.6" y="780.8" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A5</text>
-          <text x="400.6" y="792.8" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/60 m²</text>
-        </g>
-        <!-- Kav A6 -->
-        <g>
-          <path id="kav-A6" d="m 364.50729,756.59677 -30.27413,18.97661 41.67967,66.93108 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A6, Luas Lahan 36/60 meter persegi" />
-          <text x="370.3" y="799.7" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A6</text>
-          <text x="370.3" y="811.7" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/60 m²</text>
-        </g>
-        <!-- Kav A7 -->
-        <g>
-          <path id="kav-A7" d="M 334.23316,775.57338 303.95903,794.55 345.583,861.39161 375.91283,842.50446 Z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A7, Luas Lahan 36/60 meter persegi" />
-          <text x="340.0" y="818.7" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A7</text>
-          <text x="340.0" y="830.7" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/60 m²</text>
-        </g>
-        <!-- Kav A8 -->
-        <g>
-          <path id="kav-A8" d="m 303.95903,794.55 -30.27412,18.97661 41.56825,66.75216 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A8, Luas Lahan 36/60 meter persegi" />
-          <text x="309.8" y="837.7" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A8</text>
-          <text x="309.8" y="849.7" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/60 m²</text>
-        </g>
-        <!-- Kav A9 -->
-        <g>
-          <path id="kav-A9" d="m 273.68491,813.52661 -30.27413,18.97662 41.51254,66.66269 30.32984,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A9, Luas Lahan 36/60 meter persegi" />
-          <text x="279.5" y="856.7" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A9</text>
-          <text x="279.5" y="868.7" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/60 m²</text>
-        </g>
-        <!-- Kav A10 -->
-        <g>
-          <path id="kav-A10" d="m 243.41078,832.50323 -30.27413,18.97661 41.45684,66.57324 30.32983,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A10, Luas Lahan 36/60 meter persegi" />
-          <text x="249.2" y="875.6" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A10</text>
-          <text x="249.2" y="887.6" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/60 m²</text>
-        </g>
-        <!-- Kav A11 -->
-        <g>
-          <path id="kav-A11" d="m 213.13665,851.47984 -30.27413,18.97661 41.40113,66.48378 30.32984,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A11, Luas Lahan 36/60 meter persegi" />
-          <text x="219.0" y="894.6" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A11</text>
-          <text x="219.0" y="906.6" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/60 m²</text>
-        </g>
-        <!-- Kav A12 -->
-        <g>
-          <path id="kav-A12" d="m 182.86252,870.45645 -30.27412,18.97662 41.34542,66.39432 30.32983,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A12, Luas Lahan 36/60 meter persegi" />
-          <text x="188.7" y="913.6" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A12</text>
-          <text x="188.7" y="925.6" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/60 m²</text>
-        </g>
-        <!-- Kav A13 -->
-        <g>
-          <path id="kav-A13" d="m 152.5884,889.43307 -30.27413,18.97661 41.28971,66.30486 30.32984,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A13, Luas Lahan 36/60 meter persegi" />
-          <text x="158.4" y="932.6" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A13</text>
-          <text x="158.4" y="944.6" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/60 m²</text>
-        </g>
-        <!-- Kav A14 -->
-        <g>
-          <path id="kav-A14" d="m 122.31427,908.40968 -30.274126,18.97662 41.234006,66.2154 30.32983,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A14, Luas Lahan 36/72 meter persegi" />
-          <text x="134.5" y="946.8" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A14</text>
-          <text x="134.5" y="958.8" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/72 m²</text>
-        </g>
-      </g>
-
-      <!-- ROW KAVLING BAWAH (Kav B1 - B14) -->
-      <g id="kavling-row-bawah">
-        <!-- Kav B1 -->
-        <g>
-          <path id="kav-B1" d="m 578.35293,762.03885 -30.32984,18.88715 31.47859,50.54973 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B1, Luas Lahan 36/72 meter persegi" />
-          <text x="578.9" y="796.8" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B1</text>
-          <text x="578.9" y="808.8" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/72 m²</text>
-        </g>
-        <!-- Kav B2 -->
-        <g>
-          <path id="kav-B2" d="m 548.02309,780.926 -30.32983,18.88716 31.47859,50.54972 30.32983,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B2, Luas Lahan 36/72 meter persegi" />
-          <text x="548.6" y="815.7" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B2</text>
-          <text x="548.6" y="827.7" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/72 m²</text>
-        </g>
-        <!-- Kav B3 -->
-        <g>
-          <path id="kav-B3" d="m 517.69326,799.81316 -30.32984,18.88715 31.47859,50.54973 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B3, Luas Lahan 36/72 meter persegi" />
-          <text x="518.3" y="834.5" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B3</text>
-          <text x="518.3" y="846.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/72 m²</text>
-        </g>
-        <!-- Kav B4 -->
-        <g>
-          <path id="kav-B4" d="m 487.36342,818.70031 -30.32983,18.88716 31.47859,50.54972 30.32983,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B4, Luas Lahan 36/72 meter persegi" />
-          <text x="487.9" y="853.4" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B4</text>
-          <text x="487.9" y="865.4" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/72 m²</text>
-        </g>
-        <!-- Kav B5 -->
-        <g>
-          <path id="kav-B5" d="m 457.03359,837.58747 -30.32984,18.88715 31.47859,50.54973 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B5, Luas Lahan 36/72 meter persegi" />
-          <text x="457.6" y="872.3" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B5</text>
-          <text x="457.6" y="884.3" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/72 m²</text>
-        </g>
-        <!-- Kav B6 -->
-        <g>
-          <path id="kav-B6" d="m 426.70375,856.47462 -30.32983,18.88716 31.47859,50.54972 30.32983,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B6, Luas Lahan 36/72 meter persegi" />
-          <text x="427.3" y="891.2" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B6</text>
-          <text x="427.3" y="903.2" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/72 m²</text>
-        </g>
-        <!-- Kav B7 -->
-        <g>
-          <path id="kav-B7" d="m 396.37392,875.36178 -30.32984,18.88715 31.47859,50.54973 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B7, Luas Lahan 36/72 meter persegi" />
-          <text x="397.0" y="910.1" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B7</text>
-          <text x="397.0" y="922.1" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/72 m²</text>
-        </g>
-        <!-- Kav B8 -->
-        <g>
-          <path id="kav-B8" d="m 366.04408,894.24893 -30.32984,18.88716 31.4786,50.54972 30.32983,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B8, Luas Lahan 36/72 meter persegi" />
-          <text x="366.6" y="929.0" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B8</text>
-          <text x="366.6" y="941.0" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/72 m²</text>
-        </g>
-        <!-- Kav B9 -->
-        <g>
-          <path id="kav-B9" d="m 335.71424,913.13609 -30.32983,18.88715 31.47859,50.54973 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B9, Luas Lahan 36/72 meter persegi" />
-          <text x="336.3" y="947.9" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B9</text>
-          <text x="336.3" y="959.9" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/72 m²</text>
-        </g>
-        <!-- Kav B10 -->
-        <g>
-          <path id="kav-B10" d="m 305.38441,932.02324 -30.32984,18.88716 31.4786,50.5497 30.32983,-18.88713 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B10, Luas Lahan 36/72 meter persegi" />
-          <text x="306.0" y="966.8" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B10</text>
-          <text x="306.0" y="978.8" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/72 m²</text>
-        </g>
-        <!-- Kav B11 -->
-        <g>
-          <path id="kav-B11" d="m 275.05457,950.9104 -30.32983,18.88715 31.47859,50.54975 30.32984,-18.8872 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B11, Luas Lahan 36/72 meter persegi" />
-          <text x="275.6" y="985.6" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B11</text>
-          <text x="275.6" y="997.6" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/72 m²</text>
-        </g>
-        <!-- Kav B12 -->
-        <g>
-          <path id="kav-B12" d="m 244.72474,969.79755 -30.32984,18.88716 31.47859,50.54969 30.32984,-18.8871 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B12, Luas Lahan 36/72 meter persegi" />
-          <text x="245.3" y="1004.5" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B12</text>
-          <text x="245.3" y="1016.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/72 m²</text>
+          <path id="kav-B14" d="m 513.35508,663.29508 -27.75129,17.39523 41.95822,67.37837 27.80235,-17.31323 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B14, Luas Lahan 36/60" />
+          <text x="520.5" y="701.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 520.5 701.0)" pointer-events="none">B14</text>
+          <text x="520.5" y="711.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 520.5 711.5)" pointer-events="none">36/60</text>
         </g>
         <!-- Kav B13 -->
         <g>
-          <path id="kav-B13" d="m 214.3949,988.68471 -30.32983,18.88719 31.47859,50.5497 30.32983,-18.8872 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B13, Luas Lahan 36/72 meter persegi" />
-          <text x="215.0" y="1023.4" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B13</text>
-          <text x="215.0" y="1035.4" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/72 m²</text>
+          <path id="kav-B13" d="m 485.60379,680.69031 -30.27412,18.97661 41.9025,67.28891 30.32984,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B13, Luas Lahan 36/60" />
+          <text x="491.4" y="719.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 491.4 719.0)" pointer-events="none">B13</text>
+          <text x="491.4" y="729.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 491.4 729.5)" pointer-events="none">36/60</text>
         </g>
-        <!-- Kav B14 -->
+        <!-- Kav B12 -->
         <g>
-          <path id="kav-B14" d="m 184.06507,1007.5719 -30.32984,18.8871 31.47859,50.5497 30.32984,-18.8871 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B14, Luas Lahan 36/72 meter persegi" />
-          <text x="184.6" y="1042.3" font-family="'Outfit', sans-serif" font-size="11" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B14</text>
-          <text x="184.6" y="1054.3" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" fill="#1e2d24" text-anchor="middle" pointer-events="none">36/72 m²</text>
+          <path id="kav-B12" d="m 455.32967,699.66692 -30.27413,18.97662 41.8468,67.19945 30.32983,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B12, Luas Lahan 36/60" />
+          <text x="461.1" y="738.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 461.1 738.0)" pointer-events="none">B12</text>
+          <text x="461.1" y="748.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 461.1 748.5)" pointer-events="none">36/60</text>
+        </g>
+        <!-- Kav B11 -->
+        <g>
+          <path id="kav-B11" d="m 425.05554,718.64354 -30.27413,18.97661 41.79109,67.10999 30.32984,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B11, Luas Lahan 36/60" />
+          <text x="430.8" y="757.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 430.8 757.0)" pointer-events="none">B11</text>
+          <text x="430.8" y="767.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 430.8 767.5)" pointer-events="none">36/60</text>
+        </g>
+        <!-- Kav B10 -->
+        <g>
+          <path id="kav-B10" d="m 394.78141,737.62015 -30.27412,18.97662 41.73538,67.02053 30.32983,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B10, Luas Lahan 36/60" />
+          <text x="400.5" y="776.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 400.5 776.0)" pointer-events="none">B10</text>
+          <text x="400.5" y="786.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 400.5 786.5)" pointer-events="none">36/60</text>
+        </g>
+        <!-- Kav B9 -->
+        <g>
+          <path id="kav-B9" d="m 364.50729,756.59677 -30.27413,18.97661 41.67967,66.93108 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B9, Luas Lahan 36/60" />
+          <text x="370.2" y="795.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 370.2 795.0)" pointer-events="none">B9</text>
+          <text x="370.2" y="805.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 370.2 805.5)" pointer-events="none">36/60</text>
+        </g>
+        <!-- Kav B8 -->
+        <g>
+          <path id="kav-B8" d="M 334.23316,775.57338 303.95903,794.55 345.583,861.39161 375.91283,842.50446 Z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B8, Luas Lahan 36/60" />
+          <text x="339.9" y="814.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 339.9 814.0)" pointer-events="none">B8</text>
+          <text x="339.9" y="824.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 339.9 824.5)" pointer-events="none">36/60</text>
+        </g>
+        <!-- Kav B7 -->
+        <g>
+          <path id="kav-B7" d="m 303.95903,794.55 -30.27412,18.97661 41.56825,66.75216 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B7, Luas Lahan 36/60" />
+          <text x="309.6" y="833.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 309.6 833.0)" pointer-events="none">B7</text>
+          <text x="309.6" y="843.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 309.6 843.5)" pointer-events="none">36/60</text>
+        </g>
+        <!-- Kav B6 -->
+        <g>
+          <path id="kav-B6" d="m 273.68491,813.52661 -30.27413,18.97662 41.51254,66.66269 30.32984,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B6, Luas Lahan 36/60" />
+          <text x="279.3" y="852.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 279.3 852.0)" pointer-events="none">B6</text>
+          <text x="279.3" y="862.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 279.3 862.5)" pointer-events="none">36/60</text>
+        </g>
+        <!-- Kav B5 -->
+        <g>
+          <path id="kav-B5" d="m 243.41078,832.50323 -30.27413,18.97661 41.45684,66.57324 30.32983,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B5, Luas Lahan 36/60" />
+          <text x="249.0" y="871.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 249.0 871.0)" pointer-events="none">B5</text>
+          <text x="249.0" y="881.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 249.0 881.5)" pointer-events="none">36/60</text>
+        </g>
+        <!-- Kav B4 -->
+        <g>
+          <path id="kav-B4" d="m 213.13665,851.47984 -30.27413,18.97661 41.40113,66.48378 30.32984,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B4, Luas Lahan 36/60" />
+          <text x="218.7" y="890.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 218.7 890.0)" pointer-events="none">B4</text>
+          <text x="218.7" y="900.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 218.7 900.5)" pointer-events="none">36/60</text>
+        </g>
+        <!-- Kav B3 -->
+        <g>
+          <path id="kav-B3" d="m 182.86252,870.45645 -30.27412,18.97662 41.34542,66.39432 30.32983,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B3, Luas Lahan 36/60" />
+          <text x="188.4" y="909.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 188.4 909.0)" pointer-events="none">B3</text>
+          <text x="188.4" y="919.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 188.4 919.5)" pointer-events="none">36/60</text>
+        </g>
+        <!-- Kav B2 -->
+        <g>
+          <path id="kav-B2" d="m 152.5884,889.43307 -30.27413,18.97661 41.28971,66.30486 30.32984,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B2, Luas Lahan 36/60" />
+          <text x="158.1" y="928.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 158.1 928.0)" pointer-events="none">B2</text>
+          <text x="158.1" y="938.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 158.1 938.5)" pointer-events="none">36/60</text>
+        </g>
+        <!-- Kav B1 -->
+        <g>
+          <path id="kav-B1" d="m 122.31427,908.40968 -30.274126,18.97662 41.234006,66.2154 30.32983,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B1, Luas Lahan 36/72" />
+          <text x="129.8" y="947.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 129.8 947.0)" pointer-events="none">B1</text>
+          <text x="129.8" y="957.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 129.8 957.5)" pointer-events="none">36/72</text>
+        </g>
+      </g>
+
+      <!-- ROW KAVLING BAWAH (Kav A14 - A1) -->
+      <g id="kavling-row-bawah">
+        <!-- Kav A14 -->
+        <g>
+          <path id="kav-A14" d="m 578.35293,762.03885 -30.32984,18.88715 31.47859,50.54973 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A14, Luas Lahan 36/72" />
+          <text x="578.9" y="792.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 578.9 792.0)" pointer-events="none">A14</text>
+          <text x="578.9" y="802.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 578.9 802.5)" pointer-events="none">36/72</text>
+        </g>
+        <!-- Kav A13 -->
+        <g>
+          <path id="kav-A13" d="m 548.02309,780.926 -30.32983,18.88716 31.47859,50.54972 30.32983,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A13, Luas Lahan 36/72" />
+          <text x="548.6" y="811.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 548.6 811.0)" pointer-events="none">A13</text>
+          <text x="548.6" y="821.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 548.6 821.5)" pointer-events="none">36/72</text>
+        </g>
+        <!-- Kav A12 -->
+        <g>
+          <path id="kav-A12" d="m 517.69326,799.81316 -30.32984,18.88715 31.47859,50.54973 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A12, Luas Lahan 36/72" />
+          <text x="518.3" y="830.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 518.3 830.0)" pointer-events="none">A12</text>
+          <text x="518.3" y="840.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 518.3 840.5)" pointer-events="none">36/72</text>
+        </g>
+        <!-- Kav A11 -->
+        <g>
+          <path id="kav-A11" d="m 487.36342,818.70031 -30.32983,18.88716 31.47859,50.54972 30.32983,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A11, Luas Lahan 36/72" />
+          <text x="487.9" y="849.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 487.9 849.0)" pointer-events="none">A11</text>
+          <text x="487.9" y="859.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 487.9 859.5)" pointer-events="none">36/72</text>
+        </g>
+        <!-- Kav A10 -->
+        <g>
+          <path id="kav-A10" d="m 457.03359,837.58747 -30.32984,18.88715 31.47859,50.54973 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A10, Luas Lahan 36/72" />
+          <text x="457.6" y="868.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 457.6 868.0)" pointer-events="none">A10</text>
+          <text x="457.6" y="878.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 457.6 878.5)" pointer-events="none">36/72</text>
+        </g>
+        <!-- Kav A9 -->
+        <g>
+          <path id="kav-A9" d="m 426.70375,856.47462 -30.32983,18.88716 31.47859,50.54972 30.32983,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A9, Luas Lahan 36/72" />
+          <text x="427.3" y="887.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 427.3 887.0)" pointer-events="none">A9</text>
+          <text x="427.3" y="897.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 427.3 897.5)" pointer-events="none">36/72</text>
+        </g>
+        <!-- Kav A8 -->
+        <g>
+          <path id="kav-A8" d="m 396.37392,875.36178 -30.32984,18.88715 31.47859,50.54973 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A8, Luas Lahan 36/72" />
+          <text x="397.0" y="906.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 397.0 906.0)" pointer-events="none">A8</text>
+          <text x="397.0" y="916.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 397.0 916.5)" pointer-events="none">36/72</text>
+        </g>
+        <!-- Kav A7 -->
+        <g>
+          <path id="kav-A7" d="m 366.04408,894.24893 -30.32984,18.88716 31.4786,50.54972 30.32983,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A7, Luas Lahan 36/72" />
+          <text x="366.6" y="925.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 366.6 925.0)" pointer-events="none">A7</text>
+          <text x="366.6" y="935.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 366.6 935.5)" pointer-events="none">36/72</text>
+        </g>
+        <!-- Kav A6 -->
+        <g>
+          <path id="kav-A6" d="m 335.71424,913.13609 -30.32983,18.88715 31.47859,50.54973 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A6, Luas Lahan 36/72" />
+          <text x="336.3" y="944.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 336.3 944.0)" pointer-events="none">A6</text>
+          <text x="336.3" y="954.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 336.3 954.5)" pointer-events="none">36/72</text>
+        </g>
+        <!-- Kav A5 -->
+        <g>
+          <path id="kav-A5" d="m 305.38441,932.02324 -30.32984,18.88716 31.4786,50.5497 30.32983,-18.88713 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A5, Luas Lahan 36/72" />
+          <text x="306.0" y="963.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 306.0 963.0)" pointer-events="none">A5</text>
+          <text x="306.0" y="973.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 306.0 973.5)" pointer-events="none">36/72</text>
+        </g>
+        <!-- Kav A4 -->
+        <g>
+          <path id="kav-A4" d="m 275.05457,950.9104 -30.32983,18.88715 31.47859,50.54975 30.32984,-18.8872 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A4, Luas Lahan 36/72" />
+          <text x="275.6" y="982.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 275.6 982.0)" pointer-events="none">A4</text>
+          <text x="275.6" y="992.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 275.6 992.5)" pointer-events="none">36/72</text>
+        </g>
+        <!-- Kav A3 -->
+        <g>
+          <path id="kav-A3" d="m 244.72474,969.79755 -30.32984,18.88716 31.47859,50.54969 30.32984,-18.8871 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A3, Luas Lahan 36/72" />
+          <text x="245.3" y="1001.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 245.3 1001.0)" pointer-events="none">A3</text>
+          <text x="245.3" y="1011.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 245.3 1011.5)" pointer-events="none">36/72</text>
+        </g>
+        <!-- Kav A2 -->
+        <g>
+          <path id="kav-A2" d="m 214.3949,988.68471 -30.32983,18.88719 31.47859,50.5497 30.32983,-18.8872 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A2, Luas Lahan 36/72" />
+          <text x="215.0" y="1020.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 215.0 1020.0)" pointer-events="none">A2</text>
+          <text x="215.0" y="1030.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 215.0 1030.5)" pointer-events="none">36/72</text>
+        </g>
+        <!-- Kav A1 -->
+        <g>
+          <path id="kav-A1" d="m 184.06507,1007.5719 -30.32984,18.8871 31.47859,50.5497 30.32984,-18.8871 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A1, Luas Lahan 36/72" />
+          <text x="184.6" y="1038.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 184.6 1038.0)" pointer-events="none">A1</text>
+          <text x="184.6" y="1048.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" transform="rotate(-31.9135 184.6 1048.5)" pointer-events="none">36/72</text>
         </g>
       </g>
 
