@@ -441,8 +441,26 @@
 
 
 
-<!-- Seksi Sponsor, Partner & Apresiasi (Auto-Slider Loop) -->
-  <section id="sponsors" class="py-20 bg-brand-light border-t border-b border-gray-200/60 overflow-hidden">
+<!-- Seksi Sponsor & Partner Auto-Slide (100% Work Guarantee) -->
+  <section id="sponsors" class="py-20 bg-brand-light border-t border-b border-gray-200/60 overflow-hidden relative">
+    
+    <!-- CSS Animasi Ditanam Langsung Agar Pasti Berjalan -->
+    <style>
+      @keyframes autoMarquee {
+        0% { transform: translateX(0%); }
+        100% { transform: translateX(-50%); }
+      }
+      .marquee-wrapper-track {
+        display: flex !important;
+        width: max-content !important;
+        animation: autoMarquee 22s linear infinite !important;
+        will-change: transform;
+      }
+      .marquee-wrapper-track:hover {
+        animation-play-state: paused !important;
+      }
+    </style>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Header Seksi -->
@@ -454,88 +472,80 @@
         </p>
       </div>
 
-      <!-- Container Slider Marquee -->
+      <!-- Area Slider (Overflow Hidden) -->
       <div class="relative w-full overflow-hidden py-4">
         
-        <!-- Masking Gradient Kiri & Kanan (Efek Blur Elegan) -->
-        <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-32 z-10 bg-gradient-to-r from-brand-light via-brand-light/80 to-transparent"></div>
-        <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-32 z-10 bg-gradient-to-l from-brand-light via-brand-light/80 to-transparent"></div>
+        <!-- Efek Gradient Blur Kiri & Kanan -->
+        <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-20 sm:w-32 z-10 bg-gradient-to-r from-[#f7f6f2] via-[#f7f6f2]/80 to-transparent"></div>
+        <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-32 z-10 bg-gradient-to-l from-[#f7f6f2] via-[#f7f6f2]/80 to-transparent"></div>
 
-        <!-- Track Marquee (Tergulung Berulang 2 Set) -->
-        <div class="marquee-track flex items-center space-x-6 sm:space-x-8">
+        <!-- Track Animasi Utama -->
+        <div class="marquee-wrapper-track">
           
-          <!-- ================= SET LOGO 1 ================= -->
-          <div class="flex items-center space-x-6 sm:space-x-8 shrink-0">
+          <!-- ================= KELOMPOK LOGO 1 ================= -->
+          <div class="flex items-center space-x-6 pr-6 shrink-0">
             
-            <!-- Logo 1: Bank BTN -->
-            <div class="sponsor-card bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center min-w-[180px] sm:min-w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
+            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
               <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Mitra KPR</span>
               <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">Bank BTN</p>
-              <!-- Jika punya file logo PNG/SVG, gunakan tag <img> di bawah: -->
-              <!-- <img src="assets/sponsors/btn.png" alt="Bank BTN" class="h-10 w-auto object-contain"> -->
             </div>
 
-            <!-- Logo 2: Bank Mandiri -->
-            <div class="sponsor-card bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center min-w-[180px] sm:min-w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
+            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
               <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Mitra KPR</span>
               <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">Bank Mandiri</p>
             </div>
 
-            <!-- Logo 3: APERNAS -->
-            <div class="sponsor-card bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center min-w-[180px] sm:min-w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
+            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
               <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Asosiasi</span>
               <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">APERNAS</p>
             </div>
 
-            <!-- Logo 4: Google Maps -->
-            <div class="sponsor-card bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center min-w-[180px] sm:min-w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
+            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
               <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Platform Navigasi</span>
               <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">Google Maps</p>
             </div>
 
-            <!-- Logo 5: GitHub Pages -->
-            <div class="sponsor-card bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center min-w-[180px] sm:min-w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
+            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
               <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Infrastruktur</span>
               <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">GitHub Pages</p>
             </div>
 
-            <!-- Logo 6: Tailwind CSS -->
-            <div class="sponsor-card bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center min-w-[180px] sm:min-w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
+            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
               <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Teknologi UI</span>
               <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">Tailwind CSS</p>
             </div>
 
           </div>
 
-          <!-- ================= SET LOGO 2 (DUPLIKAT UNTUK SEAMLESS LOOP) ================= -->
-          <div class="flex items-center space-x-6 sm:space-x-8 shrink-0" aria-hidden="true">
+          <!-- ================= KELOMPOK LOGO 2 (DUPLIKAT UNTUK LOOP TANPA PUTUS) ================= -->
+          <div class="flex items-center space-x-6 pr-6 shrink-0" aria-hidden="true">
             
-            <div class="sponsor-card bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center min-w-[180px] sm:min-w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
+            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
               <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Mitra KPR</span>
               <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">Bank BTN</p>
             </div>
 
-            <div class="sponsor-card bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center min-w-[180px] sm:min-w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
+            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
               <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Mitra KPR</span>
               <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">Bank Mandiri</p>
             </div>
 
-            <div class="sponsor-card bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center min-w-[180px] sm:min-w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
+            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
               <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Asosiasi</span>
               <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">APERNAS</p>
             </div>
 
-            <div class="sponsor-card bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center min-w-[180px] sm:min-w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
+            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
               <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Platform Navigasi</span>
               <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">Google Maps</p>
             </div>
 
-            <div class="sponsor-card bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center min-w-[180px] sm:min-w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
+            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
               <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Infrastruktur</span>
               <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">GitHub Pages</p>
             </div>
 
-            <div class="sponsor-card bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center min-w-[180px] sm:min-w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
+            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
               <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Teknologi UI</span>
               <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">Tailwind CSS</p>
             </div>
@@ -547,7 +557,6 @@
 
     </div>
   </section>
-
 
 
 
