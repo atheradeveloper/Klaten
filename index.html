@@ -441,7 +441,7 @@
 
 
 
-<!-- Seksi Sponsor & Partner (Jarak Batas Atas Sudah Diperbaiki) -->
+<!-- Seksi Sponsor & Partner (Logo Only - Tanpa Box & Tanpa Teks) -->
   <section id="sponsors" class="mt-16 sm:mt-24 pt-20 sm:pt-28 pb-20 bg-brand-light border-t border-b border-gray-200/60 overflow-hidden relative">
     
     <!-- CSS Animasi Ditanam Langsung -->
@@ -453,7 +453,7 @@
       .marquee-wrapper-track {
         display: flex !important;
         width: max-content !important;
-        animation: autoMarquee 22s linear infinite !important;
+        animation: autoMarquee 18s linear infinite !important;
         will-change: transform;
       }
       .marquee-wrapper-track:hover {
@@ -473,81 +473,73 @@
       </div>
 
       <!-- Area Slider (Overflow Hidden) -->
-      <div class="relative w-full overflow-hidden py-4">
+      <div class="relative w-full overflow-hidden py-6">
         
         <!-- Efek Gradient Blur Kiri & Kanan -->
-        <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-20 sm:w-32 z-10 bg-gradient-to-r from-[#f7f6f2] via-[#f7f6f2]/80 to-transparent"></div>
-        <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-32 z-10 bg-gradient-to-l from-[#f7f6f2] via-[#f7f6f2]/80 to-transparent"></div>
+        <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-36 z-10 bg-gradient-to-r from-[#f7f6f2] via-[#f7f6f2]/80 to-transparent"></div>
+        <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-36 z-10 bg-gradient-to-l from-[#f7f6f2] via-[#f7f6f2]/80 to-transparent"></div>
 
         <!-- Track Animasi Utama -->
         <div class="marquee-wrapper-track">
           
           <!-- KELOMPOK LOGO 1 -->
-          <div class="flex items-center space-x-6 pr-6 shrink-0">
+          <div class="flex items-center space-x-12 sm:space-x-20 pr-12 sm:pr-20 shrink-0">
             
-            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
-              <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Mitra KPR</span>
-              <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">Bank BTN</p>
+            <!-- Logo 1: GitHub -->
+            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="h-10 sm:h-12 w-auto object-contain">
             </div>
 
-            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
-              <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Mitra KPR</span>
-              <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">Bank Mandiri</p>
+            <!-- Logo 2: Google -->
+            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-8 sm:h-10 w-auto object-contain">
             </div>
 
-            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
-              <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Asosiasi</span>
-              <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">APERNAS</p>
+            <!-- Logo 3: Facebook -->
+            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook" class="h-10 sm:h-12 w-auto object-contain">
             </div>
 
-            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
-              <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Platform Navigasi</span>
-              <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">Google Maps</p>
+            <!-- Ulangi urutan dalam kelompok agar slider terisi penuh di layar lebar -->
+            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="h-10 sm:h-12 w-auto object-contain">
             </div>
 
-            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
-              <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Infrastruktur</span>
-              <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">GitHub Pages</p>
+            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-8 sm:h-10 w-auto object-contain">
             </div>
 
-            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
-              <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Teknologi UI</span>
-              <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">Tailwind CSS</p>
+            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook" class="h-10 sm:h-12 w-auto object-contain">
             </div>
 
           </div>
 
-          <!-- KELOMPOK LOGO 2 (DUPLIKAT LOOP) -->
-          <div class="flex items-center space-x-6 pr-6 shrink-0" aria-hidden="true">
+          <!-- KELOMPOK LOGO 2 (DUPLIKAT UNTUK LOOP TANPA PUTUS) -->
+          <div class="flex items-center space-x-12 sm:space-x-20 pr-12 sm:pr-20 shrink-0" aria-hidden="true">
             
-            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
-              <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Mitra KPR</span>
-              <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">Bank BTN</p>
+            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="h-10 sm:h-12 w-auto object-contain">
             </div>
 
-            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
-              <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Mitra KPR</span>
-              <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">Bank Mandiri</p>
+            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-8 sm:h-10 w-auto object-contain">
             </div>
 
-            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
-              <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Asosiasi</span>
-              <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">APERNAS</p>
+            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook" class="h-10 sm:h-12 w-auto object-contain">
             </div>
 
-            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
-              <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Platform Navigasi</span>
-              <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">Google Maps</p>
+            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="h-10 sm:h-12 w-auto object-contain">
             </div>
 
-            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
-              <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Infrastruktur</span>
-              <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">GitHub Pages</p>
+            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-8 sm:h-10 w-auto object-contain">
             </div>
 
-            <div class="bg-white border border-gray-200/80 rounded-2xl px-8 py-5 flex flex-col items-center justify-center w-[200px] h-28 shadow-sm hover:shadow-xl hover:border-brand-gold transition-all duration-300 group">
-              <span class="text-[9px] font-semibold text-brand-gold uppercase tracking-wider mb-2">Teknologi UI</span>
-              <p class="font-display font-bold text-brand-dark text-base group-hover:scale-105 transition duration-300">Tailwind CSS</p>
+            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook" class="h-10 sm:h-12 w-auto object-contain">
             </div>
 
           </div>
