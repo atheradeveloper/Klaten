@@ -441,10 +441,10 @@
 
 
 
-<!-- Seksi Sponsor & Partner (Logo Only - Tanpa Box & Tanpa Teks) -->
+<!-- Seksi Sponsor & Partner (Ukuran Logo Dikunci Ketat) -->
   <section id="sponsors" class="mt-16 sm:mt-24 pt-20 sm:pt-28 pb-20 bg-brand-light border-t border-b border-gray-200/60 overflow-hidden relative">
     
-    <!-- CSS Animasi Ditanam Langsung -->
+    <!-- CSS Pengunci Ukuran Gambar Logo & Animasi -->
     <style>
       @keyframes autoMarquee {
         0% { transform: translateX(0%); }
@@ -458,6 +458,40 @@
       }
       .marquee-wrapper-track:hover {
         animation-play-state: paused !important;
+      }
+
+      /* PENGUNCI UKURAN GAMBAR (TIDAK BISA MELEDAK LAGI) */
+      .sponsor-logo-box {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 60px !important;
+        width: 120px !important;
+        flex-shrink: 0 !important;
+      }
+      .sponsor-logo-box img {
+        height: 40px !important;
+        max-height: 40px !important;
+        width: auto !important;
+        max-width: 110px !important;
+        object-fit: contain !important;
+        display: block !important;
+        transition: transform 0.3s ease !important;
+      }
+      .sponsor-logo-box:hover img {
+        transform: scale(1.15) !important;
+      }
+
+      @media (min-width: 640px) {
+        .sponsor-logo-box {
+          height: 70px !important;
+          width: 150px !important;
+        }
+        .sponsor-logo-box img {
+          height: 45px !important;
+          max-height: 45px !important;
+          max-width: 130px !important;
+        }
       }
     </style>
 
@@ -473,73 +507,69 @@
       </div>
 
       <!-- Area Slider (Overflow Hidden) -->
-      <div class="relative w-full overflow-hidden py-6">
+      <div class="relative w-full overflow-hidden py-4">
         
         <!-- Efek Gradient Blur Kiri & Kanan -->
-        <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-24 sm:w-36 z-10 bg-gradient-to-r from-[#f7f6f2] via-[#f7f6f2]/80 to-transparent"></div>
-        <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-24 sm:w-36 z-10 bg-gradient-to-l from-[#f7f6f2] via-[#f7f6f2]/80 to-transparent"></div>
+        <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-20 sm:w-32 z-10 bg-gradient-to-r from-[#f7f6f2] via-[#f7f6f2]/80 to-transparent"></div>
+        <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-32 z-10 bg-gradient-to-l from-[#f7f6f2] via-[#f7f6f2]/80 to-transparent"></div>
 
         <!-- Track Animasi Utama -->
         <div class="marquee-wrapper-track">
           
           <!-- KELOMPOK LOGO 1 -->
-          <div class="flex items-center space-x-12 sm:space-x-20 pr-12 sm:pr-20 shrink-0">
+          <div class="flex items-center space-x-10 sm:space-x-16 pr-10 sm:pr-16 shrink-0">
             
-            <!-- Logo 1: GitHub -->
-            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="h-10 sm:h-12 w-auto object-contain">
+            <div class="sponsor-logo-box">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
             </div>
 
-            <!-- Logo 2: Google -->
-            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-8 sm:h-10 w-auto object-contain">
+            <div class="sponsor-logo-box">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
             </div>
 
-            <!-- Logo 3: Facebook -->
-            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook" class="h-10 sm:h-12 w-auto object-contain">
+            <div class="sponsor-logo-box">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook">
             </div>
 
-            <!-- Ulangi urutan dalam kelompok agar slider terisi penuh di layar lebar -->
-            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="h-10 sm:h-12 w-auto object-contain">
+            <div class="sponsor-logo-box">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
             </div>
 
-            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-8 sm:h-10 w-auto object-contain">
+            <div class="sponsor-logo-box">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
             </div>
 
-            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook" class="h-10 sm:h-12 w-auto object-contain">
+            <div class="sponsor-logo-box">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook">
             </div>
 
           </div>
 
-          <!-- KELOMPOK LOGO 2 (DUPLIKAT UNTUK LOOP TANPA PUTUS) -->
-          <div class="flex items-center space-x-12 sm:space-x-20 pr-12 sm:pr-20 shrink-0" aria-hidden="true">
+          <!-- KELOMPOK LOGO 2 (DUPLIKAT LOOP) -->
+          <div class="flex items-center space-x-10 sm:space-x-16 pr-10 sm:pr-16 shrink-0" aria-hidden="true">
             
-            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="h-10 sm:h-12 w-auto object-contain">
+            <div class="sponsor-logo-box">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
             </div>
 
-            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-8 sm:h-10 w-auto object-contain">
+            <div class="sponsor-logo-box">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
             </div>
 
-            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook" class="h-10 sm:h-12 w-auto object-contain">
+            <div class="sponsor-logo-box">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook">
             </div>
 
-            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" class="h-10 sm:h-12 w-auto object-contain">
+            <div class="sponsor-logo-box">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
             </div>
 
-            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google" class="h-8 sm:h-10 w-auto object-contain">
+            <div class="sponsor-logo-box">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
             </div>
 
-            <div class="flex items-center justify-center hover:scale-110 transition-transform duration-300 cursor-pointer">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook" class="h-10 sm:h-12 w-auto object-contain">
+            <div class="sponsor-logo-box">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/b/b9/2023_Facebook_icon.svg" alt="Facebook">
             </div>
 
           </div>
