@@ -38,24 +38,38 @@
 }
 
 
-/* Custom Styling untuk Seksi Sponsor & Partner */
-.sponsor-card {
-  will-change: transform, box-shadow;
+/* Custom Infinite Marquee Slider Style */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 25s linear infinite;
+  will-change: transform;
+}
+
+/* Pause animasi saat kursor diarahkan ke logo */
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* Jika Anda menambahkan gambar logo asli (<img>) nanti */
 .sponsor-card img {
-  max-height: 40px;
+  max-height: 42px;
   width: auto;
   object-fit: contain;
-  transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-/* Efek Grayscale secara default untuk logo gambar dan berwarna penuh saat di-hover */
-.sponsor-card img {
   filter: grayscale(100%) opacity(0.7);
+  transition: all 0.3s ease;
 }
 
 .sponsor-card:hover img {
   filter: grayscale(0%) opacity(1);
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
