@@ -392,8 +392,87 @@
     </div>
   </section>
 
-<!-- Legalitas & Sertifikasi Section (Desktop Kembali Seperti Semula + Mobile Interactive 4 Objek Sejajar) -->
+<!-- Legalitas & Sertifikasi Section -->
   <section id="legalitas" class="py-16 sm:py-24 bg-white">
+    
+    <!-- CSS Khusus Memisahkan Tampilan Desktop vs Mobile & Mengunci Flexbox -->
+    <style>
+      /* --- TAMPILAN DESKTOP (Layar >= 768px) --- */
+      @media (min-width: 768px) {
+        .legalitas-desktop-grid {
+          display: grid !important;
+          grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+          gap: 2rem !important;
+          text-align: center !important;
+        }
+        .legalitas-mobile-wrapper {
+          display: none !important;
+        }
+      }
+
+      /* --- TAMPILAN MOBILE (Layar < 768px) --- */
+      @media (max-width: 767px) {
+        .legalitas-desktop-grid {
+          display: none !important;
+        }
+        .legalitas-mobile-wrapper {
+          display: block !important;
+        }
+      }
+
+      /* Kunci 4 Objek Sejajar Horisontal di HP */
+      .leg-mob-row {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        gap: 6px !important;
+        width: 100% !important;
+      }
+
+      .leg-mob-btn {
+        flex: 1 1 0% !important;
+        min-width: 0 !important;
+        padding: 10px 4px !important;
+        background-color: #f7f6f2 !important;
+        color: #1e2d24 !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 12px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        cursor: pointer !important;
+        transition: all 0.2s ease !important;
+      }
+
+      .leg-mob-btn.active {
+        background-color: #1e2d24 !important;
+        color: #ffffff !important;
+        border-color: #1e2d24 !important;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15) !important;
+      }
+
+      .leg-mob-icon {
+        color: #664D03 !important;
+        margin-bottom: 3px !important;
+      }
+
+      .leg-mob-btn.active .leg-mob-icon {
+        color: #c5a880 !important;
+      }
+
+      .leg-mob-text {
+        font-size: 10px !important;
+        font-weight: 700 !important;
+        line-height: 1.1 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        width: 100% !important;
+      }
+    </style>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Header Seksi -->
@@ -403,8 +482,8 @@
         <p class="text-gray-600 font-light text-xs sm:text-base">Kami memastikan seluruh dokumen hukum clear and clean demi keamanan investasi properti masa depan Anda.</p>
       </div>
 
-      <!-- ================= 1. TAMPILAN DESKTOP (KEMBALI 100% SEPERTI AWAL) ================= -->
-      <div class="hidden md:grid md:grid-cols-4 gap-8 text-center">
+      <!-- ================= 1. TAMPILAN DESKTOP (4 Kartu Lengkap) ================= -->
+      <div class="legalitas-desktop-grid">
         
         <div class="p-6 bg-brand-light rounded-2xl">
           <div class="w-16 h-16 bg-brand-dark/5 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-gold">
@@ -440,58 +519,54 @@
 
       </div>
 
-
-      <!-- ================= 2. TAMPILAN MOBILE (4 OBJEK SEJAJAR + DITAP BUKA DETAIL) ================= -->
-      <div class="block md:hidden space-y-4">
+      <!-- ================= 2. TAMPILAN MOBILE (4 Tombol Sejajar Horizontal) ================= -->
+      <div class="legalitas-mobile-wrapper space-y-4">
         
-        <p class="text-[11px] text-center text-amber-700 font-semibold uppercase tracking-wider">
-          Klik salah satu ikon untuk melihat detail:
+        <p class="text-[11px] text-center text-amber-700 font-semibold uppercase tracking-wider mb-2">
+          Klik ikon di bawah untuk lihat detail:
         </p>
 
-        <!-- 4 Objek Sejajar Dalam 1 Baris -->
-        <div class="grid grid-cols-4 gap-2">
+        <!-- 4 Tombol Sejajar Kiri - Kanan dalam 1 Baris -->
+        <div class="leg-mob-row">
           
-          <!-- Objek 1 -->
-          <button id="leg-btn-0" onclick="showLegalitasDetail(0)" class="p-2.5 bg-brand-dark text-white rounded-xl flex flex-col items-center justify-center text-center transition-all duration-300 shadow-md border border-brand-dark">
-            <div class="w-8 h-8 rounded-full flex items-center justify-center mb-1 text-brand-gold">
+          <button id="leg-btn-0" onclick="toggleLegalitasDetail(0)" class="leg-mob-btn">
+            <div class="leg-mob-icon">
               <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
             </div>
-            <span class="text-[10px] font-bold leading-tight">SHM</span>
+            <span class="leg-mob-text">SHM</span>
           </button>
 
-          <!-- Objek 2 -->
-          <button id="leg-btn-1" onclick="showLegalitasDetail(1)" class="p-2.5 bg-brand-light text-brand-dark rounded-xl flex flex-col items-center justify-center text-center transition-all duration-300 border border-gray-200">
-            <div class="w-8 h-8 rounded-full flex items-center justify-center mb-1 text-brand-gold">
+          <button id="leg-btn-1" onclick="toggleLegalitasDetail(1)" class="leg-mob-btn">
+            <div class="leg-mob-icon">
               <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
             </div>
-            <span class="text-[10px] font-bold leading-tight">PBG/IMB</span>
+            <span class="leg-mob-text">PBG/IMB</span>
           </button>
 
-          <!-- Objek 3 -->
-          <button id="leg-btn-2" onclick="showLegalitasDetail(2)" class="p-2.5 bg-brand-light text-brand-dark rounded-xl flex flex-col items-center justify-center text-center transition-all duration-300 border border-gray-200">
-            <div class="w-8 h-8 rounded-full flex items-center justify-center mb-1 text-brand-gold">
+          <button id="leg-btn-2" onclick="toggleLegalitasDetail(2)" class="leg-mob-btn">
+            <div class="leg-mob-icon">
               <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
             </div>
-            <span class="text-[10px] font-bold leading-tight">Bebas PPN</span>
+            <span class="leg-mob-text">Bebas PPN</span>
           </button>
 
-          <!-- Objek 4 -->
-          <button id="leg-btn-3" onclick="showLegalitasDetail(3)" class="p-2.5 bg-brand-light text-brand-dark rounded-xl flex flex-col items-center justify-center text-center transition-all duration-300 border border-gray-200">
-            <div class="w-8 h-8 rounded-full flex items-center justify-center mb-1 text-brand-gold">
+          <button id="leg-btn-3" onclick="toggleLegalitasDetail(3)" class="leg-mob-btn">
+            <div class="leg-mob-icon">
               <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" /></svg>
             </div>
-            <span class="text-[10px] font-bold leading-tight">Asosiasi</span>
+            <span class="leg-mob-text">Asosiasi</span>
           </button>
 
         </div>
 
-        <!-- Kotak Detail Yang Muncul Saat Objek Diklik -->
-        <div class="p-5 bg-brand-light rounded-2xl border border-gray-200 text-center space-y-2 transition-all duration-300 shadow-sm">
-          <div id="leg-detail-icon" class="w-12 h-12 bg-brand-dark/5 rounded-full flex items-center justify-center mx-auto text-brand-gold">
-            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-          </div>
-          <h3 id="leg-detail-title" class="font-display font-bold text-base text-brand-dark">SHM Terjamin</h3>
-          <p id="leg-detail-desc" class="text-xs text-gray-600 font-light leading-relaxed">Sertifikat Hak Milik (SHM) sudah pecah per kavling dan siap balik nama.</p>
+        <!-- Kotak Detail (TERSEMBUNYI SECARA DEFAULT) -->
+        <div id="leg-detail-box" class="hidden mt-3 p-5 bg-brand-light rounded-2xl border border-gray-200 text-center relative shadow-md">
+          <button onclick="closeLegalitasDetail()" class="absolute top-3 right-3 text-gray-400 hover:text-brand-dark p-1" aria-label="Tutup Detail">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+          </button>
+          <div id="leg-detail-icon" class="w-12 h-12 bg-brand-dark/5 rounded-full flex items-center justify-center mx-auto text-brand-gold mb-2"></div>
+          <h3 id="leg-detail-title" class="font-display font-bold text-base text-brand-dark"></h3>
+          <p id="leg-detail-desc" class="text-xs text-gray-600 font-light leading-relaxed"></p>
         </div>
 
       </div>
@@ -499,9 +574,11 @@
     </div>
   </section>
 
-  <!-- Script Penukar Detail Mobile -->
+  <!-- Script Logika Buka / Tutup Detail -->
   <script>
-    function showLegalitasDetail(index) {
+    let currentLegActive = -1;
+
+    function toggleLegalitasDetail(index) {
       const data = [
         {
           icon: `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>`,
@@ -525,23 +602,45 @@
         }
       ];
 
+      // Jika mengklik tombol yang sedang aktif, maka tutup detailnya
+      if (currentLegActive === index) {
+        closeLegalitasDetail();
+        return;
+      }
+
+      currentLegActive = index;
+
+      // Update warna tombol aktif
       for (let i = 0; i < 4; i++) {
         const btn = document.getElementById('leg-btn-' + i);
         if (btn) {
           if (i === index) {
-            btn.className = 'p-2.5 bg-brand-dark text-white rounded-xl flex flex-col items-center justify-center text-center transition-all duration-300 shadow-md border border-brand-dark';
+            btn.classList.add('active');
           } else {
-            btn.className = 'p-2.5 bg-brand-light text-brand-dark rounded-xl flex flex-col items-center justify-center text-center transition-all duration-300 border border-gray-200';
+            btn.classList.remove('active');
           }
         }
       }
 
+      // Tampilkan dan isi konten detail
       document.getElementById('leg-detail-icon').innerHTML = data[index].icon;
       document.getElementById('leg-detail-title').innerText = data[index].title;
       document.getElementById('leg-detail-desc').innerText = data[index].desc;
+      
+      const detailBox = document.getElementById('leg-detail-box');
+      if (detailBox) detailBox.classList.remove('hidden');
+    }
+
+    function closeLegalitasDetail() {
+      currentLegActive = -1;
+      for (let i = 0; i < 4; i++) {
+        const btn = document.getElementById('leg-btn-' + i);
+        if (btn) btn.classList.remove('active');
+      }
+      const detailBox = document.getElementById('leg-detail-box');
+      if (detailBox) detailBox.classList.add('hidden');
     }
   </script>
-
 
 
 
