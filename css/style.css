@@ -36,3 +36,26 @@
 .testimonial-card:hover {
   transform: translateY(-5px);
 }
+
+
+/* Custom Styling untuk Seksi Sponsor & Partner */
+.sponsor-card {
+  will-change: transform, box-shadow;
+}
+
+.sponsor-card img {
+  max-height: 40px;
+  width: auto;
+  object-fit: contain;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Efek Grayscale secara default untuk logo gambar dan berwarna penuh saat di-hover */
+.sponsor-card img {
+  filter: grayscale(100%) opacity(0.7);
+}
+
+.sponsor-card:hover img {
+  filter: grayscale(0%) opacity(1);
+  transform: scale(1.05);
+}
