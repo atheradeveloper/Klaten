@@ -9,8 +9,8 @@
   <meta name="author" content="Athera Properti Klaten">
     
   <!-- Link Icon Tambahan -->
-<link rel="icon" type="image/png" href="assets/icon.png"> 
-<link rel="apple-touch-icon" href="assets/icon.png">
+  <link rel="icon" type="image/png" href="assets/icon.png"> 
+  <link rel="apple-touch-icon" href="assets/icon.png">
 
   <!-- OpenGraph Metadata for Facebook & WhatsApp Sharing -->
   <meta property="og:title" content="Athera Properti Klaten | Developer Perumahan Terpercaya">
@@ -19,12 +19,12 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://atheradeveloper.github.io/Land/">
 
-  <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+  <!-- Swiper CSS (Diperlukan untuk Carousel Desktop & Mobile) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-  
   <!-- Pre-compiled Tailwind CSS & Custom CSS -->
-  <link rel="stylesheet" href="./css/tailwind.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="css/tailwind.css">
+
   <!-- JSON-LD Structured Data Schema for Local Business -->
   <script type="application/ld+json">
   {
@@ -55,13 +55,7 @@
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": [
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-        "Sunday"
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
       ],
       "opens": "08:00",
       "closes": "17:00"
@@ -73,21 +67,16 @@
   }
   </script>
 
+  <style>
+    .transition-all-custom {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-<style>
-  /* Additional custom styles */
-  /* Digunakan untuk custom overrides */
+    .map-container iframe {
+      filter: grayscale(10%) contrast(100%) invert(0%);
+    }
 
-  .transition-all-custom {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
-  .map-container iframe {
-    filter: grayscale(10%) contrast(100%) invert(0%);
-  }
-  
-  
-      /* --- Outfit (Menggunakan Relative Path) --- */
+    /* --- Fonts --- */
     @font-face {
       font-family: 'Outfit';
       font-style: normal;
@@ -117,14 +106,6 @@
       src: url('fonts/outfit-700.woff2') format('woff2');
     }
 
-    /* --- Plus Jakarta Sans (Menggunakan Relative Path) --- */
-	    @font-face {
-      font-family: 'Plus Jakarta Sans';
-      font-style: normal;
-      font-weight: 300;
-      font-display: swap;
-      src: url('fonts/plus-jakarta-sans-400.woff2') format('woff2');
-    }
     @font-face {
       font-family: 'Plus Jakarta Sans';
       font-style: normal;
@@ -135,37 +116,76 @@
     @font-face {
       font-family: 'Plus Jakarta Sans';
       font-style: normal;
-      font-weight: 500;
-      font-display: swap;
-      src: url('fonts/plus-jakarta-sans-500.woff2') format('woff2');
-    }
-    @font-face {
-      font-family: 'Plus Jakarta Sans';
-      font-style: normal;
       font-weight: 600;
       font-display: swap;
       src: url('fonts/plus-jakarta-sans-600.woff2') format('woff2');
     }
-    @font-face {
-      font-family: 'Plus Jakarta Sans';
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: url('fonts/plus-jakarta-sans-700.woff2') format('woff2');
-    }
 
-   /* Reset & Variabel Dasar */
     :root {
       --brand-dark: #1e2d24;
       --brand-gold: #664D03;
       --brand-gold-dark: #664d03;  
       --brand-light: #f7f6f2;
     }
-  
-  
-</style>
 
-  
+    /* Pengunci Lebar Grid */
+    #products .grid > div {
+      min-width: 0;
+    }
+
+    /* POSISI TOMBOL PANAH NAVIGASI DI SUDUT BAWAH GAMBAR (SESUAI FOTO) */
+    .card-nav-btn {
+      position: absolute !important;
+      bottom: 12px !important; /* Dipindahkan ke bagian Bawah Gambar */
+      top: auto !important;
+      transform: none !important;
+      width: 34px !important;
+      height: 34px !important;
+      background-color: #ffffff !important;
+      border-radius: 50% !important;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      z-index: 40 !important;
+      cursor: pointer !important;
+      border: 1px solid #e2e8f0 !important;
+      transition: all 0.2s ease !important;
+      opacity: 0.95;
+    }
+
+    .card-nav-btn:hover {
+      opacity: 1;
+      background-color: #1e2d24 !important;
+      border-color: #1e2d24 !important;
+    }
+
+    .card-nav-btn:hover svg {
+      color: #ffffff !important;
+    }
+
+    .card-nav-prev {
+      left: 12px !important; /* Sudut Bawah Kiri */
+    }
+
+    .card-nav-next {
+      right: 12px !important; /* Sudut Bawah Kanan */
+    }
+
+    /* Titik Indikator di Tengah Bawah Antara Dua Tombol */
+    .product-swiper-pagination {
+      position: absolute !important;
+      bottom: 16px !important;
+      left: 50% !important;
+      transform: translateX(-50%) !important;
+      width: auto !important;
+      z-index: 30 !important;
+    }
+
+    .product-swiper-pagination .swiper-pagination-bullet-active {
+      background: #664D03 !important;
+    }
+  </style>
 </head>
 <body class="bg-brand-light text-brand-dark font-sans scroll-smooth">
 
@@ -175,16 +195,7 @@
       <div class="flex items-center justify-between h-20">
         <!-- Logo -->
         <a href="./" class="flex items-center space-x-2">
-          <img 
-            src="assets/logo.webp" 
-            alt="Logo Athera Properti Klaten" 
-            class="h-8 w-auto" 
-            width="56" 
-            height="56"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          >
+          <img src="assets/logo.webp" alt="Logo Athera Properti Klaten" class="h-8 w-auto" width="56" height="56" loading="eager" fetchpriority="high" decoding="async">
           <span class="text-xl font-display font-bold tracking-wider text-white">Athera Properti Klaten</span>
         </a>
 
@@ -196,7 +207,7 @@
           <a href="#sold-out" class="text-gray-200 hover:text-brand-gold transition font-medium text-sm">Kisah Sukses</a>
           <a href="#legalitas" class="text-gray-200 hover:text-brand-gold transition font-medium text-sm">Legalitas</a>
           <a href="#sponsors" class="text-gray-200 hover:text-brand-gold transition font-medium text-sm">Mitra Kami</a>
-			<a href="#contact" class="text-gray-200 hover:text-brand-gold transition font-medium text-sm">Kontak</a>
+          <a href="#contact" class="text-gray-200 hover:text-brand-gold transition font-medium text-sm">Kontak</a>
           <a href="#contact" class="bg-brand-gold text-brand-dark px-5 py-2.5 rounded-full hover:bg-white hover:text-brand-dark transition-all font-semibold text-xs tracking-wider uppercase pulse-gold">Konsultasi Gratis</a>
         </nav>
 
@@ -219,7 +230,7 @@
       <a href="#sold-out" class="block text-gray-200 hover:text-brand-gold transition py-2 text-base font-medium">Kisah Sukses</a>
       <a href="#legalitas" class="block text-gray-200 hover:text-brand-gold transition py-2 text-base font-medium">Legalitas</a>
       <a href="#sponsors" class="block text-gray-200 hover:text-brand-gold transition py-2 text-base font-medium">Mitra Kami</a>
-		<a href="#contact" class="block text-gray-200 hover:text-brand-gold transition py-2 text-base font-medium">Kontak</a>
+      <a href="#contact" class="block text-gray-200 hover:text-brand-gold transition py-2 text-base font-medium">Kontak</a>
       <a href="#contact" class="block bg-brand-gold text-brand-dark text-center py-3 rounded-full hover:bg-white hover:text-brand-dark transition font-semibold text-sm">Konsultasi Gratis</a>
     </div>
   </header>
@@ -292,58 +303,90 @@
   </section>
 
   <!-- Product Categories Section -->
-  <section id="products" class="py-24 bg-brand-light">
+  <section id="products" class="py-16 sm:py-24 bg-brand-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-4">
         <span class="text-amber-600 font-display font-bold text-xs uppercase tracking-widest block">Kategori Proyek</span>
         <h2 class="text-3xl sm:text-4xl font-display font-bold text-brand-dark">Pilih Jenis Properti Terbaik</h2>
         <p class="text-gray-600 font-light">Kami menawarkan berbagai pilihan properti yang dirancang khusus untuk memenuhi gaya hidup dan anggaran finansial Anda.</p>
       </div>
 
+      <!-- GRID UTAMA PRODUK (3 Kolom di Desktop, 1 Kolom di Mobile) -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Category 1: Rumah Subsidi -->
-        <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 flex flex-col h-full border border-gray-100">
-          <div class="relative overflow-hidden aspect-[4/3]">
-            <img src="assets/graha-athera-jogonalan-tipe-30.webp" alt="Rumah Subsidi" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-            <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-brand-gold text-xs px-3.5 py-1.5 rounded-full font-semibold uppercase tracking-wider">Mulai Rp 160 Jt</div>
+        
+        <!-- CATEGORY 1: RUMAH SUBSIDI (Panah Navigasi Berada di Bawah Gambar) -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 border border-gray-100 flex flex-col h-full relative group">
+          
+          <!-- Area Gambar & Slider -->
+          <div class="relative overflow-hidden aspect-[4/3] w-full">
+            
+            <div class="swiper productSwiper w-full h-full">
+              <div class="swiper-wrapper">
+                
+                <!-- Slide 1: Jogonalan -->
+                <div class="swiper-slide relative w-full h-full">
+                  <img src="assets/graha-athera-jogonalan-tipe-30.webp" alt="Rumah Subsidi Jogonalan" class="w-full h-full object-cover">
+                  <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-brand-gold text-xs px-3.5 py-1.5 rounded-full font-semibold uppercase tracking-wider">Mulai Rp 160 Jt</div>
+                  <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded-md shadow-md text-[11px] font-bold text-brand-dark border border-gray-200">
+                    ATHERA JOGONALAN
+                  </div>
+                </div>
+
+                <!-- Slide 2: Bayat -->
+                <div class="swiper-slide relative w-full h-full">
+                  <img src="assets/graha-athera-jogonalan-tipe-30.webp" alt="Rumah Subsidi Bayat" class="w-full h-full object-cover">
+                  <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-brand-gold text-xs px-3.5 py-1.5 rounded-full font-semibold uppercase tracking-wider">Mulai Rp 160 Jt</div>
+                  <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded-md shadow-md text-[11px] font-bold text-brand-dark border border-gray-200">
+                    ATHERA BAYAT
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Pagination Dots di Tengah Bawah Gambar -->
+              <div class="swiper-pagination product-swiper-pagination"></div>
+            </div>
+
+            <!-- Tombol Panah Navigasi SVG di Sudut Bawah Kanan & Kiri (Sesuai Foto) -->
+            <button type="button" class="card-nav-btn card-nav-prev" aria-label="Proyek Sebelumnya">
+              <svg class="w-4 h-4 text-brand-dark transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button type="button" class="card-nav-btn card-nav-next" aria-label="Proyek Selanjutnya">
+              <svg class="w-4 h-4 text-brand-dark transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+
           </div>
-          <div class="p-8 flex flex-col flex-grow space-y-4">
-            <h3 class="text-xl font-display font-bold text-brand-dark">Rumah Subsidi</h3>
+
+          <!-- Body Kartu -->
+          <div class="p-6 sm:p-8 flex flex-col flex-grow space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 class="text-xl font-display font-bold text-brand-dark">Rumah Subsidi</h3>
+              <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
+                🔥 2 Proyek (Geser)
+              </span>
+            </div>
             <p class="text-gray-600 font-light text-sm flex-grow">
               Hunian nyaman subsidi pemerintah dengan fasilitas premium, one-gate system, dan cicilan tetap flat ringan mulai 1 jutaan per bulan.
             </p>
-            <a href="proyek-subsidi-asri.html" class="inline-flex items-center text-brand-gold hover:text-brand-dark font-bold text-sm tracking-wider uppercase group-hover:translate-x-2 transition duration-300">
+            <a href="proyek-subsidi-asri.html" class="inline-flex items-center text-brand-gold hover:text-brand-dark font-bold text-sm tracking-wider uppercase transition duration-300">
               Lihat Proyek 
               <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
             </a>
           </div>
-        </div>
-		
-		        <!-- Category 1: Rumah Subsidi -->
-        <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 flex flex-col h-full border border-gray-100">
-          <div class="relative overflow-hidden aspect-[4/3]">
-            <img src="assets/graha-athera-jogonalan-tipe-30.webp" alt="Rumah Subsidi" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-            <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-brand-gold text-xs px-3.5 py-1.5 rounded-full font-semibold uppercase tracking-wider">Mulai Rp 160 Jt</div>
-          </div>
-          <div class="p-8 flex flex-col flex-grow space-y-4">
-            <h3 class="text-xl font-display font-bold text-brand-dark">Rumah Subsidi</h3>
-            <p class="text-gray-600 font-light text-sm flex-grow">
-              Hunian nyaman subsidi pemerintah dengan fasilitas premium, one-gate system, dan cicilan tetap flat ringan mulai 1 jutaan per bulan.
-            </p>
-            <a href="proyek-subsidi-asri.html" class="inline-flex items-center text-brand-gold hover:text-brand-dark font-bold text-sm tracking-wider uppercase group-hover:translate-x-2 transition duration-300">
-              Lihat Proyek 
-              <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-            </a>
-          </div>
+
         </div>
 
-        <!-- Category 2: Rumah Komersil -->
+        <!-- CATEGORY 2: RUMAH KOMERSIL -->
         <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 flex flex-col h-full border border-gray-100">
           <div class="relative overflow-hidden aspect-[4/3]">
             <img src="assets/graha-athera-jogonalan-tipe-30.webp" alt="Rumah Komersil" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
             <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-brand-gold text-xs px-3.5 py-1.5 rounded-full font-semibold uppercase tracking-wider">Mulai Rp 160 Jt</div>
           </div>
-          <div class="p-8 flex flex-col flex-grow space-y-4">
+          <div class="p-6 sm:p-8 flex flex-col flex-grow space-y-4">
             <h3 class="text-xl font-display font-bold text-brand-dark">Rumah Komersil</h3>
             <p class="text-gray-600 font-light text-sm flex-grow">
               Mansion mewah modern tropical 2 lantai lengkap dengan teknologi smart home, club house eksklusif, dan lokasi di CBD kota.
@@ -355,13 +398,13 @@
           </div>
         </div>
 
-        <!-- Category 3: Tanah Kavling -->
+        <!-- CATEGORY 3: TANAH KAVLING -->
         <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 flex flex-col h-full border border-gray-100">
           <div class="relative overflow-hidden aspect-[4/3]">
             <img src="assets/graha-athera-jogonalan-tipe-30.webp" alt="Tanah Kavling" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
             <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-brand-gold text-xs px-3.5 py-1.5 rounded-full font-semibold uppercase tracking-wider">Mulai Rp 1.5 Jt / m²</div>
           </div>
-          <div class="p-8 flex flex-col flex-grow space-y-4">
+          <div class="p-6 sm:p-8 flex flex-col flex-grow space-y-4">
             <h3 class="text-xl font-display font-bold text-brand-dark">Tanah Kavling</h3>
             <p class="text-gray-600 font-light text-sm flex-grow">
               Tanah kavling matang siap bangun dengan infrastruktur lengkap seperti jalan beton, jaringan air bersih, dan listrik underground.
@@ -372,7 +415,9 @@
             </a>
           </div>
         </div>
+
       </div>
+
     </div>
   </section>
 
@@ -417,12 +462,9 @@
     </div>
   </section>
 
-<!-- Legalitas & Sertifikasi Section -->
+  <!-- Legalitas & Sertifikasi Section -->
   <section id="legalitas" class="py-16 sm:py-24 bg-white">
-    
-    <!-- CSS Khusus Memisahkan Tampilan Desktop vs Mobile & Mengunci Styling -->
     <style>
-      /* --- TAMPILAN DESKTOP (Layar >= 768px) --- */
       @media (min-width: 768px) {
         .legalitas-desktop-grid {
           display: grid !important;
@@ -435,7 +477,6 @@
         }
       }
 
-      /* --- TAMPILAN MOBILE (Layar < 768px) --- */
       @media (max-width: 767px) {
         .legalitas-desktop-grid {
           display: none !important;
@@ -445,7 +486,6 @@
         }
       }
 
-      /* Baris 4 Tombol Berikon Sejajar Horisontal di HP */
       .leg-mob-row {
         display: flex !important;
         flex-direction: row !important;
@@ -500,17 +540,14 @@
     </style>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Header Seksi -->
       <div class="text-center max-w-3xl mx-auto mb-10 sm:mb-16 space-y-2 sm:space-y-4">
         <span class="text-amber-600 font-display font-bold text-xs uppercase tracking-widest block">Legalitas Aman</span>
         <h2 class="text-2xl sm:text-4xl font-display font-bold text-brand-dark">Investasi Tenang Bersama Kami</h2>
         <p class="text-gray-600 font-light text-xs sm:text-base">Kami memastikan seluruh dokumen hukum clear and clean demi keamanan investasi properti masa depan Anda.</p>
       </div>
 
-      <!-- ================= 1. TAMPILAN DESKTOP (4 Kartu Lengkap) ================= -->
+      <!-- TAMPILAN DESKTOP -->
       <div class="legalitas-desktop-grid">
-        
         <div class="p-6 bg-brand-light rounded-2xl">
           <div class="w-16 h-16 bg-brand-dark/5 rounded-full flex items-center justify-center mx-auto mb-4 text-brand-gold">
             <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
@@ -542,15 +579,11 @@
           <h3 class="font-display font-bold text-lg text-brand-dark mb-1">Asosiasi Resmi</h3>
           <p class="text-xs text-gray-600 font-light">Kami terdaftar sebagai anggota resmi APERNAS (Asosiasi Pengembang Rumah Sederhana Sehat Nasional).</p>
         </div>
-
       </div>
 
-      <!-- ================= 2. TAMPILAN MOBILE (4 Tombol Berikon + Tanpa Background Detail) ================= -->
+      <!-- TAMPILAN MOBILE -->
       <div class="legalitas-mobile-wrapper space-y-4">
-        
-        <!-- Baris 4 Tombol Berikon Sejajar -->
         <div class="leg-mob-row">
-          
           <button id="leg-btn-0" onclick="manualSelectLegalitas(0)" class="leg-mob-btn active">
             <div class="leg-mob-icon">
               <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
@@ -578,64 +611,37 @@
             </div>
             <span class="leg-mob-text">Asosiasi</span>
           </button>
-
         </div>
 
-        <!-- Area Detail Informasi (Tanpa Background Box, Tanpa Logo Tambahan, Tanpa Silang) -->
         <div class="pt-2 px-2 text-center">
-          <h3 id="leg-detail-title" class="font-display font-bold text-base sm:text-lg text-brand-dark mb-1">
-            SHM Terjamin
-          </h3>
-          <p id="leg-detail-desc" class="text-xs text-gray-600 font-light leading-relaxed">
-            Sertifikat Hak Milik (SHM) sudah pecah per kavling dan siap balik nama.
-          </p>
+          <h3 id="leg-detail-title" class="font-display font-bold text-base sm:text-lg text-brand-dark mb-1">SHM Terjamin</h3>
+          <p id="leg-detail-desc" class="text-xs text-gray-600 font-light leading-relaxed">Sertifikat Hak Milik (SHM) sudah pecah per kavling dan siap balik nama.</p>
         </div>
-
       </div>
-
     </div>
   </section>
 
-  <!-- Script Bergilir Otomatis (Auto Rotator) -->
+  <!-- Script Legalitas Tab -->
   <script>
     let legCurrentIndex = 0;
     let legAutoTimer = null;
 
     const legData = [
-      {
-        title: 'SHM Terjamin',
-        desc: 'Sertifikat Hak Milik (SHM) sudah pecah per kavling dan siap balik nama.'
-      },
-      {
-        title: 'PBG/IMB Lengkap',
-        desc: 'Persetujuan Bangunan Gedung (PBG) resmi telah dikantongi di setiap unit.'
-      },
-      {
-        title: 'Bebas PPN',
-        desc: 'Khusus program rumah subsidi dibebaskan dari biaya Pajak Pertambahan Nilai.'
-      },
-      {
-        title: 'Asosiasi Resmi',
-        desc: 'Kami terdaftar sebagai anggota resmi APERNAS (Asosiasi Pengembang Rumah Sederhana Sehat Nasional).'
-      }
+      { title: 'SHM Terjamin', desc: 'Sertifikat Hak Milik (SHM) sudah pecah per kavling dan siap balik nama.' },
+      { title: 'PBG/IMB Lengkap', desc: 'Persetujuan Bangunan Gedung (PBG) resmi telah dikantongi di setiap unit.' },
+      { title: 'Bebas PPN', desc: 'Khusus program rumah subsidi dibebaskan dari biaya Pajak Pertambahan Nilai.' },
+      { title: 'Asosiasi Resmi', desc: 'Kami terdaftar sebagai anggota resmi APERNAS (Asosiasi Pengembang Rumah Sederhana Sehat Nasional).' }
     ];
 
     function selectLegalitasTab(index) {
       legCurrentIndex = index;
-
-      // Update status tombol aktif
       for (let i = 0; i < 4; i++) {
         const btn = document.getElementById('leg-btn-' + i);
         if (btn) {
-          if (i === index) {
-            btn.classList.add('active');
-          } else {
-            btn.classList.remove('active');
-          }
+          if (i === index) btn.classList.add('active');
+          else btn.classList.remove('active');
         }
       }
-
-      // Update teks judul dan deskripsi
       const titleEl = document.getElementById('leg-detail-title');
       const descEl = document.getElementById('leg-detail-desc');
       if (titleEl) titleEl.innerText = legData[index].title;
@@ -652,7 +658,7 @@
       legAutoTimer = setInterval(() => {
         const nextIndex = (legCurrentIndex + 1) % 4;
         selectLegalitasTab(nextIndex);
-      }, 3500); // Bergilir setiap 3.5 detik
+      }, 3500);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -660,12 +666,8 @@
     });
   </script>
 
-
-
-<!-- Seksi Sponsor & Partner (Ukuran Logo Dikunci Ketat) -->
+  <!-- Seksi Sponsor & Partner -->
   <section id="sponsors" class="mt-16 sm:mt-24 pt-20 sm:pt-28 pb-20 bg-brand-light border-t border-b border-gray-200/60 overflow-hidden relative">
-    
-    <!-- CSS Pengunci Ukuran Gambar Logo & Animasi -->
     <style>
       @keyframes autoMarquee {
         0% { transform: translateX(0%); }
@@ -681,7 +683,6 @@
         animation-play-state: paused !important;
       }
 
-      /* PENGUNCI UKURAN GAMBAR (TIDAK BISA MELEDAK LAGI) */
       .sponsor-logo-box {
         display: flex !important;
         align-items: center !important;
@@ -717,8 +718,6 @@
     </style>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Header Seksi -->
       <div class="text-center max-w-3xl mx-auto mb-14 space-y-4">
         <span class="text-amber-600 font-display font-bold text-xs uppercase tracking-widest block">Mitra & Pendukung</span>
         <h2 class="text-3xl sm:text-4xl font-display font-bold text-brand-dark">Apresiasi & Partner Kami</h2>
@@ -727,109 +726,43 @@
         </p>
       </div>
 
-      <!-- Area Slider (Overflow Hidden) -->
       <div class="relative w-full overflow-hidden py-4">
-        
-        <!-- Efek Gradient Blur Kiri & Kanan -->
         <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-20 sm:w-32 z-10 bg-gradient-to-r from-[#f7f6f2] via-[#f7f6f2]/80 to-transparent"></div>
         <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-32 z-10 bg-gradient-to-l from-[#f7f6f2] via-[#f7f6f2]/80 to-transparent"></div>
 
-        <!-- Track Animasi Utama -->
         <div class="marquee-wrapper-track">
-          
           <!-- KELOMPOK LOGO 1 -->
           <div class="flex items-center space-x-10 sm:space-x-16 pr-10 sm:pr-16 shrink-0">
-                        
-			<div class="sponsor-logo-box">
-              <img src="./assets/sponsor/meta-ads.webp" alt="Meta ADS">
-            </div>
-			
-            <div class="sponsor-logo-box">
-              <img src="./assets/sponsor/github.svg" alt="GitHub">
-            </div>
-
-            <div class="sponsor-logo-box">
-              <img src="./assets/sponsor/Google.svg" alt="Google">
-            </div>
-
-            <div class="sponsor-logo-box">
-              <img src="./assets/sponsor/duta-digital-agensi.webp" alt="Duta Digital Agensi">
-            </div>
-
-            <div class="sponsor-logo-box">
-              <img src="./assets/sponsor/disperakim-klaten.webp" alt="Disperakim Klaten">
-            </div>
-
-            <div class="sponsor-logo-box">
-              <img src="./assets/sponsor/atrbpn-klaten.webp" alt="ATR BPN Klaten">
-            </div>
-
-            <div class="sponsor-logo-box">
-              <img src="./assets/sponsor/bank-bri.webp" alt="Bank BRI">
-            </div>
-			
-
-			<div class="sponsor-logo-box">
-              <img src="./assets/sponsor/bank-btn.svg" alt="Bank BTN">
-            </div>
-
+            <div class="sponsor-logo-box"><img src="assets/sponsor/meta-ads.webp" alt="Meta ADS"></div>
+            <div class="sponsor-logo-box"><img src="assets/sponsor/github.svg" alt="GitHub"></div>
+            <div class="sponsor-logo-box"><img src="assets/sponsor/Google.svg" alt="Google"></div>
+            <div class="sponsor-logo-box"><img src="assets/sponsor/duta-digital-agensi.webp" alt="Duta Digital Agensi"></div>
+            <div class="sponsor-logo-box"><img src="assets/sponsor/disperakim-klaten.webp" alt="Disperakim Klaten"></div>
+            <div class="sponsor-logo-box"><img src="assets/sponsor/atrbpn-klaten.webp" alt="ATR BPN Klaten"></div>
+            <div class="sponsor-logo-box"><img src="assets/sponsor/bank-bri.webp" alt="Bank BRI"></div>
+            <div class="sponsor-logo-box"><img src="assets/sponsor/bank-btn.svg" alt="Bank BTN"></div>
           </div>
 
           <!-- KELOMPOK LOGO 2 (DUPLIKAT LOOP) -->
           <div class="flex items-center space-x-10 sm:space-x-16 pr-10 sm:pr-16 shrink-0" aria-hidden="true">
-            
-            <div class="sponsor-logo-box">
-              <img src="./assets/sponsor/meta-ads.webp" alt="Meta ADS">
-            </div>
-			
-            <div class="sponsor-logo-box">
-              <img src="./assets/sponsor/github.svg" alt="GitHub">
-            </div>
-
-            <div class="sponsor-logo-box">
-              <img src="./assets/sponsor/Google.svg" alt="Google">
-            </div>
-
-            <div class="sponsor-logo-box">
-              <img src="./assets/sponsor/duta-digital-agensi.webp" alt="Duta Digital Agensi">
-            </div>
-
-            <div class="sponsor-logo-box">
-              <img src="./assets/sponsor/disperakim-klaten.webp" alt="Disperakim Klaten">
-            </div>
-
-            <div class="sponsor-logo-box">
-              <img src="./assets/sponsor/atrbpn-klaten.webp" alt="ATR BPN Klaten">
-            </div>
-
-            <div class="sponsor-logo-box">
-              <img src="./assets/sponsor/bank-bri.webp" alt="Bank BRI">
-            </div>
-			
-          
-			<div class="sponsor-logo-box">
-              <img src="./assets/sponsor/bank-btn.svg" alt="Bank BTN">
-            </div>
-			
-
+            <div class="sponsor-logo-box"><img src="assets/sponsor/meta-ads.webp" alt="Meta ADS"></div>
+            <div class="sponsor-logo-box"><img src="assets/sponsor/github.svg" alt="GitHub"></div>
+            <div class="sponsor-logo-box"><img src="assets/sponsor/Google.svg" alt="Google"></div>
+            <div class="sponsor-logo-box"><img src="assets/sponsor/duta-digital-agensi.webp" alt="Duta Digital Agensi"></div>
+            <div class="sponsor-logo-box"><img src="assets/sponsor/disperakim-klaten.webp" alt="Disperakim Klaten"></div>
+            <div class="sponsor-logo-box"><img src="assets/sponsor/atrbpn-klaten.webp" alt="ATR BPN Klaten"></div>
+            <div class="sponsor-logo-box"><img src="assets/sponsor/bank-bri.webp" alt="Bank BRI"></div>
+            <div class="sponsor-logo-box"><img src="assets/sponsor/bank-btn.svg" alt="Bank BTN"></div>
           </div>
-
         </div>
       </div>
-
     </div>
   </section>
 
-
-
-
-
-	
   <!-- Hubungi Kami / Kontak Sales -->
   <section id="contact" class="py-24 bg-brand-light">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <!-- Column 1: Info & Maps -->
         <div class="space-y-8">
           <div>
             <span class="text-amber-600 font-display font-bold text-xs uppercase tracking-widest block mb-2">Hubungi Kami</span>
@@ -869,7 +802,6 @@
             </div>
           </div>
 
-          <!-- Google Maps Embed and Deep Link -->
           <div class="rounded-xl overflow-hidden shadow-lg border border-gray-200">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.569389253457!2d110.630962!3d-7.688212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwNDEnMTcuNiJTIDExMMKwMzcnNTEuNSJF!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid" 
@@ -890,7 +822,6 @@
           </div>
         </div>
 
-        <!-- Column 2: Contact Form -->
         <div class="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 space-y-6">
           <h2 class="text-2xl font-display font-bold text-brand-dark">Kirim Pesan Minat</h2>
           <p class="text-xs text-gray-600 font-light">Isi data Anda di bawah ini, tim sales eksekutif kami akan segera menghubungi Anda dalam waktu 1x24 jam.</p>
@@ -929,23 +860,12 @@
     </div>
   </section>
 
-	
   <!-- Footer -->
   <footer class="bg-brand-dark text-white pt-16 pb-8 border-t border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-      <!-- Col 1: Brand Info -->
       <div class="space-y-4">
         <a href="https://athro.biz.id/" class="flex items-center space-x-2">
-                    <img 
-            src="assets/logo.webp" 
-            alt="Logo Athera Properti Klaten" 
-            class="h-8 w-auto" 
-            width="56" 
-            height="56"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          >
+          <img src="assets/logo.webp" alt="Logo Athera Properti Klaten" class="h-8 w-auto" width="56" height="56" loading="eager" fetchpriority="high" decoding="async">
           <span class="text-xl font-display font-bold tracking-wider">Athera Properti Klaten</span>
         </a>
         <p class="text-xs text-gray-400 font-light leading-relaxed">
@@ -953,7 +873,6 @@
         </p>
       </div>
 
-      <!-- Col 2: Kategori Proyek -->
       <div class="space-y-4">
         <h3 class="font-display font-bold text-sm text-brand-gold uppercase tracking-wider">Proyek Perumahan Subsidi</h3>
         <ul class="space-y-2 text-xs text-gray-400 font-light">
@@ -963,7 +882,6 @@
         </ul>
       </div>
 
-      <!-- Col 3: Tautan Bantuan -->
       <div class="space-y-4">
         <h3 class="font-display font-bold text-sm text-brand-gold uppercase tracking-wider">Tautan Bantuan</h3>
         <ul class="space-y-2 text-xs text-gray-400 font-light">
@@ -973,7 +891,6 @@
         </ul>
       </div>
 
-      <!-- Col 4: Jam Operasional -->
       <div class="space-y-4">
         <h3 class="font-display font-bold text-sm text-brand-gold uppercase tracking-wider">Jam Operasional</h3>
         <p class="text-xs text-gray-400 font-light leading-relaxed">
@@ -983,10 +900,6 @@
       </div>
     </div>
 
-
-
-
-    <!-- Bottom Copyright -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/5 pt-8 text-center text-[10px] text-gray-600 font-light flex flex-col sm:flex-row items-center justify-between">
       <p>© 2026 Athera Properti Klaten. All Rights Reserved. Hak Cipta Dilindungi Undang-Undang.</p>
       <div class="flex space-x-4 mt-2 sm:mt-0">
@@ -998,14 +911,40 @@
 
   <!-- Floating WhatsApp Widget -->
   <a id="floating-wa-widget" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl transition-[background-color] duration-300 flex items-center group cursor-pointer" aria-label="Hubungi Sales via WhatsApp">
-  <!-- (Logo SVG Biarkan Saja Sama) -->
-  <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
       <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.03-5.115-2.908-6.995-1.878-1.88-4.357-2.914-6.997-2.915-5.442 0-9.867 4.42-9.871 9.866-.001 1.7.453 3.361 1.314 4.816L1.93 22.146l4.717-1.238zM17.43 14.86c-.296-.149-1.755-.867-2.027-.966-.271-.1-.469-.149-.667.149-.198.297-.768.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.667-1.61-.915-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.568-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-  </svg>
-  <span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-3 transition-[max-width,margin] duration-500 ease-in-out whitespace-nowrap text-sm font-semibold tracking-wider uppercase">Tanya Sales</span>
-    <!-- Dynamic WhatsApp Target kavling label -->
+    </svg>
+    <span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-3 transition-[max-width,margin] duration-500 ease-in-out whitespace-nowrap text-sm font-semibold tracking-wider uppercase">Tanya Sales</span>
     <div id="wa-widget-tooltip" class="absolute right-0 bottom-full mb-3 bg-brand-dark text-brand-gold text-[10px] px-3 py-1.5 rounded-lg shadow-xl font-medium hidden whitespace-nowrap uppercase tracking-wider border border-white/10"></div>
   </a>
+
+  <!-- Swiper JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Inisialisasi Swiper Slider Kustom -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      if (typeof Swiper !== 'undefined') {
+        new Swiper('.productSwiper', {
+          loop: true,
+          autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: '.product-swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.card-nav-next',
+            prevEl: '.card-nav-prev',
+          },
+          observer: true,
+          observeParents: true,
+        });
+      }
+    });
+  </script>
 
   <!-- Global scripts -->
   <script src="js/app.js"></script>
