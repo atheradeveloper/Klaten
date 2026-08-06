@@ -142,54 +142,47 @@
     /* Styling Tombol Navigasi Panah Geser (Desktop & Mobile) */
     .card-nav-btn {
       position: absolute;
-      /* Memindahkan posisi ke batas bawah gambar */
-      top: auto;
-      bottom: -18px; 
+      top: 32%;
+      transform: translateY(-50%);
       width: 36px;
       height: 36px;
       background-color: #ffffff;
       border-radius: 50%;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
       display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 40; /* Pastikan di atas elemen lain */
+      z-index: 30;
       cursor: pointer;
-      border: 1px solid #eee;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid #e5e7eb;
+      transition: all 0.2s ease;
     }
 
-    /* Mengatur ukuran icon panah swiper */
     .card-nav-btn::after {
-      font-size: 14px !important;
+      font-size: 13px !important;
       font-weight: bold;
       color: #1e2d24;
     }
 
-    /* Efek Hover: Lebih Interaktif */
     .card-nav-btn:hover {
-      background-color: #664D03; /* Warna Gold Brand */
-      border-color: #664D03;
-      transform: scale(1.1);
-      box-shadow: 0 6px 15px rgba(102, 77, 3, 0.3);
+      background-color: #1e2d24;
+      border-color: #1e2d24;
     }
 
     .card-nav-btn:hover::after {
       color: #ffffff;
     }
 
-    /* Posisi Spesifik Kiri & Kanan */
     .card-nav-next {
-      right: 15px;
+      right: 10px;
     }
 
     .card-nav-prev {
-      left: 15px;
+      left: 10px;
     }
 
-    /* Menghilangkan pagination agar mirip seperti di gambar (opsional) */
-    .product-swiper-pagination {
-      display: none; 
+    .swiper-pagination-bullet-active {
+      background: #664D03 !important;
     }
   </style>
 </head>
