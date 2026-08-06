@@ -287,6 +287,30 @@
 
   <!-- Product Categories Section -->
   <section id="products" class="py-16 sm:py-24 bg-brand-light">
+    
+    <!-- CSS Pemisah Desktop vs Mobile Khusus Seksi Produk -->
+    <style>
+      @media (min-width: 768px) {
+        .products-desktop-grid {
+          display: grid !important;
+          grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+          gap: 2rem !important;
+        }
+        .products-mobile-wrapper {
+          display: none !important;
+        }
+      }
+
+      @media (max-width: 767px) {
+        .products-desktop-grid {
+          display: none !important;
+        }
+        .products-mobile-wrapper {
+          display: block !important;
+        }
+      }
+    </style>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-4">
         <span class="text-amber-600 font-display font-bold text-xs uppercase tracking-widest block">Kategori Proyek</span>
@@ -294,8 +318,8 @@
         <p class="text-gray-600 font-light">Kami menawarkan berbagai pilihan properti yang dirancang khusus untuk memenuhi gaya hidup dan anggaran finansial Anda.</p>
       </div>
 
-      <!-- ================= 1. TAMPILAN DESKTOP (Layout Grid Standar) ================= -->
-      <div class="hidden md:grid md:grid-cols-3 gap-8">
+      <!-- ================= 1. TAMPILAN DESKTOP (3 Kartu Grid) ================= -->
+      <div class="products-desktop-grid">
         <!-- Category 1: Rumah Subsidi Jogonalan -->
         <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 flex flex-col h-full border border-gray-100">
           <div class="relative overflow-hidden aspect-[4/3]">
@@ -303,7 +327,7 @@
             <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-brand-gold text-xs px-3.5 py-1.5 rounded-full font-semibold uppercase tracking-wider">Mulai Rp 160 Jt</div>
           </div>
           <div class="p-8 flex flex-col flex-grow space-y-4">
-            <h3 class="text-xl font-display font-bold text-brand-dark">Rumah Subsidi (Jogonalan)</h3>
+            <h3 class="text-xl font-display font-bold text-brand-dark">Rumah Subsidi</h3>
             <p class="text-gray-600 font-light text-sm flex-grow">
               Hunian nyaman subsidi pemerintah dengan fasilitas premium, one-gate system, dan cicilan tetap flat ringan mulai 1 jutaan per bulan.
             </p>
@@ -352,8 +376,8 @@
       </div>
 
 
-      <!-- ================= 2. TAMPILAN MOBILE (Grouping Carousel + Multi-Item Badge + Auto Scroll) ================= -->
-      <div class="block md:hidden space-y-8">
+      <!-- ================= 2. TAMPILAN MOBILE (Grouping Carousel + Auto Scroll) ================= -->
+      <div class="products-mobile-wrapper space-y-8">
         
         <!-- GROUP 1: RUMAH SUBSIDI (Di-group jadi 1 Card Carousel dengan Autoplay & Indikator Navigasi) -->
         <div class="space-y-2">
@@ -422,7 +446,7 @@
               <div class="swiper-pagination product-swiper-pagination" style="position: relative; margin-top: 10px;"></div>
             </div>
 
-            <!-- Tombol Navigasi Panah Lingkaran Putih Melayang (Sesuai Gambar 2) -->
+            <!-- Tombol Navigasi Panah Lingkaran Putih Melayang -->
             <div class="swiper-button-next product-nav-btn product-nav-next"></div>
             <div class="swiper-button-prev product-nav-btn product-nav-prev"></div>
           </div>
