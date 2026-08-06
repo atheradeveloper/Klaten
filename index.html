@@ -128,61 +128,60 @@
       --brand-light: #f7f6f2;
     }
 
-    /* Pengunci Lebar Grid */
+    /* Pengunci Lebar Swiper dalam CSS Grid */
     #products .grid > div {
       min-width: 0;
     }
 
-    /* POSISI TOMBOL PANAH NAVIGASI DI SUDUT BAWAH GAMBAR (SESUAI FOTO) */
+    .product-card-swiper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Styling Tombol Navigasi Panah Geser (Desktop & Mobile) */
     .card-nav-btn {
-      position: absolute !important;
-      bottom: 12px !important; /* Dipindahkan ke bagian Bawah Gambar */
-      top: auto !important;
-      transform: none !important;
-      width: 34px !important;
-      height: 34px !important;
-      background-color: #ffffff !important;
-      border-radius: 50% !important;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22) !important;
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      z-index: 40 !important;
-      cursor: pointer !important;
-      border: 1px solid #e2e8f0 !important;
-      transition: all 0.2s ease !important;
-      opacity: 0.95;
+      position: absolute;
+      top: 32%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 30;
+      cursor: pointer;
+      border: 1px solid #e5e7eb;
+      transition: all 0.2s ease;
+    }
+
+    .card-nav-btn::after {
+      font-size: 13px !important;
+      font-weight: bold;
+      color: #1e2d24;
     }
 
     .card-nav-btn:hover {
-      opacity: 1;
-      background-color: #1e2d24 !important;
-      border-color: #1e2d24 !important;
+      background-color: #1e2d24;
+      border-color: #1e2d24;
     }
 
-    .card-nav-btn:hover svg {
-      color: #ffffff !important;
-    }
-
-    .card-nav-prev {
-      left: 12px !important; /* Sudut Bawah Kiri */
+    .card-nav-btn:hover::after {
+      color: #ffffff;
     }
 
     .card-nav-next {
-      right: 12px !important; /* Sudut Bawah Kanan */
+      right: 10px;
     }
 
-    /* Titik Indikator di Tengah Bawah Antara Dua Tombol */
-    .product-swiper-pagination {
-      position: absolute !important;
-      bottom: 16px !important;
-      left: 50% !important;
-      transform: translateX(-50%) !important;
-      width: auto !important;
-      z-index: 30 !important;
+    .card-nav-prev {
+      left: 10px;
     }
 
-    .product-swiper-pagination .swiper-pagination-bullet-active {
+    .swiper-pagination-bullet-active {
       background: #664D03 !important;
     }
   </style>
@@ -213,7 +212,7 @@
 
         <!-- Mobile Menu Hamburger -->
         <div class="md:hidden flex items-center">
-          <button id="menu-btn" class="text-white hover:text-brand-gold focus:outline-none" aria-label="Toggle Menu">
+          <button id="menu-btn" class="text-white hover:text-brand-gold focus:outline-none p-3 min-w-[48px] min-h-[48px] flex items-center justify-center" aria-label="Toggle Menu">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
@@ -234,6 +233,9 @@
       <a href="#contact" class="block bg-brand-gold text-brand-dark text-center py-3 rounded-full hover:bg-white hover:text-brand-dark transition font-semibold text-sm">Konsultasi Gratis</a>
     </div>
   </header>
+
+  <!-- BUKA TAG MAIN DI SINI -->
+  <main id="main-content">
 
   <!-- Hero Section -->
   <section id="hero" class="relative min-h-screen flex items-center justify-center bg-brand-dark text-white pt-20">
@@ -314,70 +316,68 @@
       <!-- GRID UTAMA PRODUK (3 Kolom di Desktop, 1 Kolom di Mobile) -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         
-        <!-- CATEGORY 1: RUMAH SUBSIDI (Panah Navigasi Berada di Bawah Gambar) -->
+        <!-- CATEGORY 1: RUMAH SUBSIDI (Memiliki Slider Carousel Aktif di Desktop & Mobile) -->
         <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 border border-gray-100 flex flex-col h-full relative group">
-          
-          <!-- Area Gambar & Slider -->
-          <div class="relative overflow-hidden aspect-[4/3] w-full">
-            
-            <div class="swiper productSwiper w-full h-full">
-              <div class="swiper-wrapper">
-                
-                <!-- Slide 1: Jogonalan -->
-                <div class="swiper-slide relative w-full h-full">
+          <div class="swiper productSwiper product-card-swiper flex-grow">
+            <div class="swiper-wrapper">
+              
+              <!-- Slide 1: Jogonalan -->
+              <div class="swiper-slide flex flex-col h-full">
+                <div class="relative overflow-hidden aspect-[4/3]">
                   <img src="assets/graha-athera-jogonalan-tipe-30.webp" alt="Rumah Subsidi Jogonalan" class="w-full h-full object-cover">
                   <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-brand-gold text-xs px-3.5 py-1.5 rounded-full font-semibold uppercase tracking-wider">Mulai Rp 160 Jt</div>
                   <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded-md shadow-md text-[11px] font-bold text-brand-dark border border-gray-200">
                     ATHERA JOGONALAN
                   </div>
                 </div>
+                <div class="p-6 sm:p-8 flex flex-col flex-grow space-y-4">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-display font-bold text-brand-dark">Rumah Subsidi</h3>
+                    <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-full">🔥 2 Proyek (Geser)</span>
+                  </div>
+                  <p class="text-gray-600 font-light text-sm flex-grow">
+                    Hunian nyaman subsidi pemerintah di Jogonalan dengan fasilitas premium, one-gate system, dan cicilan tetap flat ringan mulai 1 jutaan per bulan.
+                  </p>
+                  <a href="proyek-subsidi-asri.html" class="inline-flex items-center text-brand-gold hover:text-brand-dark font-bold text-sm tracking-wider uppercase transition duration-300">
+                    Lihat Proyek 
+                    <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  </a>
+                </div>
+              </div>
 
-                <!-- Slide 2: Bayat -->
-                <div class="swiper-slide relative w-full h-full">
+              <!-- Slide 2: Bayat -->
+              <div class="swiper-slide flex flex-col h-full">
+                <div class="relative overflow-hidden aspect-[4/3]">
                   <img src="assets/graha-athera-jogonalan-tipe-30.webp" alt="Rumah Subsidi Bayat" class="w-full h-full object-cover">
                   <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-brand-gold text-xs px-3.5 py-1.5 rounded-full font-semibold uppercase tracking-wider">Mulai Rp 160 Jt</div>
                   <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded-md shadow-md text-[11px] font-bold text-brand-dark border border-gray-200">
                     ATHERA BAYAT
                   </div>
                 </div>
-
+                <div class="p-6 sm:p-8 flex flex-col flex-grow space-y-4">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-display font-bold text-brand-dark">Rumah Subsidi</h3>
+                    <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-full">🔥 2 Proyek (Geser)</span>
+                  </div>
+                  <p class="text-gray-600 font-light text-sm flex-grow">
+                    Hunian asri subsidi pemerintah di Bayat lokasi strategis dekat pusat kota, bebas banjir, dengan lingkungan tertata asri.
+                  </p>
+                  <a href="proyek-subsidi-asri.html" class="inline-flex items-center text-brand-gold hover:text-brand-dark font-bold text-sm tracking-wider uppercase transition duration-300">
+                    Lihat Proyek 
+                    <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  </a>
+                </div>
               </div>
 
-              <!-- Pagination Dots di Tengah Bawah Gambar -->
-              <div class="swiper-pagination product-swiper-pagination"></div>
             </div>
 
-            <!-- Tombol Panah Navigasi SVG di Sudut Bawah Kanan & Kiri (Sesuai Foto) -->
-            <button type="button" class="card-nav-btn card-nav-prev" aria-label="Proyek Sebelumnya">
-              <svg class="w-4 h-4 text-brand-dark transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
-              </svg>
-            </button>
-            <button type="button" class="card-nav-btn card-nav-next" aria-label="Proyek Selanjutnya">
-              <svg class="w-4 h-4 text-brand-dark transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+            <!-- Tombol Navigasi Panah Geser (Bisa diklik di Desktop & Mobile) -->
+            <div class="swiper-button-next card-nav-btn card-nav-next"></div>
+            <div class="swiper-button-prev card-nav-btn card-nav-prev"></div>
 
+            <!-- Pagination Dots -->
+            <div class="swiper-pagination product-swiper-pagination" style="position: relative; margin-bottom: 12px;"></div>
           </div>
-
-          <!-- Body Kartu -->
-          <div class="p-6 sm:p-8 flex flex-col flex-grow space-y-4">
-            <div class="flex items-center justify-between">
-              <h3 class="text-xl font-display font-bold text-brand-dark">Rumah Subsidi</h3>
-              <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
-                🔥 2 Proyek (Geser)
-              </span>
-            </div>
-            <p class="text-gray-600 font-light text-sm flex-grow">
-              Hunian nyaman subsidi pemerintah dengan fasilitas premium, one-gate system, dan cicilan tetap flat ringan mulai 1 jutaan per bulan.
-            </p>
-            <a href="proyek-subsidi-asri.html" class="inline-flex items-center text-brand-gold hover:text-brand-dark font-bold text-sm tracking-wider uppercase transition duration-300">
-              Lihat Proyek 
-              <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-            </a>
-          </div>
-
         </div>
 
         <!-- CATEGORY 2: RUMAH KOMERSIL -->
@@ -486,18 +486,20 @@
         }
       }
 
+      /* Baris 4 Tombol Berikon Sejajar Horisontal di HP */
       .leg-mob-row {
         display: flex !important;
         flex-direction: row !important;
         flex-wrap: nowrap !important;
-        gap: 6px !important;
+        gap: 8px !important; /* Ditingkatkan dari 6px agar ada jarak cukup */
         width: 100% !important;
       }
 
       .leg-mob-btn {
         flex: 1 1 0% !important;
-        min-width: 0 !important;
-        padding: 10px 4px !important;
+        min-width: 48px !important;  /* Tambahkan batas minimal lebar */
+        min-height: 48px !important; /* Standar W3C/Google untuk Touch Target */
+        padding: 8px 4px !important;
         background-color: #ffffff !important;
         color: #1e2d24 !important;
         border: 1px solid #e5e7eb !important;
@@ -510,6 +512,10 @@
         cursor: pointer !important;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
       }
+	  
+	  
+	  
+	  
 
       .leg-mob-btn.active {
         background-color: #1e2d24 !important;
@@ -860,6 +866,9 @@
     </div>
   </section>
 
+  <!-- TUTUP TAG MAIN DI SINI (SEBELUM FOOTER) -->
+  </main>
+
   <!-- Footer -->
   <footer class="bg-brand-dark text-white pt-16 pb-8 border-t border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
@@ -902,10 +911,10 @@
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/5 pt-8 text-center text-[10px] text-gray-600 font-light flex flex-col sm:flex-row items-center justify-between">
       <p>© 2026 Athera Properti Klaten. All Rights Reserved. Hak Cipta Dilindungi Undang-Undang.</p>
-      <div class="flex space-x-4 mt-2 sm:mt-0">
-        <a href="#legalitas" class="hover:text-brand-gold transition">Syarat & Ketentuan</a>
-        <a href="#legalitas" class="hover:text-brand-gold transition">Kebijakan Privasi</a>
-      </div>
+<div class="flex items-center space-x-2 mt-3 sm:mt-0">
+  <a href="#legalitas" class="py-2 px-3 text-xs hover:text-brand-gold transition min-h-[44px] flex items-center">Syarat & Ketentuan</a>
+  <a href="#legalitas" class="py-2 px-3 text-xs hover:text-brand-gold transition min-h-[44px] flex items-center">Kebijakan Privasi</a>
+</div>
     </div>
   </footer>
 
@@ -921,28 +930,24 @@
   <!-- Swiper JS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <!-- Inisialisasi Swiper Slider Kustom -->
+  <!-- Inisialisasi Carousel Proyek (Desktop & Mobile) -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      if (typeof Swiper !== 'undefined') {
-        new Swiper('.productSwiper', {
-          loop: true,
-          autoplay: {
-            delay: 3500,
-            disableOnInteraction: false,
-          },
-          pagination: {
-            el: '.product-swiper-pagination',
-            clickable: true,
-          },
-          navigation: {
-            nextEl: '.card-nav-next',
-            prevEl: '.card-nav-prev',
-          },
-          observer: true,
-          observeParents: true,
-        });
-      }
+      const productSwiper = new Swiper('.productSwiper', {
+        loop: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.product-swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.card-nav-next',
+          prevEl: '.card-nav-prev',
+        },
+      });
     });
   </script>
 
