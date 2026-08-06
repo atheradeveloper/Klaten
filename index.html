@@ -19,7 +19,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://atheradeveloper.github.io/Land/">
 
-  <!-- Swiper CSS (Diperlukan untuk Carousel Mobile) -->
+  <!-- Swiper CSS (Diperlukan untuk Carousel Desktop & Mobile) -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <!-- Pre-compiled Tailwind CSS & Custom CSS -->
@@ -128,41 +128,57 @@
       --brand-light: #f7f6f2;
     }
 
-    /* Custom Swiper Mobile Styling untuk Seksi Produk */
-    .mobile-product-swiper-container {
-      position: relative;
+    /* Pengunci Lebar Swiper dalam CSS Grid */
+    #products .grid > div {
+      min-width: 0;
     }
 
-    .product-nav-btn {
+    .product-card-swiper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Styling Tombol Navigasi Panah Geser (Desktop & Mobile) */
+    .card-nav-btn {
       position: absolute;
-      top: 45%;
+      top: 32%;
       transform: translateY(-50%);
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
       background-color: #ffffff;
       border-radius: 50%;
       box-shadow: 0 4px 12px rgba(0,0,0,0.18);
       display: flex;
       justify-content: center;
       align-items: center;
-      z-index: 20;
+      z-index: 30;
       cursor: pointer;
       border: 1px solid #e5e7eb;
       transition: all 0.2s ease;
     }
 
-    .product-nav-btn::after {
+    .card-nav-btn::after {
       font-size: 13px !important;
       font-weight: bold;
       color: #1e2d24;
     }
 
-    .product-nav-next {
-      right: -12px;
+    .card-nav-btn:hover {
+      background-color: #1e2d24;
+      border-color: #1e2d24;
     }
 
-    .product-nav-prev {
-      left: -12px;
+    .card-nav-btn:hover::after {
+      color: #ffffff;
+    }
+
+    .card-nav-next {
+      right: 10px;
+    }
+
+    .card-nav-prev {
+      left: 10px;
     }
 
     .swiper-pagination-bullet-active {
@@ -287,30 +303,6 @@
 
   <!-- Product Categories Section -->
   <section id="products" class="py-16 sm:py-24 bg-brand-light">
-    
-    <!-- CSS Pemisah Desktop vs Mobile Khusus Seksi Produk -->
-    <style>
-      @media (min-width: 768px) {
-        .products-desktop-grid {
-          display: grid !important;
-          grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-          gap: 2rem !important;
-        }
-        .products-mobile-wrapper {
-          display: none !important;
-        }
-      }
-
-      @media (max-width: 767px) {
-        .products-desktop-grid {
-          display: none !important;
-        }
-        .products-mobile-wrapper {
-          display: block !important;
-        }
-      }
-    </style>
-
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-4">
         <span class="text-amber-600 font-display font-bold text-xs uppercase tracking-widest block">Kategori Proyek</span>
@@ -318,33 +310,80 @@
         <p class="text-gray-600 font-light">Kami menawarkan berbagai pilihan properti yang dirancang khusus untuk memenuhi gaya hidup dan anggaran finansial Anda.</p>
       </div>
 
-      <!-- ================= 1. TAMPILAN DESKTOP (3 Kartu Grid) ================= -->
-      <div class="products-desktop-grid">
-        <!-- Category 1: Rumah Subsidi Jogonalan -->
-        <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 flex flex-col h-full border border-gray-100">
-          <div class="relative overflow-hidden aspect-[4/3]">
-            <img src="assets/graha-athera-jogonalan-tipe-30.webp" alt="Rumah Subsidi Jogonalan" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
-            <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-brand-gold text-xs px-3.5 py-1.5 rounded-full font-semibold uppercase tracking-wider">Mulai Rp 160 Jt</div>
-          </div>
-          <div class="p-8 flex flex-col flex-grow space-y-4">
-            <h3 class="text-xl font-display font-bold text-brand-dark">Rumah Subsidi</h3>
-            <p class="text-gray-600 font-light text-sm flex-grow">
-              Hunian nyaman subsidi pemerintah dengan fasilitas premium, one-gate system, dan cicilan tetap flat ringan mulai 1 jutaan per bulan.
-            </p>
-            <a href="proyek-subsidi-asri.html" class="inline-flex items-center text-brand-gold hover:text-brand-dark font-bold text-sm tracking-wider uppercase group-hover:translate-x-2 transition duration-300">
-              Lihat Proyek 
-              <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-            </a>
+      <!-- GRID UTAMA PRODUK (3 Kolom di Desktop, 1 Kolom di Mobile) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- CATEGORY 1: RUMAH SUBSIDI (Memiliki Slider Carousel Aktif di Desktop & Mobile) -->
+        <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 border border-gray-100 flex flex-col h-full relative group">
+          <div class="swiper productSwiper product-card-swiper flex-grow">
+            <div class="swiper-wrapper">
+              
+              <!-- Slide 1: Jogonalan -->
+              <div class="swiper-slide flex flex-col h-full">
+                <div class="relative overflow-hidden aspect-[4/3]">
+                  <img src="assets/graha-athera-jogonalan-tipe-30.webp" alt="Rumah Subsidi Jogonalan" class="w-full h-full object-cover">
+                  <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-brand-gold text-xs px-3.5 py-1.5 rounded-full font-semibold uppercase tracking-wider">Mulai Rp 160 Jt</div>
+                  <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded-md shadow-md text-[11px] font-bold text-brand-dark border border-gray-200">
+                    ATHERA JOGONALAN
+                  </div>
+                </div>
+                <div class="p-6 sm:p-8 flex flex-col flex-grow space-y-4">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-display font-bold text-brand-dark">Rumah Subsidi</h3>
+                    <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-full">🔥 2 Proyek (Geser)</span>
+                  </div>
+                  <p class="text-gray-600 font-light text-sm flex-grow">
+                    Hunian nyaman subsidi pemerintah di Jogonalan dengan fasilitas premium, one-gate system, dan cicilan tetap flat ringan mulai 1 jutaan per bulan.
+                  </p>
+                  <a href="proyek-subsidi-asri.html" class="inline-flex items-center text-brand-gold hover:text-brand-dark font-bold text-sm tracking-wider uppercase transition duration-300">
+                    Lihat Proyek 
+                    <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Slide 2: Bayat -->
+              <div class="swiper-slide flex flex-col h-full">
+                <div class="relative overflow-hidden aspect-[4/3]">
+                  <img src="assets/graha-athera-jogonalan-tipe-30.webp" alt="Rumah Subsidi Bayat" class="w-full h-full object-cover">
+                  <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-brand-gold text-xs px-3.5 py-1.5 rounded-full font-semibold uppercase tracking-wider">Mulai Rp 160 Jt</div>
+                  <div class="absolute top-4 right-4 bg-white/95 backdrop-blur-md px-3 py-1 rounded-md shadow-md text-[11px] font-bold text-brand-dark border border-gray-200">
+                    ATHERA BAYAT
+                  </div>
+                </div>
+                <div class="p-6 sm:p-8 flex flex-col flex-grow space-y-4">
+                  <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-display font-bold text-brand-dark">Rumah Subsidi</h3>
+                    <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-full">🔥 2 Proyek (Geser)</span>
+                  </div>
+                  <p class="text-gray-600 font-light text-sm flex-grow">
+                    Hunian asri subsidi pemerintah di Bayat lokasi strategis dekat pusat kota, bebas banjir, dengan lingkungan tertata asri.
+                  </p>
+                  <a href="proyek-subsidi-asri.html" class="inline-flex items-center text-brand-gold hover:text-brand-dark font-bold text-sm tracking-wider uppercase transition duration-300">
+                    Lihat Proyek 
+                    <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Tombol Navigasi Panah Geser (Bisa diklik di Desktop & Mobile) -->
+            <div class="swiper-button-next card-nav-btn card-nav-next"></div>
+            <div class="swiper-button-prev card-nav-btn card-nav-prev"></div>
+
+            <!-- Pagination Dots -->
+            <div class="swiper-pagination product-swiper-pagination" style="position: relative; margin-bottom: 12px;"></div>
           </div>
         </div>
 
-        <!-- Category 2: Rumah Komersil -->
+        <!-- CATEGORY 2: RUMAH KOMERSIL -->
         <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 flex flex-col h-full border border-gray-100">
           <div class="relative overflow-hidden aspect-[4/3]">
             <img src="assets/graha-athera-jogonalan-tipe-30.webp" alt="Rumah Komersil" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
             <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-brand-gold text-xs px-3.5 py-1.5 rounded-full font-semibold uppercase tracking-wider">Mulai Rp 160 Jt</div>
           </div>
-          <div class="p-8 flex flex-col flex-grow space-y-4">
+          <div class="p-6 sm:p-8 flex flex-col flex-grow space-y-4">
             <h3 class="text-xl font-display font-bold text-brand-dark">Rumah Komersil</h3>
             <p class="text-gray-600 font-light text-sm flex-grow">
               Mansion mewah modern tropical 2 lantai lengkap dengan teknologi smart home, club house eksklusif, dan lokasi di CBD kota.
@@ -356,13 +395,13 @@
           </div>
         </div>
 
-        <!-- Category 3: Tanah Kavling -->
+        <!-- CATEGORY 3: TANAH KAVLING -->
         <div class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition duration-500 flex flex-col h-full border border-gray-100">
           <div class="relative overflow-hidden aspect-[4/3]">
             <img src="assets/graha-athera-jogonalan-tipe-30.webp" alt="Tanah Kavling" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
             <div class="absolute top-4 left-4 bg-brand-dark/80 backdrop-blur-sm text-brand-gold text-xs px-3.5 py-1.5 rounded-full font-semibold uppercase tracking-wider">Mulai Rp 1.5 Jt / m²</div>
           </div>
-          <div class="p-8 flex flex-col flex-grow space-y-4">
+          <div class="p-6 sm:p-8 flex flex-col flex-grow space-y-4">
             <h3 class="text-xl font-display font-bold text-brand-dark">Tanah Kavling</h3>
             <p class="text-gray-600 font-light text-sm flex-grow">
               Tanah kavling matang siap bangun dengan infrastruktur lengkap seperti jalan beton, jaringan air bersih, dan listrik underground.
@@ -371,126 +410,6 @@
               Lihat Proyek 
               <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
             </a>
-          </div>
-        </div>
-      </div>
-
-
-      <!-- ================= 2. TAMPILAN MOBILE (Grouping Carousel + Auto Scroll) ================= -->
-      <div class="products-mobile-wrapper space-y-8">
-        
-        <!-- GROUP 1: RUMAH SUBSIDI (Di-group jadi 1 Card Carousel dengan Autoplay & Indikator Navigasi) -->
-        <div class="space-y-2">
-          <div class="flex items-center justify-between">
-            <span class="text-xs font-bold text-brand-dark uppercase tracking-wider">Rumah Subsidi</span>
-            <span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm">
-              🔥 2 Proyek (Geser ›)
-            </span>
-          </div>
-
-          <div class="mobile-product-swiper-container">
-            <div class="swiper productSwiper">
-              <div class="swiper-wrapper">
-                
-                <!-- Slide 1 (Proyek Jogonalan) -->
-                <div class="swiper-slide">
-                  <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
-                    <div class="relative overflow-hidden aspect-[4/3]">
-                      <img src="assets/graha-athera-jogonalan-tipe-30.webp" alt="Rumah Subsidi Jogonalan" class="w-full h-full object-cover">
-                      <div class="absolute top-3 left-3 bg-brand-dark/80 backdrop-blur-sm text-brand-gold text-[10px] px-3 py-1 rounded-full font-semibold uppercase tracking-wider">Mulai Rp 160 Jt</div>
-                      <!-- Brand Logo Badge Overlay -->
-                      <div class="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-md shadow-md text-[10px] font-bold text-brand-dark border border-gray-200">
-                        ATHERA JOGONALAN
-                      </div>
-                    </div>
-                    <div class="p-6 space-y-3">
-                      <h3 class="text-lg font-display font-bold text-brand-dark">Graha Athera Jogonalan</h3>
-                      <p class="text-gray-600 font-light text-xs leading-relaxed">
-                        Hunian nyaman subsidi pemerintah dengan fasilitas premium, one-gate system, dan cicilan tetap flat ringan mulai 1 jutaan per bulan.
-                      </p>
-                      <a href="proyek-subsidi-asri.html" class="inline-flex items-center text-brand-gold font-bold text-xs tracking-wider uppercase pt-1">
-                        Lihat Proyek 
-                        <svg class="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Slide 2 (Proyek Bayat) -->
-                <div class="swiper-slide">
-                  <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
-                    <div class="relative overflow-hidden aspect-[4/3]">
-                      <img src="assets/graha-athera-jogonalan-tipe-30.webp" alt="Rumah Subsidi Bayat" class="w-full h-full object-cover">
-                      <div class="absolute top-3 left-3 bg-brand-dark/80 backdrop-blur-sm text-brand-gold text-[10px] px-3 py-1 rounded-full font-semibold uppercase tracking-wider">Mulai Rp 160 Jt</div>
-                      <!-- Brand Logo Badge Overlay -->
-                      <div class="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-md shadow-md text-[10px] font-bold text-brand-dark border border-gray-200">
-                        ATHERA BAYAT
-                      </div>
-                    </div>
-                    <div class="p-6 space-y-3">
-                      <h3 class="text-lg font-display font-bold text-brand-dark">Graha Athera Bayat</h3>
-                      <p class="text-gray-600 font-light text-xs leading-relaxed">
-                        Hunian nyaman subsidi pemerintah lokasi strategis dekat pusat kota, bebas banjir, dengan lingkungan tertata asri.
-                      </p>
-                      <a href="proyek-subsidi-asri.html" class="inline-flex items-center text-brand-gold font-bold text-xs tracking-wider uppercase pt-1">
-                        Lihat Proyek 
-                        <svg class="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-              
-              <!-- Pagination Dots -->
-              <div class="swiper-pagination product-swiper-pagination" style="position: relative; margin-top: 10px;"></div>
-            </div>
-
-            <!-- Tombol Navigasi Panah Lingkaran Putih Melayang -->
-            <div class="swiper-button-next product-nav-btn product-nav-next"></div>
-            <div class="swiper-button-prev product-nav-btn product-nav-prev"></div>
-          </div>
-        </div>
-
-        <!-- GROUP 2: RUMAH KOMERSIL -->
-        <div class="space-y-2">
-          <span class="text-xs font-bold text-brand-dark uppercase tracking-wider block">Rumah Komersil</span>
-          <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
-            <div class="relative overflow-hidden aspect-[4/3]">
-              <img src="assets/graha-athera-jogonalan-tipe-30.webp" alt="Rumah Komersil" class="w-full h-full object-cover">
-              <div class="absolute top-3 left-3 bg-brand-dark/80 backdrop-blur-sm text-brand-gold text-[10px] px-3 py-1 rounded-full font-semibold uppercase tracking-wider">Mulai Rp 160 Jt</div>
-            </div>
-            <div class="p-6 space-y-3">
-              <h3 class="text-lg font-display font-bold text-brand-dark">Rumah Komersil</h3>
-              <p class="text-gray-600 font-light text-xs leading-relaxed">
-                Mansion mewah modern tropical 2 lantai lengkap dengan teknologi smart home, club house eksklusif, dan lokasi di CBD kota.
-              </p>
-              <a href="proyek-komersil-elite.html" class="inline-flex items-center text-brand-gold font-bold text-xs tracking-wider uppercase pt-1">
-                Lihat Proyek 
-                <svg class="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- GROUP 3: TANAH KAVLING -->
-        <div class="space-y-2">
-          <span class="text-xs font-bold text-brand-dark uppercase tracking-wider block">Tanah Kavling</span>
-          <div class="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100">
-            <div class="relative overflow-hidden aspect-[4/3]">
-              <img src="assets/graha-athera-jogonalan-tipe-30.webp" alt="Tanah Kavling" class="w-full h-full object-cover">
-              <div class="absolute top-3 left-3 bg-brand-dark/80 backdrop-blur-sm text-brand-gold text-[10px] px-3 py-1 rounded-full font-semibold uppercase tracking-wider">Mulai Rp 1.5 Jt / m²</div>
-            </div>
-            <div class="p-6 space-y-3">
-              <h3 class="text-lg font-display font-bold text-brand-dark">Tanah Kavling</h3>
-              <p class="text-gray-600 font-light text-xs leading-relaxed">
-                Tanah kavling matang siap bangun dengan infrastruktur lengkap seperti jalan beton, jaringan air bersih, dan listrik underground.
-              </p>
-              <a href="proyek-komersil-elite.html" class="inline-flex items-center text-brand-gold font-bold text-xs tracking-wider uppercase pt-1">
-                Lihat Proyek 
-                <svg class="w-4 h-4 ml-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-              </a>
-            </div>
           </div>
         </div>
 
@@ -999,7 +918,7 @@
   <!-- Swiper JS CDN -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <!-- Inisialisasi Carousel Mobile Proyek -->
+  <!-- Inisialisasi Carousel Proyek (Desktop & Mobile) -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const productSwiper = new Swiper('.productSwiper', {
@@ -1013,8 +932,8 @@
           clickable: true,
         },
         navigation: {
-          nextEl: '.product-nav-next',
-          prevEl: '.product-nav-prev',
+          nextEl: '.card-nav-next',
+          prevEl: '.card-nav-prev',
         },
       });
     });
