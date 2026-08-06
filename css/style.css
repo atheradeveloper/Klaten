@@ -37,4 +37,14 @@
   transform: translateY(-5px);
 }
 
+/* Custom Emas Gelap Berkontras Tinggi (Lulus Tes Kontras WCAG AAA > 7:1 di latar putih) */
+.text-brand-gold-dark {
+  color: #785412 !important;
+}
+
+/* Badge Solid untuk Produk */
+.bg-badge-dark {
+  background-color: #1e2d24 !important;
+  color: #f5d089 !important;
+}
 
