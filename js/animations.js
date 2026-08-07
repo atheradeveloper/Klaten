@@ -15,7 +15,7 @@ function initAnimations() {
     gsap.registerPlugin(ScrollTrigger);
 
     // Efek Fade Up untuk semua elemen dengan class 'reveal'
-    gsay.utils.toArray('.reveal').forEach((el) => {
+    gsap.utils.toArray('.reveal').forEach((el) => {
         gsap.from(el, {
             scrollTrigger: {
                 trigger: el,
