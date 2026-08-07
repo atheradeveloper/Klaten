@@ -1,10 +1,63 @@
 /* ============================================================
- * ATHERA PROPERTI - CUSTOM STANDALONE STYLES (NO 3RD PARTY)
+ * ATHERA PROPERTI - CUSTOM STANDALONE STYLES (FIX MOBILE)
  * ============================================================ */
 
 /* --- Custom Scrollbar & Smooth Behavior --- */
 html {
   scroll-behavior: smooth;
+}
+
+/* --- Mobile Spacing & Flex Fallbacks (Memperbaiki Tombol & Layout HP) --- */
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 1rem !important;
+}
+.space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 0.75rem !important;
+}
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 2rem !important;
+}
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  margin-left: 1rem !important;
+}
+
+/* Flex Gap Utility Fallbacks */
+.gap-2 { gap: 0.5rem !important; }
+.gap-3 { gap: 0.75rem !important; }
+.gap-4 { gap: 1rem !important; }
+.gap-6 { gap: 1.5rem !important; }
+.gap-8 { gap: 2rem !important; }
+
+/* Responsive Typography & Hero Adjustment for Mobile (< 640px) */
+@media (max-width: 639px) {
+  #hero {
+    padding-top: 7.5rem !important;
+    padding-bottom: 4rem !important;
+    min-height: 100vh !important;
+  }
+  
+  #hero h1 {
+    font-size: 1.85rem !important; /* ~30px agar tidak terlalu besar di HP */
+    line-height: 2.25rem !important;
+  }
+
+  #hero p {
+    font-size: 0.875rem !important;
+    line-height: 1.4rem !important;
+  }
+
+  .mobile-btn-stack {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+
+  .mobile-btn-stack a {
+    width: 100% !important;
+    display: block !important;
+    box-sizing: border-box !important;
+  }
 }
 
 /* --- Standalone Product Carousel / Slider --- */
