@@ -28,34 +28,85 @@ html {
   flex-shrink: 0;
 }
 
-/* Tombol Navigasi Slider */
+/* ============================================================
+ * ELEGAN & MODERN SLIDER NAVIGATION BUTTONS (GLASSMORPHISM)
+ * ============================================================ */
+
+/* Container Tombol */
 .slider-nav-btn {
   position: absolute;
-  top: 35%;
+  top: 35%; /* Terletak pas di tengah area gambar */
   transform: translateY(-50%);
-  width: 38px;
-  height: 38px;
-  background-color: #ffffff;
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.85); /* Semi transparan */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 30;
   cursor: pointer;
-  border: 1px solid #e5e7eb;
-  transition: all 0.2s ease;
-  user-select: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  padding: 0;
 }
 
+/* Vektor Ikon Panah SVG */
+.slider-nav-btn svg {
+  width: 20px;
+  height: 20px;
+  stroke: #1e2d24; /* Warna hijau gelap Athera */
+  stroke-width: 2.2;
+  transition: transform 0.25s ease, stroke 0.25s ease;
+}
+
+/* Efek Hover (Saat Diarahkan Kursor) */
 .slider-nav-btn:hover {
-  background-color: #1e2d24;
-  color: #ffffff;
-  border-color: #1e2d24;
+  background-color: #1e2d24; /* Berubah jadi hijau gelap */
+  border-color: #664D03;
+  box-shadow: 0 8px 20px rgba(30, 45, 36, 0.35);
+  transform: translateY(-50%) scale(1.08); /* Sedikit membesar */
 }
 
-.slider-nav-prev { left: 12px; }
-.slider-nav-next { right: 12px; }
+.slider-nav-btn:hover svg {
+  stroke: #c5a880; /* Warna panah berubah jadi emas */
+}
+
+/* Micro-animation pergerakan panah saat hover */
+.slider-nav-prev:hover svg {
+  transform: translateX(-2px);
+}
+
+.slider-nav-next:hover svg {
+  transform: translateX(2px);
+}
+
+/* Posisi Tombol */
+.slider-nav-prev {
+  left: 14px;
+}
+
+.slider-nav-next {
+  right: 14px;
+}
+
+/* Penyesuaian Ukuran di Mobile (HP) */
+@media (max-width: 640px) {
+  .slider-nav-btn {
+    width: 36px;
+    height: 36px;
+  }
+  .slider-nav-btn svg {
+    width: 17px;
+    height: 17px;
+  }
+  .slider-nav-prev { left: 10px; }
+  .slider-nav-next { right: 10px; }
+}
 
 /* Indicator Dots Slider */
 .slider-dots-wrapper {
