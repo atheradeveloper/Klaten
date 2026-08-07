@@ -12,13 +12,6 @@
   <link rel="icon" type="image/png" href="assets/icon.png"> 
   <link rel="apple-touch-icon" href="assets/icon.png">
 
-  <!-- 🚀 PRELOAD CRITICAL FONTS (Mengatasi Network Dependency Tree) -->
-  <link rel="preload" href="fonts/outfit-600.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/outfit-700.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/plus-jakarta-sans-400.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/plus-jakarta-sans-600.woff2" as="font" type="font/woff2" crossorigin>
-
-
   <!-- OpenGraph Metadata for Facebook & WhatsApp Sharing -->
   <meta property="og:title" content="Athera Properti Klaten | Developer Perumahan Terpercaya">
   <meta property="og:description" content="Temukan Rumah Subsidi, Rumah Komersil, dan Tanah Kavling siap bangun dengan legalitas SHM & PBG terpecah. Unit terbatas!">
@@ -928,30 +921,27 @@
 
  
 
-<!-- 🚀 OPTIMIZED SWIPER INIT (Mencegah Forced Reflow) -->
+  <!-- Inisialisasi Carousel Proyek (Desktop & Mobile) -->
   <script>
-    window.addEventListener('load', function () {
-      requestAnimationFrame(function() {
-        if (typeof Swiper !== 'undefined') {
-          new Swiper('.productSwiper', {
-            loop: true,
-            autoplay: {
-              delay: 3500,
-              disableOnInteraction: false,
-            },
-            pagination: {
-              el: '.product-swiper-pagination',
-              clickable: true,
-            },
-            navigation: {
-              nextEl: '.card-nav-next',
-              prevEl: '.card-nav-prev',
-            },
-          });
-        }
+    document.addEventListener('DOMContentLoaded', function () {
+      const productSwiper = new Swiper('.productSwiper', {
+        loop: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.product-swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.card-nav-next',
+          prevEl: '.card-nav-prev',
+        },
       });
     });
   </script>
+
   <!-- Global scripts -->
   <script src="js/app.js"></script>
 </body>
