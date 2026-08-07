@@ -48,16 +48,3 @@ function initDefaultWhatsAppWidget() {
     }
 }
 
-// 4. Service Worker Registration (PWA)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        // Registrasi cache.js sebagai Service Worker pada cakupan root
-        navigator.serviceWorker.register('cache.js')
-            .then(reg => {
-                console.log('Service Worker berhasil didaftarkan dengan cakupan:', reg.scope);
-            })
-            .catch(err => {
-                console.error('Pendaftaran Service Worker gagal:', err);
-            });
-    });
-}
