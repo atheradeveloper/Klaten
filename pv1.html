@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Primary Meta Tags -->
+  <title>Griya Asri Land - Hunian Komersil, Subsidi FLPP & Kavling Tanah Terbaik</title>
+  <meta name="title" content="Griya Asri Land - Hunian Komersil, Subsidi FLPP & Kavling Tanah Terbaik">
+  <meta name="description" content="Temukan perumahan komersil elegan, rumah subsidi angsuran flat, dan tanah kavling siap bangun lokasi strategis dengan legalitas SHM aman.">
+  <meta name="keywords" content="rumah subsidi, perumahan komersil, tanah kavling, KPR FLPP, rumah murah, jual tanah">
+  <link rel="canonical" href="https://username.github.io/repository-name/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://username.github.io/repository-name/">
+  <meta property="og:title" content="Griya Asri Land - Hunian & Investasi Properti Terbaik">
+  <meta property="og:description" content="Cari rumah komersil, subsidi, atau tanah kavling dengan simulasi KPR transparan dan cicilan ringan.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&auto=format&fit=crop">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Griya Asri Land - Hunian & Investasi Properti Terbaik">
+  <meta property="twitter:description" content="Cari rumah komersil, subsidi, atau tanah kavling dengan simulasi KPR transparan.">
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&auto=format&fit=crop">
+
+  <!-- Preconnect External Domains for Speed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <!-- Web Font Optimization -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Alpine.js CDN (Deferred) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Anti Flash of Unstyled Content (x-cloak) -->
+  <style>
+    [x-cloak] { display: none !important; }
+  </style>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Griya Asri Land",
+    "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1200&auto=format&fit=crop",
+    "description": "Agen pemasaran properti terpercaya untuk rumah komersil, rumah subsidi, dan tanah kavling.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jakarta",
+      "addressRegion": "DKI Jakarta",
+      "addressCountry": "ID"
+    },
+    "priceRange": "Rp 160.000.000 - Rp 1.500.000.000"
+  }
+  </script>
+</head>
+
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-600 selection:text-white" x-data="propertyApp()">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2" aria-label="Halaman Utama Griya Asri Land">
+        <div class="w-10 h-10 rounded-xl bg-brand-600 flex items-center justify-center text-white font-extrabold text-xl shadow-md shadow-brand-600/30">
+          G
+        </div>
+        <span class="text-xl font-bold text-slate-900 tracking-tight">GriyaAsri<span class="text-brand-600">Land</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8 font-semibold text-sm text-slate-600">
+        <a href="#properti" class="hover:text-brand-600 transition-colors">Pilihan Properti</a>
+        <a href="#kpr-simulasi" class="hover:text-brand-600 transition-colors">Simulasi KPR</a>
+        <a href="#keunggulan" class="hover:text-brand-600 transition-colors">Keunggulan</a>
+        <a href="#testimoni" class="hover:text-brand-600 transition-colors">Testimoni</a>
+      </nav>
+
+      <div class="hidden md:flex items-center gap-4">
+        <button @click="openLeadModal('Konsultasi Umum')" type="button" class="px-5 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm transition-all shadow-md shadow-brand-600/20 active:scale-95">
+          Konsultasi Gratis
+        </button>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="md:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none" aria-label="Buka Menu Navigasi">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div x-show="mobileMenuOpen" x-cloak class="md:hidden border-t border-slate-100 bg-white px-4 pt-2 pb-6 space-y-3">
+      <a href="#properti" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-slate-50">Pilihan Properti</a>
+      <a href="#kpr-simulasi" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-slate-50">Simulasi KPR</a>
+      <a href="#keunggulan" @click="mobileMenuOpen = false" class="block px-3 py-2 rounded-md font-medium text-slate-700 hover:bg-slate-50">Keunggulan</a>
+      <button @click="openLeadModal('Konsultasi Mobile'); mobileMenuOpen = false" type="button" class="w-full text-center px-4 py-3 rounded-xl bg-brand-600 text-white font-semibold shadow-md">
+        Konsultasi Gratis
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="relative pt-8 pb-16 lg:pt-16 lg:pb-24 overflow-hidden bg-gradient-to-b from-slate-50 via-brand-50/20 to-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Hero Copywriter (AIDA Pattern) -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brand-100/80 text-brand-800 text-xs sm:text-sm font-bold border border-brand-200">
+              <span class="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></span>
+              Promo DP 0% & Free Biaya Notaris Bulan Ini!
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight tracking-tight">
+              Wujudkan Hunian Impian & Investasi Properti Aman
+            </h1>
+            
+            <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              Pilihan lengkap Perumahan Komersil Mewah, Rumah Subsidi Angsuran Flat, hingga Tanah Kavling Strategis berlegalitas SHM resmi.
+            </p>
+
+            <!-- Quick Category Badges -->
+            <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-3">
+              <button @click="activeTab = 'komersil'; scrollToSection('properti')" type="button" class="px-4 py-2 rounded-lg bg-white border border-slate-200 shadow-sm hover:border-brand-600 text-xs sm:text-sm font-semibold text-slate-700 flex items-center gap-2">
+                🏛️ Komersil Elegant
+              </button>
+              <button @click="activeTab = 'subsidi'; scrollToSection('properti')" type="button" class="px-4 py-2 rounded-lg bg-white border border-slate-200 shadow-sm hover:border-brand-600 text-xs sm:text-sm font-semibold text-slate-700 flex items-center gap-2">
+                🏡 Subsidi FLPP (Flat)
+              </button>
+              <button @click="activeTab = 'kavling'; scrollToSection('properti')" type="button" class="px-4 py-2 rounded-lg bg-white border border-slate-200 shadow-sm hover:border-brand-600 text-xs sm:text-sm font-semibold text-slate-700 flex items-center gap-2">
+                📐 Tanah Kavling SHM
+              </button>
+            </div>
+          </div>
+
+          <!-- Hero Image Container (Optimized LCP) -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3] bg-slate-200">
+              <img 
+                src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=800&auto=format&fit=crop" 
+                alt="Perumahan Modern Griya Asri Land" 
+                width="800" 
+                height="600"
+                fetchpriority="high"
+                class="w-full h-full object-cover object-center"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-white/90 backdrop-blur-md border border-white/40 shadow-lg">
+                <p class="text-xs font-semibold text-brand-700 uppercase tracking-wider">Project Featured</p>
+                <p class="text-sm font-bold text-slate-900">Grand Emerald Residence - Tipe 45/90</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROPERTY LISTING SECTION (FILTERABLE) -->
+    <section id="properti" class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mb-4">Pilihan Katalog Properti Unggulan</h2>
+          <p class="text-slate-600 text-sm sm:text-base">Gunakan filter untuk menemukan hunian atau tanah kavling sesuai dengan anggaran dan kebutuhan investasi Anda.</p>
+          
+          <!-- Category Filter Tabs -->
+          <div class="mt-8 flex flex-wrap justify-center gap-2 p-1.5 bg-slate-100 rounded-2xl max-w-fit mx-auto border border-slate-200">
+            <button 
+              @click="activeTab = 'all'" 
+              type="button"
+              :class="activeTab === 'all' ? 'bg-brand-600 text-white shadow-md' : 'text-slate-600 hover:text-slate-900'"
+              class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all"
+            >
+              Semua Tipe
+            </button>
+            <button 
+              @click="activeTab = 'komersil'" 
+              type="button"
+              :class="activeTab === 'komersil' ? 'bg-brand-600 text-white shadow-md' : 'text-slate-600 hover:text-slate-900'"
+              class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all"
+            >
+              Komersil
+            </button>
+            <button 
+              @click="activeTab = 'subsidi'" 
+              type="button"
+              :class="activeTab === 'subsidi' ? 'bg-brand-600 text-white shadow-md' : 'text-slate-600 hover:text-slate-900'"
+              class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all"
+            >
+              Subsidi (FLPP)
+            </button>
+            <button 
+              @click="activeTab = 'kavling'" 
+              type="button"
+              :class="activeTab === 'kavling' ? 'bg-brand-600 text-white shadow-md' : 'text-slate-600 hover:text-slate-900'"
+              class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold transition-all"
+            >
+              Tanah Kavling
+            </button>
+          </div>
+        </div>
+
+        <!-- Property Grid Dynamic -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <template x-for="item in filteredProperties" :key="item.id">
+            <article class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+              <!-- Card Header / Image -->
+              <div class="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                <img 
+                  :src="item.image" 
+                  :alt="item.title"
+                  loading="lazy"
+                  width="400"
+                  height="250"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                >
+                <div class="absolute top-3 left-3">
+                  <span 
+                    :class="{
+                      'bg-slate-900 text-white': item.category === 'komersil',
+                      'bg-blue-600 text-white': item.category === 'subsidi',
+                      'bg-amber-600 text-white': item.category === 'kavling'
+                    }"
+                    class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider shadow-md"
+                    x-text="item.categoryLabel"
+                  ></span>
+                </div>
+                <div class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md px-3 py-1 rounded-lg text-xs font-bold text-slate-800 shadow">
+                  <span x-text="item.location"></span>
+                </div>
+              </div>
+
+              <!-- Card Body -->
+              <div class="p-6 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 class="text-lg font-bold text-slate-900 mb-2 group-hover:text-brand-600 transition-colors" x-text="item.title"></h3>
+                  <div class="text-2xl font-extrabold text-brand-600 mb-4" x-text="formatRupiah(item.price)"></div>
+
+                  <!-- Property Specs Dynamic -->
+                  <div class="grid grid-cols-3 gap-2 py-3 border-y border-slate-100 text-xs text-slate-600 mb-6">
+                    <template x-if="item.category !== 'kavling'">
+                      <div class="text-center">
+                        <span class="block font-semibold text-slate-800" x-text="item.specs.bed + ' KT'"></span>
+                        <span class="text-[10px] text-slate-400">K. Tidur</span>
+                      </div>
+                    </template>
+                    <template x-if="item.category !== 'kavling'">
+                      <div class="text-center border-x border-slate-100">
+                        <span class="block font-semibold text-slate-800" x-text="item.specs.bath + ' KM'"></span>
+                        <span class="text-[10px] text-slate-400">K. Mandi</span>
+                      </div>
+                    </template>
+                    <div class="text-center" :class="item.category === 'kavling' ? 'col-span-3' : ''">
+                      <span class="block font-semibold text-slate-800" x-text="item.specs.lb + ' / ' + item.specs.lt + ' m²'"></span>
+                      <span class="text-[10px] text-slate-400" x-text="item.category === 'kavling' ? 'Luas Tanah' : 'LB / LT'"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CTA Actions -->
+                <div class="flex items-center gap-2">
+                  <button 
+                    @click="openLeadModal('Unit: ' + item.title)" 
+                    type="button" 
+                    class="flex-1 py-2.5 px-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition-all text-center"
+                  >
+                    Brosur & Price List
+                  </button>
+                  <a 
+                    :href="getWhatsappUrl('Halo, saya tertarik dengan unit ' + item.title + ' harga ' + formatRupiah(item.price))" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="flex-1 py-2.5 px-3 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-xs transition-all text-center shadow-md shadow-brand-600/20"
+                  >
+                    Tanya via WA
+                  </a>
+                </div>
+              </div>
+            </article>
+          </template>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- KPR CALCULATOR SECTION (ALPINE INTEGRATED) -->
+    <section id="kpr-simulasi" class="py-16 bg-slate-900 text-white relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-5 space-y-6">
+            <span class="px-3 py-1 rounded-full bg-brand-600/30 text-brand-400 border border-brand-500/30 text-xs font-bold uppercase tracking-wider">
+              Kalkulator KPR Interaktif
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white leading-tight">
+              Hitung Estimasi Cicilan Bulanan Anda
+            </h2>
+            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+              Gunakan simulator KPR terintegrasi untuk memperkirakan kewajiban angsuran bulanan sesuai harga rumah, tenor, dan suku bunga acuan.
+            </p>
+
+            <div class="p-4 rounded-2xl bg-slate-800/80 border border-slate-700/60 space-y-3 text-xs text-slate-300">
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span>Suku bunga dapat disesuaikan (Komersil / Subsidi 5% Fixed)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-brand-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                <span>Bebas Konsultasi Kelayakan Berkas KPR (BI Checking / SLIK)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Calculator Card -->
+          <div class="lg:col-span-7 bg-white text-slate-900 rounded-3xl p-6 sm:p-8 shadow-2xl">
+            <form @submit.prevent class="space-y-6">
+              
+              <!-- Input Harga Properti -->
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <label for="harga-properti" class="text-xs font-bold uppercase text-slate-600">Harga Properti</label>
+                  <span class="text-sm font-extrabold text-brand-600" x-text="formatRupiah(kpr.harga)"></span>
+                </div>
+                <input 
+                  id="harga-properti"
+                  type="range" 
+                  min="160000000" 
+                  max="1500000000" 
+                  step="10000000" 
+                  x-model.number="kpr.harga" 
+                  class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-600"
+                >
+              </div>
+
+              <!-- Input Uang Muka (%) -->
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <label for="dp-percent" class="text-xs font-bold uppercase text-slate-600">Uang Muka / DP (<span x-text="kpr.dpPercent"></span>%)</label>
+                  <span class="text-sm font-extrabold text-slate-800" x-text="formatRupiah(calculatedDP)"></span>
+                </div>
+                <input 
+                  id="dp-percent"
+                  type="range" 
+                  min="0" 
+                  max="50" 
+                  step="5" 
+                  x-model.number="kpr.dpPercent" 
+                  class="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-brand-600"
+                >
+              </div>
+
+              <!-- Grid Suku Bunga & Tenor -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="suku-bunga" class="block text-xs font-bold uppercase text-slate-600 mb-2">Suku Bunga Anuitas (%)</label>
+                  <input 
+                    id="suku-bunga"
+                    type="number" 
+                    step="0.1" 
+                    x-model.number="kpr.bunga" 
+                    class="w-full px-4 py-3 rounded-xl border border-slate-200 font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-600"
+                  >
+                </div>
+                <div>
+                  <label for="tenor-tahun" class="block text-xs font-bold uppercase text-slate-600 mb-2">Tenor Pinjaman (Tahun)</label>
+                  <select 
+                    id="tenor-tahun"
+                    x-model.number="kpr.tenor" 
+                    class="w-full px-4 py-3 rounded-xl border border-slate-200 font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-600 bg-white"
+                  >
+                    <option value="5">5 Tahun</option>
+                    <option value="10">10 Tahun</option>
+                    <option value="15">15 Tahun</option>
+                    <option value="20">20 Tahun</option>
+                    <option value="25">25 Tahun</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Result Calculation Card -->
+              <div class="p-5 rounded-2xl bg-brand-50 border border-brand-200 text-center">
+                <span class="text-xs font-bold text-brand-800 uppercase tracking-wider block mb-1">Estimasi Angsuran Bulanan</span>
+                <span class="text-3xl sm:text-4xl font-extrabold text-brand-700 block" x-text="formatRupiah(calculatedCicilan)"></span>
+                <span class="text-[11px] text-brand-800 mt-2 block">*Perhitungan estimasi diluar biaya asuransi & provisi bank.</span>
+              </div>
+
+              <!-- Direct WA CTA with Calculated Data -->
+              <a 
+                :href="getWhatsappUrl('Halo, saya ingin mengajukan KPR dengan simulasi: Harga ' + formatRupiah(kpr.harga) + ', DP ' + formatRupiah(calculatedDP) + ', Tenor ' + kpr.tenor + ' Thn. Estimasi cicilan: ' + formatRupiah(calculatedCicilan) + '/bulan.')"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full py-4 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-extrabold text-sm transition-all text-center block shadow-lg shadow-brand-600/30"
+              >
+                Ajukan KPR via WhatsApp Sekarang
+              </a>
+
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRUST & ADVANTAGES SECTION -->
+    <section id="keunggulan" class="py-16 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mb-4">Mengapa Memilih Griya Asri Land?</h2>
+          <p class="text-slate-600 text-sm sm:text-base">Komitmen penuh dalam memberikan keamanan legalitas dan kemudahan transaksi properti.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center">
+            <div class="w-12 h-12 bg-brand-100 text-brand-700 rounded-2xl flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+              ⚖️
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg mb-2">Legalitas 100% Aman</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Seluruh properti dan kavling sudah berstatus Sertifikat Hak Milik (SHM) dan PBG/IMB siap balik nama.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center">
+            <div class="w-12 h-12 bg-brand-100 text-brand-700 rounded-2xl flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+              🏥
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg mb-2">Lokasi Strategis</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Akses mudah menuju gerbang tol, pusat perbelanjaan, sekolah, dan fasilitas kesehatan publik.</p>
+          </div>
+
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm text-center">
+            <div class="w-12 h-12 bg-brand-100 text-brand-700 rounded-2xl flex items-center justify-center mx-auto mb-4 font-bold text-xl">
+              🤝
+            </div>
+            <h3 class="font-bold text-slate-900 text-lg mb-2">Pendampingan KPR 100%</h3>
+            <p class="text-xs sm:text-sm text-slate-600 leading-relaxed">Tim ahli kami bantu proses kelengkapan berkas hingga akad kredit disetujui pihak bank mitra.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div class="space-y-4">
+          <span class="text-xl font-bold text-white tracking-tight">GriyaAsri<span class="text-brand-600">Land</span></span>
+          <p class="text-xs leading-relaxed">Pengembang dan agen pemasaran properti komersil, rumah subsidi FLPP, dan kavling tanah terbaik Indonesia.</p>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-wider">Kategori</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#properti" @click="activeTab='komersil'" class="hover:text-white">Perumahan Komersil</a></li>
+            <li><a href="#properti" @click="activeTab='subsidi'" class="hover:text-white">Rumah Subsidi (FLPP)</a></li>
+            <li><a href="#properti" @click="activeTab='kavling'" class="hover:text-white">Tanah Kavling Siap Bangun</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-wider">Layanan</h4>
+          <ul class="space-y-2 text-xs">
+            <li><a href="#kpr-simulasi" class="hover:text-white">Simulasi KPR Online</a></li>
+            <li><a href="#" @click.prevent="openLeadModal('Konsultasi Berkas')" class="hover:text-white">Konsultasi BI Checking</a></li>
+            <li><a href="#" @click.prevent="openLeadModal('Cek Siteplan')" class="hover:text-white">Request Siteplan & Price List</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-sm font-bold text-white mb-4 uppercase tracking-wider">Kontak Marketing</h4>
+          <p class="text-xs leading-relaxed mb-2">Jl. Utama Properti No. 88, Jakarta</p>
+          <p class="text-xs font-bold text-brand-400">WhatsApp: +62 812-3456-7890</p>
+        </div>
+      </div>
+
+      <div class="pt-8 border-t border-slate-900 text-center text-xs text-slate-500">
+        <p>&copy; 2026 Griya Asri Land. Static Architecture Ready for GitHub Pages.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP CTA -->
+  <aside aria-label="Kontak WhatsApp Langsung">
+    <a 
+      :href="getWhatsappUrl('Halo Admin, saya mau tanya promo properti terbaru.')" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      aria-label="Chat WhatsApp Admin"
+      class="fixed bottom-6 right-6 z-50 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110 active:scale-95"
+    >
+      <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    </a>
+  </aside>
+
+  <!-- LEAD CAPTURE MODAL -->
+  <div x-show="isModalOpen" x-cloak class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-sm" x-transition>
+    <div @click.away="isModalOpen = false" class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative">
+      <button @click="isModalOpen = false" type="button" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600" aria-label="Tutup Modal">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <h3 class="text-xl font-bold text-slate-900 mb-2">Dapatkan Brosur Lengkap</h3>
+      <p class="text-xs text-slate-600 mb-6">Isi formulir di bawah ini untuk mengunduh e-brochure dan daftar harga resmi via WhatsApp.</p>
+
+      <form @submit.prevent="submitLeadForm" class="space-y-4">
+        <div>
+          <label for="lead-nama" class="block text-xs font-bold uppercase text-slate-600 mb-1">Nama Lengkap</label>
+          <input id="lead-nama" type="text" required x-model="leadForm.name" placeholder="Contoh: Budi Santoso" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600">
+        </div>
+        <div>
+          <label for="lead-wa" class="block text-xs font-bold uppercase text-slate-600 mb-1">Nomor WhatsApp</label>
+          <input id="lead-wa" type="tel" required x-model="leadForm.phone" placeholder="Contoh: 081234567890" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-brand-600">
+        </div>
+        <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-extrabold text-sm shadow-md transition-all">
+          Kirim & Unduh Brosur
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ALPINE DOMAIN LOGIC & DATA STORE -->
+  <script>
+    function propertyApp() {
+      return {
+        whatsappNumber: '6281234567890', // EDIT: Ganti dengan Nomor WA Admin Real
+        mobileMenuOpen: false,
+        isModalOpen: false,
+        activeTab: 'all',
+        leadContext: '',
+        
+        leadForm: {
+          name: '',
+          phone: ''
+        },
+
+        // Data Simulasi KPR
+        kpr: {
+          harga: 500000000,
+          dpPercent: 10,
+          bunga: 6.5,
+          tenor: 15
+        },
+
+        // Mock Data Properti Indonesia (Komersil, Subsidi, Kavling)
+        properties: [
+          {
+            id: 1,
+            title: 'Grand Emerald Residence',
+            category: 'komersil',
+            categoryLabel: 'Komersil',
+            price: 850000000,
+            location: 'BSD City, Tangerang',
+            image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600&auto=format&fit=crop',
+            specs: { bed: 3, bath: 2, lb: 70, lt: 90 }
+          },
+          {
+            id: 2,
+            title: 'Griya Harmoni FLPP',
+            category: 'subsidi',
+            categoryLabel: 'Subsidi FLPP',
+            price: 168000000,
+            location: 'Cikarang, Bekasi',
+            image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=600&auto=format&fit=crop',
+            specs: { bed: 2, bath: 1, lb: 36, lt: 60 }
+          },
+          {
+            id: 3,
+            title: 'Kavling Harmoni Hills SHM',
+            category: 'kavling',
+            categoryLabel: 'Tanah Kavling',
+            price: 240000000,
+            location: 'Bogor Timur',
+            image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=600&auto=format&fit=crop',
+            specs: { bed: 0, bath: 0, lb: 0, lt: 120 }
+          },
+          {
+            id: 4,
+            title: 'Cluster Minimalis Modern Tipe 45',
+            category: 'komersil',
+            categoryLabel: 'Komersil',
+            price: 550000000,
+            location: 'Depok Utama',
+            image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=600&auto=format&fit=crop',
+            specs: { bed: 2, bath: 1, lb: 45, lt: 72 }
+          },
+          {
+            id: 5,
+            title: 'Kavling Siap Bangun Ruko',
+            category: 'kavling',
+            categoryLabel: 'Tanah Kavling',
+            price: 350000000,
+            location: 'Sawangan, Depok',
+            image: 'https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=600&auto=format&fit=crop',
+            specs: { bed: 0, bath: 0, lb: 0, lt: 150 }
+          }
+        ],
+
+        // Filter Logic
+        get filteredProperties() {
+          if (this.activeTab === 'all') return this.properties;
+          return this.properties.filter(p => p.category === this.activeTab);
+        },
+
+        // Computed KPR DP
+        get calculatedDP() {
+          return (this.kpr.harga * this.kpr.dpPercent) / 100;
+        },
+
+        // Computed Cicilan KPR Bulanan (Rumus Anuitas)
+        get calculatedCicilan() {
+          const pokoPinjaman = this.kpr.harga - this.calculatedDP;
+          const bungaBulan = (this.kpr.bunga / 100) / 12;
+          const totalBulan = this.kpr.tenor * 12;
+
+          if (pokoPinjaman <= 0 || bungaBulan <= 0) return 0;
+
+          const cicilan = (pokoPinjaman * bungaBulan) / (1 - Math.pow(1 + bungaBulan, -totalBulan));
+          return Math.round(cicilan);
+        },
+
+        // Helpers
+        formatRupiah(number) {
+          return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(number);
+        },
+
+        getWhatsappUrl(text) {
+          return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(text)}`;
+        },
+
+        openLeadModal(context) {
+          this.leadContext = context;
+          this.isModalOpen = true;
+        },
+
+        submitLeadForm() {
+          const message = `Halo Admin, saya ${this.leadForm.name} (${this.leadForm.phone}) ingin minta e-brosur/informasi terkait: ${this.leadContext}`;
+          window.open(this.getWhatsappUrl(message), '_blank');
+          this.isModalOpen = false;
+          this.leadForm.name = '';
+          this.leadForm.phone = '';
+        },
+
+        scrollToSection(id) {
+          document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+  </script>
+</body>
+</html>
