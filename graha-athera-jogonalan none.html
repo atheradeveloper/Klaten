@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graha Athera Jogonalan | Rumah Subsidi Nyaman & Berkualitas</title>
+  <meta name="description" content="Miliki Rumah Subsidi Graha Athera Jogonalan tipe 30/60 mulai Rp 160 Jutaan. Angsuran flat ringan, legalitas aman terjamin ready. Cek ketersediaan kavling disini!">
+
+  <!-- 1. PRELOADS (Koneksi Tercepat) -->
+  <link rel="preload" as="image" href="assets/graha-athera-jogonalan-tipe-30.webp" fetchpriority="high">
+  <link rel="preload" href="data/proyek-data.json" as="fetch" crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="preconnect" href="https://athro.biz.id" crossorigin>
+
+  <!-- 2. INLINE CSS (Dibersihkan & Diperbaiki) -->
+  <style>
+    .transition-all-custom {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .map-container iframe {
+      filter: grayscale(10%) contrast(100%) invert(0%);
+    }
+
+    /* Reset & Variabel Dasar */
+    :root {
+      --brand-dark: #1e2d24;
+      --brand-gold: #664D03;
+      --brand-gold-dark: #664d03;  
+      --brand-light: #f7f6f2;
+    }
+
+    *, ::after, ::before { box-sizing: border-box; border: 0 solid #e5e7eb; --tw-shadow: 0 0 #0000; }
+    html { line-height: 1.5; -webkit-text-size-adjust: 100%; font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
+    body { margin: 0; background-color: var(--brand-light); color: var(--brand-dark); -webkit-font-smoothing: antialiased; }
+
+    .text-brand-gold-dark { color: var(--brand-gold-dark) !important; }
+    .text-gray-safe { color: #4b5563 !important; }
+    .text-gray-strong { color: #374151; }
+
+    /* --- Outfit (Menggunakan Relative Path) --- */
+    @font-face {
+      font-family: 'Outfit';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('fonts/outfit-400.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Outfit';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url('fonts/outfit-500.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Outfit';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('fonts/outfit-600.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Outfit';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('fonts/outfit-700.woff2') format('woff2');
+    }
+
+    /* --- Plus Jakarta Sans (Menggunakan Relative Path) --- */
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('fonts/plus-jakarta-sans-400.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 500;
+      font-display: swap;
+      src: url('fonts/plus-jakarta-sans-500.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('fonts/plus-jakarta-sans-600.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: url('fonts/plus-jakarta-sans-700.woff2') format('woff2');
+    }
+
+    /* Utility Classes */
+    .max-w-7xl { max-width: 80rem; }
+    .mx-auto { margin-left: auto; margin-right: auto; }
+    .flex { display: flex; }
+    .grid { display: grid; }
+    .items-center { align-items: center; }
+    .justify-between { justify-content: space-between; }
+    .hidden { display: none; }
+    .relative { position: relative; }
+    .sticky { position: sticky; }
+    .top-0 { top: 0; }
+    .z-30 { z-index: 30; }
+    .h-20 { height: 5rem; }
+    .w-full { width: 100%; }
+    .rounded-2xl { border-radius: 1rem; }
+    .rounded-full { border-radius: 9999px; }
+    .shadow-md { box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1); }
+    .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+    .bg-brand-dark { background-color: var(--brand-dark); }
+    .bg-brand-gold { background-color: var(--brand-gold); }
+    .bg-brand-light { background-color: var(--brand-light); }
+    .text-white { color: #ffffff; }
+    .text-brand-dark { color: var(--brand-dark); }
+    .text-brand-gold-dark { color: var(--brand-gold); }
+    .font-display { font-family: 'Outfit', sans-serif; }
+    .font-bold { font-weight: 700; }
+    .font-semibold { font-weight: 600; }
+    .tracking-wider { letter-spacing: 0.05em; }
+    .aspect-\[16\/10\] { aspect-ratio: 16 / 10; }
+    .object-cover { object-fit: cover; }
+    
+    /* Layout Grid */
+    @media (min-width: 768px) { .md\:flex { display: flex; } .md\:hidden { display: none; } }
+    @media (min-width: 1024px) { .lg\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+    /* Custom Siteplan & Animations */
+    .kavling-path { transition: all 0.3s ease; cursor: pointer; }
+    .kavling-path:hover, .kavling-path:focus { filter: brightness(1.1); stroke-width: 3; outline: none; }
+    @keyframes pulse-gold { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); opacity: 0.8; } }
+    .pulse-gold { animation: pulse-gold 2s infinite ease-in-out; }
+    
+    /* Map Container */
+    #peta-placeholder { background: #e5e7eb; border: 1px solid #d1d5db; }
+  </style>
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Graha Athera Jogonalan - Rumah Subsidi Premium">
+  <meta property="og:description" content="Siteplan interaktif real-time, kalkulator angsuran KPR, dan booking online langsung via WhatsApp.">
+  <meta property="og:image" content="https://athro.biz.id/assets/graha-athera-jogonalan-tipe-30.webp">
+  <meta property="og:type" content="website">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/tailwind.css">
+
+  <!-- JSON-LD SEO Schema for Product -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Graha Athera - Rumah Subsidi",
+    "image": "https://athro.biz.id/assets/graha-athera-jogonalan-tipe-30.webp",
+    "description": "Perumahan subsidi dengan konsep modern minimalis tipe 30/60.",
+    "brand": { "@type": "Brand", "name": "Athera Properti Klaten" },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "IDR",
+      "lowPrice": "166000000",
+      "highPrice": "210000000",
+      "offerCount": "50"
+    }
+  }
+  </script>
+</head>
+<body class="bg-brand-light text-brand-dark font-sans scroll-smooth">
+
+  <!-- Header / Navigation (Ditambahkan ID 'main-navbar') -->
+  <header id="main-navbar" class="bg-brand-dark shadow-md sticky top-0 left-0 w-full z-30 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <!-- Logo -->
+        <a href="./" class="flex items-center space-x-2">
+          <img 
+            src="assets/logo.webp" 
+            alt="Logo Athera Properti Klaten" 
+            class="h-8 w-auto" 
+            width="56" 
+            height="56"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          >
+          <span class="text-xl font-display font-bold tracking-wider text-white">Athera Properti Klaten</span>
+        </a>
+
+        <!-- Desktop Nav -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="./" class="text-gray-300 hover:text-brand-gold-dark transition text-sm">Kembali ke Home</a>
+          <a href="#proyek-detail" class="text-gray-300 hover:text-brand-gold-dark transition text-sm">Info Proyek</a>
+          <a href="#siteplan-section" class="text-gray-300 hover:text-brand-gold-dark transition text-sm">Denah Siteplan</a>
+          <a href="#kpr-section" class="text-gray-300 hover:text-brand-gold-dark transition text-sm">Kalkulator KPR</a>
+          <a href="#location-section" class="text-gray-300 hover:text-brand-gold-dark transition text-sm">Lokasi</a>
+          <a href="./#contact" class="bg-brand-gold text-brand-dark px-5 py-2.5 rounded-full hover:bg-white hover:text-brand-dark transition font-semibold text-xs tracking-wider uppercase">Hubungi Sales</a>
+        </nav>
+
+        <!-- Mobile Menu Hamburger -->
+        <div class="md:hidden flex items-center">
+          <button id="menu-btn" class="text-white hover:text-brand-gold-dark focus:outline-none" aria-label="Toggle Menu">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-brand-dark/95 backdrop-blur-md border-t border-white/10 px-4 py-4 space-y-3">
+      <a href="./" class="block text-gray-200 hover:text-brand-gold-dark transition py-2 text-base font-medium">Kembali ke Home</a>
+      <a href="#proyek-detail" class="block text-gray-200 hover:text-brand-gold-dark transition py-2 text-base font-medium">Info Proyek</a>
+      <a href="#siteplan-section" class="block text-gray-200 hover:text-brand-gold-dark transition py-2 text-base font-medium">Denah Siteplan</a>
+      <a href="#kpr-section" class="block text-gray-200 hover:text-brand-gold-dark transition py-2 text-base font-medium">Kalkulator KPR</a>
+      <a href="#location-section" class="block text-gray-200 hover:text-brand-gold-dark transition py-2 text-base font-medium">Lokasi</a>
+      <a href="./#contact" class="block bg-brand-gold text-brand-dark text-center py-3 rounded-full hover:bg-white hover:text-brand-dark transition font-semibold text-sm">Hubungi Sales</a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+    
+    <!-- A. BAGIAN ATAS: INFORMASI DASAR -->
+    <section id="proyek-detail" class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <!-- Media Slider / Image -->
+      <div class="rounded-2xl overflow-hidden shadow-xl border border-gray-200 bg-gray-100">
+        <img 
+          src="assets/graha-athera-jogonalan-tipe-30.webp" 
+          alt="Rumah Subsidi Graha Athera Jogonalan Tipe 30" 
+          class="w-full h-auto object-cover aspect-[16/10]"
+          width="800" 
+          height="500"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
+      </div>
+
+      <!-- Info Details -->
+      <div class="space-y-6">
+        <div class="space-y-2">
+          <div class="flex items-center space-x-2">
+            <span class="bg-emerald-100 text-emerald-800 text-xs px-3 py-1 rounded-full font-semibold uppercase tracking-wider">Rumah Subsidi</span>
+            <span class="bg-brand-gold/20 text-brand-dark text-xs px-3 py-1 rounded-full font-semibold uppercase tracking-wider">Tipe 30/60</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl font-display font-bold text-brand-dark">Graha Athera Jogonalan</h1>
+        </div>
+
+        <p class="text-gray-600 font-light leading-relaxed">
+          Perumahan subsidi dengan mutu bangunan komersil. Kami menggunakan material pilihan seperti dinding bata merah, atap baja ringan, dan lantai keramik berkualitas tinggi. Nikmati hunian asri dengan keamanan one-gate system dan jalan perumahan paving lebar 6,5 meter.
+        </p>
+
+        <!-- Facilities & Legalities Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 border-t border-gray-100">
+          <!-- Facilities -->
+          <div class="space-y-3">
+            <h2 class="font-display font-bold text-brand-dark text-sm uppercase tracking-wider">Fasilitas Sekitar</h2>
+            <ul class="space-y-2 text-sm text-gray-700 font-light">
+              <li class="flex items-center"><span class="w-2 h-2 bg-brand-gold rounded-full mr-2"></span> Stasiun Kereta Api (10 Menit)</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-brand-gold rounded-full mr-2"></span> Akses Pintu Tol (15 Menit)</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-brand-gold rounded-full mr-2"></span> Pasar Tradisional & Minimarket</li>
+              <li class="flex items-center"><span class="w-2 h-2 bg-brand-gold rounded-full mr-2"></span> Bebas Banjir</li>
+            </ul>
+          </div>
+
+          <!-- Legalities -->
+          <div class="space-y-3">
+            <h2 class="font-display font-bold text-brand-dark text-sm uppercase tracking-wider">Legalitas & Hukum</h2>
+            <div class="p-4 bg-brand-dark/5 rounded-xl space-y-2 border border-brand-dark/5">
+              <div class="flex items-center space-x-2 text-xs">
+                <svg class="h-4 w-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                <span class="font-bold text-brand-dark text-xs">SHM (Sertifikat Hak Milik)</span>
+              </div>
+              <div class="flex items-center space-x-2 text-xs">
+                <svg class="h-4 w-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                <span class="font-bold text-brand-dark text-xs">PBG / IMB Pecah Per Kavling</span>
+              </div>
+              <p class="text-[10px] text-gray-700 font-light leading-relaxed">Jaminan keamanan legalitas 100% aman, bersertifikat, dan terdaftar di dinas perumahan setempat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- B. BAGIAN TENGAH: SITEPLAN SVG INTERAKTIF (Aksesibilitas Ditingkatkan) -->
+<!-- Responsive SVG Container -->
+<div class="overflow-x-auto py-6 bg-brand-light/50 rounded-xl border border-gray-200 flex justify-center">
+  <div class="min-w-[300px] w-full max-w-5xl px-4">
+    <svg viewBox="50 635 760 470" class="w-full h-auto select-none" xmlns="http://www.w3.org/2000/svg">
+      <style>
+        .kavling-path {
+          fill: #ffffff;
+          stroke: #1e2d24;
+          stroke-width: 1.2;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+        }
+        .kavling-path:hover, .kavling-path:focus {
+          fill: #60a5fa !important;
+          stroke: #1d4ed8 !important;
+          outline: none;
+        }
+        .road-path {
+          fill: #5b6577;
+          stroke: #334155;
+          stroke-width: 1.2;
+        }
+        .fasum-path {
+          fill: #52e085;
+          stroke: #15803d;
+          stroke-width: 1.2;
+        }
+        .site-border {
+          fill: none;
+          stroke: #a1a1aa;
+          stroke-width: 1.5;
+          stroke-dasharray: 6 4;
+        }
+        .road-text {
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 11px;
+          font-weight: 800;
+          fill: #ffffff;
+          letter-spacing: 1.5px;
+        }
+      </style>
+
+      <!-- Outer Site Boundary (Garis Batas Lahan) -->
+      <path d="M 520.16482,659.02655 75.641659,937.6653 167.89518,1087.7935 793.70079,698.08853 Z" class="site-border" pointer-events="none" />
+
+      <!-- JALAN UTAMA (Tanpa Garis Putus-Putus) -->
+      <g id="jalan-utama">
+        <path d="m 557.89184,729.18152 -441.44005,274.89588 20.26558,32.9791 441.63556,-275.01765 z" class="road-path" />
+        <!-- Teks Jalan Center Presisi -->
+        <text x="345.3" y="885.1" class="road-text" text-anchor="middle" transform="rotate(-31.9135 347.3 883.1)">JALAN LEBAR 6,5M</text>
+      </g>
+
+      <!-- TAMAN & FASUM -->
+      <g id="fasum-area">
+        <!-- Fasum Atas Kanan -->
+        <path d="m 793.70079,698.08853 -273.53597,-39.06198 -6.80974,4.26853 42.00928,67.46037 2.52748,-1.57393 20.46109,32.85733 31.47859,50.54972 z" class="fasum-path" />
+        <text x="620" y="730" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="bold" fill="#14532d" letter-spacing="1">RTH</text>
+
+        <!-- Fasum Bawah Kiri 1 -->
+        <path d="m 92.040144,927.3863 -16.398485,10.279 40.810131,66.4121 16.82236,-10.4757 z" class="fasum-path" />
+        <!-- Fasum Bawah Kiri 2 -->
+        <path d="m 153.73523,1026.459 -17.01786,10.5975 31.17781,50.737 17.31864,-10.7848 z" class="fasum-path" />
+      </g>
+
+      <!-- ROW KAVLING ATAS (Kav B14 - B1) -->
+      <g id="kavling-row-atas">
+        <!-- Kav B14 -->
+        <g>
+          <path id="kav-B14" d="m 513.35508,663.29508 -27.75129,17.39523 41.95822,67.37837 27.80235,-17.31323 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B14, Luas Lahan 30/70" />
+          <text x="520.5" y="701.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B14</text>
+          <text x="520.5" y="711.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/70</text>
+        </g>
+        <!-- Kav B13 -->
+        <g>
+          <path id="kav-B13" d="m 485.60379,680.69031 -30.27412,18.97661 41.9025,67.28891 30.32984,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B13, Luas Lahan 30/78" />
+          <text x="491.4" y="719.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B13</text>
+          <text x="491.4" y="729.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/78</text>
+        </g>
+        <!-- Kav B12 -->
+        <g>
+          <path id="kav-B12" d="m 455.32967,699.66692 -30.27413,18.97662 41.8468,67.19945 30.32983,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B12, Luas Lahan 30/78" />
+          <text x="461.1" y="738.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B12</text>
+          <text x="461.1" y="748.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/78</text>
+        </g>
+        <!-- Kav B11 -->
+        <g>
+          <path id="kav-B11" d="m 425.05554,718.64354 -30.27413,18.97661 41.79109,67.10999 30.32984,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B11, Luas Lahan 30/77" />
+          <text x="430.8" y="757.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B11</text>
+          <text x="430.8" y="767.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/77</text>
+        </g>
+        <!-- Kav B10 -->
+        <g>
+          <path id="kav-B10" d="m 394.78141,737.62015 -30.27412,18.97662 41.73538,67.02053 30.32983,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B10, Luas Lahan 30/77" />
+          <text x="400.5" y="776.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B10</text>
+          <text x="400.5" y="786.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/77</text>
+        </g>
+        <!-- Kav B9 -->
+        <g>
+          <path id="kav-B9" d="m 364.50729,756.59677 -30.27413,18.97661 41.67967,66.93108 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B9, Luas Lahan 30/77" />
+          <text x="370.2" y="795.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B9</text>
+          <text x="370.2" y="805.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/77</text>
+        </g>
+        <!-- Kav B8 -->
+        <g>
+          <path id="kav-B8" d="M 334.23316,775.57338 303.95903,794.55 345.583,861.39161 375.91283,842.50446 Z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B8, Luas Lahan 30/77" />
+          <text x="339.9" y="814.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B8</text>
+          <text x="339.9" y="824.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/77</text>
+        </g>
+        <!-- Kav B7 -->
+        <g>
+          <path id="kav-B7" d="m 303.95903,794.55 -30.27412,18.97661 41.56825,66.75216 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B7, Luas Lahan 30/77" />
+          <text x="309.6" y="833.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B7</text>
+          <text x="309.6" y="843.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/77</text>
+        </g>
+        <!-- Kav B6 -->
+        <g>
+          <path id="kav-B6" d="m 273.68491,813.52661 -30.27413,18.97662 41.51254,66.66269 30.32984,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B6, Luas Lahan 30/77" />
+          <text x="279.3" y="852.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B6</text>
+          <text x="279.3" y="862.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/77</text>
+        </g>
+        <!-- Kav B5 -->
+        <g>
+          <path id="kav-B5" d="m 243.41078,832.50323 -30.27413,18.97661 41.45684,66.57324 30.32983,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B5, Luas Lahan 30/77" />
+          <text x="249.0" y="871.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B5</text>
+          <text x="249.0" y="881.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/77</text>
+        </g>
+        <!-- Kav B4 -->
+        <g>
+          <path id="kav-B4" d="m 213.13665,851.47984 -30.27413,18.97661 41.40113,66.48378 30.32984,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B4, Luas Lahan 30/77" />
+          <text x="218.7" y="890.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B4</text>
+          <text x="218.7" y="900.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/77</text>
+        </g>
+        <!-- Kav B3 -->
+        <g>
+          <path id="kav-B3" d="m 182.86252,870.45645 -30.27412,18.97662 41.34542,66.39432 30.32983,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B3, Luas Lahan 30/77" />
+          <text x="188.4" y="909.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B3</text>
+          <text x="188.4" y="919.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/77</text>
+        </g>
+        <!-- Kav B2 -->
+        <g>
+          <path id="kav-B2" d="m 152.5884,889.43307 -30.27413,18.97661 41.28971,66.30486 30.32984,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B2, Luas Lahan 30/77" />
+          <text x="158.1" y="928.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B2</text>
+          <text x="158.1" y="938.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/77</text>
+        </g>
+        <!-- Kav B1 -->
+        <g>
+          <path id="kav-B1" d="m 122.31427,908.40968 -30.274126,18.97662 41.234006,66.2154 30.32983,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling B1, Luas Lahan 30/77" />
+          <text x="129.8" y="947.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">B1</text>
+          <text x="129.8" y="957.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/77</text>
+        </g>
+      </g>
+
+      <!-- ROW KAVLING BAWAH (Kav A14 - A1) -->
+      <g id="kavling-row-bawah">
+        <!-- Kav A14 -->
+        <g>
+          <path id="kav-A14" d="m 578.35293,762.03885 -30.32984,18.88715 31.47859,50.54973 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A14, Luas Lahan 30/60" />
+          <text x="578.9" y="792.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A14</text>
+          <text x="578.9" y="802.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/60</text>
+        </g>
+        <!-- Kav A13 -->
+        <g>
+          <path id="kav-A13" d="m 548.02309,780.926 -30.32983,18.88716 31.47859,50.54972 30.32983,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A13, Luas Lahan 30/60" />
+          <text x="548.6" y="811.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A13</text>
+          <text x="548.6" y="821.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/60</text>
+        </g>
+        <!-- Kav A12 -->
+        <g>
+          <path id="kav-A12" d="m 517.69326,799.81316 -30.32984,18.88715 31.47859,50.54973 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A12, Luas Lahan 30/60" />
+          <text x="518.3" y="830.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A12</text>
+          <text x="518.3" y="840.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/60</text>
+        </g>
+        <!-- Kav A11 -->
+        <g>
+          <path id="kav-A11" d="m 487.36342,818.70031 -30.32983,18.88716 31.47859,50.54972 30.32983,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A11, Luas Lahan 30/60" />
+          <text x="487.9" y="849.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A11</text>
+          <text x="487.9" y="859.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/60</text>
+        </g>
+        <!-- Kav A10 -->
+        <g>
+          <path id="kav-A10" d="m 457.03359,837.58747 -30.32984,18.88715 31.47859,50.54973 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A10, Luas Lahan 30/60" />
+          <text x="457.6" y="868.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A10</text>
+          <text x="457.6" y="878.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/60</text>
+        </g>
+        <!-- Kav A9 -->
+        <g>
+          <path id="kav-A9" d="m 426.70375,856.47462 -30.32983,18.88716 31.47859,50.54972 30.32983,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A9, Luas Lahan 30/60" />
+          <text x="427.3" y="887.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A9</text>
+          <text x="427.3" y="897.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/60</text>
+        </g>
+        <!-- Kav A8 -->
+        <g>
+          <path id="kav-A8" d="m 396.37392,875.36178 -30.32984,18.88715 31.47859,50.54973 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A8, Luas Lahan 30/60" />
+          <text x="397.0" y="906.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A8</text>
+          <text x="397.0" y="916.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/60</text>
+        </g>
+        <!-- Kav A7 -->
+        <g>
+          <path id="kav-A7" d="m 366.04408,894.24893 -30.32984,18.88716 31.4786,50.54972 30.32983,-18.88715 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A7, Luas Lahan 30/60" />
+          <text x="366.6" y="925.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A7</text>
+          <text x="366.6" y="935.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/60</text>
+        </g>
+        <!-- Kav A6 -->
+        <g>
+          <path id="kav-A6" d="m 335.71424,913.13609 -30.32983,18.88715 31.47859,50.54973 30.32984,-18.88716 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A6, Luas Lahan 30/60" />
+          <text x="336.3" y="944.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A6</text>
+          <text x="336.3" y="954.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/60</text>
+        </g>
+        <!-- Kav A5 -->
+        <g>
+          <path id="kav-A5" d="m 305.38441,932.02324 -30.32984,18.88716 31.4786,50.5497 30.32983,-18.88713 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A5, Luas Lahan 30/60" />
+          <text x="306.0" y="963.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A5</text>
+          <text x="306.0" y="973.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/60</text>
+        </g>
+        <!-- Kav A4 -->
+        <g>
+          <path id="kav-A4" d="m 275.05457,950.9104 -30.32983,18.88715 31.47859,50.54975 30.32984,-18.8872 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A4, Luas Lahan 30/60" />
+          <text x="275.6" y="982.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A4</text>
+          <text x="275.6" y="992.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/60</text>
+        </g>
+        <!-- Kav A3 -->
+        <g>
+          <path id="kav-A3" d="m 244.72474,969.79755 -30.32984,18.88716 31.47859,50.54969 30.32984,-18.8871 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A3, Luas Lahan 30/60" />
+          <text x="245.3" y="1001.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A3</text>
+          <text x="245.3" y="1011.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/60</text>
+        </g>
+        <!-- Kav A2 -->
+        <g>
+          <path id="kav-A2" d="m 214.3949,988.68471 -30.32983,18.88719 31.47859,50.5497 30.32983,-18.8872 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A2, Luas Lahan 30/60" />
+          <text x="215.0" y="1020.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A2</text>
+          <text x="215.0" y="1030.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/60</text>
+        </g>
+        <!-- Kav A1 -->
+        <g>
+          <path id="kav-A1" d="m 184.06507,1007.5719 -30.32984,18.8871 31.47859,50.5497 30.32984,-18.8871 z" class="kavling-path" tabindex="0" role="button" aria-label="Kavling A1, Luas Lahan 30/60" />
+          <text x="184.6" y="1038.0" font-family="'Outfit', sans-serif" font-size="10" font-weight="bold" fill="#1e2d24" text-anchor="middle" pointer-events="none">A1</text>
+          <text x="184.6" y="1048.5" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" fill="#1e2d24" text-anchor="middle" pointer-events="none">30/60</text>
+        </g>
+      </g>
+
+      <!-- Frame Luar Canvas -->
+      <rect x="52" y="637" width="756" height="466" fill="none" stroke="#664D03" stroke-width="1.5" rx="10" pointer-events="none" />
+    </svg>
+  </div>
+</div>
+    </section>
+
+    <!-- D. BAGIAN FINANSIAL: KALKULATOR KPR -->
+    <section id="kpr-section" class="grid grid-cols-1 lg:grid-cols-3 gap-8 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+      <!-- Input Panel -->
+      <div class="lg:col-span-1 space-y-6">
+        <div>
+          <h2 class="text-xl font-display font-bold text-brand-dark">Kalkulator Simulasi KPR</h2>
+          <p class="text-xs text-gray-700 font-light mt-1">Sesuaikan harga properti, nominal Down Payment, persentase bunga tahunan, dan tenor kredit KPR untuk simulasi angsuran.</p>
+        </div>
+
+        <div class="space-y-4 text-xs font-semibold text-brand-dark uppercase tracking-wider">
+          <!-- Harga Jual -->
+          <div>
+            <label for="input-harga-kpr" class="block mb-2">Harga Jual Unit (Rp)</label>
+            <input type="number" id="input-harga-kpr" class="w-full px-4 py-3 rounded-lg bg-brand-light border border-gray-200 focus:outline-none focus:border-brand-gold text-sm text-brand-dark" placeholder="Masukkan harga...">
+          </div>
+
+          <!-- DP Percent & Nominal -->
+          <div class="grid grid-cols-3 gap-3">
+            <div class="col-span-1">
+              <label for="input-dp-persen" class="block mb-2">DP (%)</label>
+              <input type="number" id="input-dp-persen" value="10" min="0" max="100" class="w-full px-4 py-3 rounded-lg bg-brand-light border border-gray-200 focus:outline-none focus:border-brand-gold text-sm text-brand-dark" placeholder="%">
+            </div>
+            <div class="col-span-2">
+              <label for="input-dp-nominal" class="block mb-2">DP Nominal (Rp)</label>
+              <input type="number" id="input-dp-nominal" class="w-full px-4 py-3 rounded-lg bg-brand-light border border-gray-200 focus:outline-none focus:border-brand-gold text-sm text-brand-dark" placeholder="Maks nominal...">
+            </div>
+          </div>
+
+          <!-- Suku Bunga & Tenor -->
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label for="input-bunga-kpr" class="block mb-2">Bunga (% / Thn)</label>
+              <input type="number" id="input-bunga-kpr" value="5" step="0.1" class="w-full px-4 py-3 rounded-lg bg-brand-light border border-gray-200 focus:outline-none focus:border-brand-gold text-sm text-brand-dark">
+            </div>
+            <div>
+              <label for="input-tenor-kpr" class="block mb-2">Tenor (Tahun)</label>
+              <input type="number" id="input-tenor-kpr" value="15" min="1" max="30" class="w-full px-4 py-3 rounded-lg bg-brand-light border border-gray-200 focus:outline-none focus:border-brand-gold text-sm text-brand-dark">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Output Panel: Results & Cost breakdown -->
+      <div class="lg:col-span-2 bg-brand-light p-8 rounded-xl border border-gray-100 flex flex-col justify-between space-y-6">
+        <div>
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-700 mb-6">Rincian Perkiraan Kredit & Biaya</h3>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            <!-- Main metrics -->
+            <div class="space-y-4">
+              <div>
+                <p class="text-[10px] uppercase font-bold tracking-wider text-gray-700">Plafon Pinjaman KPR</p>
+                <p id="out-plafon" class="text-2xl font-display font-bold text-brand-dark">Rp 0</p>
+              </div>
+              <div class="bg-brand-dark p-6 rounded-xl text-white">
+                <p class="text-[11px] uppercase font-bold tracking-wider text-brand-gold">Estimasi Angsuran Bulanan</p>
+                <p id="out-angsuran" class="text-4xl font-display font-bold text-brand-gold">Rp 0</p>
+                <p class="text-[8px] text-gray-300 font-light mt-1">*Bunga flat/annuity. Hasil real mengikuti appraisal bank terkait.</p>
+              </div>
+            </div>
+
+            <!-- Fees breakdown -->
+            <div class="space-y-3 text-xs">
+              <h4 class="font-bold text-brand-dark uppercase tracking-wider pb-2 border-b border-gray-200">Biaya Awal Legalitas & Bank</h4>
+              
+              <div class="flex justify-between">
+                <span class="text-gray-700 font-light">Pajak BPHTB (Subsidized)</span>
+                <span id="out-bphtb" class="font-bold text-brand-dark">Rp 0</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-700 font-light">AJB & Bea Notaris</span>
+                <span id="out-ajb" class="font-bold text-brand-dark">Rp 0</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-700 font-light">Provisi Bank</span>
+                <span id="out-provisi" class="font-bold text-brand-dark">Rp 0</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-700 font-light">Biaya Admin Bank</span>
+                <span id="out-admin" class="font-bold text-brand-dark">Rp 0</span>
+              </div>
+              
+              <div class="flex justify-between pt-3 border-t border-gray-200 text-sm">
+                <span class="font-bold text-brand-dark">Total Biaya Awal</span>
+                <span id="out-total-awal" class="font-bold text-brand-gold-dark text-lg">Rp 0</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-[11px] text-gray-600 font-medium leading-relaxed pt-4 border-t">
+          Disclaimer: Perhitungan di atas merupakan simulasi perkiraan kotor. Besaran angsuran dan biaya bank dapat bervariasi bergantung pada profil finansial pemohon dan suku bunga terkini yang berlaku di Bank Pemberi Kredit (KPR BTN, Mandiri, BRI, dll).
+        </div>
+      </div>
+    </section>
+
+    <!-- C. BAGIAN BAWAH: GOOGLE MAPS DEEP LINK -->
+    <section id="location-section" class="grid grid-cols-1 lg:grid-cols-3 gap-8 bg-white p-8 rounded-2xl shadow-lg border border-gray-100 items-center">
+      <div class="lg:col-span-1 space-y-4">
+        <span class="text-brand-gold-dark font-display font-bold text-xs uppercase tracking-widest block">Lokasi Presisi</span>
+        <h2 class="text-2xl font-display font-bold text-brand-dark">Strategis, Bebas Banjir, & Aksesibilitas Tinggi</h2>
+        <p class="text-sm text-gray-700 font-light">Terletak di Jl. Raya Utama No. 12, Semarang. Dekat dengan sarana sekolah, rumah sakit, pusat belanja, dan halte BRT.</p>
+        
+        <div class="pt-4">
+          <a href="https://maps.google.com/?q=-7.7053242,110.5190491" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-brand-dark text-white hover:bg-brand-gold hover:text-brand-dark px-6 py-3.5 rounded-lg text-sm font-semibold tracking-wider uppercase transition shadow-md w-full text-center">
+            <svg class="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+            Petunjuk Navigasi Google Maps
+          </a>
+        </div>
+      </div>
+
+      <!-- Map frame -->
+      <div class="lg:col-span-2 rounded-xl overflow-hidden shadow-md border border-gray-200 h-[280px]">
+        <!-- 1. Placeholder untuk Peta (Tampilan Awal) -->
+        <div id="peta-placeholder" style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+          <p style="font-family: sans-serif; color: #555;">Memuat Peta Lokasi...</p>
+        </div>
+
+        <!-- 2. Iframe Asli (Disembunyikan) -->
+        <div id="peta-container" style="display: none; width: 100%; height: 100%;">
+          <iframe 
+            id="peta-gmaps"
+            data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.270732448332!2d110.5190491!3d-7.7053242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwNDInMTkuMiJTIDExMMKwMzEnMDguNiJF!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid"
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            title="Peta Lokasi Graha Athera Jogonalan"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- E. BAGIAN FOOTER PROYEK: CALL TO ACTION -->
+  <section class="bg-brand-dark text-white py-16 border-t border-brand-gold/25 relative overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(197,168,128,0.15),transparent)] pointer-events-none"></div>
+    <div class="max-w-4xl mx-auto px-4 text-center relative z-10 space-y-6">
+      <span class="text-brand-gold font-display font-bold text-m uppercase tracking-widest block text-glow">Stok Terbatas!</span>
+      <h2 class="text-3xl sm:text-4xl font-display font-bold text-white">Jangan Lewatkan Kesempatan Memiliki Rumah Impian</h2>
+      <p class="text-sm text-gray-300 max-w-xl mx-auto font-light leading-relaxed">
+        Kuota perumahan subsidi dengan suku bunga KPR flat 5% per tahun dari program pemerintah terus berkurang setiap harinya. Amankan nomor kavling Anda sekarang juga sebelum kehabisan!
+      </p>
+      <div class="pt-4 flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <a href="#siteplan-section" class="w-full sm:w-auto bg-white text-brand-dark px-8 py-4 rounded-full font-semibold text-sm tracking-wider uppercase hover:bg-brand-gold hover:text-brand-dark transition-all duration-300">Pilih Kavling</a>
+        <a id="btn-cta-whatsapp" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto bg-brand-gold text-brand-dark px-8 py-4 rounded-full font-semibold text-sm tracking-wider uppercase hover:bg-white hover:text-brand-dark transition-all duration-300 pulse-gold flex items-center justify-center">
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.03-5.115-2.908-6.995-1.878-1.88-4.357-2.914-6.997-2.915-5.442 0-9.867 4.42-9.871 9.866-.001 1.7.453 3.361 1.314 4.816L1.93 22.146l4.717-1.238zM17.43 14.86c-.296-.149-1.755-.867-2.027-.966-.271-.1-.469-.149-.667.149-.198.297-.768.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.667-1.61-.915-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.568-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+          Hubungi Sales Sekarang
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- POP-UP DETAIL KAVLING MODAL -->
+  <div id="detail-kavling-modal" class="fixed inset-0 z-50 bg-brand-dark/75 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-brand-light rounded-2xl shadow-2xl max-w-md w-full overflow-hidden border border-gray-100 transform transition-all duration-300 scale-100">
+      
+      <!-- Header modal -->
+      <div class="bg-brand-dark p-6 text-white flex justify-between items-center">
+        <div>
+          <p class="text-[10px] text-brand-gold font-bold uppercase tracking-wider">Detail Informasi Unit</p>
+          <h3 class="text-xl font-display font-bold">Kavling <span id="modal-no-kavling" class="text-brand-gold">A1</span></h3>
+        </div>
+        <button id="close-modal-btn" class="text-gray-300 hover:text-white focus:outline-none" aria-label="Tutup Detail Modal">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+      </div>
+
+      <!-- Body modal -->
+      <div class="p-6 space-y-4">
+        <!-- Status & Harga -->
+        <div class="flex justify-between items-center pb-4 border-b border-gray-100">
+          <div>
+            <p class="text-[10px] text-gray-600 font-bold uppercase tracking-wider">Harga Cash Jual</p>
+            <p id="modal-harga" class="text-lg font-display font-bold text-brand-gold-dark">Rp 0</p>
+          </div>
+          <span id="modal-status" class="px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider">TERSENDIRI</span>
+        </div>
+
+        <!-- Specifications Grid -->
+        <div class="grid grid-cols-2 gap-4 text-xs">
+          <div>
+            <p class="text-gray-600 font-light">Luas Bangunan/Tanah</p>
+            <p id="modal-luas" class="font-bold text-brand-dark text-sm mt-0.5">36/60 m²</p>
+          </div>
+          <div>
+            <p class="text-gray-600 font-light">Dimensi Tanah</p>
+            <p id="modal-dimensi" class="font-bold text-brand-dark text-sm mt-0.5">6x10 m</p>
+          </div>
+          <div class="col-span-2">
+            <p class="text-gray-600 font-light">Sertifikat Hukum & Legalitas</p>
+            <p id="modal-sertifikat" class="font-bold text-brand-dark text-sm mt-0.5">SHM No. 441/Asri</p>
+          </div>
+        </div>
+
+        <!-- 2D Plan Mockup display -->
+        <div class="bg-white p-4 rounded-xl border border-gray-200 space-y-2">
+          <p class="text-[10px] text-gray-600 font-bold uppercase tracking-wider text-center">Ilustrasi Denah Tata Ruang Tipe 36</p>
+          <div class="flex justify-center py-2">
+
+
+
+
+
+
+
+            
+          </div>
+        </div>
+
+        <p class="text-[10px] text-gray-700 font-light text-center">Simulasi cicilan dan rincian biaya KPR otomatis ter-update di kalkulator bagian bawah.</p>
+      </div>
+
+      <!-- Action Button inside modal -->
+      <div class="p-6 bg-brand-light border-t border-gray-100 flex space-x-3">
+        <a href="#kpr-section" onclick="document.getElementById('detail-kavling-modal').classList.add('hidden')" class="w-1/2 bg-brand-dark text-white hover:bg-brand-gold hover:text-brand-dark py-3.5 rounded-xl font-semibold text-xs tracking-wider uppercase text-center transition">Simulasi KPR</a>
+        <a id="modal-wa-btn" href="#" target="_blank" rel="noopener noreferrer" class="w-1/2 bg-emerald-500 hover:bg-emerald-600 text-white py-3.5 rounded-xl font-semibold text-xs tracking-wider uppercase text-center transition flex items-center justify-center">
+          <svg class="w-4 h-4 mr-1.5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.03-5.115-2.908-6.995-1.878-1.88-4.357-2.914-6.997-2.915-5.442 0-9.867 4.42-9.871 9.866-.001 1.7.453 3.361 1.314 4.816L1.93 22.146l4.717-1.238zM17.43 14.86c-.296-.149-1.755-.867-2.027-.966-.271-.1-.469-.149-.667.149-.198.297-.768.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.667-1.61-.915-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.568-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+          Chat Sales
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer (Simple version for Project Page) -->
+  <footer class="bg-brand-dark text-white py-8 border-t border-white/5 text-center text-xs font-light text-gray-700">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between">
+      <a href="index.html" class="font-display font-bold text-white text-base tracking-wider">Athera Properti Klaten</a>
+      <p class="mt-2 sm:mt-0">© 2026 PT Athera Putra Prima. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Widget -->
+  <a id="floating-wa-widget" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white p-4 rounded-full shadow-2xl transition duration-300 flex items-center group cursor-pointer" aria-label="Hubungi Sales via WhatsApp">
+    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.03-5.115-2.908-6.995-1.878-1.88-4.357-2.914-6.997-2.915-5.442 0-9.867 4.42-9.871 9.866-.001 1.7.453 3.361 1.314 4.816L1.93 22.146l4.717-1.238zM17.43 14.86c-.296-.149-1.755-.867-2.027-.966-.271-.1-.469-.149-.667.149-.198.297-.768.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.667-1.61-.915-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.568-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    </svg>
+    <span class="max-w-0 overflow-hidden group-hover:max-w-xs group-hover:ml-3 transition-all duration-500 ease-in-out whitespace-nowrap text-sm font-semibold tracking-wider uppercase">Tanya Sales</span>
+    <div id="wa-widget-tooltip" class="absolute right-0 bottom-full mb-3 bg-brand-dark text-brand-light text-[10px] px-3 py-1.5 rounded-lg shadow-xl font-medium hidden whitespace-nowrap uppercase tracking-wider border border-white/10"></div>
+  </a>
+
+  <!-- Project Specific & Global Scripts (Memakai Relative Path) -->
+  <script src="js/kalkulator.js" defer></script>
+  <script src="js/siteplan.js" defer></script>
+  <script src="js/app.js" defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Inisialisasi siteplan & kalkulator
+        inisialisasiSiteplan('subsidi-asri', true);
+        inisialisasiKalkulator(true);
+
+        // Binding tombol WA modal agar tersinkronisasi
+        const modalWaBtn = document.getElementById('modal-wa-btn');
+        const mainWaBtn = document.getElementById('btn-cta-whatsapp');
+        
+        const observer = new MutationObserver(() => {
+            if (mainWaBtn && modalWaBtn) {
+                modalWaBtn.href = mainWaBtn.href;
+                if (mainWaBtn.classList.contains('opacity-50')) {
+                    modalWaBtn.classList.add('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+                    modalWaBtn.innerText = 'Sudah Terjual';
+                } else {
+                    modalWaBtn.classList.remove('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+                    modalWaBtn.innerText = 'Chat Sales';
+                }
+            }
+        });
+        
+        if (mainWaBtn) {
+            observer.observe(mainWaBtn, { attributes: true, attributeFilter: ['href', 'class'] });
+        }
+
+        // Lazy Loading Google Maps
+        const petaPlaceholder = document.getElementById('peta-placeholder');
+        const petaContainer = document.getElementById('peta-container');
+        const iframePeta = document.getElementById('peta-gmaps');
+
+        if (petaPlaceholder && petaContainer && iframePeta) {
+          const observerMap = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+              iframePeta.src = iframePeta.getAttribute('data-src');
+              petaPlaceholder.style.display = 'none';
+              petaContainer.style.display = 'block';
+              observerMap.unobserve(petaPlaceholder);
+            }
+          }, { rootMargin: '0px 0px 150px 0px' });
+
+          observerMap.observe(petaPlaceholder);
+        }
+    });
+  </script>
+</body>
+</html>
