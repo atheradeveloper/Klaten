@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Primary Meta Tags -->
+  <title>ANPRO.id - Anugerah Properti Klaten | PT Anugerah Putra Prima</title>
+  <meta name="title" content="ANPRO.id - Anugerah Properti Klaten | PT Anugerah Putra Prima">
+  <meta name="description" content="Official website ANPRO.id (PT Anugerah Putra Prima). Pengembang perumahan komersil, subsidi FLPP, dan tanah kavling SHM terpercaya di Klaten sejak 2006.">
+  <link rel="canonical" href="https://anpro.id/">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://anpro.id/">
+  <meta property="og:title" content="ANPRO.id - Anugerah Properti Klaten | PT Anugerah Putra Prima">
+  <meta property="og:description" content="Pilih perumahan & tanah kavling SHM Klaten langsung di anpro.id">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop">
+
+  <!-- Twitter Meta -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://anpro.id/">
+  <meta property="twitter:title" content="ANPRO.id - Anugerah Properti Klaten">
+  <meta property="twitter:description" content="Pilih perumahan & tanah kavling SHM Klaten langsung di anpro.id">
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop">
+
+  <!-- Preconnect External Domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <!-- Typography: Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN (Palette Kalem) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            stone: {
+              50: '#fafaf9',
+              100: '#f5f5f4',
+              200: '#e7e5e4',
+              300: '#d6d3d1',
+              400: '#a8a29e',
+              700: '#44403c',
+              800: '#292524',
+              900: '#1c1917',
+            },
+            accent: {
+              taupe: '#8c6d53',
+              gold: '#b4835b'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Alpine.js CDN -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <style>
+    [x-cloak] { display: none !important; }
+    /* Hide scrollbar for carousel */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "PT Anugerah Putra Prima (Anugerah Properti Klaten)",
+    "alternateName": "ANPRO.id",
+    "url": "https://anpro.id/",
+    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop",
+    "telephone": "+62272322830",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jln. Perintis Kemerdekaan No. 28",
+      "addressLocality": "Klaten Utara",
+      "addressRegion": "Jawa Tengah",
+      "countryName": "ID"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "08:00",
+      "closes": "16:00"
+    },
+    "priceRange": "Rp 150.000.000 - Rp 600.000.000"
+  }
+  </script>
+</head>
+
+<body class="bg-stone-50 text-stone-900 font-sans antialiased selection:bg-stone-800 selection:text-stone-50" x-data="propertyApp()">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-40 bg-stone-900 text-stone-100 border-b border-stone-800 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <a href="https://anpro.id/" class="flex items-center gap-3" aria-label="ANPRO.id Halaman Utama">
+        <div class="w-10 h-10 rounded-xl bg-stone-800 border border-stone-700 flex items-center justify-center font-bold text-amber-100 text-xl shadow">
+          A
+        </div>
+        <div>
+          <span class="text-lg font-bold tracking-tight block leading-none">Anugerah <span class="text-stone-400 font-normal">Properti</span></span>
+          <span class="text-[10px] text-stone-400 block tracking-widest uppercase">ANPRO.id</span>
+        </div>
+      </a>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-8 text-xs font-semibold text-stone-300">
+        <a href="#proyek" class="hover:text-amber-200 transition-colors">Proyek ANPRO (8)</a>
+        <a href="#detail-proyek" class="hover:text-amber-200 transition-colors">Detail & Fasilitas</a>
+        <a href="#siteplan" class="hover:text-amber-200 transition-colors">Siteplan Kavling</a>
+        <a href="#keunggulan" class="hover:text-amber-200 transition-colors">Mengapa ANPRO?</a>
+        <a href="#kpr" class="hover:text-amber-200 transition-colors">Simulasi KPR</a>
+      </nav>
+
+      <div class="hidden md:flex items-center gap-4">
+        <a :href="getWhatsappUrl('Halo ANPRO.id, saya ingin bertanya mengenai proyek perumahan / kavling Klaten.')" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-100 font-semibold text-xs transition-all border border-stone-700">
+          Konsultasi Marketing
+        </a>
+      </div>
+
+      <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="md:hidden p-2 text-stone-300" aria-label="Menu Navigasi">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div x-show="mobileMenuOpen" x-cloak class="md:hidden bg-stone-900 border-t border-stone-800 px-4 py-4 space-y-3 text-xs text-stone-300">
+      <a href="#proyek" @click="mobileMenuOpen = false" class="block py-2">Proyek ANPRO (8 Proyek)</a>
+      <a href="#detail-proyek" @click="mobileMenuOpen = false" class="block py-2">Detail & Fasilitas</a>
+      <a href="#siteplan" @click="mobileMenuOpen = false" class="block py-2">Siteplan Kavling</a>
+      <a href="#keunggulan" @click="mobileMenuOpen = false" class="block py-2">Mengapa ANPRO?</a>
+      <a href="#kpr" @click="mobileMenuOpen = false" class="block py-2">Simulasi KPR</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="relative pt-12 pb-20 bg-stone-900 text-stone-100 overflow-hidden border-b border-stone-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-stone-800 text-amber-200 text-xs font-semibold border border-stone-700">
+              <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+              Official Portal ANPRO.id - PT Anugerah Putra Prima
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight">
+              Developer Perumahan & Tanah Kavling Terpercaya Klaten
+            </h1>
+            
+            <p class="text-sm sm:text-base text-stone-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+              Membangun lebih dari 200 unit rumah & kavling berkualitas sejak 2006. Pilihan lokasi super strategis dengan legalitas Clean & Clear (SHM, PBB, IMB per unit).
+            </p>
+
+            <div class="pt-2 flex flex-wrap justify-center lg:justify-start gap-4">
+              <a href="#proyek" class="px-6 py-3.5 rounded-xl bg-amber-800 hover:bg-amber-900 text-stone-100 font-bold text-xs transition-all shadow-lg">
+                Jelajahi Proyek ANPRO
+              </a>
+              <a href="#kpr" class="px-6 py-3.5 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-200 font-bold text-xs transition-all border border-stone-700">
+                Simulasi KPR Bank
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-stone-800 aspect-[4/3] bg-stone-800">
+              <img 
+                :src="selectedProjectData.image" 
+                :alt="selectedProjectData.title" 
+                width="800" 
+                height="600"
+                fetchpriority="high"
+                class="w-full h-full object-cover transition-all duration-500"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-transparent to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-stone-900/90 border border-stone-700/80 backdrop-blur-sm">
+                <span class="text-[10px] font-bold text-amber-200 uppercase tracking-widest block" x-text="selectedProjectData.category"></span>
+                <p class="text-sm font-extrabold text-white" x-text="selectedProjectData.title + ' (' + selectedProjectData.location + ')'"></p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 1: PILIH PROYEK ANPRO.ID (SLIDER CAROUSEL DRAG & BUTTON) -->
+    <section id="proyek" class="py-16 bg-stone-50 border-b border-stone-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-stone-200 pb-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-stone-500">Langkah 1 dari 4 (8 Proyek ANPRO.id)</span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold text-stone-900 mt-1">Pilih Proyek & Kavling ANPRO</h2>
+            <p class="text-stone-600 text-xs sm:text-sm mt-1">
+              Geser dengan **klik & drag mouse**, usap layar HP, atau tekan tombol panah untuk memilih proyek.
+            </p>
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="flex items-center gap-2">
+            <button @click="scrollCarousel(-1)" type="button" aria-label="Geser Kiri" class="w-10 h-10 rounded-xl bg-white border border-stone-300 text-stone-800 hover:bg-stone-900 hover:text-white font-bold transition-all shadow-sm flex items-center justify-center">
+              ‹
+            </button>
+            <button @click="scrollCarousel(1)" type="button" aria-label="Geser Kanan" class="w-10 h-10 rounded-xl bg-white border border-stone-300 text-stone-800 hover:bg-stone-900 hover:text-white font-bold transition-all shadow-sm flex items-center justify-center">
+              ›
+            </button>
+          </div>
+        </div>
+
+        <!-- Carousel Container -->
+        <div class="relative">
+          <div 
+            x-ref="projectCarousel" 
+            @mousedown="handleMouseDown($event)"
+            @mouseleave="handleMouseLeave()"
+            @mouseup="handleMouseUp()"
+            @mousemove="handleMouseMove($event)"
+            :class="isMouseDown ? 'cursor-grabbing select-none' : 'cursor-grab'"
+            class="flex gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth py-2 no-scrollbar"
+          >
+            <template x-for="proj in projects" :key="proj.id">
+              <article 
+                @click="selectProject(proj.id)"
+                class="min-w-[280px] sm:min-w-[340px] md:min-w-[360px] snap-start bg-white rounded-2xl border-2 transition-all duration-300 cursor-pointer overflow-hidden flex flex-col justify-between group shadow-sm hover:shadow-xl"
+                :class="selectedProjectId === proj.id ? 'border-stone-900 ring-2 ring-stone-900/10' : 'border-stone-200 hover:border-stone-400'"
+              >
+                <div>
+                  <div class="relative aspect-[16/10] overflow-hidden bg-stone-100">
+                    <img :src="proj.image" :alt="proj.title" loading="lazy" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 pointer-events-none">
+                    <div class="absolute top-3 left-3">
+                      <span class="px-3 py-1 rounded-full text-[10px] font-extrabold uppercase bg-stone-900 text-stone-100 shadow" x-text="proj.category"></span>
+                    </div>
+                  </div>
+
+                  <div class="p-6">
+                    <h3 class="text-lg font-bold text-stone-900" x-text="proj.title"></h3>
+                    <p class="text-xs font-semibold text-stone-500 mb-4" x-text="proj.location"></p>
+                    <p class="text-xs text-stone-600 line-clamp-2 leading-relaxed mb-4" x-text="proj.desc"></p>
+                    
+                    <div class="pt-3 border-t border-stone-100 flex justify-between items-center">
+                      <span class="text-[11px] text-stone-400">Harga Mulai</span>
+                      <span class="text-base font-extrabold text-stone-900" x-text="formatRupiah(proj.priceStart)"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="p-6 pt-0">
+                  <button type="button" class="w-full py-3 rounded-xl font-bold text-xs transition-all text-center pointer-events-none" :class="selectedProjectId === proj.id ? 'bg-stone-900 text-white' : 'bg-stone-100 text-stone-800 group-hover:bg-stone-200'">
+                    <span x-text="selectedProjectId === proj.id ? 'Proyek Aktif Dipilih ✓' : 'Lihat Detail Proyek Ini'"></span>
+                  </button>
+                </div>
+              </article>
+            </template>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STEP 2: DETAIL PROYEK TERPILIH -->
+    <section id="detail-proyek" class="py-16 bg-white border-b border-stone-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-stone-200 pb-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-stone-500">Langkah 2 dari 4</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-900 mt-1" x-text="'Overview: ' + selectedProjectData.title"></h2>
+            <p class="text-xs sm:text-sm text-stone-600 mt-1" x-text="'Lokasi: ' + selectedProjectData.location + ' | Tipe: ' + selectedProjectData.category"></p>
+          </div>
+
+          <a href="#siteplan" class="px-5 py-2.5 rounded-xl bg-amber-800 hover:bg-amber-900 text-stone-100 text-xs font-bold transition-all shadow-md">
+            Lanjut ke Siteplan Proyek Ini ↓
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-6 space-y-6">
+            <p class="text-sm text-stone-700 leading-relaxed" x-text="selectedProjectData.desc"></p>
+
+            <div>
+              <h3 class="text-xs font-bold uppercase text-stone-500 tracking-wider mb-3">Keunggulan & Akses Lokasi Proyek:</h3>
+              <div class="grid grid-cols-2 gap-3">
+                <template x-for="fac in selectedProjectData.facilities" :key="fac">
+                  <div class="flex items-center gap-2 p-3 rounded-xl bg-stone-50 border border-stone-200 text-xs font-semibold text-stone-800">
+                    <span class="text-amber-800">✓</span>
+                    <span x-text="fac"></span>
+                  </div>
+                </template>
+              </div>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-stone-100 border border-stone-200 text-xs space-y-1">
+              <span class="font-bold text-stone-900 block">Jaminan Legalitas ANPRO.id:</span>
+              <p class="text-stone-600">Legalitas Clean & Clear. Setiap unit bersertifikat SHM, PBB terpisah, dan ber-IMB/PBG lengkap siap balik nama.</p>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6">
+            <div class="rounded-3xl overflow-hidden border border-stone-200 shadow-lg aspect-[16/10] bg-stone-100">
+              <img :src="selectedProjectData.image" :alt="selectedProjectData.title" class="w-full h-full object-cover">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STEP 3: SITEPLAN KONTEKSTUAL (TERPISAH PER PROYEK) -->
+    <section id="siteplan" class="py-16 bg-stone-50 border-b border-stone-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-stone-200 pb-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-stone-500">Langkah 3 dari 4</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-stone-900 mt-1" x-text="'Siteplan Unit: ' + selectedProjectData.title"></h2>
+            <p class="text-xs sm:text-sm text-stone-600 mt-1" x-text="'Menampilkan unit & kavling khusus untuk proyek ' + selectedProjectData.title + ' (' + selectedProjectData.location + ')'"></p>
+          </div>
+
+          <!-- Legend Indicators -->
+          <div class="flex items-center gap-4 text-xs font-medium bg-white p-3 rounded-xl border border-stone-200">
+            <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-stone-200 border border-stone-400"></span><span class="text-stone-700">Tersedia</span></div>
+            <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-amber-100 border border-amber-400"></span><span class="text-amber-900">Booked</span></div>
+            <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded bg-stone-300"></span><span class="text-stone-500">Terjual</span></div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Masterplan Map Grid -->
+          <div class="lg:col-span-8 bg-white p-6 rounded-3xl border border-stone-200 space-y-6">
+            
+            <div>
+              <p class="text-xs font-extrabold text-stone-500 uppercase tracking-widest mb-3">Blok A - Front View</p>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <template x-for="unit in getUnitsByBlock('A')" :key="unit.code">
+                  <button 
+                    @click="selectedUnitCode = unit.code"
+                    type="button"
+                    :disabled="unit.status === 'sold'"
+                    :class="{
+                      'ring-2 ring-stone-900 bg-stone-900 text-white': selectedUnitCode === unit.code,
+                      'bg-stone-200 text-stone-800 hover:bg-stone-300': unit.status === 'available' && selectedUnitCode !== unit.code,
+                      'bg-amber-100 text-amber-900 border border-amber-300': unit.status === 'booked' && selectedUnitCode !== unit.code,
+                      'bg-stone-300 text-stone-400 cursor-not-allowed line-through': unit.status === 'sold'
+                    }"
+                    class="p-4 rounded-xl text-left transition-all relative flex flex-col justify-between h-24 shadow-sm"
+                  >
+                    <div class="flex justify-between items-start">
+                      <span class="text-xs font-bold" x-text="unit.code"></span>
+                      <span class="text-[9px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded" :class="unit.status === 'available' ? 'bg-stone-300/60' : 'bg-white/60'" x-text="unit.status"></span>
+                    </div>
+                    <div>
+                      <p class="text-[11px] font-medium" x-text="unit.type"></p>
+                      <p class="text-[10px] opacity-80" x-text="'LT ' + unit.lt + 'm²'"></p>
+                    </div>
+                  </button>
+                </template>
+              </div>
+            </div>
+
+            <div>
+              <p class="text-xs font-extrabold text-stone-500 uppercase tracking-widest mb-3">Blok B - Inner View</p>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <template x-for="unit in getUnitsByBlock('B')" :key="unit.code">
+                  <button 
+                    @click="selectedUnitCode = unit.code"
+                    type="button"
+                    :disabled="unit.status === 'sold'"
+                    :class="{
+                      'ring-2 ring-stone-900 bg-stone-900 text-white': selectedUnitCode === unit.code,
+                      'bg-stone-200 text-stone-800 hover:bg-stone-300': unit.status === 'available' && selectedUnitCode !== unit.code,
+                      'bg-amber-100 text-amber-900 border border-amber-300': unit.status === 'booked' && selectedUnitCode !== unit.code,
+                      'bg-stone-300 text-stone-400 cursor-not-allowed line-through': unit.status === 'sold'
+                    }"
+                    class="p-4 rounded-xl text-left transition-all relative flex flex-col justify-between h-24 shadow-sm"
+                  >
+                    <div class="flex justify-between items-start">
+                      <span class="text-xs font-bold" x-text="unit.code"></span>
+                      <span class="text-[9px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded" :class="unit.status === 'available' ? 'bg-stone-300/60' : 'bg-white/60'" x-text="unit.status"></span>
+                    </div>
+                    <div>
+                      <p class="text-[11px] font-medium" x-text="unit.type"></p>
+                      <p class="text-[10px] opacity-80" x-text="'LT ' + unit.lt + 'm²'"></p>
+                    </div>
+                  </button>
+                </template>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Unit Info Card -->
+          <div class="lg:col-span-4 bg-white p-6 rounded-3xl border border-stone-200 shadow-sm space-y-6 sticky top-28">
+            <div class="border-b border-stone-200 pb-4">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-stone-500">Unit Terpilih</span>
+              <h3 class="text-2xl font-extrabold text-stone-900" x-text="activeUnitDetail.code"></h3>
+              <p class="text-xs text-stone-600 mt-1" x-text="activeUnitDetail.type + ' (' + selectedProjectData.title + ')'"></p>
+            </div>
+
+            <div class="space-y-3 text-xs text-stone-700">
+              <div class="flex justify-between py-2 border-b border-stone-100">
+                <span class="text-stone-500">Status Availability</span>
+                <span class="font-extrabold uppercase px-2 py-0.5 rounded text-[10px]" :class="activeUnitDetail.status === 'available' ? 'bg-stone-200 text-stone-800' : 'bg-amber-100 text-amber-900'" x-text="activeUnitDetail.status"></span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-stone-100">
+                <span class="text-stone-500">Harga Resmi</span>
+                <span class="font-bold text-stone-900" x-text="formatRupiah(activeUnitDetail.price)"></span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-stone-100">
+                <span class="text-stone-500">Luas Tanah / Bangunan</span>
+                <span class="font-semibold" x-text="activeUnitDetail.lt + ' m² / ' + activeUnitDetail.lb + ' m²'"></span>
+              </div>
+              <div class="flex justify-between py-2 border-b border-stone-100">
+                <span class="text-stone-500">Biaya Booking NUP</span>
+                <span class="font-bold text-stone-900">Rp 5.000.000</span>
+              </div>
+            </div>
+
+            <button 
+              @click="openBookingModal('Unit ' + activeUnitDetail.code + ' - ' + selectedProjectData.title)" 
+              type="button"
+              :disabled="activeUnitDetail.status === 'sold'"
+              class="w-full py-3.5 rounded-xl bg-stone-900 hover:bg-stone-800 text-stone-100 font-bold text-xs transition-all shadow-md text-center block disabled:opacity-50"
+            >
+              Lanjut Booking NUP Unit Ini
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- STEP 4: MENGAPA ANUGERAH PROPERTI (ANPRO.ID) -->
+    <section id="keunggulan" class="py-16 bg-white border-b border-stone-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        
+        <div class="text-center max-w-3xl mx-auto space-y-2">
+          <span class="text-xs font-bold uppercase tracking-widest text-stone-500">Keunggulan Pengembang</span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold text-stone-900">Mengapa Pilih Anugerah Properti Klaten?</h2>
+          <p class="text-stone-600 text-xs sm:text-sm">Dedikasi kami sejak 2006 menghadirkan kawasan hunian layak, bernilai investasi tinggi, dan aman secara hukum.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-stone-900 text-amber-100 flex items-center justify-center font-bold text-base">📍</div>
+            <h3 class="font-bold text-stone-900 text-sm">Super Strategis</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">Dikelilingi sarana transportasi, pendidikan, rumah sakit ternama, dan kantor pemerintahan.</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-stone-900 text-amber-100 flex items-center justify-center font-bold text-base">📜</div>
+            <h3 class="font-bold text-stone-900 text-sm">Legalitas Clean & Clear</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">Sertifikat Hak Milik (SHM) pecah per unit, PBB terpisah, dan IMB/PBG lengkap aman dijamin.</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-stone-900 text-amber-100 flex items-center justify-center font-bold text-base">🏦</div>
+            <h3 class="font-bold text-stone-900 text-sm">KPR Semua Bank</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">Pengajuan KPR didukung oleh bank syariah maupun konvensional ternama dengan proses mudah.</p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-stone-50 border border-stone-200 space-y-3">
+            <div class="w-10 h-10 rounded-xl bg-stone-900 text-amber-100 flex items-center justify-center font-bold text-base">📐</div>
+            <h3 class="font-bold text-stone-900 text-sm">Free Design Rumah</h3>
+            <p class="text-xs text-stone-600 leading-relaxed">Bebas menyesuaikan desain tata ruang bangunan rumah tanpa biaya tambahan (syarat berlaku).</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: KALKULATOR KPR -->
+    <section id="kpr" class="py-16 bg-stone-900 text-stone-100 border-b border-stone-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <div class="lg:col-span-5 space-y-6">
+            <span class="px-3 py-1 rounded-full bg-stone-800 text-amber-200 border border-stone-700 text-xs font-bold uppercase tracking-wider">Simulasi Transparan</span>
+            <h2 class="text-3xl font-extrabold text-white">Hitung Estimasi Angsuran KPR Bulanan</h2>
+            <p class="text-stone-400 text-xs sm:text-sm leading-relaxed">
+              Sesuaikan harga properti, persen DP, dan tenor untuk memperkirakan kewajiban cicilan per bulan secara akurat.
+            </p>
+          </div>
+
+          <div class="lg:col-span-7 bg-white text-stone-900 rounded-3xl p-6 sm:p-8 shadow-2xl">
+            <form @submit.prevent class="space-y-6">
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <label for="kpr-harga" class="text-xs font-bold uppercase text-stone-600">Harga Properti</label>
+                  <span class="text-sm font-extrabold text-stone-900" x-text="formatRupiah(kpr.harga)"></span>
+                </div>
+                <input id="kpr-harga" type="range" min="150000000" max="1000000000" step="10000000" x-model.number="kpr.harga" class="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-stone-900">
+              </div>
+
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <label for="kpr-dp" class="text-xs font-bold uppercase text-stone-600">Uang Muka / DP (<span x-text="kpr.dpPercent"></span>%)</label>
+                  <span class="text-sm font-extrabold text-stone-800" x-text="formatRupiah(calculatedDP)"></span>
+                </div>
+                <input id="kpr-dp" type="range" min="0" max="50" step="5" x-model.number="kpr.dpPercent" class="w-full h-2 bg-stone-200 rounded-lg appearance-none cursor-pointer accent-stone-900">
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="kpr-bunga" class="block text-xs font-bold uppercase text-stone-600 mb-2">Suku Bunga Anuitas (%)</label>
+                  <input id="kpr-bunga" type="number" step="0.1" x-model.number="kpr.bunga" class="w-full px-4 py-3 rounded-xl border border-stone-200 font-bold text-stone-800 focus:outline-none focus:ring-2 focus:ring-stone-800">
+                </div>
+                <div>
+                  <label for="kpr-tenor" class="block text-xs font-bold uppercase text-stone-600 mb-2">Tenor Pinjaman (Tahun)</label>
+                  <select id="kpr-tenor" x-model.number="kpr.tenor" class="w-full px-4 py-3 rounded-xl border border-stone-200 font-bold text-stone-800 focus:outline-none focus:ring-2 focus:ring-stone-800 bg-white">
+                    <option value="5">5 Tahun</option>
+                    <option value="10">10 Tahun</option>
+                    <option value="15">15 Tahun</option>
+                    <option value="20">20 Tahun</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-stone-100 border border-stone-200 text-center">
+                <span class="text-xs font-bold text-stone-600 uppercase tracking-wider block mb-1">Estimasi Cicilan Bulanan</span>
+                <span class="text-3xl font-extrabold text-stone-900 block" x-text="formatRupiah(calculatedCicilan)"></span>
+              </div>
+
+              <a :href="getWhatsappUrl('Halo ANPRO.id, saya ingin konsultasi KPR dengan estimasi cicilan ' + formatRupiah(calculatedCicilan) + '/bulan.')" target="_blank" rel="noopener noreferrer" class="w-full py-4 rounded-xl bg-stone-900 hover:bg-stone-800 text-stone-100 font-bold text-xs transition-all text-center block shadow-lg">
+                Konsultasi KPR Ini via WhatsApp
+              </a>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER TERSTRUKTUR & INFORMASI KANTOR RESMI (ANPRO.id) -->
+  <footer class="bg-stone-950 text-stone-400 py-16 border-t border-stone-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-stone-800">
+        
+        <!-- Perusahaan & Profil -->
+        <div class="md:col-span-4 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-stone-800 border border-stone-700 flex items-center justify-center font-bold text-amber-100 text-base">
+              A
+            </div>
+            <span class="text-lg font-bold text-white tracking-tight">Anugerah <span class="text-stone-400 font-normal">Properti</span></span>
+          </div>
+          <p class="text-stone-400 leading-relaxed">
+            <strong class="text-stone-200">PT Anugerah Putra Prima (ANPRO.id)</strong><br>
+            Developer perumahan dan tanah kavling berpengalaman sejak 2006 (resmi berdiri 2009). Berkomitmen menghadirkan kawasan hunian layak, strategis, dan berlegalitas aman di Klaten.
+          </p>
+        </div>
+
+        <!-- Alamat Kantor & Jam Operasional -->
+        <div class="md:col-span-5 space-y-4">
+          <h3 class="text-xs font-extrabold text-white uppercase tracking-wider border-b border-stone-800 pb-2">
+            Kantor Pusat & Operasional
+          </h3>
+          
+          <div class="space-y-3 text-stone-300">
+            
+            <div class="flex items-start gap-3">
+              <span class="text-base shrink-0 leading-none mt-0.5">📍</span>
+              <div class="leading-relaxed">
+                <span class="font-bold text-amber-200 block sm:inline">Alamat: </span>
+                <span class="text-stone-300">Jln. Perintis Kemerdekaan No. 28, Belang Wetan, Klaten Utara, Kab. Klaten, Jawa Tengah.</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-base shrink-0 leading-none mt-0.5">🕒</span>
+              <div class="leading-relaxed">
+                <span class="font-bold text-amber-200 block sm:inline">Jam Kantor: </span>
+                <span class="text-stone-300">Senin – Sabtu: 08.00 – 16.00 WIB (Kecuali Tanggal Merah)</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-base shrink-0 leading-none mt-0.5">📞</span>
+              <div class="leading-relaxed">
+                <span class="font-bold text-amber-200 block sm:inline">Telp Kantor: </span>
+                <span class="text-stone-300">(0272) 322830</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-base shrink-0 leading-none mt-0.5">💬</span>
+              <div class="leading-relaxed">
+                <span class="font-bold text-amber-200 block sm:inline">WhatsApp: </span>
+                <span class="text-stone-300">0851-2466-5145 / 0858-6769-8000</span>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3">
+              <span class="text-base shrink-0 leading-none mt-0.5">✉️</span>
+              <div class="leading-relaxed">
+                <span class="font-bold text-amber-200 block sm:inline">Email: </span>
+                <span class="text-stone-300">anugerah_property@yahoo.com / contact@anpro.id</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Navigasi Cepat -->
+        <div class="md:col-span-3 space-y-4">
+          <h3 class="text-xs font-extrabold text-white uppercase tracking-wider border-b border-stone-800 pb-2">Tautan Cepat</h3>
+          <ul class="space-y-2 text-stone-400">
+            <li><a href="#proyek" class="hover:text-amber-200 transition-colors">Pilih Proyek ANPRO (8)</a></li>
+            <li><a href="#detail-proyek" class="hover:text-amber-200 transition-colors">Detail & Fasilitas</a></li>
+            <li><a href="#siteplan" class="hover:text-amber-200 transition-colors">Siteplan Units</a></li>
+            <li><a href="#keunggulan" class="hover:text-amber-200 transition-colors">Mengapa ANPRO?</a></li>
+            <li><a href="#kpr" class="hover:text-amber-200 transition-colors">Simulasi KPR Online</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-stone-500">
+        <p>&copy; 2026 PT Anugerah Putra Prima (<a href="https://anpro.id/" class="text-stone-300 hover:underline">ANPRO.id</a>). All Rights Reserved.</p>
+        <p>Aset & Dokumen Legalitas Terverifikasi SHM / PBG</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- MODAL FORM NUP -->
+  <div x-show="isBookingModalOpen" x-cloak class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-950/70 backdrop-blur-sm" x-transition>
+    <div @click.away="isBookingModalOpen = false" class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative border border-stone-200 text-stone-900">
+      
+      <button @click="isBookingModalOpen = false" type="button" class="absolute top-4 right-4 text-stone-400 hover:text-stone-600" aria-label="Tutup">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="mb-6">
+        <span class="text-[10px] font-bold uppercase tracking-wider text-amber-800">Formulir NUP Online ANPRO.id</span>
+        <h3 class="text-xl font-extrabold text-stone-900" x-text="bookingContext"></h3>
+        <p class="text-xs text-stone-600 mt-1">Data akan tersimpan secara terenkripsi di sistem Google Sheets & WA Admin.</p>
+      </div>
+
+      <form @submit.prevent="submitNupToGoogleSheets" class="space-y-4">
+        <div>
+          <label for="modal-nama" class="block text-xs font-bold uppercase text-stone-600 mb-1">Nama Lengkap Sesuai KTP</label>
+          <input id="modal-nama" type="text" required x-model="bookingForm.name" placeholder="Sesuai KTP" class="w-full px-4 py-3 rounded-xl border border-stone-200 text-xs focus:outline-none focus:ring-2 focus:ring-stone-800">
+        </div>
+
+        <div>
+          <label for="modal-wa" class="block text-xs font-bold uppercase text-stone-600 mb-1">Nomor WhatsApp</label>
+          <input id="modal-wa" type="tel" required x-model="bookingForm.phone" placeholder="0812xxxxxxx" class="w-full px-4 py-3 rounded-xl border border-stone-200 text-xs focus:outline-none focus:ring-2 focus:ring-stone-800">
+        </div>
+
+        <div>
+          <label for="modal-skema" class="block text-xs font-bold uppercase text-stone-600 mb-1">Rencana Skema Bayar</label>
+          <select id="modal-skema" x-model="bookingForm.scheme" class="w-full px-4 py-3 rounded-xl border border-stone-200 text-xs font-semibold text-stone-800 focus:outline-none focus:ring-2 focus:ring-stone-800 bg-white">
+            <option value="KPR Bank">KPR Bank Partner</option>
+            <option value="Cash Bertahap">Cash Bertahap</option>
+            <option value="Cash Keras">Cash Keras</option>
+          </select>
+        </div>
+
+        <button type="submit" :disabled="isLoading" class="w-full py-3.5 rounded-xl bg-stone-900 hover:bg-stone-800 text-stone-100 font-extrabold text-xs shadow-md transition-all disabled:opacity-50">
+          <span x-show="!isLoading">Kirim NUP & Simpan Data</span>
+          <span x-show="isLoading" x-cloak>Memproses Data...</span>
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ALPINE.JS ENGINE -->
+  <script>
+    function propertyApp() {
+      return {
+        googleScriptUrl: 'https://script.google.com/macros/s/AKfycbx...GANTI_DENGAN_URL_DEPLOYMENT_ANDA.../exec',
+        whatsappNumber: '6285124665145', // WhatsApp Resmi ANPRO.id
+        mobileMenuOpen: false,
+        isBookingModalOpen: false,
+        isLoading: false,
+        selectedProjectId: 'p1',
+        selectedUnitCode: 'GM2-01',
+        bookingContext: '',
+
+        // State untuk Drag Mouse
+        isMouseDown: false,
+        startX: 0,
+        scrollLeftPos: 0,
+        dragMoved: false,
+
+        bookingForm: { name: '', phone: '', scheme: 'KPR Bank' },
+        kpr: { harga: 385000000, dpPercent: 10, bunga: 6.5, tenor: 15 },
+
+        // DATA 8 PROYEK OTENTIK ANPRO.ID (PT ANUGERAH PUTRA PRIMA)
+        projects: [
+          {
+            id: 'p1',
+            title: 'Graha Mulia 2 (RSI Klaten)',
+            location: 'Belang Wetan, Klaten Utara',
+            category: 'Perumahan & Kavling T60',
+            priceStart: 450000000,
+            image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop',
+            desc: 'Perumahan eksklusif & kavling siap bangun lokasi super strategis 100m dari Jln. Solo-Jogja & belakang RSI Klaten.',
+            facilities: ['Jalan Aspal 6,5m', '100m Jln. Solo-Jogja', 'Belakang RSI Klaten', 'Sertifikat SHM & IMB']
+          },
+          {
+            id: 'p2',
+            title: 'Graha Mulia Blimbing',
+            location: 'Blimbing, Kab. Klaten',
+            category: 'Subsidi FLPP (T30)',
+            priceStart: 168000000,
+            image: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=800&auto=format&fit=crop',
+            desc: 'Perumahan subsidi berkualitas tinggi dengan lingkungan asri di Blimbing Klaten, cicilan flat 1 jutaan/bulan.',
+            facilities: ['Jalan Paving 6m', 'Taman Cluster', 'Masjid Warga', 'Bebas Banjir']
+          },
+          {
+            id: 'p3',
+            title: 'Graha Cetan Sejahtera',
+            location: 'Srayon, Cetan, Ceper, Klaten',
+            category: 'Perumahan T45 & T48',
+            priceStart: 350000000,
+            image: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop',
+            desc: 'Unit premium dekat SPBU Cetan & Luwes Ceper. Pilihan T45 (2KT) & T48 (3KT) dengan dimensi muka 9 meter.',
+            facilities: ['Dimensi Muka 9m', 'Carport & Dapur', 'Free Custom Design', 'Dekat SPBU Cetan']
+          },
+          {
+            id: 'p4',
+            title: 'Graha Mranggen Sejahtera',
+            location: 'Mranggen, Klaten',
+            category: 'Siap Huni T40',
+            priceStart: 295000000,
+            image: 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?q=80&w=800&auto=format&fit=crop',
+            desc: 'Rumah siap huni tipe 40 lokasi asri Mranggen Klaten. Promo bonus Kanopi gratis & diskon menarik.',
+            facilities: ['Bonus Kanopi Gratis', 'Unit Siap Huni', 'Sertifikat SHM & IMB', 'Akses Mudah']
+          },
+          {
+            id: 'p5',
+            title: 'Kavling Kelapa Gading 2',
+            location: 'Jl. KH. Ahmad Dahlan, Klaten',
+            category: 'Tanah Kavling SHM',
+            priceStart: 195000000,
+            image: 'https://images.unsplash.com/photo-1628744876497-eb30460be9f6?q=80&w=800&auto=format&fit=crop',
+            desc: '14 unit kavling pilihan tepat pinggir Jln. KH. Ahmad Dahlan utara RSI Klaten. Cocok untuk hunian/kos.',
+            facilities: ['Jalan Cor 6,5m', 'Pinggir Jln Dahlan', 'Utara RSI Klaten', 'SHM Siap Balik Nama']
+          },
+          {
+            id: 'p6',
+            title: 'Kavling Belangwetan',
+            location: 'Belang Wetan, Klaten Utara',
+            category: 'Tanah Kavling SHM',
+            priceStart: 180000000,
+            image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop',
+            desc: '12 unit kavling pilihan 100m dari Balai Desa Belangwetan & belakang RSI Klaten. Setting jalan cor 6,5m.',
+            facilities: ['Jalan Cor 6,5m', '100m Balai Desa', 'Dekat RSI Klaten', 'SHM Murni']
+          },
+          {
+            id: 'p7',
+            title: 'Kavling Nglinggi',
+            location: 'Nglinggi, Klaten',
+            category: 'Tanah Kavling SHM',
+            priceStart: 175000000,
+            image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop',
+            desc: '15 unit kavling siap bangun dekat RSUP dr. Soeradji Tirtonegoro Klaten, jalan 6,5m cocok untuk hunian & kos.',
+            facilities: ['Lebar Jalan 6,5m', 'Dekat RSUP Soeradji', 'Cocok Kos-kosan', 'SHM Murni']
+          },
+          {
+            id: 'p8',
+            title: 'Kavling Karanglo & Jatipuro',
+            location: 'Karanglo / Jatipuro, Klaten',
+            category: 'Tanah Kavling SHM',
+            priceStart: 150000000,
+            image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=800&auto=format&fit=crop',
+            desc: 'Kavling tanah investasi harga terjangkau di kawasan berkembang Klaten, jalan cor beton rapat & bebas banjir.',
+            facilities: ['Harga Terjangkau', 'Sertifikat SHM Pecah', 'Bebas Desain Rumah', 'Proses Notaris Cepat']
+          }
+        ],
+
+        // DATA KAVLING & UNIT RIIL MASING-MASING PROYEK ANPRO.ID
+        units: [
+          // Proyek p1: Graha Mulia 2
+          { projectId: 'p1', code: 'GM2-01', block: 'A', type: 'Rumah T60/120', price: 580000000, lt: 120, lb: 60, status: 'available' },
+          { projectId: 'p1', code: 'GM2-02', block: 'A', type: 'Rumah T60/120', price: 580000000, lt: 120, lb: 60, status: 'booked' },
+          { projectId: 'p1', code: 'GM2-03', block: 'B', type: 'Kavling 100m²', price: 280000000, lt: 100, lb: 0, status: 'available' },
+
+          // Proyek p2: Graha Mulia Blimbing
+          { projectId: 'p2', code: 'GMB-01', block: 'A', type: 'Tipe 30/60 (FLPP)', price: 168000000, lt: 60, lb: 30, status: 'available' },
+          { projectId: 'p2', code: 'GMB-02', block: 'A', type: 'Tipe 30/60 (FLPP)', price: 168000000, lt: 60, lb: 30, status: 'available' },
+          { projectId: 'p2', code: 'GMB-03', block: 'B', type: 'Tipe 30/60 (FLPP)', price: 168000000, lt: 60, lb: 30, status: 'booked' },
+
+          // Proyek p3: Graha Cetan Sejahtera
+          { projectId: 'p3', code: 'GCS-01', block: 'A', type: 'Tipe 45/90', price: 350000000, lt: 90, lb: 45, status: 'available' },
+          { projectId: 'p3', code: 'GCS-02', block: 'A', type: 'Tipe 48/100', price: 385000000, lt: 100, lb: 48, status: 'available' },
+          { projectId: 'p3', code: 'GCS-03', block: 'B', type: 'Tipe 45/90', price: 350000000, lt: 90, lb: 45, status: 'booked' },
+
+          // Proyek p4: Graha Mranggen Sejahtera
+          { projectId: 'p4', code: 'GMS-A4', block: 'A', type: 'Tipe 40/80 (Siap Huni)', price: 295000000, lt: 80, lb: 40, status: 'available' },
+          { projectId: 'p4', code: 'GMS-A5', block: 'A', type: 'Tipe 40/80', price: 295000000, lt: 80, lb: 40, status: 'booked' },
+
+          // Proyek p5: Kavling Kelapa Gading 2
+          { projectId: 'p5', code: 'KG2-01', block: 'A', type: 'Kavling Hook 130m²', price: 215000000, lt: 130, lb: 0, status: 'available' },
+          { projectId: 'p5', code: 'KG2-02', block: 'A', type: 'Kavling Standar 100m²', price: 195000000, lt: 100, lb: 0, status: 'available' },
+          { projectId: 'p5', code: 'KG2-03', block: 'B', type: 'Kavling Standar 100m²', price: 195000000, lt: 100, lb: 0, status: 'booked' },
+
+          // Proyek p6: Kavling Belangwetan
+          { projectId: 'p6', code: 'KBW-01', block: 'A', type: 'Kavling 100m²', price: 180000000, lt: 100, lb: 0, status: 'available' },
+          { projectId: 'p6', code: 'KBW-02', block: 'B', type: 'Kavling 100m²', price: 180000000, lt: 100, lb: 0, status: 'available' },
+
+          // Proyek p7: Kavling Nglinggi
+          { projectId: 'p7', code: 'KNG-01', block: 'A', type: 'Kavling 100m²', price: 175000000, lt: 100, lb: 0, status: 'available' },
+          { projectId: 'p7', code: 'KNG-02', block: 'B', type: 'Kavling 100m²', price: 175000000, lt: 100, lb: 0, status: 'booked' },
+
+          // Proyek p8: Kavling Karanglo
+          { projectId: 'p8', code: 'KKR-01', block: 'A', type: 'Kavling SHM 90m²', price: 150000000, lt: 90, lb: 0, status: 'available' },
+          { projectId: 'p8', code: 'KKR-02', block: 'B', type: 'Kavling SHM 90m²', price: 150000000, lt: 90, lb: 0, status: 'sold' }
+        ],
+
+        get selectedProjectData() {
+          return this.projects.find(p => p.id === this.selectedProjectId) || this.projects[0];
+        },
+
+        // MOUSE DRAG TO SCROLL ENGINE
+        handleMouseDown(e) {
+          this.isMouseDown = true;
+          this.dragMoved = false;
+          this.startX = e.pageX - this.$refs.projectCarousel.offsetLeft;
+          this.scrollLeftPos = this.$refs.projectCarousel.scrollLeft;
+        },
+        handleMouseLeave() {
+          this.isMouseDown = false;
+        },
+        handleMouseUp() {
+          this.isMouseDown = false;
+        },
+        handleMouseMove(e) {
+          if (!this.isMouseDown) return;
+          e.preventDefault();
+          const x = e.pageX - this.$refs.projectCarousel.offsetLeft;
+          const walk = (x - this.startX) * 1.6;
+          if (Math.abs(walk) > 6) {
+            this.dragMoved = true;
+          }
+          this.$refs.projectCarousel.scrollLeft = this.scrollLeftPos - walk;
+        },
+
+        selectProject(id) {
+          if (this.dragMoved) return; // Cegah pemicuan klik saat user hanya menggeser mouse
+          this.selectedProjectId = id;
+          
+          // Auto-select unit pertama proyek terpilih
+          const firstUnit = this.units.find(u => u.projectId === id);
+          if (firstUnit) {
+            this.selectedUnitCode = firstUnit.code;
+          }
+          this.scrollToSection('detail-proyek');
+        },
+
+        scrollCarousel(direction) {
+          const container = this.$refs.projectCarousel;
+          if (container) {
+            const scrollAmount = container.clientWidth * 0.8;
+            container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+          }
+        },
+
+        get activeUnitDetail() {
+          const projectUnits = this.units.filter(u => u.projectId === this.selectedProjectId);
+          return projectUnits.find(u => u.code === this.selectedUnitCode) || projectUnits[0] || { code: 'N/A', type: 'Standar', price: this.selectedProjectData.priceStart, lt: 90, lb: 36, status: 'available' };
+        },
+
+        // FILTER KAVLING/UNIT KHUSUS PER PROYEK TERPILIH
+        getUnitsByBlock(blockName) {
+          return this.units.filter(u => u.projectId === this.selectedProjectId && u.block === blockName);
+        },
+
+        get calculatedDP() {
+          return (this.kpr.harga * this.kpr.dpPercent) / 100;
+        },
+
+        get calculatedCicilan() {
+          const pokok = this.kpr.harga - this.calculatedDP;
+          const bungaBulan = (this.kpr.bunga / 100) / 12;
+          const totalBulan = this.kpr.tenor * 12;
+          if (pokok <= 0 || bungaBulan <= 0) return 0;
+          return Math.round((pokok * bungaBulan) / (1 - Math.pow(1 + bungaBulan, -totalBulan)));
+        },
+
+        formatRupiah(num) {
+          return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(num);
+        },
+
+        getWhatsappUrl(msg) {
+          return `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(msg)}`;
+        },
+
+        openBookingModal(ctx) {
+          this.bookingContext = ctx;
+          this.isBookingModalOpen = true;
+        },
+
+        scrollToSection(id) {
+          document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+        },
+
+        async submitNupToGoogleSheets() {
+          this.isLoading = true;
+
+          const payload = {
+            nama: this.bookingForm.name,
+            telepon: this.bookingForm.phone,
+            unit: this.bookingContext,
+            skema: this.bookingForm.scheme,
+            status: 'Follow Up'
+          };
+
+          const waMsg = `Halo Admin ANPRO.id (PT Anugerah Putra Prima), saya mengajukan reservasi NUP:\nNama: ${this.bookingForm.name}\nNo WA: ${this.bookingForm.phone}\nProyek/Unit: ${this.bookingContext}\nSkema: ${this.bookingForm.scheme}`;
+
+          if (!this.googleScriptUrl.includes('GANTI_DENGAN_URL')) {
+            try {
+              await fetch(this.googleScriptUrl, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+              });
+            } catch (e) {
+              console.error("Gagal post data ke Sheets", e);
+            }
+          }
+
+          window.open(this.getWhatsappUrl(waMsg), '_blank');
+          this.isLoading = false;
+          this.isBookingModalOpen = false;
+          this.bookingForm.name = '';
+          this.bookingForm.phone = '';
+        }
+      }
+    }
+  </script>
+</body>
+</html>
