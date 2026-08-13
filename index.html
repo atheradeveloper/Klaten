@@ -221,17 +221,21 @@
 </head>
 <body class="bg-brand-light text-brand-dark font-sans scroll-smooth antialiased" x-data="atheraApp()">
 
-  <!-- Header / Navigation -->
-  <header id="main-navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-brand-dark/95 md:bg-brand-dark shadow-md">
+ <header id="main-navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-brand-dark/95 md:bg-brand-dark shadow-md">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
-        <!-- Logo -->
-        <a href="./" class="flex items-center space-x-2" aria-label="Beranda Athera Properti Klaten">
-          <img src="assets/logo.webp" 
-               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=100&q=80'" 
-               alt="Logo Athera Properti Klaten" 
-               class="h-8 w-auto" width="32" height="32" loading="eager" fetchpriority="high">
-          <span class="text-xl font-display font-bold tracking-wider text-white">Athera Properti Klaten</span>
+        
+        <!-- Logo Brand GRAND ATHERA -->
+        <a href="./" class="flex items-center space-x-3 group" aria-label="Beranda Grand Athera - PT Athera Putra Prima">
+          <!-- Icon Square GA -->
+          <div class="w-11 h-11 bg-[#0b1727] text-white font-display font-extrabold text-xl rounded-xl flex items-center justify-center tracking-tighter shadow-md border border-white/10 group-hover:scale-105 transition-transform duration-300 shrink-0">
+            GA
+          </div>
+          <!-- Text Stack -->
+          <div class="flex flex-col justify-center">
+            <span class="text-lg md:text-xl font-display font-extrabold tracking-wider text-white uppercase leading-none">GRAND ATHERA</span>
+            <span class="text-[9px] md:text-[10px] font-sans font-semibold tracking-widest text-brand-gold-light uppercase mt-1 leading-none">PT ATHERA PUTRA PRIMA</span>
+          </div>
         </a>
 
         <!-- Desktop Nav Links -->
@@ -243,7 +247,7 @@
           <a href="#legalitas" class="text-gray-200 hover:text-brand-gold-light transition font-semibold text-sm">Legalitas</a>
           <a href="#sponsors" class="text-gray-200 hover:text-brand-gold-light transition font-semibold text-sm">Mitra Kami</a>
           <a href="#contact" class="text-gray-200 hover:text-brand-gold-light transition font-semibold text-sm">Kontak</a>
-          <a href="https://wa.me/6285124665145?text=Halo%20Athera%20Properti%2C%20saya%20ingin%20konsultasi%20gratis." 
+          <a href="https://wa.me/6285124665145?text=Halo%20Grand%20Athera%2C%20saya%20ingin%20konsultasi%20gratis." 
              target="_blank" rel="noopener noreferrer" 
              class="bg-brand-gold text-white px-5 py-2.5 rounded-full hover:bg-white hover:text-brand-dark transition-all font-bold text-xs tracking-wider uppercase pulse-gold min-h-[48px] inline-flex items-center justify-center">Konsultasi Gratis</a>
         </nav>
@@ -270,12 +274,11 @@
       <a @click="mobileMenuOpen = false" href="#legalitas" class="block text-gray-200 hover:text-brand-gold-light transition py-2 text-base font-semibold">Legalitas</a>
       <a @click="mobileMenuOpen = false" href="#sponsors" class="block text-gray-200 hover:text-brand-gold-light transition py-2 text-base font-semibold">Mitra Kami</a>
       <a @click="mobileMenuOpen = false" href="#contact" class="block text-gray-200 hover:text-brand-gold-light transition py-2 text-base font-semibold">Kontak</a>
-      <a href="https://wa.me/6285124665145?text=Halo%20Athera%20Properti%2C%20saya%20ingin%20konsultasi%20gratis." 
+      <a href="https://wa.me/6285124665145?text=Halo%20Grand%20Athera%2C%20saya%20ingin%20konsultasi%20gratis." 
          target="_blank" rel="noopener noreferrer" 
          class="block bg-brand-gold text-white text-center py-3 rounded-full hover:bg-white hover:text-brand-dark transition font-bold text-sm min-h-[48px] flex items-center justify-center">Konsultasi Gratis</a>
     </div>
   </header>
-
   <!-- Hero Section -->
   <section id="hero" class="relative min-h-screen flex items-center justify-center bg-brand-dark text-white pt-20">
     <div class="absolute inset-0 z-0">
