@@ -221,43 +221,52 @@
 </head>
 <body class="bg-brand-light text-brand-dark font-sans scroll-smooth antialiased" x-data="atheraApp()">
 
- <header id="main-navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-brand-dark/95 md:bg-brand-dark shadow-md">
+<!-- Header / Navigation -->
+  <header id="main-navbar" class="fixed top-0 left-0 w-full z-40 transition-all duration-300 bg-[#16241b] shadow-lg border-b border-white/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20">
+      <div class="flex items-center justify-between h-16 sm:h-20">
         
-        <!-- Logo Brand GRAND ATHERA -->
-        <a href="./" class="flex items-center space-x-3 group" aria-label="Beranda Grand Athera - PT Athera Putra Prima">
-          <!-- Icon Square GA -->
-<a href="./" class="flex items-center" aria-label="Beranda Grand Athera - PT Athera Putra Prima">
-  <img src="assets/logo.webp" alt="Logo Grand Athera - PT Athera Putra Prima" class="h-10 w-auto object-contain">
-</a>
-          <!-- Text Stack -->
-          <div class="flex flex-col justify-center">
-            <span class="text-lg md:text-xl font-display font-extrabold tracking-wider text-white uppercase leading-none">GRAND ATHERA</span>
-            <span class="text-[9px] md:text-[10px] font-sans font-semibold tracking-widest text-brand-gold-light uppercase mt-1 leading-none">PT ATHERA PUTRA PRIMA</span>
+        <!-- BRAND LOGO CONTAINER -->
+        <a href="./" class="flex items-center gap-2.5 sm:gap-3.5 shrink-0 group py-1" aria-label="Beranda Grand Athera">
+          <!-- Logo Gambar (Terkunci Proporsinya, Tidak Akan Melebar/Gepeng) -->
+          <img src="assets/logo.webp" 
+               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=100&q=80'" 
+               alt="Logo Grand Athera" 
+               class="h-9 sm:h-11 w-auto object-contain shrink-0 drop-shadow-md">
+          
+          <!-- Teks Brand (Responsif & Tidak Akan Terpotong di Mobile) -->
+          <div class="flex flex-col justify-center whitespace-nowrap">
+            <!-- Teks Atas (Souvenir Bold) -->
+            <span class="text-base sm:text-lg md:text-xl font-bold tracking-wider text-white uppercase leading-none block" style="font-family: 'Souvenir Bold', 'ITC Souvenir Bold', 'Souvenir', serif;">
+              GRAND ATHERA
+            </span>
+            <!-- Teks Bawah (Sejajar Kanan-Kiri) -->
+            <span class="text-[7.5px] xs:text-[8.5px] sm:text-[9.5px] font-sans font-bold text-[#c5a880] uppercase mt-1 leading-none block" style="letter-spacing: 0.08em;">
+              PT ATHERA PUTRA PRIMA
+            </span>
           </div>
         </a>
 
         <!-- Desktop Nav Links -->
-        <nav class="hidden md:flex items-center space-x-8">
-          <a href="#hero" class="text-gray-200 hover:text-brand-gold-light transition font-semibold text-sm">Home</a>
-          <a href="#about" class="text-gray-200 hover:text-brand-gold-light transition font-semibold text-sm">Tentang Kami</a>
-          <a href="#products" class="text-gray-200 hover:text-brand-gold-light transition font-semibold text-sm">Produk Kami</a>
-          <a href="#sold-out" class="text-gray-200 hover:text-brand-gold-light transition font-semibold text-sm">Kisah Sukses</a>
-          <a href="#legalitas" class="text-gray-200 hover:text-brand-gold-light transition font-semibold text-sm">Legalitas</a>
-          <a href="#sponsors" class="text-gray-200 hover:text-brand-gold-light transition font-semibold text-sm">Mitra Kami</a>
-          <a href="#contact" class="text-gray-200 hover:text-brand-gold-light transition font-semibold text-sm">Kontak</a>
+        <nav class="hidden md:flex items-center space-x-7 lg:space-x-8">
+          <a href="#hero" class="text-gray-100 hover:text-[#c5a880] transition font-semibold text-sm">Home</a>
+          <a href="#about" class="text-gray-100 hover:text-[#c5a880] transition font-semibold text-sm">Tentang Kami</a>
+          <a href="#products" class="text-gray-100 hover:text-[#c5a880] transition font-semibold text-sm">Produk Kami</a>
+          <a href="#sold-out" class="text-gray-100 hover:text-[#c5a880] transition font-semibold text-sm">Kisah Sukses</a>
+          <a href="#legalitas" class="text-gray-100 hover:text-[#c5a880] transition font-semibold text-sm">Legalitas</a>
+          <a href="#sponsors" class="text-gray-100 hover:text-[#c5a880] transition font-semibold text-sm">Mitra Kami</a>
+          <a href="#contact" class="text-gray-100 hover:text-[#c5a880] transition font-semibold text-sm">Kontak</a>
           <a href="https://wa.me/6285124665145?text=Halo%20Grand%20Athera%2C%20saya%20ingin%20konsultasi%20gratis." 
              target="_blank" rel="noopener noreferrer" 
-             class="bg-brand-gold text-white px-5 py-2.5 rounded-full hover:bg-white hover:text-brand-dark transition-all font-bold text-xs tracking-wider uppercase pulse-gold min-h-[48px] inline-flex items-center justify-center">Konsultasi Gratis</a>
+             class="bg-[#664D03] text-white px-5 py-2.5 rounded-full hover:bg-white hover:text-[#16241b] transition-all font-bold text-xs tracking-wider uppercase pulse-gold min-h-[44px] inline-flex items-center justify-center shadow-md">Konsultasi Gratis</a>
         </nav>
 
         <!-- Mobile Menu Hamburger -->
-        <div class="md:hidden flex items-center">
+        <div class="md:hidden flex items-center shrink-0">
           <button @click="mobileMenuOpen = !mobileMenuOpen" 
                   type="button" 
-                  class="text-white hover:text-brand-gold-light focus:outline-none p-3 min-w-[48px] min-h-[48px] flex items-center justify-center" aria-label="Buka Menu Navigasi">
-            <svg class="h-7 w-7 fill-current" viewBox="0 0 24 24">
+                  class="text-white hover:text-[#c5a880] focus:outline-none p-2 rounded-lg" aria-label="Buka Menu Navigasi">
+            <svg class="h-6 w-6 sm:h-7 sm:w-7 fill-current" viewBox="0 0 24 24">
               <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
             </svg>
           </button>
@@ -266,42 +275,56 @@
     </div>
 
     <!-- Mobile Dropdown Menu -->
-    <div x-cloak x-show="mobileMenuOpen" x-transition class="md:hidden bg-brand-dark border-t border-white/10 px-4 py-4 space-y-3">
-      <a @click="mobileMenuOpen = false" href="#hero" class="block text-gray-200 hover:text-brand-gold-light transition py-2 text-base font-semibold">Home</a>
-      <a @click="mobileMenuOpen = false" href="#about" class="block text-gray-200 hover:text-brand-gold-light transition py-2 text-base font-semibold">Tentang Kami</a>
-      <a @click="mobileMenuOpen = false" href="#products" class="block text-gray-200 hover:text-brand-gold-light transition py-2 text-base font-semibold">Produk Kami</a>
-      <a @click="mobileMenuOpen = false" href="#sold-out" class="block text-gray-200 hover:text-brand-gold-light transition py-2 text-base font-semibold">Kisah Sukses</a>
-      <a @click="mobileMenuOpen = false" href="#legalitas" class="block text-gray-200 hover:text-brand-gold-light transition py-2 text-base font-semibold">Legalitas</a>
-      <a @click="mobileMenuOpen = false" href="#sponsors" class="block text-gray-200 hover:text-brand-gold-light transition py-2 text-base font-semibold">Mitra Kami</a>
-      <a @click="mobileMenuOpen = false" href="#contact" class="block text-gray-200 hover:text-brand-gold-light transition py-2 text-base font-semibold">Kontak</a>
+    <div x-cloak x-show="mobileMenuOpen" x-transition class="md:hidden bg-[#16241b] border-t border-white/10 px-5 py-5 space-y-3">
+      <a @click="mobileMenuOpen = false" href="#hero" class="block text-gray-200 hover:text-[#c5a880] transition py-2 text-base font-semibold">Home</a>
+      <a @click="mobileMenuOpen = false" href="#about" class="block text-gray-200 hover:text-[#c5a880] transition py-2 text-base font-semibold">Tentang Kami</a>
+      <a @click="mobileMenuOpen = false" href="#products" class="block text-gray-200 hover:text-[#c5a880] transition py-2 text-base font-semibold">Produk Kami</a>
+      <a @click="mobileMenuOpen = false" href="#sold-out" class="block text-gray-200 hover:text-[#c5a880] transition py-2 text-base font-semibold">Kisah Sukses</a>
+      <a @click="mobileMenuOpen = false" href="#legalitas" class="block text-gray-200 hover:text-[#c5a880] transition py-2 text-base font-semibold">Legalitas</a>
+      <a @click="mobileMenuOpen = false" href="#sponsors" class="block text-gray-200 hover:text-[#c5a880] transition py-2 text-base font-semibold">Mitra Kami</a>
+      <a @click="mobileMenuOpen = false" href="#contact" class="block text-gray-200 hover:text-[#c5a880] transition py-2 text-base font-semibold">Kontak</a>
       <a href="https://wa.me/6285124665145?text=Halo%20Grand%20Athera%2C%20saya%20ingin%20konsultasi%20gratis." 
          target="_blank" rel="noopener noreferrer" 
-         class="block bg-brand-gold text-white text-center py-3 rounded-full hover:bg-white hover:text-brand-dark transition font-bold text-sm min-h-[48px] flex items-center justify-center">Konsultasi Gratis</a>
+         class="block bg-[#664D03] text-white text-center py-3 rounded-full hover:bg-white hover:text-[#16241b] transition font-bold text-sm min-h-[48px] flex items-center justify-center shadow-md">Konsultasi Gratis</a>
     </div>
   </header>
+
   <!-- Hero Section -->
-  <section id="hero" class="relative min-h-screen flex items-center justify-center bg-brand-dark text-white pt-20">
+  <section id="hero" class="relative min-h-screen flex items-center justify-center bg-[#16241b] text-white pt-20">
     <div class="absolute inset-0 z-0">
       <img src="assets/bg-home.webp" 
            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80'" 
-           alt="Proyek komersil Athera Properti Klaten" 
+           alt="Proyek Komersil Grand Athera" 
            width="1600" height="900"
            fetchpriority="high" decoding="async"
-           class="w-full h-full object-cover opacity-35 filter brightness-90">
-      <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/50 to-transparent"></div>
+           class="w-full h-full object-cover opacity-30 filter brightness-90">
+      <div class="absolute inset-0 bg-gradient-to-t from-[#16241b] via-[#16241b]/60 to-transparent"></div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-24 md:py-32">
-      <p class="text-brand-gold-light text-sm md:text-base font-display font-bold tracking-widest uppercase mb-4">Real Estate &amp; Developer Indonesia</p>
-      <h1 class="text-4xl sm:text-5xl md:text-7xl font-display font-bold tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
-        Membangun Masa Depan <br><span class="text-brand-gold-light">Hunian Idaman Anda</span>
+    <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20 sm:py-28 md:py-32">
+      <!-- Sub-heading -->
+      <p class="text-[#c5a880] text-xs sm:text-sm font-display font-bold tracking-[0.2em] uppercase mb-3">
+        Real Estate &amp; Developer Indonesia
+      </p>
+      
+      <!-- Main Headline -->
+      <h1 class="text-3xl sm:text-5xl md:text-6xl font-display font-extrabold tracking-tight mb-5 leading-tight">
+        Membangun Masa Depan <br><span class="text-[#c5a880]">Hunian Idaman Anda</span>
       </h1>
-      <p class="text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl mx-auto mb-10 font-normal leading-relaxed">
+      
+      <!-- Description Paragraph -->
+      <p class="text-xs sm:text-base md:text-lg text-gray-200 max-w-2xl mx-auto mb-8 font-normal leading-relaxed">
         Penyedia hunian berkualitas dari Rumah Subsidi nyaman, Rumah Komersil eksklusif, hingga Tanah Kavling siap bangun dengan legalitas 100% aman dan bersertifikat.
       </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-        <a href="#products" class="w-full sm:w-auto bg-brand-gold text-white px-8 py-4 rounded-full font-bold text-sm tracking-wider uppercase hover:bg-white hover:text-brand-dark transition-all duration-300 text-center shadow-lg min-h-[48px] flex items-center justify-center">Lihat Proyek</a>
-        <a href="#contact" class="w-full sm:w-auto border border-white/40 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full font-bold text-sm tracking-wider uppercase hover:bg-white hover:text-brand-dark transition-all duration-300 text-center min-h-[48px] flex items-center justify-center">Hubungi Kami</a>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 max-w-md mx-auto sm:max-w-none">
+        <a href="#products" class="w-full sm:w-auto bg-[#664D03] text-white px-8 py-3.5 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase hover:bg-white hover:text-[#16241b] transition-all duration-300 text-center shadow-lg min-h-[48px] flex items-center justify-center">
+          Lihat Proyek
+        </a>
+        <a href="#contact" class="w-full sm:w-auto border border-white/30 bg-white/10 backdrop-blur-sm text-white px-8 py-3.5 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase hover:bg-white hover:text-[#16241b] transition-all duration-300 text-center min-h-[48px] flex items-center justify-center">
+          Hubungi Kami
+        </a>
       </div>
     </div>
   </section>
