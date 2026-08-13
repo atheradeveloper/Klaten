@@ -235,16 +235,20 @@
                class="h-9 sm:h-11 w-auto object-contain shrink-0 drop-shadow-md">
           
           <!-- Teks Brand (Responsif & Tidak Akan Terpotong di Mobile) -->
-          <div class="flex flex-col justify-center whitespace-nowrap">
-            <!-- Teks Atas (Souvenir Bold) -->
-    <span class="text-lg sm:text-xl md:text-xl lg:text-2xl font-bold tracking-wider text-white uppercase leading-none block" style="font-family: 'Souvenir', 'ITC Souvenir', serif;">
-        GRAND ATHERA
-    </span>
-            <!-- Teks Bawah (Sejajar Kanan-Kiri) -->
-            <span class="text-[8.5px] xs:text-[9.5px] sm:text-[9.5px] font-sans text-[#c5a880] uppercase mt-1 leading-none block" style="font-family: 'Souvenir', 'ITC Souvenir', 'Souvenir', serif; letter-spacing: 0.3em;">
-              PT ATHERA PUTRA PRIMA
-            </span>
-          </div>
+<!-- Container Pembungkus (Lebar Dikunci oleh Teks Atas) -->
+<div class="inline-flex flex-col justify-center w-fit">
+  
+  <!-- Teks Atas (ACUAN LEBAR) -->
+  <span class="text-lg sm:text-xl md:text-xl lg:text-2xl font-bold tracking-wider text-white uppercase leading-none block whitespace-nowrap" style="font-family: 'Souvenir', 'ITC Souvenir', serif;">
+      GRAND ATHERA
+  </span>
+
+  <!-- Teks Bawah (MENYESUAIKAN PRESISI LEBAR ATAS) -->
+  <span class="w-full text-[8.8px] sm:text-[9.8px] md:text-[9.8px] lg:text-[11.8px] font-bold text-[#c5a880] uppercase mt-1 leading-none block tracking-[0.24em]" style="font-family: 'Souvenir', 'ITC Souvenir', serif; text-align-last: justify; text-align: justify;">
+      PT ATHERA PUTRA PRIMA
+  </span>
+
+</div>
         </a>
 
         <!-- Desktop Nav Links -->
