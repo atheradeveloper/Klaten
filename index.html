@@ -307,30 +307,29 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 sm:h-20">
         
-        <!-- BRAND LOGO CONTAINER -->
-        <a href="./" class="flex items-center gap-2.5 sm:gap-3.5 shrink-0 group py-1" aria-label="Beranda Grand Athera">
-          <!-- Logo Gambar (Terkunci Proporsinya, Tidak Akan Melebar/Gepeng) -->
-          <img src="assets/logo.webp" 
-               onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=100&q=80'" 
-               alt="Logo Grand Athera" 
-               class="h-9 sm:h-11 w-auto object-contain shrink-0 drop-shadow-md">
-          
-          <!-- Teks Brand (Responsif & Tidak Akan Terpotong di Mobile) -->
-<!-- Container Pembungkus (Lebar Dikunci oleh Teks Atas) -->
-<div class="inline-flex flex-col justify-center w-fit">
+<!-- BRAND LOGO CONTAINER (Sejajar Sempurna Batas Atas & Bawah) -->
+<a href="./" class="flex items-center gap-2.5 sm:gap-3.5 shrink-0 group py-1" aria-label="Beranda Grand Athera">
   
-  <!-- Teks Atas (ACUAN LEBAR) -->
-  <span class="text-lg sm:text-xl md:text-xl lg:text-2xl  tracking-wider text-white uppercase leading-none block whitespace-nowrap" style="font-family: 'Souvenir', 'ITC Souvenir', serif;">
-      GRAND ATHERA
-  </span>
+  <!-- Logo Gambar (Tinggi Disesuaikan Presisi dengan Blok Teks) -->
+  <img src="assets/logo.webp" 
+       alt="Logo Grand Athera" 
+       class="h-[32px] sm:h-[36px] md:h-[36px] lg:h-[42px] w-auto object-contain shrink-0 drop-shadow-md">
+  
+  <!-- Container Pembungkus Teks Brand (Tinggi SAMA PERSIS dengan Logo) -->
+  <div class="inline-flex flex-col justify-between h-[32px] sm:h-[36px] md:h-[36px] lg:h-[42px] w-fit">
+    
+    <!-- Teks Atas (Pojok Atas Lurus Sempurna dengan Atas Logo) -->
+    <span class="text-lg sm:text-xl md:text-xl lg:text-2xl font-bold tracking-wider text-white uppercase leading-none block whitespace-nowrap" style="font-family: 'Souvenir', 'ITC Souvenir', serif;">
+        GRAND ATHERA
+    </span>
 
-  <!-- Teks Bawah (MENYESUAIKAN PRESISI LEBAR ATAS) -->
-  <span class="w-full text-[8.8px] sm:text-[9.8px] md:text-[9.8px] lg:text-[11.8px] font-bold text-[#c5a880] uppercase mt-1 leading-none block tracking-[0.24em]" style="font-family: 'Souvenir', 'ITC Souvenir', serif; text-align-last: justify; text-align: justify;">
-      PT ATHERA PUTRA PRIMA
-  </span>
+    <!-- Teks Bawah (Pojok Bawah Lurus Sempurna dengan Bawah Logo) -->
+    <span class="w-full text-[8.8px] sm:text-[9.8px] md:text-[9.8px] lg:text-[11.8px] font-bold text-[#c5a880] uppercase leading-none block tracking-[0.24em]" style="font-family: 'Souvenir', 'ITC Souvenir', serif; text-align-last: justify; text-align: justify;">
+        PT ATHERA PUTRA PRIMA
+    </span>
 
-</div>
-        </a>
+  </div>
+</a>
 
         <!-- Desktop Nav Links -->
         <nav class="hidden md:flex items-center space-x-7 lg:space-x-8">
