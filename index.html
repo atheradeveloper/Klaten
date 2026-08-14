@@ -402,14 +402,14 @@
         Kami hadirkan ragam pilihan properti terbaik—Rumah Subsidi, Komersil, hingga Tanah Kavling siap bangun dengan kepastian hukum dan standar kualitas bangunan unggul.
       </p>
 
-      <!-- Action Buttons -->
+<!-- Action Buttons -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-4 max-w-md mx-auto sm:max-w-none">
         <a href="#products" class="w-full sm:w-auto bg-[#664D03] text-white px-8 py-3.5 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase hover:bg-white hover:text-[#16241b] transition-all duration-300 text-center shadow-lg min-h-[48px] flex items-center justify-center">
           Lihat Katalog Properti
         </a>
-        <a href="#contact" class="w-full sm:w-auto border border-white/30 bg-white/10 backdrop-blur-sm text-white px-8 py-3.5 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase hover:bg-white hover:text-[#16241b] transition-all duration-300 text-center min-h-[48px] flex items-center justify-center">
-          KONSULTASI GRATIS
-        </a>
+        <button type="button" @click="consultationModalOpen = true" class="w-full sm:w-auto border border-white/30 bg-white/10 backdrop-blur-sm text-white px-8 py-3.5 rounded-full font-bold text-xs sm:text-sm tracking-wider uppercase hover:bg-white hover:text-[#16241b] transition-all duration-300 text-center min-h-[48px] flex items-center justify-center cursor-pointer">
+          DOWNLOAD BROSUR
+        </button>
       </div>
     </div>
   </section>
@@ -1291,6 +1291,7 @@
       return {
         mobileMenuOpen: false,
         activeCategoryModal: null,
+        consultationModalOpen: false, // State untuk Pop-up Modal Konsultasi
 
         soldOutProjects: [],
         soldOutIndex: 0,
@@ -1524,5 +1525,81 @@
       }, 3500);
     }
   </script>
+  
+  
+  
+  
+  <!-- POP-UP MODAL FORMULIR DOWNLOAD BROSUR -->
+<div x-cloak 
+     x-show="consultationModalOpen" 
+     x-transition:enter="transition ease-out duration-300"
+     x-transition:enter-start="opacity-0 scale-95"
+     x-transition:enter-end="opacity-100 scale-100"
+     x-transition:leave="transition ease-in duration-200"
+     x-transition:leave-start="opacity-100 scale-100"
+     x-transition:leave-end="opacity-0 scale-95"
+     class="fixed inset-0 z-50 bg-brand-dark/80 backdrop-blur-md flex items-center justify-center p-4 overflow-y-auto">
+  
+  <div @click.away="consultationModalOpen = false" 
+       class="bg-white rounded-3xl shadow-2xl max-w-md w-full p-6 sm:p-8 border border-gray-200 relative my-8 transform transition-all">
+    
+    <!-- Tombol Tutup X -->
+    <button @click="consultationModalOpen = false" 
+            type="button" 
+            aria-label="Tutup Pop-up"
+            class="absolute top-4 right-4 text-gray-400 hover:text-brand-dark text-xl font-bold w-10 h-10 rounded-full flex items-center justify-center hover:bg-gray-100 transition focus:outline-none">
+      ✕
+    </button>
+
+    <!-- Judul & Deskripsi Modal -->
+    <h2 class="text-2xl font-display font-bold text-brand-dark">Dapatkan Brosur Gratis</h2>
+    <p class="text-xs text-gray-800 font-medium mt-1 mb-6">Dapatkan e-brosur dan daftar harga terbaru secara gratis. Gunakan formulir ini juga untuk berkonsultasi mengenai rencana hunian impian Anda.</p>
+    
+    <!-- Formulir Modal -->
+    <form id="modal-wa-contact-form" class="space-y-4">
+      <div>
+        <label for="modal-form-nama" class="block text-xs font-bold text-brand-dark uppercase tracking-wider mb-2">Nama Panggilan</label>
+        <input type="text" id="modal-form-nama" required class="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-400 focus:outline-none focus:border-brand-gold text-sm text-brand-dark min-h-[48px]" placeholder="Masukkan nama Anda...">
+      </div>
+
+      <div>
+        <label for="modal-form-wa" class="block text-xs font-bold text-brand-dark uppercase tracking-wider mb-2">Nomor WhatsApp</label>
+        <input type="tel" 
+               id="modal-form-wa" 
+               required 
+               minlength="11" 
+               maxlength="15" 
+               pattern="^08[0-9]{9,}$" 
+               title="Nomor WhatsApp harus diawali '08' dan minimal 11 digit angka"
+               class="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-400 focus:outline-none focus:border-brand-gold text-sm text-brand-dark min-h-[48px]" 
+               placeholder="Contoh: 08123456789...">
+      </div>
+
+      <div>
+        <label for="modal-form-kategori" class="block text-xs font-bold text-brand-dark uppercase tracking-wider mb-2">Daftar Brosur Perumahan</label>
+        <select id="modal-form-kategori" class="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-400 focus:outline-none focus:border-brand-gold text-sm text-brand-dark min-h-[48px]">
+          <option value="Graha Athera Jogonalan">Graha Athera Jogonalan</option>
+          <option value="Graha Athera Bayat">Graha Athera Bayat</option>
+          <option value="Graha Athera Nangsri">Graha Athera Nangsri</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="modal-form-pesan" class="block text-xs font-bold text-brand-dark uppercase tracking-wider mb-2">Pertanyaan & Saran (Opsional)</label>
+        <textarea id="modal-form-pesan" rows="3" class="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-400 focus:outline-none focus:border-brand-gold text-sm text-brand-dark" placeholder="Contoh: Info brosur, simulasi angsuran, atau jadwal survei lokasi..."></textarea>
+      </div>
+
+      <button type="submit" class="w-full bg-brand-dark text-white hover:bg-brand-gold hover:text-white py-4 rounded-lg font-bold text-sm tracking-wider uppercase transition-all duration-300 shadow-md flex items-center justify-center gap-2 min-h-[48px]">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24.00 24.00" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17 17H17.01M17.4 14H18C18.9319 14 19.3978 14 19.7654 14.1522C20.2554 14.3552 20.6448 14.7446 20.8478 15.2346C21 15.6022 21 16.0681 21 17C21 17.9319 21 18.3978 20.8478 18.7654C20.6448 19.2554 20.2554 19.6448 19.7654 19.8478C19.3978 20 18.9319 20 18 20H6C5.06812 20 4.60218 20 4.23463 19.8478C3.74458 19.6448 3.35523 19.2554 3.15224 18.7654C3 18.3978 3 17.9319 3 17C3 16.0681 3 15.6022 3.15224 15.2346C3.35523 14.7446 3.74458 14.3552 4.23463 14.1522C4.60218 14 5.06812 14 6 14H6.6M12 15V4M12 15L9 12M12 15L15 12" stroke="#fff" stroke-width="1.92" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Download Brosur
+      </button>
+    </form>
+  </div>
+</div>
+  
+  
+  
 </body>
 </html>
