@@ -1113,13 +1113,13 @@
     </div>
   </footer>
 
-<!-- FLOATING WHATSAPP SIDE TAB (MODERN MINIMALIST AUTO-HIDE & SWIPE LEFT) -->
+<!-- FLOATING SIDE TAB (TANPA LOGO WA, TANPA KEDIP, AUTO HIDE 3 DETIK / SCROLL) -->
   <div x-data="waWidget()" 
        x-init="initWidget()" 
        @scroll.window.passive="autoHideOnScroll()"
        class="fixed bottom-20 right-0 z-50 flex items-center transition-all duration-300 ease-out">
 
-    <!-- TAB SISIAN (SIDE HANDLE - TAMPIL DI PINGGIR KANAN LAYAR) -->
+    <!-- TOMBOL SISIAN TERSEMBUNYI (MINIMALIS - TANPA LOGO WA & TANPA KEDIP) -->
     <div x-show="!isOpen" 
          x-transition:enter="transition ease-out duration-300"
          x-transition:enter-start="opacity-0 translate-x-4"
@@ -1127,26 +1127,17 @@
          @touchstart="handleTouchStart($event)"
          @touchend="handleTouchEnd($event)"
          @click="openWidget()"
-         class="group flex items-center gap-2 bg-[#16241b]/95 backdrop-blur-md text-white py-3 pl-3 pr-2.5 rounded-l-2xl border-y border-l border-emerald-500/30 shadow-2xl cursor-pointer hover:bg-emerald-950/90 transition-all transform hover:-translate-x-1 select-none"
-         title="Geser ke kiri atau klik untuk Chat WhatsApp">
+         class="flex items-center justify-center bg-[#16241b]/90 backdrop-blur-md text-emerald-400 py-3.5 px-2.5 rounded-l-xl border-y border-l border-emerald-500/30 shadow-xl cursor-pointer hover:bg-[#16241b] hover:text-white transition-all transform hover:-translate-x-1 select-none"
+         title="Klik atau Geser ke kiri">
       
-      <!-- Indikator Geser Kiri (Panah Animasi) -->
-      <div class="flex items-center text-emerald-400 group-hover:text-white transition">
-        <svg class="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
-        </svg>
-      </div>
+      <!-- Panah Statis (Tanpa Kedip / Tanpa Logo WA) -->
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/>
+      </svg>
 
-      <!-- WA Icon dengan Pulse Dot -->
-      <div class="relative flex items-center justify-center w-8 h-8 rounded-full bg-emerald-600 text-white shadow-md">
-        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-          <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.03-5.115-2.908-6.995-1.878-1.88-4.357-2.914-6.997-2.915-5.442 0-9.867 4.42-9.871 9.866-.001 1.7.453 3.361 1.314 4.816L1.93 22.146l4.717-1.238zM17.43 14.86c-.296-.149-1.755-.867-2.027-.966-.271-.1-.469-.149-.667.149-.198.297-.768.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.667-1.61-.915-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.568-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-        </svg>
-        <span class="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-400 rounded-full animate-ping"></span>
-      </div>
     </div>
 
-    <!-- KARTU EXPANDED WA (TAMPIL SAAT DIGESER KE KIRI / DIKLIK) -->
+    <!-- KARTU TERBUKA SAAT DIKLIK / DIGESER (DIAM 3 DETIK LALU HIDE AUTOMATIS) -->
     <div x-show="isOpen" 
          x-transition:enter="transition ease-out duration-300 transform"
          x-transition:enter-start="opacity-0 translate-x-full"
@@ -1154,15 +1145,14 @@
          x-transition:leave="transition ease-in duration-200 transform"
          x-transition:leave-start="opacity-100 translate-x-0"
          x-transition:leave-end="opacity-0 translate-x-full"
-         @mouseleave="startIdleTimer()"
          class="bg-[#16241b] text-white p-3 pl-4 pr-3 rounded-l-2xl border-y border-l border-emerald-500/40 shadow-2xl flex items-center gap-3 select-none">
       
       <!-- WA Link Direct -->
       <a href="https://wa.me/6285124665145?text=Halo%20Grand%20Athera%2C%20saya%20tertarik%20untuk%20bertanya%20mengenai%20proyek%20perumahan." 
          target="_blank" rel="noopener noreferrer"
          class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-full bg-emerald-600 hover:bg-emerald-500 transition flex items-center justify-center text-white shadow-lg shrink-0">
-          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+        <div class="w-9 h-9 rounded-full bg-emerald-600 hover:bg-emerald-500 transition flex items-center justify-center text-white shadow-lg shrink-0">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.03-5.115-2.908-6.995-1.878-1.88-4.357-2.914-6.997-2.915-5.442 0-9.867 4.42-9.871 9.866-.001 1.7.453 3.361 1.314 4.816L1.93 22.146l4.717-1.238zM17.43 14.86c-.296-.149-1.755-.867-2.027-.966-.271-.1-.469-.149-.667.149-.198.297-.768.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.667-1.61-.915-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.568-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
           </svg>
         </div>
@@ -1172,11 +1162,11 @@
         </div>
       </a>
 
-      <!-- Tombol Tutup -->
+      <!-- Tombol Tutup Manual -->
       <button @click="closeWidget()" 
               type="button" 
               class="text-gray-400 hover:text-white p-1 rounded-full hover:bg-white/10 transition ml-1"
-              title="Sembunyikan">
+              title="Tutup">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
         </svg>
@@ -1185,7 +1175,7 @@
 
   </div>
 
-  <!-- SCRIPT LOGIC DEDICATED UNTUK WA WIDGET -->
+  <!-- SCRIPT LOGIC DEDICATED UNTUK WIDGET -->
   <script>
     function waWidget() {
       return {
@@ -1209,7 +1199,7 @@
         },
 
         autoHideOnScroll() {
-          // Begitu layar di-scroll, otomatis tutup kembali ke tab sisian
+          // Otomatis hide seketika saat halaman di-scroll
           if (this.isOpen) {
             this.closeWidget();
           }
@@ -1217,10 +1207,10 @@
 
         startIdleTimer() {
           this.clearIdleTimer();
-          // Tutup otomatis jika diam selama 3.5 detik
+          // Diam selama Tepat 3 Detik (3000ms), lalu otomatis hide lagi
           this.idleTimer = setTimeout(() => {
             this.closeWidget();
-          }, 3500);
+          }, 3000);
         },
 
         clearIdleTimer() {
@@ -1230,15 +1220,14 @@
           }
         },
 
-        // Gesture Swipe Left
         handleTouchStart(e) {
           this.touchStartX = e.changedTouches[0].screenX;
         },
 
         handleTouchEnd(e) {
           this.touchEndX = e.changedTouches[0].screenX;
-          // Geser ke kiri minimal 25px -> Buka widget
-          if (this.touchStartX - this.touchEndX > 25) {
+          // Geser ke kiri minimal 20px -> Buka widget
+          if (this.touchStartX - this.touchEndX > 20) {
             this.openWidget();
           }
         }
