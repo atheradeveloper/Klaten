@@ -1,18 +1,36 @@
 [
   {
-    "title": "Griya Candi Asri",
+    "title": "Graha Trucuk Sejahtera",
     "units": "68 Unit Rumah Subsidi & Komersil - Serah Terima 2024",
     "image": "assets/graha-athera-jogonalan-tipe-30.webp",
     "fallback": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80"
   },
   {
-    "title": "Elite Townhouse Tembalang",
+    "title": "Graha Mulia",
     "units": "32 Unit Luxury Smart Homes - Serah Terima 2025",
     "image": "assets/graha-athera-jogonalan-tipe-30.webp",
     "fallback": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=800&q=80"
   },
   {
-    "title": "Graha Athera Nangsri",
+    "title": "Graha Mulia Sumberejo",
+    "units": "45 Unit Rumah Subsidi FLPP - Serah Terima 2025",
+    "image": "assets/graha-athera-jogonalan-tipe-30.webp",
+    "fallback": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+  }
+    {
+    "title": "Graha Mranggen Sejahtera",
+    "units": "45 Unit Rumah Subsidi FLPP - Serah Terima 2025",
+    "image": "assets/graha-athera-jogonalan-tipe-30.webp",
+    "fallback": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+  }
+    {
+    "title": "Graha Ngupit Sejahtera",
+    "units": "45 Unit Rumah Subsidi FLPP - Serah Terima 2025",
+    "image": "assets/graha-athera-jogonalan-tipe-30.webp",
+    "fallback": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
+  }
+    {
+    "title": "Graha Margomulyo 1",
     "units": "45 Unit Rumah Subsidi FLPP - Serah Terima 2025",
     "image": "assets/graha-athera-jogonalan-tipe-30.webp",
     "fallback": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80"
