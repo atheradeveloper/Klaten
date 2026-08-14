@@ -1384,43 +1384,46 @@ const BROSUR_MAP = {
 document.addEventListener('DOMContentLoaded', function () {
   const form = document.getElementById('wa-contact-form');
   if (form) {
-    form.addEventListener('submit', async function (e) {
+    form.addEventListener('submit', function (e) {
       e.preventDefault();
 
       const submitBtn = form.querySelector('button[type="submit"]');
       const originalBtnText = submitBtn.innerHTML;
 
-      // Ambil Nilai dari Input
       const nama = document.getElementById('form-nama').value.trim();
       const wa = document.getElementById('form-wa').value.trim();
       const kategori = document.getElementById('form-kategori').value;
       const pesan = document.getElementById('form-pesan').value.trim();
 
-      // Indikator Loading pada Tombol
+      // Loading state pada tombol
       submitBtn.disabled = true;
       submitBtn.innerHTML = `
         <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
           <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
-        Mencatat Data & Mengunduh...
+        Memproses Data...
       `;
 
-      try {
-        // 1. KIRIM DATA KE GOOGLE SPREADSHEET
-        const formData = new FormData();
-        formData.append('nama', nama);
-        formData.append('wa', wa);
-        formData.append('kategori', kategori);
-        formData.append('pesan', pesan);
+      // Payload JSON
+      const payload = {
+        nama: nama,
+        wa: wa,
+        kategori: kategori,
+        pesan: pesan
+      };
 
-        await fetch(GOOGLE_SCRIPT_URL, {
-          method: 'POST',
-          mode: 'no-cors', // Menembus CORS Restriction Google Apps Script
-          body: formData
-        });
-
-        // 2. TRIGGER AUTOMATIC DOWNLOAD BROSUR PDF
+      // 1. Kirim Data ke Google Apps Script via JSON text/plain
+      fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain'
+        },
+        body: JSON.stringify(payload)
+      })
+      .then(() => {
+        // 2. Download Brosur PDF
         const pdfUrl = BROSUR_MAP[kategori] || "assets/brosur/brosur-graha-athera-jogonalan.pdf";
         const downloadAnchor = document.createElement('a');
         downloadAnchor.href = pdfUrl;
@@ -1429,25 +1432,25 @@ document.addEventListener('DOMContentLoaded', function () {
         downloadAnchor.click();
         document.body.removeChild(downloadAnchor);
 
-        // 3. OPSIONAL: Buka WhatsApp Sales agar interaksi cepat
+        // 3. Buka WhatsApp Sales
         const salesWA = "6285124665145";
         const textWA = `Halo Athera Properti Klaten,\nSaya *${nama}* (${wa}).\nSaya telah mengunduh brosur: *${kategori}*.\nCatatan: ${pesan || '-'}`;
         
         setTimeout(() => {
           window.open(`https://wa.me/${salesWA}?text=${encodeURIComponent(textWA)}`, '_blank', 'noopener,noreferrer');
-        }, 1000);
+        }, 800);
 
-        // Reset Form & Kembalikan Tombol
         form.reset();
-        alert('Terima kasih! Brosur Anda sedang diunduh dan data Anda telah kami terima.');
-
-      } catch (error) {
-        console.error('Error submitting form:', error);
-        alert('Terjadi kendala saat menyimpan data. Brosur akan tetap diunduh.');
-      } finally {
+        alert('Terima kasih! Data Anda telah tersimpan dan brosur sedang diunduh.');
+      })
+      .catch((err) => {
+        console.error('Error:', err);
+        alert('Terjadi kesalahan koneksi. Silakan coba lagi.');
+      })
+      .finally(() => {
         submitBtn.disabled = false;
         submitBtn.innerHTML = originalBtnText;
-      }
+      });
     });
   }
 });
