@@ -1395,35 +1395,28 @@ document.addEventListener('DOMContentLoaded', function () {
       const kategori = document.getElementById('form-kategori').value;
       const pesan = document.getElementById('form-pesan').value.trim();
 
-      // Loading state pada tombol
+      // Loading state tombol
       submitBtn.disabled = true;
-      submitBtn.innerHTML = `
-        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-        </svg>
-        Memproses Data...
-      `;
+      submitBtn.innerHTML = `Memproses Data...`;
 
-      // Payload JSON
-      const payload = {
-        nama: nama,
-        wa: wa,
-        kategori: kategori,
-        pesan: pesan
-      };
+      // Menggunakan URLSearchParams agar dijamin terbaca oleh e.parameter Apps Script
+      const params = new URLSearchParams();
+      params.append('nama', nama);
+      params.append('wa', wa);
+      params.append('kategori', kategori);
+      params.append('pesan', pesan);
 
-      // 1. Kirim Data ke Google Apps Script via JSON text/plain
+      // Kirim Data via Fetch
       fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
-        mode: 'no-cors',
+        mode: 'no-cors', // Penting untuk bypass aturan CORS Google
         headers: {
-          'Content-Type': 'text/plain'
+          'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: JSON.stringify(payload)
+        body: params.toString()
       })
       .then(() => {
-        // 2. Download Brosur PDF
+        // 1. Download Brosur PDF
         const pdfUrl = BROSUR_MAP[kategori] || "assets/brosur/brosur-graha-athera-jogonalan.pdf";
         const downloadAnchor = document.createElement('a');
         downloadAnchor.href = pdfUrl;
@@ -1432,7 +1425,7 @@ document.addEventListener('DOMContentLoaded', function () {
         downloadAnchor.click();
         document.body.removeChild(downloadAnchor);
 
-        // 3. Buka WhatsApp Sales
+        // 2. Buka WhatsApp Sales
         const salesWA = "6285124665145";
         const textWA = `Halo Athera Properti Klaten,\nSaya *${nama}* (${wa}).\nSaya telah mengunduh brosur: *${kategori}*.\nCatatan: ${pesan || '-'}`;
         
@@ -1441,11 +1434,11 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 800);
 
         form.reset();
-        alert('Terima kasih! Data Anda telah tersimpan dan brosur sedang diunduh.');
+        alert('Terima kasih! Data Anda telah tercatat dan brosur sedang diunduh.');
       })
       .catch((err) => {
         console.error('Error:', err);
-        alert('Terjadi kesalahan koneksi. Silakan coba lagi.');
+        alert('Terjadi kesalahan. Silakan coba lagi.');
       })
       .finally(() => {
         submitBtn.disabled = false;
