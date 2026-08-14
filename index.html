@@ -1276,8 +1276,9 @@
   </script>
 
   <!-- ALPINE.JS ENGINE SCRIPT -->
+ <!-- SCRIPT UTAMA WEBSITE & FORM HANDLING -->
   <script>
- function atheraApp() {
+    function atheraApp() {
       return {
         mobileMenuOpen: false,
         activeCategoryModal: null,
@@ -1358,8 +1359,9 @@
         }
       }
     }
+
     document.addEventListener('DOMContentLoaded', function () {
-      // Navbar Scroll Shadow Effect
+      // 1. Navbar Scroll Effect
       const navbar = document.getElementById('main-navbar');
       if (navbar) {
         window.addEventListener('scroll', () => {
@@ -1371,82 +1373,81 @@
         }, { passive: true });
       }
 
-      // Ganti dengan URL Google Apps Script milik Anda dari Langkah 1
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwpbElKevNn_A99QIzKIOMy1oSLLrtVAvwfw2_EtZjLWHWvsOHEtEYY0hFvktXPIJTU/exec"; 
+      // 2. Google Script URL & Brosur Map
+      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwpbElKevNn_A99QIzKIOMy1oSLLrtVAvwfw2_EtZjLWHWvsOHEtEYY0hFvktXPIJTU/exec"; 
 
-// Mapping URL File Brosur PDF berdasarkan pilihan dropdown
-const BROSUR_MAP = {
-  "Graha Athera Jogonalan": "assets/brosur/brosur-graha-athera-jogonalan.pdf",
-  "Graha Athera Bayat": "assets/brosur/brosur-graha-athera-bayat.pdf",
-  "Graha Athera Nangsri": "assets/brosur/brosur-graha-athera-nangsri.pdf"
-};
+      const BROSUR_MAP = {
+        "Graha Athera Jogonalan": "assets/brosur/brosur-graha-athera-jogonalan.pdf",
+        "Graha Athera Bayat": "assets/brosur/brosur-graha-athera-bayat.pdf",
+        "Graha Athera Nangsri": "assets/brosur/brosur-graha-athera-nangsri.pdf"
+      };
 
-document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('wa-contact-form');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+      // 3. Form Submit Event Handler (Tanpa Nested Listener)
+      const form = document.getElementById('wa-contact-form');
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
 
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const originalBtnText = submitBtn.innerHTML;
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const originalBtnText = submitBtn.innerHTML;
 
-      const nama = document.getElementById('form-nama').value.trim();
-      const wa = document.getElementById('form-wa').value.trim();
-      const kategori = document.getElementById('form-kategori').value;
-      const pesan = document.getElementById('form-pesan').value.trim();
+          const namaVal = document.getElementById('form-nama').value.trim();
+          const waVal = document.getElementById('form-wa').value.trim();
+          const kategoriVal = document.getElementById('form-kategori').value;
+          const pesanVal = document.getElementById('form-pesan').value.trim();
 
-      // Loading state tombol
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = `Memproses Data...`;
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = "Memproses & Menyimpan Data...";
 
-      // Menggunakan URLSearchParams agar dijamin terbaca oleh e.parameter Apps Script
-      const params = new URLSearchParams();
-      params.append('nama', nama);
-      params.append('wa', wa);
-      params.append('kategori', kategori);
-      params.append('pesan', pesan);
+          const params = new URLSearchParams();
+          params.append('nama', namaVal);
+          params.append('wa', waVal);
+          params.append('kategori', kategoriVal);
+          params.append('pesan', pesanVal);
 
-      // Kirim Data via Fetch
-      fetch(GOOGLE_SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors', // Penting untuk bypass aturan CORS Google
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: params.toString()
-      })
-      .then(() => {
-        // 1. Download Brosur PDF
-        const pdfUrl = BROSUR_MAP[kategori] || "assets/brosur/brosur-graha-athera-jogonalan.pdf";
-        const downloadAnchor = document.createElement('a');
-        downloadAnchor.href = pdfUrl;
-        downloadAnchor.download = `Brosur-${kategori.replace(/\s+/g, '-')}.pdf`;
-        document.body.appendChild(downloadAnchor);
-        downloadAnchor.click();
-        document.body.removeChild(downloadAnchor);
+          fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            body: params.toString()
+          })
+          .then(() => {
+            // Download Brosur PDF
+            const pdfUrl = BROSUR_MAP[kategoriVal] || "assets/brosur/brosur-graha-athera-jogonalan.pdf";
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.href = pdfUrl;
+            downloadAnchor.download = `Brosur-${kategoriVal.replace(/\s+/g, '-')}.pdf`;
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            document.body.removeChild(downloadAnchor);
 
-        // 2. Buka WhatsApp Sales
-        const salesWA = "6285124665145";
-        const textWA = `Halo Athera Properti Klaten,\nSaya *${nama}* (${wa}).\nSaya telah mengunduh brosur: *${kategori}*.\nCatatan: ${pesan || '-'}`;
-        
-        setTimeout(() => {
-          window.open(`https://wa.me/${salesWA}?text=${encodeURIComponent(textWA)}`, '_blank', 'noopener,noreferrer');
-        }, 800);
+            // Buka WhatsApp Sales
+            const salesWA = "6285124665145";
+            const textWA = `Halo Athera Properti Klaten,\nSaya *${namaVal}* (${waVal}).\nSaya telah mengunduh brosur: *${kategoriVal}*.\nCatatan: ${pesanVal || '-'}`;
+            
+            setTimeout(() => {
+              window.open(`https://wa.me/${salesWA}?text=${encodeURIComponent(textWA)}`, '_blank', 'noopener,noreferrer');
+            }, 800);
 
-        form.reset();
-        alert('Terima kasih! Data Anda telah tercatat dan brosur sedang diunduh.');
-      })
-      .catch((err) => {
-        console.error('Error:', err);
-        alert('Terjadi kesalahan. Silakan coba lagi.');
-      })
-      .finally(() => {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnText;
-      });
+            form.reset();
+            alert('Terima kasih! Data Anda telah tercatat di Google Sheet dan brosur sedang diunduh.');
+          })
+          .catch((err) => {
+            console.error('Error:', err);
+            alert('Terjadi kesalahan koneksi. Silakan coba lagi.');
+          })
+          .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+          });
+        });
+      }
+
+      // 4. Inisialisasi Mobile Legalitas Tab Auto Timer
+      startLegAutoTimer();
     });
-  }
-});
 
     // Google Maps Dynamic Facade Loader
     function loadMapIframeNow() {
@@ -1494,10 +1495,6 @@ document.addEventListener('DOMContentLoaded', function () {
         selectLegalitasTab(nextIndex);
       }, 3500);
     }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      startLegAutoTimer();
-    });
   </script>
 </body>
 </html>
