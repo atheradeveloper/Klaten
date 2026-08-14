@@ -1035,17 +1035,13 @@
         mobileMenuOpen: false,
         activeCategoryModal: null,
 
-        // Data diawali dengan array kosong, nanti diisi otomatis dari JSON
         soldOutProjects: [],
         soldOutIndex: 0,
         soldOutTimer: null,
         loadingSoldOut: true,
 
         async init() {
-          // Ambil data dari file proyek-selesai.json
           await this.fetchSoldOutProjects();
-          
-          // Mulai jalankan autoslide jika data berhasil dimuat
           if (this.soldOutProjects.length > 0) {
             this.startSoldOutSlide();
           }
@@ -1055,7 +1051,10 @@
           try {
             const response = await fetch('proyek-selesai.json');
             if (!response.ok) throw new Error('Gagal mengambil data proyek');
-            this.soldOutProjects = await response.json();
+            const data = await response.json();
+            if (Array.isArray(data) && data.length > 0) {
+              this.soldOutProjects = data;
+            }
           } catch (error) {
             console.error('Error fetching proyek-selesai.json:', error);
           } finally {
@@ -1065,11 +1064,11 @@
 
         startSoldOutSlide() {
           this.stopSoldOutSlide();
-          if (this.soldOutProjects.length <= 1) return; // Tidak perlu slide jika data cuma 1
+          if (this.soldOutProjects.length <= 1) return;
           
           this.soldOutTimer = setInterval(() => {
             this.nextSoldOut();
-          }, 4000); // Ganti slide setiap 4 detik
+          }, 4000);
         },
 
         stopSoldOutSlide() {
@@ -1089,7 +1088,6 @@
           this.soldOutIndex = (this.soldOutIndex - 1 + this.soldOutProjects.length) % this.soldOutProjects.length;
         },
 
-        // Helper untuk Desktop: Menampilkan 2 proyek berdampingan
         getDesktopSoldOutProjects() {
           if (this.soldOutProjects.length === 0) return [];
           if (this.soldOutProjects.length === 1) return [this.soldOutProjects[0]];
@@ -1113,7 +1111,6 @@
         }
       }
     }
-
     document.addEventListener('DOMContentLoaded', function () {
       // Navbar Scroll Shadow Effect
       const navbar = document.getElementById('main-navbar');
