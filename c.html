@@ -25,7 +25,6 @@
   <!-- Preload Critical LCP Hero Image -->
   <link rel="preload" as="image" href="assets/bg-home.webp" fetchpriority="high">
 
-  <!-- OPTIMASI: Peringatan Tailwind CDN (PageSpeed). Wajib diubah menjadi file statis hasil compile (<link rel="stylesheet" href="assets/style.css">) sebelum live di production agar skor PageSpeed maksimal dan memangkas Unused JavaScript. -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -173,26 +172,26 @@
       animation: customPulse 2.5s ease-in-out infinite;
     }
 
-    /* OPTIMASI: Efek Membalik Buku (3D Flip Transition) untuk menghilangkan Slider yang berkedip */
-    .book-container {
-      perspective: 1200px;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1fr;
-      position: relative;
+    /* ----------------------------------------------------- */
+    /* OPTIMASI: EFEK SLIDER MEMBALIK BUKU 3D YANG SEMPURNA  */
+    /* ----------------------------------------------------- */
+    .flip-container {
+      perspective: 1500px;
     }
-    .book-page {
-      grid-column: 1 / -1;
-      grid-row: 1 / -1;
+    .flip-item {
+      /* Memaksa elemen tumpuk (stack) sempurna tanpa tumpang tindih berantakan */
+      grid-area: 1 / 1; 
       transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
       will-change: transform, opacity;
       width: 100%;
     }
     .flip-enter-active, .flip-leave-active {
-      transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 0.8s ease-in-out;
+      transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.8s ease-in-out;
     }
     .flip-enter-start {
-      transform: rotateY(90deg) scale(0.95);
+      transform: rotateY(80deg) scale(0.9);
       opacity: 0;
     }
     .flip-enter-end {
@@ -204,9 +203,10 @@
       opacity: 1;
     }
     .flip-leave-end {
-      transform: rotateY(-90deg) scale(0.95);
+      transform: rotateY(-80deg) scale(0.9);
       opacity: 0;
     }
+    /* ----------------------------------------------------- */
 
     @media (min-width: 768px) {
       .legalitas-desktop-grid {
@@ -328,7 +328,6 @@
     <div class="flex items-center justify-between h-16 sm:h-20 gap-4">
       
       <a href="./" class="flex items-center gap-2.5 sm:gap-3.5 shrink-0 group py-1" aria-label="Beranda Grand Athera">
-        <!-- OPTIMASI: Perbaikan CLS PageSpeed - Menambahkan atribut width dan height pada Logo -->
         <img src="assets/logo.webp" 
              alt="Logo Grand Athera" 
              width="100" height="100"
@@ -388,7 +387,6 @@
   <!-- Hero Section -->
   <section id="hero" class="relative min-h-screen flex items-center justify-center bg-[#16241b] text-white pt-20">
     <div class="absolute inset-0 z-0">
-      <!-- OPTIMASI: Perbaikan CLS PageSpeed - Menambahkan explicit width & height -->
       <img src="assets/bg-home.webp" 
            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80'" 
            alt="Proyek Komersil Grand Athera" 
@@ -403,7 +401,6 @@
         DEVELOPER PROPERTI TERPERCAYA INDONESIA
       </p>
       
-      <!-- OPTIMASI: SEO Lokal (Tag H1) - Memasukkan keyword lokal Klaten -->
       <h1 class="text-3xl sm:text-5xl md:text-6xl font-display font-extrabold tracking-tight mb-5 leading-tight">
         Wujudkan Hunian Impian &amp; <br><span class="text-[#c5a880]">Investasi Properti Terbaik di Klaten</span>
       </h1>
@@ -459,7 +456,6 @@
         <div class="relative">
           <div class="absolute -inset-4 bg-brand-gold/10 rounded-2xl -rotate-2 z-0"></div>
           <div class="relative z-10 rounded-xl overflow-hidden shadow-2xl">
-            <!-- OPTIMASI: Perbaikan CLS PageSpeed - Menambahkan explicit width & height -->
             <img src="assets/graha-athera-jogonalan-tipe-30.webp" 
                  alt="Perumahan Subsidi Graha Athera Jogonalan" 
                  width="800" height="600"
@@ -485,7 +481,6 @@
         <div @click="openCategory('subsidi')" 
              class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-200 flex flex-col h-full cursor-pointer transform hover:-translate-y-1">
           <div class="relative overflow-hidden aspect-[4/3]">
-            <!-- OPTIMASI: Perbaikan CLS PageSpeed -->
             <img src="assets/graha-athera-jogonalan-tipe-30.webp" 
                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80'" 
                  alt="Rumah Subsidi" 
@@ -493,7 +488,6 @@
                  loading="lazy" decoding="async"
                  class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
             <div class="absolute top-4 left-4 bg-brand-dark/90 text-white text-xs px-3.5 py-1.5 rounded-full font-extrabold uppercase tracking-wider">Mulai Rp 160 Jt</div>
-            <!-- OPTIMASI: Optimasi Konversi Sales - Urgency Badge -->
             <div class="absolute top-4 right-4 bg-red-100 text-red-800 px-3 py-1 rounded-full shadow-md text-xs font-extrabold border border-red-300 flex items-center gap-1 pulse-gold">
               🔥 Sisa 3 Unit Terakhir!
             </div>
@@ -502,7 +496,6 @@
             <h3 class="text-xl font-display font-bold text-brand-dark group-hover:text-amber-800 transition">Rumah Subsidi FLPP</h3>
             <p class="text-gray-800 font-normal text-sm flex-grow">
               Hunian nyaman subsidi pemerintah di Jogonalan &amp; Bayat dengan fasilitas premium, one-gate system.
-              <!-- OPTIMASI: Optimasi Konversi Sales - Copywriting Pricing -->
               <span class="block mt-2 font-bold text-brand-dark">Cicilan Flat Mulai Rp 1 Jutaan/Bulan, Lebih Murah dari Ngekos!</span>
             </p>
             <div class="inline-flex items-center text-brand-gold font-extrabold text-sm tracking-wider uppercase group-hover:text-brand-dark transition duration-300 pt-2 min-h-[48px]">
@@ -516,7 +509,6 @@
         <div @click="openCategory('komersil')" 
              class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-200 flex flex-col h-full cursor-pointer transform hover:-translate-y-1">
           <div class="relative overflow-hidden aspect-[4/3]">
-            <!-- OPTIMASI: Perbaikan CLS PageSpeed -->
             <img src="assets/graha-athera-jogonalan-tipe-30.webp" 
                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'" 
                  alt="Rumah Komersil" 
@@ -544,7 +536,6 @@
         <div @click="openCategory('kavling')" 
              class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-200 flex flex-col h-full cursor-pointer transform hover:-translate-y-1">
           <div class="relative overflow-hidden aspect-[4/3]">
-            <!-- OPTIMASI: Perbaikan CLS PageSpeed -->
             <img src="assets/graha-athera-jogonalan-tipe-30.webp" 
                  onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80'" 
                  alt="Tanah Kavling" 
@@ -608,9 +599,10 @@
 
         <div class="lg:col-span-2">
           
-          <!-- OPTIMASI: Efek Membalik Buku (Book Flip Transition) untuk Mobile View -->
-          <div class="block sm:hidden book-container">
-            <template x-for="(proj, idx) in soldOutProjects" :key="proj.title || idx">
+          <!-- MOBILE VIEW (Efek Membalik Buku 3D Mulus) -->
+          <!-- Menggunakan 'grid sm:hidden' agar tidak konflik dengan display statis block bawaan tailwind -->
+          <div class="grid sm:hidden flip-container w-full">
+            <template x-for="(proj, idx) in soldOutProjects" :key="idx">
               <div x-show="soldOutIndex === idx" 
                    x-transition:enter="flip-enter-active"
                    x-transition:enter-start="flip-enter-start"
@@ -618,8 +610,7 @@
                    x-transition:leave="flip-leave-active"
                    x-transition:leave-start="flip-leave-start"
                    x-transition:leave-end="flip-leave-end"
-                   class="book-page relative group rounded-2xl overflow-hidden shadow-xl aspect-[4/3] border border-white/10">
-                <!-- OPTIMASI: Perbaikan CLS PageSpeed -->
+                   class="flip-item relative group rounded-2xl overflow-hidden shadow-xl aspect-[4/3] border border-white/10 w-full">
                 <img :src="proj.image" 
                      @error="$el.src=proj.fallback" 
                      :alt="proj.title" 
@@ -636,8 +627,9 @@
             </template>
           </div>
 
-          <!-- OPTIMASI: Efek Membalik Buku (Book Flip Transition) untuk Desktop View -->
-          <div class="hidden sm:block book-container">
+          <!-- DESKTOP VIEW (Efek Membalik Buku 3D Mulus) -->
+          <!-- Menggunakan 'hidden sm:grid' agar child elemen menumpuk persis di 1 sel grid -->
+          <div class="hidden sm:grid flip-container w-full">
             <template x-for="(pair, idx) in getDesktopPairs()" :key="idx">
               <div x-show="soldOutIndex === idx"
                    x-transition:enter="flip-enter-active"
@@ -646,7 +638,7 @@
                    x-transition:leave="flip-leave-active"
                    x-transition:leave-start="flip-leave-start"
                    x-transition:leave-end="flip-leave-end"
-                   class="book-page grid grid-cols-2 gap-6 w-full">
+                   class="flip-item grid grid-cols-2 gap-6 w-full">
                 
                 <!-- Item 1 (Kiri) -->
                 <div class="relative group rounded-2xl overflow-hidden shadow-xl aspect-[4/3] border border-white/10 transition-all duration-500">
@@ -683,6 +675,7 @@
               </div>
             </template>
           </div>
+
         </div>
       </div>
     </div>
@@ -774,7 +767,6 @@
         <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-20 sm:w-32 z-10 bg-gradient-to-l from-[#f7f6f2] via-[#f7f6f2]/80 to-transparent"></div>
 
         <div class="marquee-wrapper-track">
-          <!-- OPTIMASI: Perbaikan CLS PageSpeed -->
           <div class="flex items-center space-x-10 sm:space-x-16 pr-10 sm:pr-16 shrink-0">
             <div class="sponsor-logo-box"><img src="assets/sponsor/anugerah-land.webp" width="120" height="40" loading="lazy" decoding="async" alt="Anugerah Land Klaten"></div>
             <div class="sponsor-logo-box"><img src="assets/sponsor/disperakim-klaten.webp" width="120" height="40" loading="lazy" decoding="async" alt="Disperakim Klaten"></div>
@@ -791,7 +783,6 @@
             <div class="sponsor-logo-box"><img src="assets/sponsor/idwebhost.webp" width="120" height="40" loading="lazy" decoding="async" alt="IDwebhost"></div>
           </div>
 
-          <!-- OPTIMASI: Perbaikan CLS PageSpeed -->
           <div class="flex items-center space-x-10 sm:space-x-16 pr-10 sm:pr-16 shrink-0" aria-hidden="true">
             <div class="sponsor-logo-box"><img src="assets/sponsor/anugerah-land.webp" width="120" height="40" loading="lazy" decoding="async" alt="Anugerah Land Klaten"></div>
             <div class="sponsor-logo-box"><img src="assets/sponsor/disperakim-klaten.webp" width="120" height="40" loading="lazy" decoding="async" alt="Disperakim Klaten"></div>
@@ -830,7 +821,6 @@
               </div>
               <div>
                 <h3 class="font-display font-bold text-brand-dark">Alamat Kantor</h3>
-                <!-- OPTIMASI: Koreksi Typo Alamat (Memastikan tertulis 'Perintis' Kemerdekaan) -->
                 <p class="text-sm text-gray-800 font-medium">Jalan Perintis Kemerdekaan No. 28 Klaten Utara, Klaten, Jawa Tengah 57438</p>
               </div>
             </div>
@@ -859,7 +849,6 @@
           <!-- MAP FACADE CONTAINER -->
           <div class="rounded-xl overflow-hidden shadow-lg border border-gray-300">
             <div id="map-facade-box" class="h-[220px] bg-gray-800 relative flex items-center justify-center cursor-pointer group" onclick="loadMapIframeNow()">
-              <!-- OPTIMASI: Perbaikan CLS PageSpeed -->
               <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80" 
                    width="800" height="220" loading="lazy" decoding="async" alt="Preview Lokasi Kantor" 
                    class="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition">
@@ -884,7 +873,6 @@
           <p class="text-xs text-gray-800 font-medium">Dapatkan e-brosur dan daftar harga terbaru secara gratis. Gunakan formulir ini juga untuk berkonsultasi mengenai rencana lokasi proyek kami ke depan, atau beri tahu kami lokasi rumah impian Anda.</p>
           
           <form id="wa-contact-form" class="space-y-4">
-            <!-- OPTIMASI: Honeypot Anti-Spam Security untuk mencegah bot -->
             <input type="text" id="form-honeypot" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
 
             <div>
@@ -949,21 +937,18 @@
             <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md flex flex-col justify-between">
               <div>
                 <div class="relative aspect-[4/3] overflow-hidden">
-                  <!-- OPTIMASI: Perbaikan CLS PageSpeed -->
                   <img src="assets/graha-athera-jogonalan-tipe-30.webp" 
                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80'" 
                        alt="Graha Athera Jogonalan" 
                        width="600" height="450"
                        class="w-full h-full object-cover">
                   <div class="absolute top-3 left-3 bg-brand-dark/90 text-white text-xs px-3 py-1 rounded-full font-extrabold">Mulai Rp 166 Jt</div>
-                  <!-- OPTIMASI: Optimasi Konversi Sales - Urgency Badge -->
                   <div class="absolute top-3 right-3 bg-red-100 text-red-800 text-[10px] font-extrabold px-2.5 py-1 rounded-full border border-red-300">🔥 Sisa 3 Unit Terakhir!</div>
                 </div>
                 <div class="p-5 space-y-2">
                   <h4 class="text-lg font-display font-bold text-brand-dark">Graha Athera Jogonalan</h4>
                   <p class="text-xs text-gray-800 leading-relaxed">
                     Perumahan subsidi FLPP tipe 30/60 &amp; 30/77. Berlokasi di Jogonalan Klaten, 10 menit dari Stasiun Kereta, bebas banjir &amp; SHM ready.
-                    <!-- OPTIMASI: Optimasi Konversi Sales - Copywriting Pricing -->
                     <span class="block mt-2 font-bold text-brand-dark">Cicilan Flat Mulai Rp 1 Jutaan/Bulan, Lebih Murah dari Ngekos!</span>
                   </p>
                   <div class="pt-2 flex flex-wrap gap-2 text-[10px] font-bold text-brand-dark">
@@ -986,7 +971,6 @@
             <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md flex flex-col justify-between">
               <div>
                 <div class="relative aspect-[4/3] overflow-hidden">
-                  <!-- OPTIMASI: Perbaikan CLS PageSpeed -->
                   <img src="assets/graha-athera-jogonalan-tipe-30.webp" 
                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80'" 
                        alt="Graha Athera Bayat" 
@@ -1019,7 +1003,6 @@
         <template x-if="activeCategoryModal === 'komersil'">
           <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md flex flex-col md:flex-row">
             <div class="md:w-1/2 aspect-[4/3] relative">
-              <!-- OPTIMASI: Perbaikan CLS PageSpeed -->
               <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Rumah Komersil Klaten" width="800" height="600" class="w-full h-full object-cover">
               <div class="absolute top-3 left-3 bg-brand-dark/90 text-white text-xs px-3 py-1 rounded-full font-extrabold">Mulai Rp 350 Jt</div>
             </div>
@@ -1040,7 +1023,6 @@
         <template x-if="activeCategoryModal === 'kavling'">
           <div class="bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-md flex flex-col md:flex-row">
             <div class="md:w-1/2 aspect-[4/3] relative">
-              <!-- OPTIMASI: Perbaikan CLS PageSpeed -->
               <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" alt="Tanah Kavling Klaten" width="800" height="600" class="w-full h-full object-cover">
               <div class="absolute top-3 left-3 bg-brand-dark/90 text-white text-xs px-3 py-1 rounded-full font-extrabold">Mulai Rp 1.5 Jt / m²</div>
             </div>
@@ -1067,7 +1049,6 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-12">
       <div class="space-y-4">
         <a href="./" class="flex items-center gap-2.5 shrink-0 group py-1" aria-label="Beranda Grand Athera">
-          <!-- OPTIMASI: Perbaikan CLS PageSpeed -->
           <img src="assets/logo.webp" alt="Logo Grand Athera" width="100" height="100" class="h-8 w-auto object-contain shrink-0 drop-shadow-md">
           <div class="inline-flex flex-col justify-between h-8 w-fit shrink-0">
             <span class="text-base font-bold tracking-wider text-white uppercase leading-none block whitespace-nowrap" style="font-family: 'Souvenir', 'ITC Souvenir', serif;">
@@ -1236,7 +1217,6 @@
       <p class="text-xs text-gray-800 font-medium mt-1 mb-6">Dapatkan e-brosur dan daftar harga terbaru secara gratis. Gunakan formulir ini juga untuk berkonsultasi mengenai rencana hunian impian Anda.</p>
       
       <form id="modal-wa-contact-form" class="space-y-4">
-        <!-- OPTIMASI: Honeypot Anti-Spam Security untuk mencegah bot -->
         <input type="text" id="modal-form-honeypot" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
 
         <div>
@@ -1341,7 +1321,6 @@
           this.soldOutIndex = (this.soldOutIndex - 1 + this.soldOutProjects.length) % this.soldOutProjects.length;
         },
 
-        // OPTIMASI: Logic baru agar slide desktop berganti 2 berbarengan secara mulus
         getDesktopPairs() {
           if (this.soldOutProjects.length === 0) return [];
           return this.soldOutProjects.map((_, i) => {
@@ -1387,7 +1366,7 @@
         "Graha Athera Nangsri": "assets/brosur/brosur-graha-athera-nangsri.pdf"
       };
 
-      // 3. REUSABLE FORM SUBMISSION HANDLER (UNTUK HASIL MAKSIMAL KEDUA FORM)
+      // 3. REUSABLE FORM SUBMISSION HANDLER
       function attachFormHandler(formId, isModal = false) {
         const form = document.getElementById(formId);
         if (!form) return;
@@ -1399,11 +1378,10 @@
           const submitBtn = form.querySelector('button[type="submit"]');
           const originalBtnText = submitBtn.innerHTML;
 
-          // OPTIMASI: Validasi Honeypot untuk memblokir Bot/Spam secara diam-diam
           const honeypotInput = document.getElementById(prefix + 'honeypot');
           if (honeypotInput && honeypotInput.value.trim() !== '') {
             console.warn('Terdeteksi spamming oleh bot.');
-            return; // Hentikan eksekusi script jika form disusupi bot
+            return; 
           }
 
           const namaInput = document.getElementById(prefix + 'nama');
@@ -1414,11 +1392,10 @@
           if (!namaInput || !waInput || !kategoriInput) return;
 
           const namaVal = namaInput.value.trim();
-          const waVal = waInput.value.trim().replace(/\D/g, ''); // Membersihkan selain angka
+          const waVal = waInput.value.trim().replace(/\D/g, ''); 
           const kategoriVal = kategoriInput.value;
           const pesanVal = pesanInput ? pesanInput.value.trim() : '';
 
-          // VALIDASI NOMOR WHATSAPP (08 & MINIMAL 11 DIGIT)
           if (!waVal.startsWith('08')) {
             alert('Nomor WhatsApp wajib diawali angka "08" (Contoh: 08123456789).');
             waInput.focus();
@@ -1431,7 +1408,6 @@
             return;
           }
 
-          // Indikator Loading
           submitBtn.disabled = true;
           submitBtn.innerHTML = "Memproses & Menyimpan Data...";
 
@@ -1441,7 +1417,6 @@
           params.append('kategori', kategoriVal);
           params.append('pesan', pesanVal);
 
-          // Kirim Data via Fetch POST
           fetch(GOOGLE_SCRIPT_URL, {
             method: 'POST',
             mode: 'no-cors',
@@ -1451,7 +1426,6 @@
             body: params.toString()
           })
           .then(() => {
-            // 1. Download Brosur PDF
             const pdfUrl = BROSUR_MAP[kategoriVal] || "assets/brosur/brosur-graha-athera-jogonalan.pdf";
             const downloadAnchor = document.createElement('a');
             downloadAnchor.href = pdfUrl;
@@ -1460,7 +1434,6 @@
             downloadAnchor.click();
             document.body.removeChild(downloadAnchor);
 
-            // 2. Buka WhatsApp Sales
             const salesWA = "6285124665145";
             const textWA = `Halo Athera Properti Klaten,\nSaya *${namaVal}* (${waVal}).\nSaya telah mengunduh brosur: *${kategoriVal}*.\nCatatan: ${pesanVal || '-'}`;
             
@@ -1470,7 +1443,6 @@
 
             form.reset();
 
-            // Jika dari modal, otomatis tutup modalnya
             if (isModal && window.Alpine) {
               const rootEl = document.querySelector('[x-data]');
               if (rootEl && rootEl._x_dataStack && rootEl._x_dataStack[0]) {
@@ -1491,15 +1463,12 @@
         });
       }
 
-      // Hubungkan Handler ke Form Halaman Utama & Form Pop-up Modal
       attachFormHandler('wa-contact-form', false);
       attachFormHandler('modal-wa-contact-form', true);
 
-      // 4. Inisialisasi Mobile Legalitas Tab Auto Timer
       startLegAutoTimer();
     });
 
-    // Google Maps Dynamic Facade Loader
     function loadMapIframeNow() {
       const box = document.getElementById('map-facade-box');
       if (box) {
@@ -1507,7 +1476,6 @@
       }
     }
 
-    // Legalitas Mobile Tab Script
     let legCurrentIndex = 0;
     let legAutoTimer = null;
 
