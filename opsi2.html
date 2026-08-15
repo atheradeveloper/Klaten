@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Grand Athera Klaten | Pengembang Rumah Subsidi & Properti Terpercaya</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Pengembang perumahan terpercaya di Klaten oleh PT Athera Putra Prima. Rumah Subsidi FLPP, Rumah Komersil, dan Tanah Kavling siap bangun dengan legalitas SHM terjamin.">
+  <meta name="keywords" content="rumah subsidi klaten, grand athera, developer perumahan klaten, graha athera jogonalan, rumah flpp bayat, tanah kavling klaten, properti klaten shm">
+  <meta name="author" content="PT Athera Putra Prima">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://athro.biz.id/">
+  <meta name="theme-color" content="#243028">
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="assets/icon.png"> 
+  <link rel="apple-touch-icon" href="assets/icon.png">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:locale" content="id_ID">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Grand Athera | Hunian Tenang & Legalitas Pasti di Klaten">
+  <meta property="og:description" content="Perumahan subsidi dan komersil berkualitas di Klaten. Sertifikat SHM & PBG terpecah per unit, cicilan mulai 1 jutaan/bulan.">
+  <meta property="og:url" content="https://athro.biz.id/">
+  <meta property="og:site_name" content="Grand Athera">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80">
+
+  <!-- Google Fonts: Plus Jakarta Sans (Clean, Neutral, Modern) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/bg-home.webp" fetchpriority="high">
+
+  <!-- Tailwind CSS Engine -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            linen: {
+              50: '#FAF8F5',
+              100: '#F5F2EB',
+              200: '#ECE6DC',
+              300: '#E0D7C9',
+            },
+            moss: {
+              900: '#1C251F',
+              800: '#243028',
+              700: '#2F3F34',
+              600: '#415448',
+              500: '#586E60',
+            },
+            clay: {
+              700: '#6E523D',
+              600: '#8A6B53',
+              500: '#A48268',
+              400: '#C2A58F',
+              100: '#F3ECE6',
+            },
+            charcoal: {
+              900: '#1F2220',
+              800: '#2C302D',
+              600: '#555A56',
+              400: '#868C87',
+              200: '#D5D8D5',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Alpine.js Engine -->
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "name": "Grand Athera - PT Athera Putra Prima",
+    "url": "https://athro.biz.id/",
+    "logo": "https://athro.biz.id/assets/logo.webp",
+    "description": "Pengembang perumahan di Klaten yang menyediakan Rumah Subsidi FLPP, Rumah Komersil, dan Kavling Siap Bangun dengan jaminan SHM aman.",
+    "telephone": "+6285124665145",
+    "priceRange": "Rp 160.000.000 - Rp 600.000.000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Jalan Perintis Kemerdekaan No. 28 Klaten Utara",
+      "addressLocality": "Klaten",
+      "addressRegion": "Jawa Tengah",
+      "postalCode": "57438",
+      "addressCountry": "ID"
+    }
+  }
+  </script>
+
+  <style>
+    [x-cloak] { display: none !important; }
+    
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      background-color: #FAF8F5;
+      color: #1F2220;
+    }
+
+    .hairline-border { border: 1px solid #E5E0D6; }
+    .hairline-b { border-bottom: 1px solid #E5E0D6; }
+    .hairline-t { border-top: 1px solid #E5E0D6; }
+
+    @keyframes subtleMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-container {
+      display: flex;
+      width: max-content;
+      animation: subtleMarquee 32s linear infinite;
+    }
+    .marquee-container:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+
+<body x-data="grandAtheraApp()" x-init="initData()">
+
+  <!-- 1. NAVIGATION BAR (Clean, Calm & Grounded) -->
+  <header class="sticky top-0 z-40 bg-[#FAF8F5]/90 backdrop-blur-md hairline-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="h-20 flex items-center justify-between">
+        
+        <!-- Brand Identity -->
+        <a href="./" class="flex items-center gap-3 group" aria-label="Beranda Grand Athera">
+          <img src="assets/logo.webp" alt="Logo Grand Athera" class="h-9 w-auto object-contain">
+          <div class="flex flex-col">
+            <span class="text-sm font-bold tracking-wider text-moss-900 uppercase">GRAND ATHERA</span>
+            <span class="text-[9px] font-medium tracking-[0.2em] text-clay-600 uppercase">PT Athera Putra Prima</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center space-x-7 text-xs font-semibold uppercase tracking-wider text-charcoal-800">
+          <a href="#proyek" class="hover:text-moss-700 transition-colors py-2">Katalog Proyek</a>
+          <a href="#kpr" class="hover:text-moss-700 transition-colors py-2">Hitung Cicilan</a>
+          <a href="#tentang" class="hover:text-moss-700 transition-colors py-2">Pendekatan Kami</a>
+          <a href="#legalitas" class="hover:text-moss-700 transition-colors py-2">Legalitas</a>
+          <a href="#lokasi" class="hover:text-moss-700 transition-colors py-2">Kontak</a>
+        </nav>
+
+        <!-- CTA Action -->
+        <div class="hidden sm:flex items-center gap-3">
+          <button type="button" 
+                  @click="openModalBrosur('Konsultasi Header')"
+                  class="px-5 py-2.5 rounded-lg bg-moss-800 hover:bg-moss-700 text-white text-xs font-semibold tracking-wider uppercase transition duration-200 cursor-pointer">
+            Unduh Brosur
+          </button>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+          <button @click="mobileMenu = !mobileMenu" type="button" class="p-2 text-charcoal-800 hover:text-moss-800" aria-label="Buka Menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path x-show="!mobileMenu" stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/>
+              <path x-show="mobileMenu" x-cloak stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div x-cloak x-show="mobileMenu" x-transition class="md:hidden bg-[#FAF8F5] hairline-b px-5 py-4 space-y-3 text-sm font-medium text-charcoal-800">
+      <a @click="mobileMenu = false" href="#proyek" class="block py-1.5 hover:text-moss-700">Katalog Proyek</a>
+      <a @click="mobileMenu = false" href="#kpr" class="block py-1.5 hover:text-moss-700">Hitung Cicilan KPR</a>
+      <a @click="mobileMenu = false" href="#tentang" class="block py-1.5 hover:text-moss-700">Pendekatan &amp; Keunggulan</a>
+      <a @click="mobileMenu = false" href="#legalitas" class="block py-1.5 hover:text-moss-700">Legalitas &amp; Sertifikat</a>
+      <a @click="mobileMenu = false" href="#lokasi" class="block py-1.5 hover:text-moss-700">Kontak Kantor</a>
+      <button type="button" 
+              @click="mobileMenu = false; openModalBrosur('Mobile CTA')"
+              class="w-full mt-2 py-3 rounded-lg bg-moss-800 text-white text-xs font-bold uppercase tracking-wider text-center">
+        Dapatkan Brosur &amp; Simulasi
+      </button>
+    </div>
+  </header>
+
+  <!-- 2. HERO SECTION (Editorial, Warm & Calm) -->
+  <section class="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      
+      <!-- Left: Honest & Human Narrative -->
+      <div class="lg:col-span-7 space-y-6 sm:space-y-8">
+        
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-linen-200/80 text-moss-800 text-xs font-semibold tracking-wide">
+          <span class="w-1.5 h-1.5 rounded-full bg-moss-600"></span>
+          Pengembang Resmi Klaten • Anggota APERNAS
+        </div>
+
+        <h1 class="text-3xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-charcoal-900 leading-[1.2]">
+          Rumah yang dibangun dengan cermat. Legalitas yang jelas sejak awal.
+        </h1>
+
+        <p class="text-base sm:text-lg text-charcoal-600 font-normal leading-relaxed max-w-2xl">
+          Kami mendesain hunian subsidi FLPP dan rumah keluarga di Klaten dengan standar konstruksi teruji, lingkungan bebas banjir, serta jaminan Sertifikat Hak Milik (SHM) yang telah terpecah per kavling.
+        </p>
+
+        <!-- Action Links -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
+          <a href="#proyek" class="px-6 py-3.5 rounded-lg bg-moss-800 hover:bg-moss-700 text-white font-semibold text-xs uppercase tracking-wider text-center transition duration-150 shadow-sm">
+            Lihat Pilihan Rumah
+          </a>
+          <button type="button" 
+                  @click="openModalBrosur('Hero E-Brosur')"
+                  class="px-6 py-3.5 rounded-lg bg-linen-100 hover:bg-linen-200 text-charcoal-800 hairline-border font-semibold text-xs uppercase tracking-wider text-center transition duration-150 cursor-pointer">
+            Unduh Daftar Harga (PDF)
+          </button>
+        </div>
+
+        <!-- Grounded Proof Metrics -->
+        <div class="pt-8 hairline-t grid grid-cols-3 gap-4">
+          <div>
+            <p class="text-2xl sm:text-3xl font-bold text-moss-900">100+</p>
+            <p class="text-xs text-charcoal-600 font-medium mt-0.5">Keluarga Terlayani</p>
+          </div>
+          <div>
+            <p class="text-2xl sm:text-3xl font-bold text-moss-900">100%</p>
+            <p class="text-xs text-charcoal-600 font-medium mt-0.5">SHM Pecah Per Unit</p>
+          </div>
+          <div>
+            <p class="text-2xl sm:text-3xl font-bold text-moss-900">10+ Thn</p>
+            <p class="text-xs text-charcoal-600 font-medium mt-0.5">Pengalaman Tim</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Pure Architectural Visual Preview -->
+      <div class="lg:col-span-5">
+        <div class="bg-white p-3 rounded-2xl hairline-border shadow-sm">
+          <div class="relative aspect-[4/3] rounded-xl overflow-hidden bg-linen-100">
+            <img src="assets/graha-athera-jogonalan-tipe-30.webp" 
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'"
+                 alt="Graha Athera Jogonalan" 
+                 class="w-full h-full object-cover">
+            <div class="absolute bottom-3 left-3 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-md text-xs font-semibold text-moss-900 shadow-sm">
+              Graha Athera Jogonalan • Mulai 166 Juta
+            </div>
+          </div>
+          <div class="p-4 space-y-2">
+            <div class="flex items-center justify-between text-xs text-charcoal-600">
+              <span>Tipe 30/60 &amp; 30/77</span>
+              <span>2 Kamar Tidur</span>
+              <span class="text-moss-700 font-bold">Cicilan ~1 Jt/bln</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 3. PROJECT CATALOGUE (Subtle Filters & Structured Cards) -->
+  <section id="proyek" class="py-20 bg-linen-100 hairline-t hairline-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Title & Category Filter Tabs -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-clay-600 block mb-1">Daftar Pilihan</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-charcoal-900">Unit Siap Bangun &amp; Siap Huni</h2>
+          <p class="text-sm text-charcoal-600 mt-1 max-w-xl font-normal">
+            Semua unit telah melewati verifikasi kelayakan kontur tanah, sistem pembuangan air tertutup, dan legalitas kepemilikan.
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="inline-flex p-1 bg-white rounded-lg hairline-border text-xs font-semibold">
+          <button type="button" @click="filter = 'all'" :class="filter === 'all' ? 'bg-moss-800 text-white' : 'text-charcoal-600 hover:text-charcoal-900'" class="px-3.5 py-1.5 rounded-md transition">Semua</button>
+          <button type="button" @click="filter = 'subsidi'" :class="filter === 'subsidi' ? 'bg-moss-800 text-white' : 'text-charcoal-600 hover:text-charcoal-900'" class="px-3.5 py-1.5 rounded-md transition">Subsidi FLPP</button>
+          <button type="button" @click="filter = 'komersil'" :class="filter === 'komersil' ? 'bg-moss-800 text-white' : 'text-charcoal-600 hover:text-charcoal-900'" class="px-3.5 py-1.5 rounded-md transition">Komersil</button>
+          <button type="button" @click="filter = 'kavling'" :class="filter === 'kavling' ? 'bg-moss-800 text-white' : 'text-charcoal-600 hover:text-charcoal-900'" class="px-3.5 py-1.5 rounded-md transition">Kavling</button>
+        </div>
+      </div>
+
+      <!-- Project Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- CARD 1: Graha Athera Jogonalan -->
+        <div x-show="filter === 'all' || filter === 'subsidi'" x-transition class="bg-white rounded-xl overflow-hidden hairline-border flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[16/10] bg-linen-200 overflow-hidden">
+              <img src="assets/graha-athera-jogonalan-tipe-30.webp" 
+                   onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=800&q=80'"
+                   alt="Graha Athera Jogonalan" 
+                   loading="lazy"
+                   class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-moss-900 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
+                Subsidi Pemerintah
+              </div>
+            </div>
+
+            <div class="p-6 space-y-3">
+              <div>
+                <span class="text-[11px] font-semibold text-clay-600 uppercase">Kec. Jogonalan, Klaten</span>
+                <h3 class="text-lg font-bold text-charcoal-900 mt-0.5">Graha Athera Jogonalan</h3>
+                <p class="text-xs text-charcoal-600 leading-relaxed mt-2 font-normal">
+                  Lokasi strategis dekat Stasiun Srowot &amp; jalan raya Solo-Yogya. Lingkungan tenang, jalan perumahan lebar 6.5 meter, bebas risiko genangan air.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2 py-3 hairline-t hairline-b text-center text-[11px]">
+                <div><span class="text-charcoal-400 block font-medium">Tipe</span><strong class="text-charcoal-800">30/60 &amp; 30/77</strong></div>
+                <div><span class="text-charcoal-400 block font-medium">Kamar</span><strong class="text-charcoal-800">2 KT / 1 KM</strong></div>
+                <div><span class="text-charcoal-400 block font-medium">Status</span><strong class="text-moss-700">SHM Siap</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-6 pb-6 pt-2 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] text-charcoal-400 font-medium block">Mulai Dari</span>
+              <span class="text-base font-bold text-charcoal-900">Rp 166.000.000</span>
+            </div>
+            <button type="button" 
+                    @click="openModalBrosur('Graha Athera Jogonalan')" 
+                    class="px-3.5 py-2 rounded-lg bg-linen-100 hover:bg-moss-800 hover:text-white hairline-border text-xs font-semibold text-charcoal-800 transition">
+              Detail &amp; Brosur
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD 2: Graha Athera Bayat -->
+        <div x-show="filter === 'all' || filter === 'subsidi'" x-transition class="bg-white rounded-xl overflow-hidden hairline-border flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[16/10] bg-linen-200 overflow-hidden">
+              <img src="assets/graha-athera-jogonalan-tipe-30.webp" 
+                   onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1580587771525-78b9dba3b914?auto=format&fit=crop&w=800&q=80'"
+                   alt="Graha Athera Bayat" 
+                   loading="lazy"
+                   class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-moss-900 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
+                Subsidi Pemerintah
+              </div>
+            </div>
+
+            <div class="p-6 space-y-3">
+              <div>
+                <span class="text-[11px] font-semibold text-clay-600 uppercase">Kec. Bayat, Klaten</span>
+                <h3 class="text-lg font-bold text-charcoal-900 mt-0.5">Graha Athera Bayat</h3>
+                <p class="text-xs text-charcoal-600 leading-relaxed mt-2 font-normal">
+                  Kawasan hunian asri dengan udara segar. Akses mudah ke pusat pasar lokal, sekolah, dan puskesmas. Program KPR subsidi suku bunga tetap 5%.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2 py-3 hairline-t hairline-b text-center text-[11px]">
+                <div><span class="text-charcoal-400 block font-medium">Tipe</span><strong class="text-charcoal-800">30/60</strong></div>
+                <div><span class="text-charcoal-400 block font-medium">Kamar</span><strong class="text-charcoal-800">2 KT / 1 KM</strong></div>
+                <div><span class="text-charcoal-400 block font-medium">Pajak</span><strong class="text-moss-700">Bebas PPN</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-6 pb-6 pt-2 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] text-charcoal-400 font-medium block">Mulai Dari</span>
+              <span class="text-base font-bold text-charcoal-900">Rp 160.000.000</span>
+            </div>
+            <button type="button" 
+                    @click="openModalBrosur('Graha Athera Bayat')" 
+                    class="px-3.5 py-2 rounded-lg bg-linen-100 hover:bg-moss-800 hover:text-white hairline-border text-xs font-semibold text-charcoal-800 transition">
+              Detail &amp; Brosur
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD 3: Athera Residence Komersil -->
+        <div x-show="filter === 'all' || filter === 'komersil'" x-transition class="bg-white rounded-xl overflow-hidden hairline-border flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[16/10] bg-linen-200 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" 
+                   alt="Athera Signature Residence" 
+                   loading="lazy"
+                   class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-clay-700 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
+                Komersil Mandiri
+              </div>
+            </div>
+
+            <div class="p-6 space-y-3">
+              <div>
+                <span class="text-[11px] font-semibold text-clay-600 uppercase">Klaten Utara</span>
+                <h3 class="text-lg font-bold text-charcoal-900 mt-0.5">Athera Signature Residence</h3>
+                <p class="text-xs text-charcoal-600 leading-relaxed mt-2 font-normal">
+                  Hunian modern tropical dengan sirkulasi udara optimal dan pencahayaan alami maksimal. Struktur dinding bata merah dan kusen aluminium rapi.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2 py-3 hairline-t hairline-b text-center text-[11px]">
+                <div><span class="text-charcoal-400 block font-medium">Tipe</span><strong class="text-charcoal-800">45/90</strong></div>
+                <div><span class="text-charcoal-400 block font-medium">Keamanan</span><strong class="text-charcoal-800">One Gate</strong></div>
+                <div><span class="text-charcoal-400 block font-medium">Legalitas</span><strong class="text-moss-700">SHM + PBG</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-6 pb-6 pt-2 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] text-charcoal-400 font-medium block">Mulai Dari</span>
+              <span class="text-base font-bold text-charcoal-900">Rp 350.000.000</span>
+            </div>
+            <button type="button" 
+                    @click="openModalBrosur('Athera Signature Residence')" 
+                    class="px-3.5 py-2 rounded-lg bg-linen-100 hover:bg-moss-800 hover:text-white hairline-border text-xs font-semibold text-charcoal-800 transition">
+              Detail &amp; Brosur
+            </button>
+          </div>
+        </div>
+
+        <!-- CARD 4: Kavling Siap Bangun -->
+        <div x-show="filter === 'all' || filter === 'kavling'" x-transition class="bg-white rounded-xl overflow-hidden hairline-border flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[16/10] bg-linen-200 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80" 
+                   alt="Tanah Kavling Klaten" 
+                   loading="lazy"
+                   class="w-full h-full object-cover">
+              <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-charcoal-800 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">
+                Tanah Kavling
+              </div>
+            </div>
+
+            <div class="p-6 space-y-3">
+              <div>
+                <span class="text-[11px] font-semibold text-clay-600 uppercase">Klaten</span>
+                <h3 class="text-lg font-bold text-charcoal-900 mt-0.5">Kavling Matang Siap Bangun</h3>
+                <p class="text-xs text-charcoal-600 leading-relaxed mt-2 font-normal">
+                  Lahan siap bangun dengan patok batas BPN jelas, jalan lingkungan cor beton, serta saluran air terpadu. Sangat ideal untuk tabungan aset tanah.
+                </p>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2 py-3 hairline-t hairline-b text-center text-[11px]">
+                <div><span class="text-charcoal-400 block font-medium">Luas</span><strong class="text-charcoal-800">70 - 150 m²</strong></div>
+                <div><span class="text-charcoal-400 block font-medium">Akses</span><strong class="text-charcoal-800">Truk Masuk</strong></div>
+                <div><span class="text-charcoal-400 block font-medium">Surat</span><strong class="text-moss-700">SHM Pecah</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="px-6 pb-6 pt-2 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] text-charcoal-400 font-medium block">Mulai Dari</span>
+              <span class="text-base font-bold text-charcoal-900">Rp 1.5 Jt / m²</span>
+            </div>
+            <button type="button" 
+                    @click="openModalBrosur('Tanah Kavling Siap Bangun')" 
+                    class="px-3.5 py-2 rounded-lg bg-linen-100 hover:bg-moss-800 hover:text-white hairline-border text-xs font-semibold text-charcoal-800 transition">
+              Cek Lokasi
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. TRANSPARENT KPR SIMULATOR (Soft, Clear & Accessible) -->
+  <section id="kpr" class="py-20 bg-white hairline-b">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8" x-data="kprCalc()">
+      
+      <div class="text-center mb-12 space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-clay-600 block">Kalkulator Bersahabat</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-charcoal-900">Simulasi Angsuran Bulanan</h2>
+        <p class="text-sm text-charcoal-600 font-normal">
+          Perkiraan cicilan KPR subsidi (bunga flat 5% dari pemerintah) dan rumah komersil.
+        </p>
+      </div>
+
+      <div class="bg-linen-50 p-6 sm:p-10 rounded-2xl hairline-border grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+        
+        <!-- Controls -->
+        <div class="md:col-span-7 space-y-5">
+          <div>
+            <label class="block text-xs font-semibold text-charcoal-600 uppercase mb-2">Pilihan Program</label>
+            <div class="grid grid-cols-2 gap-2">
+              <button type="button" 
+                      @click="setScheme('subsidi')" 
+                      :class="scheme === 'subsidi' ? 'bg-moss-800 text-white' : 'bg-white hairline-border text-charcoal-800'"
+                      class="py-2.5 px-3 rounded-lg text-xs font-semibold transition">
+                Subsidi (5% Flat)
+              </button>
+              <button type="button" 
+                      @click="setScheme('komersil')" 
+                      :class="scheme === 'komersil' ? 'bg-moss-800 text-white' : 'bg-white hairline-border text-charcoal-800'"
+                      class="py-2.5 px-3 rounded-lg text-xs font-semibold transition">
+                Komersil (~8.5%)
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between text-xs mb-1.5 font-medium text-charcoal-600">
+              <span>Harga Properti</span>
+              <strong class="text-charcoal-900 font-bold" x-text="formatRp(harga)"></strong>
+            </div>
+            <input type="range" 
+                   :min="scheme === 'subsidi' ? 160000000 : 300000000" 
+                   :max="scheme === 'subsidi' ? 180000000 : 800000000" 
+                   step="5000000" 
+                   x-model.number="harga" 
+                   @input="recalculate()"
+                   class="w-full h-1.5 bg-linen-300 rounded-lg appearance-none cursor-pointer accent-moss-800">
+          </div>
+
+          <div>
+            <div class="flex justify-between text-xs mb-1.5 font-medium text-charcoal-600">
+              <span>Uang Muka (DP)</span>
+              <strong class="text-charcoal-900 font-bold" x-text="formatRp(dp)"></strong>
+            </div>
+            <input type="range" 
+                   :min="harga * 0.01" 
+                   :max="harga * 0.3" 
+                   step="1000000" 
+                   x-model.number="dp" 
+                   @input="recalculate()"
+                   class="w-full h-1.5 bg-linen-300 rounded-lg appearance-none cursor-pointer accent-moss-800">
+          </div>
+
+          <div>
+            <div class="flex justify-between text-xs mb-1.5 font-medium text-charcoal-600">
+              <span>Jangka Waktu (Tenor)</span>
+              <strong class="text-charcoal-900 font-bold" x-text="tenor + ' Tahun'"></strong>
+            </div>
+            <div class="grid grid-cols-4 gap-2">
+              <template x-for="t in [10, 15, 20, 25]">
+                <button type="button" 
+                        @click="tenor = t; recalculate();" 
+                        :class="tenor === t ? 'bg-moss-700 text-white' : 'bg-white hairline-border text-charcoal-600'"
+                        class="py-2 rounded text-xs font-semibold transition">
+                  <span x-text="t + ' Thn'"></span>
+                </button>
+              </template>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result Box -->
+        <div class="md:col-span-5 bg-white p-6 rounded-xl hairline-border text-center space-y-4 shadow-sm">
+          <div>
+            <span class="text-[11px] font-semibold text-charcoal-400 uppercase tracking-wider block">Perkiraan Angsuran</span>
+            <div class="text-2xl sm:text-3xl font-bold text-moss-900 mt-1" x-text="formatRp(angsuran) + '/bln'"></div>
+            <p class="text-[11px] text-charcoal-400 mt-1">Suku bunga tetap 5% flat untuk program FLPP.</p>
+          </div>
+
+          <div class="pt-3 hairline-t text-xs text-charcoal-600 space-y-1.5 text-left">
+            <div class="flex justify-between">
+              <span>Plafon Pokok:</span>
+              <strong class="text-charcoal-800" x-text="formatRp(harga - dp)"></strong>
+            </div>
+            <div class="flex justify-between">
+              <span>Bunga:</span>
+              <strong class="text-moss-700" x-text="scheme === 'subsidi' ? '5% Tetap Flat' : '8.5% Efektif'"></strong>
+            </div>
+          </div>
+
+          <button type="button" 
+                  @click="openModalBrosur('Simulasi KPR ' + formatRp(harga))" 
+                  class="w-full py-3 rounded-lg bg-moss-800 hover:bg-moss-700 text-white text-xs font-semibold uppercase tracking-wider transition">
+            Konsultasi Berkas KPR
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. ABOUT & DEVELOPER APPROACH (Honest Craftsmanship) -->
+  <section id="tentang" class="py-20 bg-linen-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-xs font-bold uppercase tracking-widest text-clay-600 block">Prinsip Kerja</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-charcoal-900 leading-snug">
+            Kami percaya rumah yang baik berawal dari fondasi yang jujur dan legalitas yang rapi.
+          </h2>
+          <p class="text-sm sm:text-base text-charcoal-600 leading-relaxed font-normal">
+            Dikelola oleh <strong>PT Athera Putra Prima</strong>, kami meneruskan pengalaman 10+ tahun dari grup <strong>Anugerah Land</strong>. Kami ingin mempermudah masyarakat memiliki rumah pertama tanpa rasa was-was mengenai sertifikat, kualitas bangunan, ataupun risiko banjir.
+          </p>
+
+          <div class="space-y-4 pt-2">
+            <div class="flex items-start gap-3.5">
+              <div class="w-8 h-8 rounded-lg bg-linen-200 text-moss-800 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">1</div>
+              <div>
+                <h3 class="text-sm font-bold text-charcoal-900">Fondasi Batu Kali &amp; Struktur Beton Bertulang</h3>
+                <p class="text-xs text-charcoal-600 mt-0.5">Didesain dengan perhitungan konstruksi presisi demi ketahanan bangunan jangka panjang.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-8 h-8 rounded-lg bg-linen-200 text-moss-800 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">2</div>
+              <div>
+                <h3 class="text-sm font-bold text-charcoal-900">Saluran Air Tertutup &amp; Bebas Genangan</h3>
+                <p class="text-xs text-charcoal-600 mt-0.5">Tata letak saluran air di bawah jalan sehingga lingkungan tetap rapi, bersih, dan tidak kumuh.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3.5">
+              <div class="w-8 h-8 rounded-lg bg-linen-200 text-moss-800 flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">3</div>
+              <div>
+                <h3 class="text-sm font-bold text-charcoal-900">Sertifikat Hak Milik Sudah Terpecah</h3>
+                <p class="text-xs text-charcoal-600 mt-0.5">Legalitas aman dan tidak dalam sengketa. Pembeli langsung menerima kepastian hak atas tanah.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-6">
+          <div class="bg-white p-3 rounded-2xl hairline-border shadow-sm">
+            <img src="assets/graha-athera-jogonalan-tipe-30.webp" 
+                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'"
+                 alt="Kualitas Properti Grand Athera" 
+                 loading="lazy"
+                 class="w-full h-auto rounded-xl object-cover aspect-[4/3]">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. LEGALITAS (Subtle, Clean Transparency) -->
+  <section id="legalitas" class="py-20 bg-white hairline-t hairline-b">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14 space-y-2">
+        <span class="text-xs font-bold uppercase tracking-widest text-clay-600 block">Jaminan Hukum</span>
+        <h2 class="text-2xl sm:text-3xl font-bold text-charcoal-900">Transparansi Dokumen Resmi</h2>
+        <p class="text-sm text-charcoal-600 font-normal">
+          Seluruh unit dipasarkan dengan kelengkapan dokumen yang telah divalidasi oleh instansi berwenang di Klaten.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="p-6 bg-linen-50 rounded-xl hairline-border space-y-2">
+          <div class="w-10 h-10 rounded-lg bg-white hairline-border text-moss-800 flex items-center justify-center font-bold text-sm">
+            SHM
+          </div>
+          <h3 class="text-sm font-bold text-charcoal-900 pt-2">Sertifikat Hak Milik</h3>
+          <p class="text-xs text-charcoal-600 leading-relaxed">Sertifikat telah terpecah per kavling, siap langsung balik nama ke pembeli.</p>
+        </div>
+
+        <div class="p-6 bg-linen-50 rounded-xl hairline-border space-y-2">
+          <div class="w-10 h-10 rounded-lg bg-white hairline-border text-moss-800 flex items-center justify-center font-bold text-sm">
+            PBG
+          </div>
+          <h3 class="text-sm font-bold text-charcoal-900 pt-2">Izin Bangunan Resmi</h3>
+          <p class="text-xs text-charcoal-600 leading-relaxed">Persetujuan Bangunan Gedung (PBG/IMB) sah sesuai regulasi Pemkab Klaten.</p>
+        </div>
+
+        <div class="p-6 bg-linen-50 rounded-xl hairline-border space-y-2">
+          <div class="w-10 h-10 rounded-lg bg-white hairline-border text-moss-800 flex items-center justify-center font-bold text-sm">
+            0%
+          </div>
+          <h3 class="text-sm font-bold text-charcoal-900 pt-2">Bebas Pajak PPN</h3>
+          <p class="text-xs text-charcoal-600 leading-relaxed">Khusus unit subsidi pemerintah dibebaskan dari biaya Pajak Pertambahan Nilai.</p>
+        </div>
+
+        <div class="p-6 bg-linen-50 rounded-xl hairline-border space-y-2">
+          <div class="w-10 h-10 rounded-lg bg-white hairline-border text-moss-800 flex items-center justify-center font-bold text-sm">
+            ✓
+          </div>
+          <h3 class="text-sm font-bold text-charcoal-900 pt-2">Anggota APERNAS</h3>
+          <p class="text-xs text-charcoal-600 leading-relaxed">Pengembang terdaftar resmi dan diawasi asosiasi perumahan nasional.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. SPONSORS & BANK PARTNERS (Muted Grayscale Monochromatic) -->
+  <section class="py-12 bg-linen-50 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-6">
+      <span class="text-[10px] font-bold uppercase tracking-[0.2em] text-charcoal-400">Didukung Kemitraan Perbankan &amp; Instansi</span>
+    </div>
+
+    <div class="relative w-full overflow-hidden">
+      <div class="marquee-container flex items-center gap-12 sm:gap-16 opacity-70">
+        <img src="assets/sponsor/bank-btn.svg" alt="Bank BTN" class="h-8 w-auto grayscale">
+        <img src="assets/sponsor/bank-bri.webp" alt="Bank BRI" class="h-8 w-auto grayscale">
+        <img src="assets/sponsor/bank-bsi.webp" alt="Bank BSI" class="h-8 w-auto grayscale">
+        <img src="assets/sponsor/bank-bni.svg" alt="Bank BNI" class="h-8 w-auto grayscale">
+        <img src="assets/sponsor/bank-mandiri.webp" alt="Bank Mandiri" class="h-8 w-auto grayscale">
+        <img src="assets/sponsor/atrbpn-klaten.webp" alt="ATR BPN Klaten" class="h-8 w-auto grayscale">
+        <img src="assets/sponsor/disperakim-klaten.webp" alt="Disperakim Klaten" class="h-8 w-auto grayscale">
+        <img src="assets/sponsor/anugerah-land.webp" alt="Anugerah Land" class="h-8 w-auto grayscale">
+
+        <!-- Repeated for infinite scroll -->
+        <img src="assets/sponsor/bank-btn.svg" alt="Bank BTN" class="h-8 w-auto grayscale" aria-hidden="true">
+        <img src="assets/sponsor/bank-bri.webp" alt="Bank BRI" class="h-8 w-auto grayscale" aria-hidden="true">
+        <img src="assets/sponsor/bank-bsi.webp" alt="Bank BSI" class="h-8 w-auto grayscale" aria-hidden="true">
+        <img src="assets/sponsor/bank-bni.svg" alt="Bank BNI" class="h-8 w-auto grayscale" aria-hidden="true">
+        <img src="assets/sponsor/bank-mandiri.webp" alt="Bank Mandiri" class="h-8 w-auto grayscale" aria-hidden="true">
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CONTACT & DOWNLOAD BROCHURE FORM (Warm Paper Style) -->
+  <section id="lokasi" class="py-20 bg-white hairline-t">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- Left: Office info & Map -->
+        <div class="lg:col-span-5 space-y-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-clay-600 block mb-1">Pusat Informasi</span>
+            <h2 class="text-2xl sm:text-3xl font-bold text-charcoal-900">Kantor Pemasaran</h2>
+            <p class="text-sm text-charcoal-600 mt-2 font-normal">
+              Kami siap mendampingi Anda untuk survei lokasi dan berkonsultasi mengenai kelayakan berkas KPR.
+            </p>
+          </div>
+
+          <div class="space-y-4 text-xs text-charcoal-700">
+            <div>
+              <strong class="text-charcoal-900 block font-semibold">Alamat:</strong>
+              <p class="text-charcoal-600 mt-0.5">Jalan Perintis Kemerdekaan No. 28 Klaten Utara, Klaten, Jawa Tengah 57438</p>
+            </div>
+            <div>
+              <strong class="text-charcoal-900 block font-semibold">WhatsApp Layanan:</strong>
+              <p class="text-charcoal-600 mt-0.5">+62 851-2466-5145</p>
+            </div>
+            <div>
+              <strong class="text-charcoal-900 block font-semibold">Waktu Operasional:</strong>
+              <p class="text-charcoal-600 mt-0.5">Senin – Sabtu (08.00 – 16.00 WIB)</p>
+            </div>
+          </div>
+
+          <!-- Map Box -->
+          <div class="rounded-xl overflow-hidden hairline-border">
+            <div id="map-box" class="h-44 bg-linen-200 relative flex items-center justify-center cursor-pointer group" onclick="loadMap()">
+              <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=800&q=80" 
+                   alt="Peta Lokasi Kantor" 
+                   class="w-full h-full object-cover opacity-60">
+              <div class="absolute bg-white px-4 py-2 rounded-lg text-xs font-semibold text-charcoal-800 hairline-border shadow-sm group-hover:bg-linen-50">
+                Klik untuk Memuat Peta Kantor
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Lead Capture Form -->
+        <div class="lg:col-span-7 bg-linen-50 p-8 sm:p-10 rounded-2xl hairline-border">
+          <h3 class="text-xl font-bold text-charcoal-900">Unduh E-Brosur &amp; Pricelist</h3>
+          <p class="text-xs text-charcoal-600 mt-1 mb-6 font-normal">
+            Silakan masukkan kontak Anda. Sistem akan mengunduh brosur PDF dan menghubungkan Anda dengan representatif kami.
+          </p>
+
+          <form id="wa-contact-form" class="space-y-4">
+            <div>
+              <label for="form-nama" class="block text-xs font-semibold text-charcoal-800 uppercase mb-1">Nama Panggilan</label>
+              <input type="text" id="form-nama" required class="w-full px-4 py-3 rounded-lg bg-white hairline-border text-xs text-charcoal-900 focus:outline-none focus:border-moss-700" placeholder="Nama Anda...">
+            </div>
+
+            <div>
+              <label for="form-wa" class="block text-xs font-semibold text-charcoal-800 uppercase mb-1">Nomor WhatsApp</label>
+              <input type="tel" id="form-wa" required minlength="10" maxlength="15" pattern="^08[0-9]{8,}$" title="Awali nomor dengan 08" class="w-full px-4 py-3 rounded-lg bg-white hairline-border text-xs text-charcoal-900 focus:outline-none focus:border-moss-700" placeholder="Contoh: 081234567890">
+            </div>
+
+            <div>
+              <label for="form-kategori" class="block text-xs font-semibold text-charcoal-800 uppercase mb-1">Pilihan Brosur</label>
+              <select id="form-kategori" class="w-full px-4 py-3 rounded-lg bg-white hairline-border text-xs text-charcoal-900 focus:outline-none focus:border-moss-700">
+                <option value="Graha Athera Jogonalan">Graha Athera Jogonalan (Subsidi)</option>
+                <option value="Graha Athera Bayat">Graha Athera Bayat (Subsidi)</option>
+                <option value="Graha Athera Nangsri">Graha Athera Nangsri</option>
+                <option value="Athera Signature Residence">Athera Signature Residence (Komersil)</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="form-pesan" class="block text-xs font-semibold text-charcoal-800 uppercase mb-1">Pertanyaan / Rencana Survei (Opsional)</label>
+              <textarea id="form-pesan" rows="3" class="w-full px-4 py-3 rounded-lg bg-white hairline-border text-xs text-charcoal-900 focus:outline-none focus:border-moss-700" placeholder="Tuliskan catatan tambahan jika ada..."></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-lg bg-moss-800 hover:bg-moss-700 text-white text-xs font-semibold uppercase tracking-wider transition">
+              Kirim &amp; Dapatkan Brosur
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. FOOTER -->
+  <footer class="bg-linen-100 hairline-t py-12 text-xs text-charcoal-600">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-3 gap-8 mb-8">
+      <div>
+        <span class="font-bold text-charcoal-900 uppercase tracking-wider block mb-2">Grand Athera</span>
+        <p class="leading-relaxed text-charcoal-600">
+          PT Athera Putra Prima berkomitmen menghadirkan perumahan bersubsidi dan hunian komersil dengan jaminan mutu struktur serta legalitas aman di Klaten.
+        </p>
+      </div>
+      <div>
+        <span class="font-bold text-charcoal-900 uppercase tracking-wider block mb-2">Lokasi Perumahan</span>
+        <ul class="space-y-1.5 text-charcoal-600">
+          <li>Graha Athera Jogonalan</li>
+          <li>Graha Athera Bayat</li>
+          <li>Graha Athera Nangsri</li>
+          <li>Athera Signature Residence</li>
+        </ul>
+      </div>
+      <div>
+        <span class="font-bold text-charcoal-900 uppercase tracking-wider block mb-2">Kontak Pemasaran</span>
+        <p class="leading-relaxed text-charcoal-600">
+          Jl. Perintis Kemerdekaan No. 28 Klaten Utara<br>
+          WhatsApp: +62 851-2466-5145<br>
+          Email: atheradeveloper@gmail.com
+        </p>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 hairline-t text-center text-charcoal-400">
+      © 2026 PT Athera Putra Prima. Seluruh Hak Cipta Dilindungi.
+    </div>
+  </footer>
+
+  <!-- 10. MODAL POPUP BROCHURE -->
+  <div x-cloak x-show="modalBrosur" class="fixed inset-0 z-50 bg-charcoal-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div @click.away="modalBrosur = false" class="bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full hairline-border shadow-lg relative">
+      <button @click="modalBrosur = false" class="absolute top-4 right-4 text-charcoal-400 hover:text-charcoal-800 text-lg font-bold">✕</button>
+      <h3 class="text-lg font-bold text-charcoal-900">Unduh Brosur Properti</h3>
+      <p class="text-xs text-charcoal-600 mt-1 mb-4">Lengkapi form berikut untuk mendapatkan berkas PDF.</p>
+
+      <form id="modal-wa-form" class="space-y-3">
+        <div>
+          <label for="modal-form-nama" class="block text-[11px] font-semibold text-charcoal-700 uppercase mb-1">Nama</label>
+          <input type="text" id="modal-form-nama" required class="w-full px-3.5 py-2.5 rounded-lg bg-linen-50 hairline-border text-xs text-charcoal-900 focus:outline-none focus:border-moss-700" placeholder="Nama Anda...">
+        </div>
+        <div>
+          <label for="modal-form-wa" class="block text-[11px] font-semibold text-charcoal-700 uppercase mb-1">Nomor WhatsApp</label>
+          <input type="tel" id="modal-form-wa" required minlength="10" maxlength="15" pattern="^08[0-9]{8,}$" class="w-full px-3.5 py-2.5 rounded-lg bg-linen-50 hairline-border text-xs text-charcoal-900 focus:outline-none focus:border-moss-700" placeholder="081234567890">
+        </div>
+        <div>
+          <label for="modal-form-kategori" class="block text-[11px] font-semibold text-charcoal-700 uppercase mb-1">Pilihan Unit</label>
+          <select id="modal-form-kategori" class="w-full px-3.5 py-2.5 rounded-lg bg-linen-50 hairline-border text-xs text-charcoal-900 focus:outline-none focus:border-moss-700" x-model="modalSelectedCategory">
+            <option value="Graha Athera Jogonalan">Graha Athera Jogonalan</option>
+            <option value="Graha Athera Bayat">Graha Athera Bayat</option>
+            <option value="Graha Athera Nangsri">Graha Athera Nangsri</option>
+            <option value="Athera Signature Residence">Athera Signature Residence</option>
+          </select>
+        </div>
+        <button type="submit" class="w-full py-3 mt-2 rounded-lg bg-moss-800 hover:bg-moss-700 text-white text-xs font-semibold uppercase tracking-wider transition">
+          Unduh Sekarang
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- 11. SUBTLE FLOATING WHATSAPP PILL -->
+  <a href="https://wa.me/6285124665145?text=Halo%20Grand%20Athera%2C%20saya%20tertarik%20mengenai%20proyek%20perumahan." 
+     target="_blank" rel="noopener noreferrer" 
+     class="fixed bottom-6 right-6 z-40 bg-moss-800 hover:bg-moss-700 text-white px-4 py-3 rounded-full shadow-md flex items-center gap-2.5 transition text-xs font-semibold uppercase tracking-wider" 
+     aria-label="Kontak WhatsApp Sales">
+    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.03-5.115-2.908-6.995-1.878-1.88-4.357-2.914-6.997-2.915-5.442 0-9.867 4.42-9.871 9.866-.001 1.7.453 3.361 1.314 4.816L1.93 22.146l4.717-1.238zM17.43 14.86c-.296-.149-1.755-.867-2.027-.966-.271-.1-.469-.149-.667.149-.198.297-.768.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.667-1.61-.915-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.568-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    </svg>
+    <span>Hubungi Sales</span>
+  </a>
+
+  <!-- 12. SCRIPTS APPLICATION -->
+  <script>
+    function grandAtheraApp() {
+      return {
+        mobileMenu: false,
+        modalBrosur: false,
+        modalSelectedCategory: 'Graha Athera Jogonalan',
+        filter: 'all',
+
+        initData() {},
+
+        openModalBrosur(target) {
+          if (target && target.includes('Bayat')) {
+            this.modalSelectedCategory = 'Graha Athera Bayat';
+          } else if (target && target.includes('Signature')) {
+            this.modalSelectedCategory = 'Athera Signature Residence';
+          } else {
+            this.modalSelectedCategory = 'Graha Athera Jogonalan';
+          }
+          this.modalBrosur = true;
+        }
+      }
+    }
+
+    function kprCalc() {
+      return {
+        scheme: 'subsidi',
+        harga: 166000000,
+        dp: 2000000,
+        tenor: 20,
+        rate: 0.05,
+        angsuran: 1085000,
+
+        setScheme(type) {
+          this.scheme = type;
+          if (type === 'subsidi') {
+            this.harga = 166000000;
+            this.dp = 2000000;
+            this.rate = 0.05;
+          } else {
+            this.harga = 400000000;
+            this.dp = 40000000;
+            this.rate = 0.085;
+          }
+          this.recalculate();
+        },
+
+        recalculate() {
+          const principal = Math.max(0, this.harga - this.dp);
+          const monthlyRate = this.rate / 12;
+          const totalMonths = this.tenor * 12;
+          const monthlyPayment = (principal * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -totalMonths));
+          this.angsuran = Math.round(monthlyPayment);
+        },
+
+        formatRp(val) {
+          return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(val);
+        }
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwpbElKevNn_A99QIzKIOMy1oSLLrtVAvwfw2_EtZjLWHWvsOHEtEYY0hFvktXPIJTU/exec"; 
+
+      const BROSUR_MAP = {
+        "Graha Athera Jogonalan": "assets/brosur/brosur-graha-athera-jogonalan.pdf",
+        "Graha Athera Bayat": "assets/brosur/brosur-graha-athera-bayat.pdf",
+        "Graha Athera Nangsri": "assets/brosur/brosur-graha-athera-nangsri.pdf",
+        "Athera Signature Residence": "assets/brosur/brosur-graha-athera-jogonalan.pdf"
+      };
+
+      function attachForm(formId, isModal = false) {
+        const form = document.getElementById(formId);
+        if (!form) return;
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const prefix = isModal ? 'modal-form-' : 'form-';
+          const submitBtn = form.querySelector('button[type="submit"]');
+          const origText = submitBtn.innerHTML;
+
+          const namaEl = document.getElementById(prefix + 'nama');
+          const waEl = document.getElementById(prefix + 'wa');
+          const katEl = document.getElementById(prefix + 'kategori');
+          const pesanEl = document.getElementById(prefix + 'pesan');
+
+          const nama = namaEl.value.trim();
+          const wa = waEl.value.trim().replace(/\D/g, '');
+          const kategori = katEl.value;
+          const pesan = pesanEl ? pesanEl.value.trim() : '';
+
+          if (!wa.startsWith('08') || wa.length < 10) {
+            alert('Nomor WhatsApp wajib diawali angka 08 dan minimal 10 digit.');
+            waEl.focus();
+            return;
+          }
+
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = "Memproses...";
+
+          const params = new URLSearchParams();
+          params.append('nama', nama);
+          params.append('wa', wa);
+          params.append('kategori', kategori);
+          params.append('pesan', pesan);
+
+          fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: params.toString()
+          }).then(() => {
+            const pdfUrl = BROSUR_MAP[kategori] || "assets/brosur/brosur-graha-athera-jogonalan.pdf";
+            const a = document.createElement('a');
+            a.href = pdfUrl;
+            a.download = `Brosur-${kategori.replace(/\s+/g, '-')}.pdf`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+
+            const salesWA = "6285124665145";
+            const msg = `Halo Grand Athera,\nSaya *${nama}* (${wa}).\nSaya telah mengunduh e-brosur: *${kategori}*.\nCatatan: ${pesan || '-'}`;
+            
+            setTimeout(() => {
+              window.open(`https://wa.me/${salesWA}?text=${encodeURIComponent(msg)}`, '_blank');
+            }, 700);
+
+            form.reset();
+            alert('Terima kasih. Brosur sedang diunduh.');
+          }).catch(err => {
+            console.error(err);
+            alert('Gagal mengirim data. Silakan hubungi kami via WhatsApp.');
+          }).finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = origText;
+          });
+        });
+      }
+
+      attachForm('wa-contact-form', false);
+      attachForm('modal-wa-form', true);
+    });
+
+    function loadMap() {
+      const box = document.getElementById('map-box');
+      if (box) {
+        box.innerHTML = `<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3954.569389253457!2d110.630962!3d-7.688212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zN8KwNDInMTkuMiJTIDExMMKwMzcnNTEuNSJF!5e0!3m2!1sid!2sid!4v1710000000000!5m2!1sid!2sid" width="100%" height="176" style="border:0;" allowfullscreen="" loading="lazy" title="Peta Lokasi Kantor Athera"></iframe>`;
+      }
+    }
+  </script>
+</body>
+</html>
